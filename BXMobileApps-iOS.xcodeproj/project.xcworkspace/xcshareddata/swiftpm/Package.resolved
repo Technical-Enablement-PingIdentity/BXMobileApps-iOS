@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "pingone-mobile-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pingidentity/pingone-mobile-sdk-ios.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5a4d652e6d63b0ded2efed7312aeacb595f7aec4"
+      }
+    }
+  ],
+  "version" : 2
+}

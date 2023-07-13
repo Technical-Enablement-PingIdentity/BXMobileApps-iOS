@@ -11,7 +11,7 @@ import SwiftUI
 struct BXFinanceApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeScreen(versionColor: .white, background: Color.secondaryColor.ignoresSafeArea())
+            FinanceRootView()
         }
     }
 }

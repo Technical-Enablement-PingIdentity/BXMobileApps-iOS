@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  BXMobileApps-iOS
+
+  Created by Eric Anderson on 7/12/23.
+  
+*/
+
+"Notifications Disabled Message" = "If you do not wish to enable notifications you will need to be in the BXFinance App on your phone before you attempt to use it for MFA.";
+
+"Home Action 1" = "Pay & Transfer";
+"Home Action 2" = "Banking & Credit Accounts";
+"Home Action 3" = "Loans & Lines of Credit";
+"Home Action 4" = "Investment Accounts";
+"Home Action 5" = "Profile & Settings";
+"Home Action 6" = "Messages";

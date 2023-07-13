@@ -10,11 +10,21 @@ import SwiftUI
 struct BXButton: View {
     let text: String
     let action: () -> Void
+    let width: CGFloat?
+    
+    init(text: String, action: @escaping () -> Void, width: CGFloat? = 230) {
+        self.text = text
+        self.action = action
+        self.width = width
+    }
     
     var body: some View {
         Button(action: action) {
             Text(text)
-        }.buttonStyle(BXButtonStyle())
+                .frame(width: width)
+        }
+        .buttonStyle(BXButtonStyle())
+            
     }
 }
 
@@ -22,7 +32,6 @@ public struct BXButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()
-            .padding([.leading, .trailing], 30)
             .foregroundColor(.white)
             .font(Font.body.bold())
             .background(configuration.isPressed ? Color.buttonPressedColor : Color.primaryColor)

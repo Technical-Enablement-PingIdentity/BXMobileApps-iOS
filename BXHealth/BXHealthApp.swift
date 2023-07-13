@@ -11,12 +11,7 @@ import SwiftUI
 struct BXHealthApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeScreen(versionColor: .primaryColor, background: Image("Background")
-                .resizable()
-                .ignoresSafeArea()
-                .aspectRatio(2.4, contentMode: .fill)
-                .opacity(0.8)
-            )
+            HealthRootView()
         }
     }
 }

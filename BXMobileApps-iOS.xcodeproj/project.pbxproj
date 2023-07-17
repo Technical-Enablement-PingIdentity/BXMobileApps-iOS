@@ -12,6 +12,25 @@
 		1000F9EA2A6084B000ADB773 /* HomeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9E82A6084B000ADB773 /* HomeActionsView.swift */; };
 		1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9ED2A60862B00ADB773 /* HealthHomeView.swift */; };
 		1000F9F12A60867100ADB773 /* FinanceHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9F02A60867100ADB773 /* FinanceHomeView.swift */; };
+		1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
+		1000FA052A6096D900ADB773 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
+		1000FA0A2A609D8000ADB773 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA062A609D6600ADB773 /* Microblink.xcframework */; };
+		1000FA0B2A609D8000ADB773 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA062A609D6600ADB773 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1000FA0D2A609D8200ADB773 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */; };
+		1000FA0E2A609D8200ADB773 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA122A60A37500ADB773 /* VerifyClient.swift */; };
+		1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA152A60A4D400ADB773 /* FinanceHomeViewModel.swift */; };
+		1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */; };
+		1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1000FA1B2A60B40400ADB773 /* AppAuth */; };
+		1000FA1E2A61BDA200ADB773 /* DevicePairingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */; };
+		1000FA1F2A61BDC000ADB773 /* DevicePairingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */; };
+		1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */; };
+		1000FA262A61C1CE00ADB773 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA252A61C1CE00ADB773 /* Constants.swift */; };
+		1000FA2A2A61C3AA00ADB773 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA282A61C3AA00ADB773 /* Constants.swift */; };
+		1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */; };
+		1000FA2D2A61CDE600ADB773 /* OidcConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */; };
+		1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2E2A65922E00ADB773 /* UIUtilities.swift */; };
+		1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2E2A65922E00ADB773 /* UIUtilities.swift */; };
 		10109F422A5F0541004A60E1 /* BXFinanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F412A5F0541004A60E1 /* BXFinanceApp.swift */; };
 		10109F462A5F0543004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F452A5F0543004A60E1 /* Assets.xcassets */; };
 		10109F492A5F0543004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F482A5F0543004A60E1 /* Preview Assets.xcassets */; };
@@ -31,8 +50,8 @@
 		1076D22F2A5F2C4F0073ADD2 /* OverrideLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1076D2312A5F2C4F0073ADD2 /* OverrideLocalizable.strings */; };
 		1076D2332A5F2D8C0073ADD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1076D2322A5F2D8C0073ADD2 /* Localizable.strings */; };
 		1076D2342A5F2D8C0073ADD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1076D2322A5F2D8C0073ADD2 /* Localizable.strings */; };
-		1076D2362A5F2DC70073ADD2 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2352A5F2DC70073ADD2 /* String+Localized.swift */; };
-		1076D2372A5F2DC70073ADD2 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2352A5F2DC70073ADD2 /* String+Localized.swift */; };
+		1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */; };
+		1076D2372A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */; };
 		1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */; };
 		1076D23D2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */; };
 		1076D2422A5F52D80073ADD2 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1076D2412A5F52D80073ADD2 /* PingOneSDK */; };
@@ -41,10 +60,37 @@
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1000FA0C2A609D8000ADB773 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1000FA0B2A609D8000ADB773 /* Microblink.xcframework in Embed Frameworks */,
+				1000FA0E2A609D8200ADB773 /* PingOneVerify.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1000F9E82A6084B000ADB773 /* HomeActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionsView.swift; sourceTree = "<group>"; };
 		1000F9ED2A60862B00ADB773 /* HealthHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHomeView.swift; sourceTree = "<group>"; };
 		1000F9F02A60867100ADB773 /* FinanceHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceHomeView.swift; sourceTree = "<group>"; };
+		1000FA032A6096D900ADB773 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
+		1000FA062A609D6600ADB773 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = Frameworks/Microblink.xcframework; sourceTree = "<group>"; };
+		1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PingOneVerify.xcframework; path = Frameworks/PingOneVerify.xcframework; sourceTree = "<group>"; };
+		1000FA122A60A37500ADB773 /* VerifyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyClient.swift; sourceTree = "<group>"; };
+		1000FA152A60A4D400ADB773 /* FinanceHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceHomeViewModel.swift; sourceTree = "<group>"; };
+		1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
+		1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePairingClient.swift; sourceTree = "<group>"; };
+		1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceViewModel.swift; sourceTree = "<group>"; };
+		1000FA252A61C1CE00ADB773 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1000FA282A61C3AA00ADB773 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OidcConstants.swift; sourceTree = "<group>"; };
+		1000FA2E2A65922E00ADB773 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		10109F3E2A5F0541004A60E1 /* BXFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10109F412A5F0541004A60E1 /* BXFinanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXFinanceApp.swift; sourceTree = "<group>"; };
 		10109F452A5F0543004A60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +108,7 @@
 		1076D22D2A5F2C480073ADD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OverrideLocalizable.strings; sourceTree = "<group>"; };
 		1076D2302A5F2C4F0073ADD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OverrideLocalizable.strings; sourceTree = "<group>"; };
 		1076D2322A5F2D8C0073ADD2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		1076D2352A5F2DC70073ADD2 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedForApp.swift"; sourceTree = "<group>"; };
 		1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeView+RegisterNotifications.swift"; sourceTree = "<group>"; };
 		1076D23E2A5F523B0073ADD2 /* BXFinance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXFinance.entitlements; sourceTree = "<group>"; };
 		1076D23F2A5F528C0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +122,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1000FA0D2A609D8200ADB773 /* PingOneVerify.xcframework in Frameworks */,
 				1076D2422A5F52D80073ADD2 /* PingOneSDK in Frameworks */,
+				1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */,
+				1000FA0A2A609D8000ADB773 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +176,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1000FA142A60A4BC00ADB773 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1000FA152A60A4D400ADB773 /* FinanceHomeViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1000FA312A65928000ADB773 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1000FA2E2A65922E00ADB773 /* UIUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		10109F352A5F0541004A60E1 = {
 			isa = PBXGroup;
 			children = (
@@ -152,11 +217,13 @@
 			isa = PBXGroup;
 			children = (
 				1000F9F42A60900300ADB773 /* Resources */,
+				1000FA142A60A4BC00ADB773 /* Models */,
 				1000F9EB2A60860600ADB773 /* Views */,
 				1076D23F2A5F528C0073ADD2 /* Info.plist */,
 				1076D23E2A5F523B0073ADD2 /* BXFinance.entitlements */,
 				10109F412A5F0541004A60E1 /* BXFinanceApp.swift */,
 				10109F472A5F0543004A60E1 /* Preview Content */,
+				1000FA252A61C1CE00ADB773 /* Constants.swift */,
 			);
 			path = BXFinance;
 			sourceTree = "<group>";
@@ -178,6 +245,7 @@
 				1076D2432A5F52EB0073ADD2 /* Info.plist */,
 				10109F552A5F05DB004A60E1 /* BXHealthApp.swift */,
 				10109F5B2A5F05DD004A60E1 /* Preview Content */,
+				1000FA282A61C3AA00ADB773 /* Constants.swift */,
 			);
 			path = BXHealth;
 			sourceTree = "<group>";
@@ -193,11 +261,15 @@
 		1076D2142A5F09B20073ADD2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1000FA312A65928000ADB773 /* Utilities */,
 				1076D2202A5F22050073ADD2 /* UIComponents */,
 				1076D2192A5F11870073ADD2 /* Extensions */,
 				1076D2482A5F5DC10073ADD2 /* Models */,
 				1076D2182A5F117D0073ADD2 /* Views */,
 				102C85492A6062AD00C77793 /* AppDelegate.swift */,
+				1000FA122A60A37500ADB773 /* VerifyClient.swift */,
+				1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */,
+				1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -207,6 +279,7 @@
 			children = (
 				1076D2152A5F0F940073ADD2 /* WelcomeView.swift */,
 				1000F9E82A6084B000ADB773 /* HomeActionsView.swift */,
+				1000FA032A6096D900ADB773 /* AddDeviceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */,
-				1076D2352A5F2DC70073ADD2 /* String+Localized.swift */,
+				1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */,
 				1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */,
 			);
 			path = Extensions;
@@ -232,6 +305,8 @@
 		1076D2442A5F52F20073ADD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1000FA062A609D6600ADB773 /* Microblink.xcframework */,
+				1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */,
+				1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */,
+				1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +331,7 @@
 				10109F3A2A5F0541004A60E1 /* Sources */,
 				10109F3B2A5F0541004A60E1 /* Frameworks */,
 				10109F3C2A5F0541004A60E1 /* Resources */,
+				1000FA0C2A609D8000ADB773 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +340,7 @@
 			name = BXFinance;
 			packageProductDependencies = (
 				1076D2412A5F52D80073ADD2 /* PingOneSDK */,
+				1000FA1B2A60B40400ADB773 /* AppAuth */,
 			);
 			productName = BXFinance;
 			productReference = 10109F3E2A5F0541004A60E1 /* BXFinance.app */;
@@ -316,6 +395,7 @@
 			mainGroup = 10109F352A5F0541004A60E1;
 			packageReferences = (
 				1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */,
+				1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -358,13 +438,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1000F9E92A6084B000ADB773 /* HomeActionsView.swift in Sources */,
+				1000FA262A61C1CE00ADB773 /* Constants.swift in Sources */,
 				102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */,
+				1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
+				1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */,
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
-				1076D2362A5F2DC70073ADD2 /* String+Localized.swift in Sources */,
+				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
+				1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
+				1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */,
+				1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */,
 				1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
+				1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */,
+				1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */,
 				102C85502A60742800C77793 /* FinanceRootView.swift in Sources */,
+				1000FA1E2A61BDA200ADB773 /* DevicePairingClient.swift in Sources */,
 				1000F9F12A60867100ADB773 /* FinanceHomeView.swift in Sources */,
 				10109F422A5F0541004A60E1 /* BXFinanceApp.swift in Sources */,
 				1076D21E2A5F184B0073ADD2 /* BXButton.swift in Sources */,
@@ -380,8 +469,13 @@
 				1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21C2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				1000F9E72A6080EA00ADB773 /* AppDelegate.swift in Sources */,
-				1076D2372A5F2DC70073ADD2 /* String+Localized.swift in Sources */,
+				1000FA2A2A61C3AA00ADB773 /* Constants.swift in Sources */,
+				1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */,
+				1076D2372A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
+				1000FA052A6096D900ADB773 /* AddDeviceView.swift in Sources */,
 				102C85522A607CD900C77793 /* HealthRootView.swift in Sources */,
+				1000FA1F2A61BDC000ADB773 /* DevicePairingClient.swift in Sources */,
+				1000FA2D2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D23D2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
 				1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */,
@@ -540,6 +634,7 @@
 				INFOPLIST_FILE = BXFinance/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used to capture your selfie and IDs as well as to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -573,6 +668,7 @@
 				INFOPLIST_FILE = BXFinance/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used to capture your selfie and IDs as well as to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -690,6 +786,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/openid/AppAuth-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pingidentity/pingone-mobile-sdk-ios.git";
@@ -701,6 +805,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1000FA1B2A60B40400ADB773 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
 		1076D2412A5F52D80073ADD2 /* PingOneSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;

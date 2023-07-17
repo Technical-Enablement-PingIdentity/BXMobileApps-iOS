@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HealthRootView: View {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @ObservedObject private var model: MainViewModel
     
     init() {

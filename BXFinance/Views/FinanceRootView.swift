@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FinanceRootView: View {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @ObservedObject private var model: MainViewModel
     
     init() {

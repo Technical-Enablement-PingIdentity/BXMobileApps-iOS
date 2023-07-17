@@ -9,8 +9,6 @@ import SwiftUI
 
 struct WelcomeView: View {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
     @ObservedObject private var model: MainViewModel
     
     let versionColor: Color
@@ -35,7 +33,7 @@ struct WelcomeView: View {
         VStack {
             Spacer()
             
-            BXButton(text: "Getting Started".localized()) { () in
+            BXButton(text: "Getting Started".localizedForApp()) { () in
                 model.currentRoute = .home
             }
             
@@ -44,18 +42,18 @@ struct WelcomeView: View {
             Text(versionLabel)
                 .foregroundColor(versionColor)
         }
-        .alert("Notifications Disabled".localized(), isPresented: $model.displayNotificationDeniedWarning, actions: {
-            Button("Dismiss".localized(), role: .cancel) {
+        .alert("Notifications Disabled".localizedForApp(), isPresented: $model.displayNotificationDeniedWarning, actions: {
+            Button("Dismiss".localizedForApp(), role: .cancel) {
                 model.displayNotificationDeniedWarning = false
             }
-            Button("Go to Settings".localized()) {
+            Button("Go to Settings".localizedForApp()) {
                 model.displayNotificationDeniedWarning = false
                 if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsUrl)
                 }
             }
         }, message: {
-            Text("Notifications Disabled Message".localized())
+            Text("Notifications Disabled Message".localizedForApp())
         })
     }
 }

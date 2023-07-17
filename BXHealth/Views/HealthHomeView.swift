@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HealthHomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        AddDeviceView()
+            .padding(.top, 48)
         Spacer()
         HomeActionsView()
     }

@@ -6,8 +6,16 @@
   
 */
 
-"Getting Started" = "Getting Started >";
+"Getting Started" = "Getting Started";
 "Notifications Disabled" = "Notifications Disabled";
 "Dismiss" = "Dismiss";
 "Go to Settings" = "Go to Settings";
 "Use the App" = "Use the App";
+"Add Device" = "Add Device";
+"Verify Your Identity" = "Verify Your Identity";
+"Client Builder Error" = "Client Builder Error";
+"Document Submission Complete" = "Document Submission Complete";
+"Device Paired" = "Device has been succesfully paired!";
+"Okay" = "Okay";
+"Approve" = "Approve";
+"Deny" = "Deny";

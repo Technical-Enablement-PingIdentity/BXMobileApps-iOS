@@ -12,7 +12,7 @@ struct BXButton: View {
     let action: () -> Void
     let width: CGFloat?
     
-    init(text: String, action: @escaping () -> Void, width: CGFloat? = 230) {
+    init(text: String, action: @escaping () -> Void, width: CGFloat? = 210) {
         self.text = text
         self.action = action
         self.width = width

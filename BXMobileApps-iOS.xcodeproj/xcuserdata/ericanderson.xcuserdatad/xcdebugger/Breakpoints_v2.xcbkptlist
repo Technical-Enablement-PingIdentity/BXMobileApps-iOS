@@ -7,17 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "46C107F0-2D53-46A7-9F36-7E8FD348B960"
-            shouldBeEnabled = "Yes"
+            uuid = "59F662FB-94AE-4DD1-9D63-9033227F9C4B"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/DevicePairingClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "processIdToken(idToken:approvePairingHandler:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "59F662FB-94AE-4DD1-9D63-9033227F9C4B - 3a169c64c726bc52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BXFinance.DevicePairingClient.processIdToken(idToken: Swift.String, approvePairingHandler: (Swift.Optional&lt;PingOneSDK.PairingObject&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BXFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericanderson/Projects/TechEnablement/BXMobileApps-iOS/Shared/DevicePairingClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "59F662FB-94AE-4DD1-9D63-9033227F9C4B - 3a169c64c726bc52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BXFinance.DevicePairingClient.processIdToken(idToken: Swift.String, approvePairingHandler: (Swift.Optional&lt;PingOneSDK.PairingObject&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BXFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericanderson/Projects/TechEnablement/BXMobileApps-iOS/Shared/DevicePairingClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "59F662FB-94AE-4DD1-9D63-9033227F9C4B - 998c0a4b63f2af0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;PingOneSDK.PairingObject&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in BXFinance.DevicePairingClient.processIdToken(idToken: Swift.String, approvePairingHandler: (Swift.Optional&lt;PingOneSDK.PairingObject&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BXFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericanderson/Projects/TechEnablement/BXMobileApps-iOS/Shared/DevicePairingClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "153">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

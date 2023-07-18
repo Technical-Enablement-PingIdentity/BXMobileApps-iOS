@@ -12,23 +12,75 @@ struct FinanceHomeView: View {
     private let verifyClient: VerifyClient
     
     @ObservedObject private var homeModel: FinanceHomeViewModel
+    @ObservedObject private var mainModel: MainViewModel
     
     init() {
+        mainModel = MainViewModel.shared
+        
         let model = FinanceHomeViewModel.shared
         homeModel = model
+
         verifyClient = VerifyClient(model: model)
     }
     
     var body: some View {
         Group {
-            AddDeviceView(issuer: K.issuer, redirectUri: K.redirectUri, clientId: K.clientId)
-                .padding(.top, 36)
-                .padding(.bottom, 12)
-            BXButton(text: "Verify Your Identity".localizedForApp()) {
-                verifyClient.launchVerify()
+            TabView {
+                VStack {
+                    AddDeviceView(issuer: K.issuer, redirectUri: K.redirectUri, clientId: K.clientId)
+                        .padding(.top, 36)
+                        .padding(.bottom, 12)
+                    BXButton(text: "Verify Your Identity".localizedForApp()) {
+                        verifyClient.launchVerify()
+                    }
+                    Spacer()
+                }
+                .background(TabViewTransparentBackground())
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+                
+                VStack {
+                    Text("Protect data TK")
+                }
+                .background(TabViewTransparentBackground())
+                .tabItem {
+                    Image(systemName: "lock.shield")
+                    Text("Protect")
+                }
+                
+                VStack {
+                    Text("Nothing to see here")
+                }
+                .background(TabViewTransparentBackground())
+                .tabItem {
+                    Image(systemName: "building.columns")
+                    Text("Accounts")
+                }
+                
+                VStack {
+                    Text("Nothing to see here")
+                }
+                .background(TabViewTransparentBackground())
+                .tabItem {
+                    Image(systemName: "creditcard")
+                    Text("Loans")
+                }
+                
+                VStack {
+                    Text("Nothing to see here")
+                }
+                .background(TabViewTransparentBackground())
+                .tabItem {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("Investments")
+                }
             }
-            Spacer()
-            HomeActionsView()
+            .onAppear() {
+                UITabBar.appearance().barTintColor = .white
+            }
+            .accentColor(Color.white)
         }
         .alert("Client Builder Error".localizedForApp(), isPresented: $homeModel.displayClientBuilderErrorAlert, actions: {
             Button("Okay") {

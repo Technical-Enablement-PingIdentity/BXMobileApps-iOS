@@ -14,7 +14,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     var currentAuthorizationFlow: OIDExternalUserAgentSession? = nil
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("will finish launching with options")
         UNUserNotificationCenter.current().delegate = self
+
         return true
     }
     
@@ -50,7 +52,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
             else if let notificationObject {
                 if notificationObject.notificationType == .authentication {
-                    MainViewModel.shared.displayAuthenticationAlert = true
+                    MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
                     completionHandler(UIBackgroundFetchResult.newData)
                     return
                 }
@@ -67,5 +69,24 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         }
 
         return false
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Did receive user notification")
+        
+        PingOne.processRemoteNotificationAction(response.actionIdentifier, authenticationMethod: "user", forRemoteNotification: response.notification.request.content.userInfo) { notificationObject, error in
+            if let error {
+                print("Error processing notification action: \(error.localizedDescription)")
+                if error.code == ErrorCode.unrecognizedRemoteNotification.rawValue {
+                    // Remote notification may not have been from PingOne
+                }
+            } else if let notificationObject {
+                MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
+            }
+            
+            DispatchQueue.main.async {
+                completionHandler()
+            }
+        }
     }
 }

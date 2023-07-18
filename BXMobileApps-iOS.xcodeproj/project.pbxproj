@@ -58,6 +58,11 @@
 		1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1076D2452A5F52F20073ADD2 /* PingOneSDK */; };
 		1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
+		10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */; };
+		10D4133F2A65ECA000BC8DC4 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10D4133E2A65ECA000BC8DC4 /* AppAuth */; };
+		10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */; };
+		10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */; };
+		10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,6 +120,8 @@
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneProtectView.swift; sourceTree = "<group>"; };
+		10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTransparentBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +131,7 @@
 			files = (
 				1000FA0D2A609D8200ADB773 /* PingOneVerify.xcframework in Frameworks */,
 				1076D2422A5F52D80073ADD2 /* PingOneSDK in Frameworks */,
+				10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */,
 				1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */,
 				1000FA0A2A609D8000ADB773 /* Microblink.xcframework in Frameworks */,
 			);
@@ -133,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D4133F2A65ECA000BC8DC4 /* AppAuth in Frameworks */,
 				1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +154,7 @@
 			children = (
 				102C854F2A60742800C77793 /* FinanceRootView.swift */,
 				1000F9F02A60867100ADB773 /* FinanceHomeView.swift */,
+				10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 				1076D2152A5F0F940073ADD2 /* WelcomeView.swift */,
 				1000F9E82A6084B000ADB773 /* HomeActionsView.swift */,
 				1000FA032A6096D900ADB773 /* AddDeviceView.swift */,
+				10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 			packageProductDependencies = (
 				1076D2412A5F52D80073ADD2 /* PingOneSDK */,
 				1000FA1B2A60B40400ADB773 /* AppAuth */,
+				10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */,
 			);
 			productName = BXFinance;
 			productReference = 10109F3E2A5F0541004A60E1 /* BXFinance.app */;
@@ -361,6 +373,7 @@
 			name = BXHealth;
 			packageProductDependencies = (
 				1076D2452A5F52F20073ADD2 /* PingOneSDK */,
+				10D4133E2A65ECA000BC8DC4 /* AppAuth */,
 			);
 			productName = BXHealth;
 			productReference = 10109F532A5F05DB004A60E1 /* BXHealth.app */;
@@ -396,6 +409,7 @@
 			packageReferences = (
 				1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */,
 				1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+				10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -446,7 +460,9 @@
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
+				10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
 				1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
+				10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */,
 				1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */,
 				1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */,
 				1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
@@ -480,6 +496,7 @@
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
 				1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */,
 				1076D21F2A5F184B0073ADD2 /* BXButton.swift in Sources */,
+				10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +662,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingidentity.techenablement.bxfinance.sample.BXFinance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -679,7 +696,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingidentity.techenablement.bxfinance.sample.BXFinance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -802,6 +819,14 @@
 				kind = branch;
 			};
 		};
+		10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pingidentity/pingone-signals-sdk-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -819,6 +844,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
 			productName = PingOneSDK;
+		};
+		10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */;
+			productName = PingOneSignals;
+		};
+		10D4133E2A65ECA000BC8DC4 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

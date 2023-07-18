@@ -20,6 +20,7 @@ extension WelcomeView {
                     if error == nil {
                         center.setNotificationCategories(PingOne.getUNNotificationCategories())
                         DispatchQueue.main.async {
+                            print("Registering for remote notifications")
                             UIApplication.shared.registerForRemoteNotifications()
                         }
                     }

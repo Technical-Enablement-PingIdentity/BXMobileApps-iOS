@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import PingOneSignals
 
 @main
 struct BXFinanceApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {

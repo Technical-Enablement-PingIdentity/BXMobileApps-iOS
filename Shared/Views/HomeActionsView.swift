@@ -11,10 +11,6 @@ struct HomeActionsView: View {
     
     var body: some View {
         VStack {
-            Text("Use the App".localizedForApp()).padding(.bottom, 6)
-                .foregroundColor(.primaryColor)
-                .font(.system(size: 16, weight: .bold))
-                
             BXButton(text: "Home Action 1".localizedForApp()) { print("Home Action 1 Pressed") }
             BXButton(text: "Home Action 2".localizedForApp()) { print("Home Action 2 Pressed") }
             BXButton(text: "Home Action 3".localizedForApp()) { print("Home Action 3 Pressed") }

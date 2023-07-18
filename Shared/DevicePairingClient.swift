@@ -69,6 +69,7 @@ class DevicePairingClient {
     }
     
     private func processIdToken(idToken: String, approvePairingHandler: @escaping (PairingObject?) -> Void) {
+        print("ID Token: \(idToken)")
         PingOne.processIdToken(idToken) { pairingObject, error in
             guard let pairingObject else {
                 print("An error occurred processing ID Token \(error?.localizedDescription ?? "Unkown Error")")

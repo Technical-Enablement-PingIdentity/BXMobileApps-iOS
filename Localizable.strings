@@ -19,3 +19,10 @@
 "Okay" = "Okay";
 "Approve" = "Approve";
 "Deny" = "Deny";
+"Get Protect Data" = "Get Protect Data";
+
+// PingOne push notifications
+"notification.confirm"  = "Approve";
+"notification.deny"     = "Deny";
+"notification.message"  = "You have a new authentication request.";
+"notification.title"    = "New Authentication";

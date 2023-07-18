@@ -47,7 +47,9 @@ struct AddDeviceView: View {
                     if let error {
                         print("Device pairing failed: \(error.localizedDescription)")
                     } else {
-                        model.displayPairedNotificationAlert = true
+                        DispatchQueue.main.async {
+                            model.displayPairedNotificationAlert = true
+                        }
                     }
                 }
             }

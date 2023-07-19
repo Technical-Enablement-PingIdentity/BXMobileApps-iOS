@@ -14,7 +14,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     var currentAuthorizationFlow: OIDExternalUserAgentSession? = nil
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print("will finish launching with options")
         UNUserNotificationCenter.current().delegate = self
 
         return true

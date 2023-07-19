@@ -31,6 +31,7 @@
 		1000FA2D2A61CDE600ADB773 /* OidcConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */; };
 		1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2E2A65922E00ADB773 /* UIUtilities.swift */; };
 		1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2E2A65922E00ADB773 /* UIUtilities.swift */; };
+		100A10872A68610D00E59B99 /* View+defaultBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A10862A68610D00E59B99 /* View+defaultBackground.swift */; };
 		10109F422A5F0541004A60E1 /* BXFinanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F412A5F0541004A60E1 /* BXFinanceApp.swift */; };
 		10109F462A5F0543004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F452A5F0543004A60E1 /* Assets.xcassets */; };
 		10109F492A5F0543004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F482A5F0543004A60E1 /* Preview Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */; };
 		10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */; };
 		10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */; };
+		10D413472A67242600BC8DC4 /* AddDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,6 +98,7 @@
 		1000FA282A61C3AA00ADB773 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OidcConstants.swift; sourceTree = "<group>"; };
 		1000FA2E2A65922E00ADB773 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		100A10862A68610D00E59B99 /* View+defaultBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+defaultBackground.swift"; sourceTree = "<group>"; };
 		10109F3E2A5F0541004A60E1 /* BXFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10109F412A5F0541004A60E1 /* BXFinanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXFinanceApp.swift; sourceTree = "<group>"; };
 		10109F452A5F0543004A60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				10109F412A5F0541004A60E1 /* BXFinanceApp.swift */,
 				10109F472A5F0543004A60E1 /* Preview Content */,
 				1000FA252A61C1CE00ADB773 /* Constants.swift */,
+				100A10862A68610D00E59B99 /* View+defaultBackground.swift */,
 			);
 			path = BXFinance;
 			sourceTree = "<group>";
@@ -457,6 +461,7 @@
 				1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
 				1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */,
+				100A10872A68610D00E59B99 /* View+defaultBackground.swift in Sources */,
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
@@ -484,6 +489,7 @@
 				1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
 				1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21C2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
+				10D413472A67242600BC8DC4 /* AddDeviceViewModel.swift in Sources */,
 				1000F9E72A6080EA00ADB773 /* AppDelegate.swift in Sources */,
 				1000FA2A2A61C3AA00ADB773 /* Constants.swift in Sources */,
 				1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */,
@@ -729,7 +735,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingidentity.techenablement.bxhealth.sample.BXHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -762,7 +768,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingidentity.techenablement.bxhealth.sample.BXHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

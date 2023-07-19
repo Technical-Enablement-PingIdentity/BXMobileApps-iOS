@@ -27,8 +27,10 @@ class MainViewModel: ObservableObject {
     }
     
     func promptUserForAuthentication(notificationObject: NotificationObject) {
-        self.notificationObject = notificationObject
-        displayAuthenticationAlert = true
+        DispatchQueue.main.async {
+            self.notificationObject = notificationObject
+            self.displayAuthenticationAlert = true
+        }
     }
     
     func finishAuthenticationPrompt(userAccepted: Bool) {

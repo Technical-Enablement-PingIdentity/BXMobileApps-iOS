@@ -15,6 +15,7 @@ class AddDeviceViewModel: ObservableObject {
     @Published var pairingObject: PairingObject? = nil
     @Published var displayPairedNotificationAlert: Bool = false
     @Published var displayApprovePairingAlert: Bool = false
+    @Published var displayPairingError: Bool = false
     
     func needsPairingApproval(pairingObject: PairingObject?) {
         guard let pairingObject else {

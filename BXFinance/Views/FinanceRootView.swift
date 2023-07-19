@@ -32,9 +32,7 @@ struct FinanceRootView: View {
             
             Spacer().frame(height: 50)
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
-        .background(Color.secondaryColor)
+        .defaultBackground()
         .animation(.default, value: model.currentRoute)
         .alert("Authorize Request".localizedForApp(), isPresented: $model.displayAuthenticationAlert) {
             Button("Approve".localizedForApp()) {

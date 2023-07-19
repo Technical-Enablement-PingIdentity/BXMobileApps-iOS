@@ -20,7 +20,7 @@ struct HomeActionsView: View {
 
         }
         .padding(24)
-        .background(.white)
+//        .background(.white)
     }
 }
 

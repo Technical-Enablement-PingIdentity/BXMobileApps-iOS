@@ -20,6 +20,8 @@
 "Approve" = "Approve";
 "Deny" = "Deny";
 "Get Protect Data" = "Get Protect Data";
+"Error Pairing Device" = "Error pairing device";
+"Error Pairing Device Message" = "You may have reached the MFA device limit for your user.";
 
 // PingOne push notifications
 "notification.confirm"  = "Approve";

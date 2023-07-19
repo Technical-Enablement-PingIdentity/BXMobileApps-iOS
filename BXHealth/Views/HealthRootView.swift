@@ -38,6 +38,14 @@ struct HealthRootView: View {
             .ignoresSafeArea()
             .aspectRatio(2.4, contentMode: .fill)
             .opacity(0.8))
+        .alert("Authorize Request".localizedForApp(), isPresented: $model.displayAuthenticationAlert) {
+            Button("Approve".localizedForApp()) {
+                model.finishAuthenticationPrompt(userAccepted: true)
+            }
+            Button("Deny".localizedForApp(), role: .destructive) {
+                model.finishAuthenticationPrompt(userAccepted: false)
+            }
+        }
     }
 }
 

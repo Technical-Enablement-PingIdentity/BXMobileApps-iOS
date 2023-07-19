@@ -14,6 +14,9 @@ struct FinanceHomeView: View {
     @ObservedObject private var homeModel: FinanceHomeViewModel
     @ObservedObject private var mainModel: MainViewModel
     
+    @State var selectedTab = "home"
+    @State var lastActiveTab = "home"
+    
     init() {
         mainModel = MainViewModel.shared
         
@@ -25,7 +28,7 @@ struct FinanceHomeView: View {
     
     var body: some View {
         Group {
-            TabView {
+            TabView(selection: $selectedTab) {
                 VStack {
                     AddDeviceView(issuer: K.issuer, redirectUri: K.redirectUri, clientId: K.clientId)
                         .padding(.top, 36)
@@ -35,52 +38,66 @@ struct FinanceHomeView: View {
                     }
                     Spacer()
                 }
-                .background(TabViewTransparentBackground())
+                .defaultBackground()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .tag("home")
                 
                 VStack {
                     Text("Protect data TK")
                 }
-                .background(TabViewTransparentBackground())
+                .defaultBackground()
                 .tabItem {
                     Image(systemName: "lock.shield")
                     Text("Protect")
                 }
+                .tag("protect")
                 
                 VStack {
                     Text("Nothing to see here")
                 }
-                .background(TabViewTransparentBackground())
+                .defaultBackground()
                 .tabItem {
                     Image(systemName: "building.columns")
                     Text("Accounts")
                 }
+                .tag("accounts")
                 
                 VStack {
                     Text("Nothing to see here")
                 }
-                .background(TabViewTransparentBackground())
+                .defaultBackground()
                 .tabItem {
                     Image(systemName: "creditcard")
                     Text("Loans")
                 }
+                .tag("loans")
                 
                 VStack {
                     Text("Nothing to see here")
                 }
-                .background(TabViewTransparentBackground())
+                .defaultBackground()
                 .tabItem {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                     Text("Investments")
                 }
+                .tag("investments")
             }
             .onAppear() {
                 UITabBar.appearance().barTintColor = .white
             }
             .accentColor(Color.white)
+            .onChange(of: selectedTab) { newValue in
+                let activeTabs = ["home", "protect"]
+                if activeTabs.contains(newValue) {
+                    selectedTab = newValue
+                    lastActiveTab = newValue
+                } else {
+                    selectedTab = lastActiveTab
+                }
+            }
         }
         .alert("Client Builder Error".localizedForApp(), isPresented: $homeModel.displayClientBuilderErrorAlert, actions: {
             Button("Okay") {

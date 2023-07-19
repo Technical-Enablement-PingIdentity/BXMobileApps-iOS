@@ -34,7 +34,12 @@ struct AddDeviceView: View {
                 return
             }
             
-            devicePairingClient?.pairDevice(appDelegate: appDelegate, viewController: rootViewController, approvePairingHandler: model.needsPairingApproval)
+            guard let devicePairingClient else {
+                print("devicePairingClient is null")
+                return
+            }
+            
+            devicePairingClient.pairDevice(appDelegate: appDelegate, viewController: rootViewController, approvePairingHandler: model.needsPairingApproval)
         }
         .disabled(devicePairingClient == nil || !devicePairingClient!.clientReady == false)
         .alert("Pair Device Title".localizedForApp(), isPresented: $model.displayApprovePairingAlert) {
@@ -44,11 +49,13 @@ struct AddDeviceView: View {
                 }
                 
                 pairingObject.approve { response, error in
-                    if let error {
-                        print("Device pairing failed: \(error.localizedDescription)")
-                    } else {
-                        DispatchQueue.main.async {
-                            model.displayPairedNotificationAlert = true
+                    DispatchQueue.main.async {
+                        if let error {
+                            print("Device pairing failed: \(error.localizedDescription)")
+                            model.displayPairingError = true
+                            model.approvalComplete(approved: false)
+                        } else {
+                            model.approvalComplete(approved: true)
                         }
                     }
                 }
@@ -62,6 +69,13 @@ struct AddDeviceView: View {
                 model.displayPairedNotificationAlert = false
             }
         }
+        .alert("Error Pairing Device".localizedForApp(), isPresented: $model.displayPairingError, actions: {
+            Button("Okay".localizedForApp()) {
+                model.displayPairingError = false
+            }
+        }, message: {
+            Text("Error Pairing Device Message".localizedForApp())
+        })
     }
 }
 

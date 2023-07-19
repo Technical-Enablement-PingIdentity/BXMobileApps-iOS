@@ -90,7 +90,7 @@ struct FinanceHomeView: View {
             }
             .accentColor(Color.white)
             .onChange(of: selectedTab) { newValue in
-                let activeTabs = ["home", "protect"]
+                let activeTabs = ["home"/*, "protect"*/]
                 if activeTabs.contains(newValue) {
                     selectedTab = newValue
                     lastActiveTab = newValue

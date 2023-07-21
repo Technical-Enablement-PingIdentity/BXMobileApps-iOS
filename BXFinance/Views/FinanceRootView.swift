@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PingOneSignals
 
 struct FinanceRootView: View {
     
@@ -14,7 +13,6 @@ struct FinanceRootView: View {
     
     init() {
         self.model = MainViewModel.shared
-        initPingOneSignalsSdk()
     }
     
     var body: some View {
@@ -48,22 +46,5 @@ struct FinanceRootView: View {
 struct FinanceRootView_Previews: PreviewProvider {
     static var previews: some View {
         FinanceRootView()
-    }
-}
-
-extension FinanceRootView {
-    func initPingOneSignalsSdk() {
-        let initParams = POInitParams()
-        initParams.envId = "6c77a243-4622-4c89-a0ca-5905fb4eb3f4"
-        
-        let pingOneSignals = PingOneSignals.initSDK(initParams: initParams)
-        
-        pingOneSignals.setInitCallback { error in
-            if let error {
-                print("PingOne Signals init failed: \(error.localizedDescription)")
-            } else {
-                print("PingOne Signals initialized!")
-            }
-        }
     }
 }

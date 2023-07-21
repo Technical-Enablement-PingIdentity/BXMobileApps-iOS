@@ -41,6 +41,7 @@
 		102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85492A6062AD00C77793 /* AppDelegate.swift */; };
 		102C85502A60742800C77793 /* FinanceRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C854F2A60742800C77793 /* FinanceRootView.swift */; };
 		102C85522A607CD900C77793 /* HealthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85512A607CD900C77793 /* HealthRootView.swift */; };
+		103654182A6AD0DB0036DB3F /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103654172A6AD0DB0036DB3F /* NetworkCalls.swift */; };
 		1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2152A5F0F940073ADD2 /* WelcomeView.swift */; };
 		1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2152A5F0F940073ADD2 /* WelcomeView.swift */; };
 		1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */; };
@@ -110,6 +111,7 @@
 		102C85492A6062AD00C77793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		102C854F2A60742800C77793 /* FinanceRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceRootView.swift; sourceTree = "<group>"; };
 		102C85512A607CD900C77793 /* HealthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRootView.swift; sourceTree = "<group>"; };
+		103654172A6AD0DB0036DB3F /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
 		1076D2152A5F0F940073ADD2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+BrandConstants.swift"; sourceTree = "<group>"; };
 		1076D21D2A5F184B0073ADD2 /* BXButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXButton.swift; sourceTree = "<group>"; };
@@ -171,24 +173,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1000F9F32A608FE900ADB773 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				10109F592A5F05DD004A60E1 /* Assets.xcassets */,
-				1076D2312A5F2C4F0073ADD2 /* OverrideLocalizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1000F9F42A60900300ADB773 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				10109F452A5F0543004A60E1 /* Assets.xcassets */,
-				1076D22E2A5F2C480073ADD2 /* OverrideLocalizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		1000FA142A60A4BC00ADB773 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,15 +213,17 @@
 		10109F402A5F0541004A60E1 /* BXFinance */ = {
 			isa = PBXGroup;
 			children = (
-				1000F9F42A60900300ADB773 /* Resources */,
 				1000FA142A60A4BC00ADB773 /* Models */,
 				1000F9EB2A60860600ADB773 /* Views */,
 				1076D23F2A5F528C0073ADD2 /* Info.plist */,
 				1076D23E2A5F523B0073ADD2 /* BXFinance.entitlements */,
 				10109F412A5F0541004A60E1 /* BXFinanceApp.swift */,
-				10109F472A5F0543004A60E1 /* Preview Content */,
+				103654172A6AD0DB0036DB3F /* NetworkCalls.swift */,
 				1000FA252A61C1CE00ADB773 /* Constants.swift */,
 				100A10862A68610D00E59B99 /* View+defaultBackground.swift */,
+				10109F452A5F0543004A60E1 /* Assets.xcassets */,
+				1076D22E2A5F2C480073ADD2 /* OverrideLocalizable.strings */,
+				10109F472A5F0543004A60E1 /* Preview Content */,
 			);
 			path = BXFinance;
 			sourceTree = "<group>";
@@ -253,13 +239,14 @@
 		10109F542A5F05DB004A60E1 /* BXHealth */ = {
 			isa = PBXGroup;
 			children = (
-				1000F9F32A608FE900ADB773 /* Resources */,
 				1000F9EC2A60861100ADB773 /* Views */,
 				1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */,
 				1076D2432A5F52EB0073ADD2 /* Info.plist */,
 				10109F552A5F05DB004A60E1 /* BXHealthApp.swift */,
-				10109F5B2A5F05DD004A60E1 /* Preview Content */,
 				1000FA282A61C3AA00ADB773 /* Constants.swift */,
+				10109F592A5F05DD004A60E1 /* Assets.xcassets */,
+				1076D2312A5F2C4F0073ADD2 /* OverrideLocalizable.strings */,
+				10109F5B2A5F05DD004A60E1 /* Preview Content */,
 			);
 			path = BXHealth;
 			sourceTree = "<group>";
@@ -460,6 +447,7 @@
 				102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */,
 				1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
+				103654182A6AD0DB0036DB3F /* NetworkCalls.swift in Sources */,
 				1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */,
 				100A10872A68610D00E59B99 /* View+defaultBackground.swift in Sources */,
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,

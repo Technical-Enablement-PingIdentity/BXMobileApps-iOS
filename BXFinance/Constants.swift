@@ -13,4 +13,10 @@ struct K {
     static let clientId = "028887be-5d57-4cb8-aeb9-874c4f202ae0"
     
     static let redirectUri = "pingonesdk://sample"
+    
+    static let pingOneEnvId = "6c77a243-4622-4c89-a0ca-5905fb4eb3f4"
+    
+    static let apiBaseUrl = "https://bxfinance-qa-api.ping-devops.com"
+    
+    static let ipAddressApiUrl = "https://api.ipify.org?format=json"
 }

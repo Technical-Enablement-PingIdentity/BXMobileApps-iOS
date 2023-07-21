@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PingOneSignals
 
 class FinanceHomeViewModel: ObservableObject, VerifyViewModel {
     
@@ -17,4 +18,5 @@ class FinanceHomeViewModel: ObservableObject, VerifyViewModel {
     @Published var displayDocumentSubmissionSuccessfulAlert: Bool = false
     @Published var documentSubmissionNameResult: String? = nil
     
+    var signalsStatus = "Not Initialized"
 }

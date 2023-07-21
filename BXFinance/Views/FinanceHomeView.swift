@@ -6,24 +6,25 @@
 //
 
 import SwiftUI
+import PingOneSignals
 
 struct FinanceHomeView: View {
     
     private let verifyClient: VerifyClient
     
     @ObservedObject private var homeModel: FinanceHomeViewModel
-    @ObservedObject private var mainModel: MainViewModel
     
     @State var selectedTab = "home"
     @State var lastActiveTab = "home"
     
     init() {
-        mainModel = MainViewModel.shared
         
         let model = FinanceHomeViewModel.shared
         homeModel = model
 
         verifyClient = VerifyClient(model: model)
+        
+        initPingOneSignalsSdk()
     }
     
     var body: some View {
@@ -46,7 +47,7 @@ struct FinanceHomeView: View {
                 .tag("home")
                 
                 VStack {
-                    Text("Protect data TK")
+                    PingOneProtectView(homeModel: homeModel)
                 }
                 .defaultBackground()
                 .tabItem {
@@ -86,11 +87,15 @@ struct FinanceHomeView: View {
                 .tag("investments")
             }
             .onAppear() {
-                UITabBar.appearance().barTintColor = .white
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.backgroundColor = UIColor(.secondaryColor)
+                
+                UITabBar.appearance().standardAppearance = tabBarAppearance
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
             .accentColor(Color.white)
             .onChange(of: selectedTab) { newValue in
-                let activeTabs = ["home"/*, "protect"*/]
+                let activeTabs = ["home", "protect"]
                 if activeTabs.contains(newValue) {
                     selectedTab = newValue
                     lastActiveTab = newValue
@@ -119,5 +124,24 @@ struct FinanceHomeView: View {
 struct FinanceHomeView_Previews: PreviewProvider {
     static var previews: some View {
         FinanceHomeView()
+    }
+}
+
+extension FinanceHomeView {
+    func initPingOneSignalsSdk() {
+        let initParams = POInitParams()
+        initParams.envId = K.pingOneEnvId
+        
+        let pingOneSignals = PingOneSignals.initSDK(initParams: initParams)
+        
+        pingOneSignals.setInitCallback { error in
+            if let error {
+                self.homeModel.signalsStatus = "Initialization Failed"
+                print("PingOne Signals init failed: \(error.localizedDescription)")
+            } else {
+                self.homeModel.signalsStatus = "Initialized successfully"
+                print("PingOne Signals initialized!")
+            }
+        }
     }
 }

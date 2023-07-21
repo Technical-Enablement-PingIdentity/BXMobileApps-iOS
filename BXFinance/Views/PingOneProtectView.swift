@@ -50,6 +50,9 @@ struct PingOneProtectView: View {
             }
 
             BXButton(text: "Get Risk Evaluation") {
+                // Dismiss the keyboard now else it will wait until the TextField is removed resulting in an unsighly animation
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                
                 submitUsername()
             }
             .padding(.top, 8)

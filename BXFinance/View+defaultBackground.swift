@@ -10,7 +10,8 @@ import SwiftUI
 extension View {
     func defaultBackground() -> some View {
         self.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all)
             .background(Color.secondaryColor)
+            .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea(.keyboard)
     }
 }

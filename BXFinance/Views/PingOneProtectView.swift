@@ -21,42 +21,47 @@ struct PingOneProtectView: View {
     }
     
     var body: some View {
-        if let riskAssessment {
-            ScrollView {
-                Text("Risk Assessment Response: \(riskAssessment)").background(.white)
-            }
-
-            BXButton(text: "Clear Assessment") {
-                resetView()
-            }
-            .padding(.bottom, 50)
+        if submitting {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
         } else {
-            TextField("BXFinance Username", text: $username)
-                .textInputAutocapitalization(.never)
-                .tint(.primaryColor)
-                .textFieldStyle(.roundedBorder)
-                .padding([.leading, .trailing], 30)
-                .padding(.top, 50)
-                .submitLabel(.done)
-                .onSubmit {
+            if let riskAssessment {
+                ScrollView {
+                    Text("Risk Assessment Response: \(riskAssessment)").background(.white)
+                }
+                
+                BXButton(text: "Clear Assessment") {
+                    resetView()
+                }
+                .padding(.bottom, 50)
+            } else {
+                TextField("BXFinance Username", text: $username)
+                    .textInputAutocapitalization(.never)
+                    .tint(.primaryColor)
+                    .textFieldStyle(.roundedBorder)
+                    .padding([.leading, .trailing], 30)
+                    .padding(.top, 50)
+                    .submitLabel(.done)
+                    .onSubmit {
+                        submitUsername()
+                    }
+                
+                if submitted && username.count < 2 {
+                    Text("Username is required as must be at least 2 characters")
+                        .foregroundColor(.red)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .trailing], 30)
+                }
+                
+                BXButton(text: "Get Risk Evaluation") {
+                    // Dismiss the keyboard now else it will wait until the TextField is removed resulting in an unsighly animation
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    
                     submitUsername()
                 }
-            
-            if submitted && username.count < 2 {
-                Text("Username is required as must be at least 2 characters")
-                    .foregroundColor(.red)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding([.leading, .trailing], 30)
+                .padding(.top, 8)
+                .disabled(submitting)
             }
-
-            BXButton(text: "Get Risk Evaluation") {
-                // Dismiss the keyboard now else it will wait until the TextField is removed resulting in an unsighly animation
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                
-                submitUsername()
-            }
-            .padding(.top, 8)
-            .disabled(submitting)
         }
 
         Spacer()
@@ -85,20 +90,25 @@ struct PingOneProtectView: View {
             return
         }
         
+        submitting = true
+        
         signals.getData { data, error in
             if let error {
                 print("An error occurred getting signals data \(error)")
+                submitting = false
                 return
             }
             
             guard let data else {
                 print("Signals data is nil")
+                submitting = false
                 return
             }
             
             Task {
                 do {
                     riskAssessment = try await NetworkCalls.getRiskEvaluation(username: username, riskData: data)
+                    submitting = false
                 } catch {
                     fatalError(error.localizedDescription)
                 }

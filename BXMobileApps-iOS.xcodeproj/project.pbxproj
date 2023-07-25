@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1000F9E72A6080EA00ADB773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85492A6062AD00C77793 /* AppDelegate.swift */; };
-		1000F9E92A6084B000ADB773 /* HomeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9E82A6084B000ADB773 /* HomeActionsView.swift */; };
-		1000F9EA2A6084B000ADB773 /* HomeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9E82A6084B000ADB773 /* HomeActionsView.swift */; };
 		1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9ED2A60862B00ADB773 /* HealthHomeView.swift */; };
 		1000F9F12A60867100ADB773 /* FinanceHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9F02A60867100ADB773 /* FinanceHomeView.swift */; };
 		1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
@@ -60,6 +58,8 @@
 		1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1076D2452A5F52F20073ADD2 /* PingOneSDK */; };
 		1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
+		10CE192D2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */; };
+		10CE192E2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */; };
 		10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */; };
 		10D4133F2A65ECA000BC8DC4 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10D4133E2A65ECA000BC8DC4 /* AppAuth */; };
 		10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */; };
@@ -84,7 +84,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1000F9E82A6084B000ADB773 /* HomeActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionsView.swift; sourceTree = "<group>"; };
 		1000F9ED2A60862B00ADB773 /* HealthHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHomeView.swift; sourceTree = "<group>"; };
 		1000F9F02A60867100ADB773 /* FinanceHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceHomeView.swift; sourceTree = "<group>"; };
 		1000FA032A6096D900ADB773 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dismissKeyboard.swift"; sourceTree = "<group>"; };
 		10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneProtectView.swift; sourceTree = "<group>"; };
 		10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTransparentBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				1076D2152A5F0F940073ADD2 /* WelcomeView.swift */,
-				1000F9E82A6084B000ADB773 /* HomeActionsView.swift */,
 				1000FA032A6096D900ADB773 /* AddDeviceView.swift */,
 				10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */,
 			);
@@ -292,6 +291,7 @@
 				1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */,
 				1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */,
 				1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */,
+				10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1000F9E92A6084B000ADB773 /* HomeActionsView.swift in Sources */,
 				1000FA262A61C1CE00ADB773 /* Constants.swift in Sources */,
 				102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */,
 				1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
@@ -459,6 +458,7 @@
 				1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */,
 				1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */,
 				1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
+				10CE192D2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */,
 				1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */,
 				1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */,
 				102C85502A60742800C77793 /* FinanceRootView.swift in Sources */,
@@ -473,11 +473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1000F9EA2A6084B000ADB773 /* HomeActionsView.swift in Sources */,
 				1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
 				1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21C2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				10D413472A67242600BC8DC4 /* AddDeviceViewModel.swift in Sources */,
+				10CE192E2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */,
 				1000F9E72A6080EA00ADB773 /* AppDelegate.swift in Sources */,
 				1000FA2A2A61C3AA00ADB773 /* Constants.swift in Sources */,
 				1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */,

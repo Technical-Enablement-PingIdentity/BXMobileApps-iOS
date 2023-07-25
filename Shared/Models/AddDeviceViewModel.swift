@@ -13,9 +13,10 @@ class AddDeviceViewModel: ObservableObject {
     static let shared = AddDeviceViewModel()
     
     @Published var pairingObject: PairingObject? = nil
-    @Published var displayPairedNotificationAlert: Bool = false
-    @Published var displayApprovePairingAlert: Bool = false
-    @Published var displayPairingError: Bool = false
+    @Published var displayPairedNotificationAlert = false
+    @Published var displayApprovePairingAlert = false
+    @Published var displayPairingError = false
+    @Published var pairingClientReady = false
     
     func needsPairingApproval(pairingObject: PairingObject?) {
         guard let pairingObject else {
@@ -34,5 +35,9 @@ class AddDeviceViewModel: ObservableObject {
         if approved {
             displayPairedNotificationAlert = true
         }
+    }
+    
+    func pairingClientReady(successful: Bool) {
+        self.pairingClientReady = successful
     }
 }

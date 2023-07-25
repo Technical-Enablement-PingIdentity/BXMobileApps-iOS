@@ -8,11 +8,5 @@
 
 "Notifications Disabled Message" = "If you do not wish to enable notifications you will need to be in the BXFinance App on your phone before you attempt to use it for MFA.";
 "Pair Device Title" = "Would you like to pair this device with your BXFinance account?";
-"Authorize Request" = "Would you like to authorize this BXHealth login request?";
+"Authorize Request" = "Would you like to authorize this BXFinance login request?";
 
-"Home Action 1" = "Pay & Transfer";
-"Home Action 2" = "Banking & Credit Accounts";
-"Home Action 3" = "Loans & Lines of Credit";
-"Home Action 4" = "Investment Accounts";
-"Home Action 5" = "Profile & Settings";
-"Home Action 6" = "Messages";

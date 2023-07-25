@@ -12,10 +12,10 @@ class FinanceHomeViewModel: ObservableObject, VerifyViewModel {
     
     static let shared = FinanceHomeViewModel()
     
-    @Published var displayClientBuilderErrorAlert: Bool = false
+    @Published var displayClientBuilderErrorAlert = false
     @Published var clientBuilderErrorDescription: String? = nil
     
-    @Published var displayDocumentSubmissionSuccessfulAlert: Bool = false
+    @Published var displayDocumentSubmissionSuccessfulAlert = false
     @Published var documentSubmissionNameResult: String? = nil
     
     var signalsStatus = "Not Initialized"

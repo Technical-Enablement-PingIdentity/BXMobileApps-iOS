@@ -5,7 +5,7 @@
 //  Created by Eric Anderson on 7/14/23.
 //
 
-import Foundation
+import SwiftUI
 import AppAuth
 import PingOneSDK
 
@@ -17,9 +17,7 @@ class DevicePairingClient {
     
     private var oidcConfiguration: OIDServiceConfiguration? = nil
     
-    var clientReady = false
-    
-    init(issuer: URL, redirectUri: URL, clientId: String) {
+    init(issuer: URL, redirectUri: URL, clientId: String, completionHandler: @escaping (Bool) -> Void) {
         self.issuer = issuer
         self.redirectUri = redirectUri
         self.clientId = clientId
@@ -27,13 +25,14 @@ class DevicePairingClient {
         OIDAuthorizationService.discoverConfiguration(forIssuer: self.issuer) { config, error in
             guard let config else {
                 print("Error retrieving discovery configuration \(error?.localizedDescription ?? "Unknown Error")")
+                completionHandler(false)
                 return
             }
             
             print("Got issuer configuration: \(config)")
             
             self.oidcConfiguration = config
-            self.clientReady = true
+            completionHandler(true)
         }
     }
     

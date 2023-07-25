@@ -16,11 +16,12 @@ struct AddDeviceView: View {
     @ObservedObject private var model: AddDeviceViewModel
     
     init(issuer: String, redirectUri: String, clientId: String) {
-        model = AddDeviceViewModel.shared
+        let deviceModel = AddDeviceViewModel.shared
+        model = deviceModel
         
         if let issuerUrl = URL(string: issuer),
            let redirectUrl = URL(string: redirectUri) {
-            devicePairingClient = DevicePairingClient(issuer: issuerUrl, redirectUri: redirectUrl, clientId: clientId)
+            devicePairingClient = DevicePairingClient(issuer: issuerUrl, redirectUri: redirectUrl, clientId: clientId, completionHandler: deviceModel.pairingClientReady)
         } else {
             devicePairingClient = nil
             print("Unable to parse issuer and/or redirect URIs as URLs, device pairing will not work")
@@ -41,7 +42,7 @@ struct AddDeviceView: View {
             
             devicePairingClient.pairDevice(appDelegate: appDelegate, viewController: rootViewController, approvePairingHandler: model.needsPairingApproval)
         }
-        .disabled(devicePairingClient == nil || !devicePairingClient!.clientReady == false)
+        .disabled(!model.pairingClientReady)
         .alert("Pair Device Title".localizedForApp(), isPresented: $model.displayApprovePairingAlert) {
             Button("Approve".localizedForApp()) {
                 guard let pairingObject = model.pairingObject else {

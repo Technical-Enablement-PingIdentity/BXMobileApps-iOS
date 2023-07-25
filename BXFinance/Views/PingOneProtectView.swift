@@ -16,6 +16,8 @@ struct PingOneProtectView: View {
     @State var submitting = false
     @State var riskAssessment: String? = nil
     
+    @FocusState private var focusedField: Bool
+    
     init(homeModel: FinanceHomeViewModel) {
         self.homeModel = homeModel
     }
@@ -41,9 +43,18 @@ struct PingOneProtectView: View {
                     .textFieldStyle(.roundedBorder)
                     .padding([.leading, .trailing], 30)
                     .padding(.top, 50)
-                    .submitLabel(.done)
+                    .submitLabel(.go)
+                    .focused($focusedField)
                     .onSubmit {
                         submitUsername()
+                    }
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("Done") {
+                                focusedField = false
+                            }.foregroundColor(.blue)
+                        }
                     }
                 
                 if submitted && username.count < 2 {
@@ -54,9 +65,6 @@ struct PingOneProtectView: View {
                 }
                 
                 BXButton(text: "Get Risk Evaluation") {
-                    // Dismiss the keyboard now else it will wait until the TextField is removed resulting in an unsighly animation
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    
                     submitUsername()
                 }
                 .padding(.top, 8)
@@ -77,8 +85,9 @@ struct PingOneProtectView: View {
         self.submitting = false
         self.username = ""
     }
-    
+
     func submitUsername() {
+        dismissKeyboard()
         submitted = true
         
         if username.count < 2 {

@@ -46,14 +46,14 @@ struct AddDeviceView: View {
         .alert("Pair Device Title".localizedForApp(), isPresented: $model.displayApprovePairingAlert) {
             Button("Approve".localizedForApp()) {
                 guard let pairingObject = model.pairingObject else {
-                    fatalError("pairingObject is null")
+                    fatalError("pairingObject is nil")
                 }
                 
                 pairingObject.approve { response, error in
                     DispatchQueue.main.async {
                         if let error {
-                            print("Device pairing failed: \(error.localizedDescription)")
                             model.displayPairingError = true
+                            model.pairingErrorMessage = error.localizedDescription
                             model.approvalComplete(approved: false)
                         } else {
                             model.approvalComplete(approved: true)
@@ -70,12 +70,11 @@ struct AddDeviceView: View {
                 model.displayPairedNotificationAlert = false
             }
         }
-        .alert("Error Pairing Device".localizedForApp(), isPresented: $model.displayPairingError, actions: {
+        .alert(model.pairingErrorMessage ?? "Error Pairing Device".localizedForApp(), isPresented: $model.displayPairingError, actions: {
             Button("Okay".localizedForApp()) {
                 model.displayPairingError = false
+                model.pairingErrorMessage = nil
             }
-        }, message: {
-            Text("Error Pairing Device Message".localizedForApp())
         })
     }
 }

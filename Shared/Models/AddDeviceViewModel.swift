@@ -14,6 +14,7 @@ class AddDeviceViewModel: ObservableObject {
     
     @Published var pairingObject: PairingObject? = nil
     @Published var displayPairedNotificationAlert = false
+    @Published var pairingErrorMessage: String? = nil
     @Published var displayApprovePairingAlert = false
     @Published var displayPairingError = false
     @Published var pairingClientReady = false

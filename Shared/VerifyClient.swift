@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PingOneVerify_iOS
+import PingOneVerify
 
 class VerifyClient {
     private var model: VerifyViewModel
@@ -21,9 +21,14 @@ class VerifyClient {
             return
         }
         
-        PingOneVerifyClient.Builder()
+        let appearanceSettings = UIAppearanceSettings()
+            .setBodyTextColor(.white)
+            .setHeadingTextColor(.white)
+        
+        PingOneVerifyClient.Builder(isOverridingAssets: false)
             .setListener(self)
             .setRootViewController(rootViewController)
+            .setUIAppearance(appearanceSettings)
             .startVerification { pingOneVerifyClient, clientBuilderError in
                 if let clientBuilderError {
                     logerror(clientBuilderError.localizedDescription ?? "Unknown error occurred")

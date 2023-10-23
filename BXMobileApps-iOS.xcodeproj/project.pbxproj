@@ -12,10 +12,6 @@
 		1000F9F12A60867100ADB773 /* FinanceHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000F9F02A60867100ADB773 /* FinanceHomeView.swift */; };
 		1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
 		1000FA052A6096D900ADB773 /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
-		1000FA0A2A609D8000ADB773 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA062A609D6600ADB773 /* Microblink.xcframework */; };
-		1000FA0B2A609D8000ADB773 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA062A609D6600ADB773 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1000FA0D2A609D8200ADB773 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */; };
-		1000FA0E2A609D8200ADB773 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA122A60A37500ADB773 /* VerifyClient.swift */; };
 		1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA152A60A4D400ADB773 /* FinanceHomeViewModel.swift */; };
 		1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */; };
@@ -36,6 +32,12 @@
 		10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F552A5F05DB004A60E1 /* BXHealthApp.swift */; };
 		10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F592A5F05DD004A60E1 /* Assets.xcassets */; };
 		10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */; };
+		101D0ABD2AE6C7F50038F4C5 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */; };
+		101D0ABE2AE6C7F50038F4C5 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		101D0AC02AE6C7F70038F4C5 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */; };
+		101D0AC12AE6C7F70038F4C5 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		101D0AC22AE6C7F80038F4C5 /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */; };
+		101D0AC32AE6C7F80038F4C5 /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85492A6062AD00C77793 /* AppDelegate.swift */; };
 		102C85502A60742800C77793 /* FinanceRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C854F2A60742800C77793 /* FinanceRootView.swift */; };
 		102C85522A607CD900C77793 /* HealthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85512A607CD900C77793 /* HealthRootView.swift */; };
@@ -69,14 +71,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1000FA0C2A609D8000ADB773 /* Embed Frameworks */ = {
+		101D0ABF2AE6C7F50038F4C5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1000FA0B2A609D8000ADB773 /* Microblink.xcframework in Embed Frameworks */,
-				1000FA0E2A609D8200ADB773 /* PingOneVerify.xcframework in Embed Frameworks */,
+				101D0ABE2AE6C7F50038F4C5 /* BlinkID.xcframework in Embed Frameworks */,
+				101D0AC32AE6C7F80038F4C5 /* VoiceSdk.xcframework in Embed Frameworks */,
+				101D0AC12AE6C7F70038F4C5 /* PingOneVerify.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,8 +90,6 @@
 		1000F9ED2A60862B00ADB773 /* HealthHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHomeView.swift; sourceTree = "<group>"; };
 		1000F9F02A60867100ADB773 /* FinanceHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceHomeView.swift; sourceTree = "<group>"; };
 		1000FA032A6096D900ADB773 /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
-		1000FA062A609D6600ADB773 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = Frameworks/Microblink.xcframework; sourceTree = "<group>"; };
-		1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PingOneVerify.xcframework; path = Frameworks/PingOneVerify.xcframework; sourceTree = "<group>"; };
 		1000FA122A60A37500ADB773 /* VerifyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyClient.swift; sourceTree = "<group>"; };
 		1000FA152A60A4D400ADB773 /* FinanceHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceHomeViewModel.swift; sourceTree = "<group>"; };
 		1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +108,9 @@
 		10109F552A5F05DB004A60E1 /* BXHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHealthApp.swift; sourceTree = "<group>"; };
 		10109F592A5F05DD004A60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
+		101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneVerify.xcframework; sourceTree = "<group>"; };
+		101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VoiceSdk.xcframework; sourceTree = "<group>"; };
 		102C85492A6062AD00C77793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		102C854F2A60742800C77793 /* FinanceRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceRootView.swift; sourceTree = "<group>"; };
 		102C85512A607CD900C77793 /* HealthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRootView.swift; sourceTree = "<group>"; };
@@ -134,11 +138,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1000FA0D2A609D8200ADB773 /* PingOneVerify.xcframework in Frameworks */,
 				1076D2422A5F52D80073ADD2 /* PingOneSDK in Frameworks */,
+				101D0AC22AE6C7F80038F4C5 /* VoiceSdk.xcframework in Frameworks */,
 				10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */,
+				101D0AC02AE6C7F70038F4C5 /* PingOneVerify.xcframework in Frameworks */,
+				101D0ABD2AE6C7F50038F4C5 /* BlinkID.xcframework in Frameworks */,
 				1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */,
-				1000FA0A2A609D8000ADB773 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +312,9 @@
 		1076D2442A5F52F20073ADD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1000FA062A609D6600ADB773 /* Microblink.xcframework */,
-				1000FA072A609D6600ADB773 /* PingOneVerify.xcframework */,
+				101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */,
+				101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */,
+				101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,7 +339,7 @@
 				10109F3A2A5F0541004A60E1 /* Sources */,
 				10109F3B2A5F0541004A60E1 /* Frameworks */,
 				10109F3C2A5F0541004A60E1 /* Resources */,
-				1000FA0C2A609D8000ADB773 /* Embed Frameworks */,
+				101D0ABF2AE6C7F50038F4C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,7 +384,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					10109F3D2A5F0541004A60E1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -552,6 +558,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -612,6 +619,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -637,7 +645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -655,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3;
+				MARKETING_VERSION = 3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -671,7 +679,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -689,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3;
+				MARKETING_VERSION = 3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -705,7 +713,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -722,7 +730,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -738,7 +746,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -755,7 +763,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

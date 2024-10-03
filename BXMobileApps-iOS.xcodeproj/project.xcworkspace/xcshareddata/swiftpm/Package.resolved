@@ -1,5 +1,5 @@
 {
-  "originHash" : "cf9bd1eee1b95f5d52477c405ef82c83e7b2f8c6c7a7f1d057ae7e53ef57d391",
+  "originHash" : "00b1a2196920911cc146e8713889f7cf83ea0a81fec5a311b87e35e1d2051ccf",
   "pins" : [
     {
       "identity" : "appauth-ios",
@@ -11,12 +11,21 @@
       }
     },
     {
+      "identity" : "cocoalumberjack",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CocoaLumberjack/CocoaLumberjack.git",
+      "state" : {
+        "revision" : "4b8714a7fb84d42393314ce897127b3939885ec3",
+        "version" : "3.8.5"
+      }
+    },
+    {
       "identity" : "pingone-mobile-sdk-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pingidentity/pingone-mobile-sdk-ios.git",
       "state" : {
         "branch" : "main",
-        "revision" : "9e0da577cd1491f0a47c0554258966dcbb11c0cb"
+        "revision" : "0ed041b5ca2aef8445e2c181d341558921e0fc4c"
       }
     },
     {
@@ -25,7 +34,25 @@
       "location" : "https://github.com/pingidentity/pingone-signals-sdk-ios",
       "state" : {
         "branch" : "main",
-        "revision" : "0d59784a017a72020a0983712d4c04de9c0433ac"
+        "revision" : "59fde21ecebaaf1b20046e79f55f05f4beb7a74d"
+      }
+    },
+    {
+      "identity" : "svgkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SVGKit/SVGKit",
+      "state" : {
+        "revision" : "58152b9f7c85eab239160b36ffdfd364aa43d666",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log",
+      "state" : {
+        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
+        "version" : "1.6.1"
       }
     }
   ],

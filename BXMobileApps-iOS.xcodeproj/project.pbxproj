@@ -89,9 +89,24 @@
 		1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1076D2452A5F52F20073ADD2 /* PingOneSDK */; };
 		1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
+		108733992CB98DB60071630C /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 108733982CB98DB60071630C /* SVGKit */; };
 		10A0FDAC2C989645000E2E12 /* View+defaultBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A10862A68610D00E59B99 /* View+defaultBackground.swift */; };
 		10A0FDB12C98BD09000E2E12 /* Array+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */; };
-		10B50D442CADD3C700BD8187 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10B50D432CADD3C700BD8187 /* SVGKit */; };
+		10B0D6452CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */; };
+		10B0D6472CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */; };
+		10B0D64A2CB0697100422E01 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6482CB0696800422E01 /* Connectivity.swift */; };
+		10B0D64B2CB0697100422E01 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6482CB0696800422E01 /* Connectivity.swift */; };
+		10B0D64D2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */; };
+		10B0D64E2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */; };
+		10B0D6502CB06EC200422E01 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64F2CB06EBF00422E01 /* PickerItem.swift */; };
+		10B0D6512CB06EC200422E01 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64F2CB06EBF00422E01 /* PickerItem.swift */; };
+		10B0D6532CB06F0300422E01 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6522CB06F0000422E01 /* Date.swift */; };
+		10B0D6552CB06F0300422E01 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6522CB06F0000422E01 /* Date.swift */; };
+		10B0D6592CB06FAD00422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65A2CB06FAD00422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65B2CB06FD400422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65D2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */; };
+		10B0D65E2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */; };
 		10B50D752CADD65F00BD8187 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */; };
 		10B50D762CADD65F00BD8187 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10B50D772CADD66000BD8187 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */; };
@@ -119,32 +134,24 @@
 		10B50D932CADD94E00BD8187 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D912CADD94E00BD8187 /* WalletView.swift */; };
 		10B50D942CADD94E00BD8187 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D912CADD94E00BD8187 /* WalletView.swift */; };
 		10B50D962CADD96600BD8187 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D952CADD96600BD8187 /* WalletViewModel.swift */; };
-		10B50D972CADD96600BD8187 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D952CADD96600BD8187 /* WalletViewModel.swift */; };
 		10B50D982CADD96600BD8187 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D952CADD96600BD8187 /* WalletViewModel.swift */; };
 		10B50D9B2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */; };
 		10B50D9C2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */; };
-		10B50D9D2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */; };
 		10B50DA02CADDF4200BD8187 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */; };
 		10B50DA12CADDF4200BD8187 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */; };
-		10B50DA22CADDF4200BD8187 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */; };
 		10B50DA42CADDF6700BD8187 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */; };
 		10B50DA52CADDF6700BD8187 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */; };
-		10B50DA62CADDF6700BD8187 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */; };
-		10B50DA82CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */; };
 		10B50DA92CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */; };
 		10B50DAA2CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */; };
 		10B50DAC2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */; };
-		10B50DAD2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */; };
 		10B50DAE2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */; };
 		10B50DB02CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */; };
 		10B50DB12CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */; };
-		10B50DB22CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */; };
 		10B50DB82CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
 		10B50DB92CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
 		10B50DBA2CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
 		10B50DBC2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */; };
 		10B50DBD2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */; };
-		10B50DBE2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */; };
 		10B84FA82C88D99E00930B75 /* BXIndustryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B84FA72C88D99E00930B75 /* BXIndustryApp.swift */; };
 		10B84FAC2C88D9A100930B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B84FAB2C88D9A100930B75 /* Assets.xcassets */; };
 		10B84FAF2C88D9A100930B75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B84FAE2C88D9A100930B75 /* Preview Assets.xcassets */; };
@@ -241,6 +248,13 @@
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+asColor.swift"; sourceTree = "<group>"; };
+		10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUiHandler.swift; sourceTree = "<group>"; };
+		10B0D6482CB0696800422E01 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCredentialPicker.swift; sourceTree = "<group>"; };
+		10B0D64F2CB06EBF00422E01 /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
+		10B0D6522CB06F0000422E01 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		10B0D6572CB06FAA00422E01 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromSVG.swift"; sourceTree = "<group>"; };
 		10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
 		10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
 		10B50D5F2CADD64300BD8187 /* CommunicationManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CommunicationManager.xcframework; sourceTree = "<group>"; };
@@ -291,9 +305,9 @@
 				10B50D872CADD67000BD8187 /* PingOneWallet.xcframework in Frameworks */,
 				10B50D832CADD66E00BD8187 /* libsecp256k1.xcframework in Frameworks */,
 				10B50D7D2CADD66400BD8187 /* DIDSDK.xcframework in Frameworks */,
-				10B50D442CADD3C700BD8187 /* SVGKit in Frameworks */,
 				10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */,
 				10B50D812CADD66D00BD8187 /* JoseTools.xcframework in Frameworks */,
+				108733992CB98DB60071630C /* SVGKit in Frameworks */,
 				1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +363,10 @@
 		1000FA312A65928000ADB773 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */,
+				10B0D6482CB0696800422E01 /* Connectivity.swift */,
+				10B0D6522CB06F0000422E01 /* Date.swift */,
+				10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */,
 				1000FA2E2A65922E00ADB773 /* UIUtilities.swift */,
 			);
 			path = Utilities;
@@ -478,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */,
+				10B0D6572CB06FAA00422E01 /* Date+String.swift */,
 				1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */,
 				105FAA302C9A2CC2006BE8BF /* String+asColor.swift */,
 				1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */,
@@ -534,6 +553,8 @@
 				10B50D9E2CADDF2500BD8187 /* observer */,
 				10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */,
 				10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */,
+				10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */,
+				10B0D64F2CB06EBF00422E01 /* PickerItem.swift */,
 				10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */,
 				10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */,
 			);
@@ -593,7 +614,7 @@
 				1076D2412A5F52D80073ADD2 /* PingOneSDK */,
 				1000FA1B2A60B40400ADB773 /* AppAuth */,
 				10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */,
-				10B50D432CADD3C700BD8187 /* SVGKit */,
+				108733982CB98DB60071630C /* SVGKit */,
 			);
 			productName = BXFinance;
 			productReference = 10109F3E2A5F0541004A60E1 /* BXFinance.app */;
@@ -677,7 +698,7 @@
 				1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */,
 				1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
 				10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */,
-				10B50D422CADD3C700BD8187 /* XCRemoteSwiftPackageReference "SVGKit" */,
+				108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -739,12 +760,16 @@
 				10B50DBC2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */,
 				103654182A6AD0DB0036DB3F /* ProtectClient.swift in Sources */,
 				1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */,
+				10B0D65D2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */,
 				100A10872A68610D00E59B99 /* View+defaultBackground.swift in Sources */,
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
+				10B0D64B2CB0697100422E01 /* Connectivity.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
 				10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
 				1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
+				10B0D64E2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */,
+				10B0D6532CB06F0300422E01 /* Date.swift in Sources */,
 				10B50D942CADD94E00BD8187 /* WalletView.swift in Sources */,
 				105FAA2D2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
 				10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */,
@@ -755,7 +780,9 @@
 				1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */,
 				1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
 				10CE192D2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */,
+				10B0D6502CB06EC200422E01 /* PickerItem.swift in Sources */,
 				1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */,
+				10B0D6472CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */,
 				1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */,
 				102C85502A60742800C77793 /* FinanceRootView.swift in Sources */,
 				10B50DA02CADDF4200BD8187 /* EventObserver.swift in Sources */,
@@ -764,6 +791,7 @@
 				10109F422A5F0541004A60E1 /* BXFinanceApp.swift in Sources */,
 				105FAA132C9A1B76006BE8BF /* View+conditional.swift in Sources */,
 				10B50D962CADD96600BD8187 /* WalletViewModel.swift in Sources */,
+				10B0D6592CB06FAD00422E01 /* Date+String.swift in Sources */,
 				1076D21E2A5F184B0073ADD2 /* BXButton.swift in Sources */,
 				105FAA312C9A2CC2006BE8BF /* String+asColor.swift in Sources */,
 				10B50DB82CADEDA900BD8187 /* QRScanner.swift in Sources */,
@@ -774,6 +802,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B0D65B2CB06FD400422E01 /* Date+String.swift in Sources */,
 				1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
 				1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21C2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
@@ -793,18 +822,10 @@
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
 				10B50DB92CADEDA900BD8187 /* QRScanner.swift in Sources */,
 				1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */,
-				10B50DAD2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */,
-				10B50DBE2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */,
-				10B50DA22CADDF4200BD8187 /* EventObserver.swift in Sources */,
 				105FAA2E2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
 				105FAA142C9A1B76006BE8BF /* View+conditional.swift in Sources */,
-				10B50DB22CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */,
-				10B50D972CADD96600BD8187 /* WalletViewModel.swift in Sources */,
 				1076D21F2A5F184B0073ADD2 /* BXButton.swift in Sources */,
 				10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
-				10B50DA82CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */,
-				10B50DA62CADDF6700BD8187 /* EventObserverUtils.swift in Sources */,
-				10B50D9D2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,13 +839,16 @@
 				10B50D932CADD94E00BD8187 /* WalletView.swift in Sources */,
 				10A0FDB12C98BD09000E2E12 /* Array+asColor.swift in Sources */,
 				10B50DBA2CADEDA900BD8187 /* QRScanner.swift in Sources */,
+				10B0D64D2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */,
 				105FAA1F2C9A2361006BE8BF /* View+dismissKeyboard.swift in Sources */,
 				102712CF2C93779E00492869 /* BXIndustryMainViewModel.swift in Sources */,
+				10B0D64A2CB0697100422E01 /* Connectivity.swift in Sources */,
 				105FAA212C9A237E006BE8BF /* TabViewTransparentBackground.swift in Sources */,
 				10B50DAC2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */,
 				105FAA222C9A255F006BE8BF /* PingOneProtectView.swift in Sources */,
 				105FAA1D2C9A234F006BE8BF /* VerifyViewModel.swift in Sources */,
 				10B50DB02CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */,
+				10B0D6452CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */,
 				105FAA182C9A22F0006BE8BF /* BXButton.swift in Sources */,
 				105FAA192C9A2301006BE8BF /* UIUtilities.swift in Sources */,
 				105FAA2F2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
@@ -833,9 +857,11 @@
 				10B50DA52CADDF6700BD8187 /* EventObserverUtils.swift in Sources */,
 				102712C92C9366B700492869 /* DevicePairingClient.swift in Sources */,
 				10B50DA12CADDF4200BD8187 /* EventObserver.swift in Sources */,
+				10B0D65E2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */,
 				105FAA1E2C9A2353006BE8BF /* AddDeviceViewModel.swift in Sources */,
 				102712C72C93661800492869 /* BXIndustryRootView.swift in Sources */,
 				105FAA172C9A22E2006BE8BF /* AddDeviceView.swift in Sources */,
+				10B0D6512CB06EC200422E01 /* PickerItem.swift in Sources */,
 				10A0FDAC2C989645000E2E12 /* View+defaultBackground.swift in Sources */,
 				105FAA332C9A2CC2006BE8BF /* String+asColor.swift in Sources */,
 				102712D22C93795D00492869 /* BXIndustryConfiguratorView.swift in Sources */,
@@ -845,6 +871,8 @@
 				105FAA1C2C9A2349006BE8BF /* VerifyClient.swift in Sources */,
 				105FAA1A2C9A231E006BE8BF /* Color+BrandConstants.swift in Sources */,
 				105FAA1B2C9A2346006BE8BF /* ProtectClient.swift in Sources */,
+				10B0D6552CB06F0300422E01 /* Date.swift in Sources */,
+				10B0D65A2CB06FAD00422E01 /* Date+String.swift in Sources */,
 				105FAA152C9A1B76006BE8BF /* View+conditional.swift in Sources */,
 				105FAA382C9B1C08006BE8BF /* Constants.swift in Sources */,
 				10B50D982CADD96600BD8187 /* WalletViewModel.swift in Sources */,
@@ -1261,12 +1289,12 @@
 				kind = branch;
 			};
 		};
-		10B50D422CADD3C700BD8187 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+		108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			repositoryURL = "https://github.com/bhavyachauhan-ping/SVGKit/";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = 3.x_bk;
+				kind = branch;
 			};
 		};
 		10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */ = {
@@ -1310,9 +1338,9 @@
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
 			productName = PingOneSDK;
 		};
-		10B50D432CADD3C700BD8187 /* SVGKit */ = {
+		108733982CB98DB60071630C /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 10B50D422CADD3C700BD8187 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			package = 108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKit;
 		};
 		10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */ = {

@@ -1,5 +1,5 @@
 {
-  "originHash" : "00b1a2196920911cc146e8713889f7cf83ea0a81fec5a311b87e35e1d2051ccf",
+  "originHash" : "09ce25e12fab69f1fb51750b89fb2390eac0ce1b829d998fff96d9e094271226",
   "pins" : [
     {
       "identity" : "appauth-ios",
@@ -40,10 +40,10 @@
     {
       "identity" : "svgkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SVGKit/SVGKit",
+      "location" : "https://github.com/bhavyachauhan-ping/SVGKit/",
       "state" : {
-        "revision" : "58152b9f7c85eab239160b36ffdfd364aa43d666",
-        "version" : "3.0.0"
+        "branch" : "3.x_bk",
+        "revision" : "e63efe727d28e83e210d545ddc5585de8732a831"
       }
     },
     {

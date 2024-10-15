@@ -128,6 +128,13 @@ public class PingOneWalletHelper {
         return self.pingoneWalletClient.getDataRepository()
     }
     
+    public func deleteCredentials() {
+        let repo = self.getDataRepository()
+        repo.getAllCredentials().forEach { claim in
+            repo.deleteCredential(forId: claim.getId())
+        }
+    }
+    
 }
 
 /// Extension to implement WalletCallbackHandler
@@ -245,6 +252,8 @@ extension PingOneWalletHelper {
             if let isSuccess = event.isSuccess() {
                 self.notifyUser(message: isSuccess ? "Wallet paired successfully" : "Wallet pairing failed")
             }
+        @unknown default:
+            fatalError("Unhandled Pairing Event")
         }
     }
     
@@ -289,6 +298,8 @@ extension PingOneWalletHelper {
                     self.notifyUser(message: "Failed to present credential")
                 case .requiresAction(let action):
                     self.handlePresentationAction(action)
+                @unknown default:
+                    fatalError("Unhandled presentation status")
                 }
             }
             .onError { err in
@@ -304,6 +315,8 @@ extension PingOneWalletHelper {
                 logattention("Opening URL: \(redirectUri) - result: \(result) - message: \(message)")
                 self.notifyUser(message: message)
             })
+        @unknown default:
+            fatalError("Unhandled presentation action")
         }
     }
     
@@ -321,6 +334,8 @@ extension PingOneWalletHelper {
         switch event.getCredentialEvent() {
         case .CREDENTIAL_UPDATED:
             self.handleCredentialUpdate(event.getAction(), referenceCredentialId: event.getReferenceCredentialId())
+        @unknown default:
+            fatalError("Unhandled credential event")
         }
     }
     
@@ -328,6 +343,8 @@ extension PingOneWalletHelper {
         switch action {
         case .DELETE:
             self.pingoneWalletClient.getDataRepository().deleteCredential(forId: referenceCredentialId)
+        @unknown default:
+            fatalError("Unhandled credential updated=")
         }
     }
     

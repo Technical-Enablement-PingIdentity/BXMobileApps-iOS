@@ -14,16 +14,16 @@ public class WalletCoordinator {
     
     static let TOAST_DURATION: TimeInterval = 2.0
     
-    var navigationController: UINavigationController
+//    var navigationController: UINavigationController
     var pingOneWalletHelper: PingOneWalletHelper
     var applicationUiHandler: ApplicationUiHandler! = ApplicationUiHandler()
     
     var eventObserver: EventObserver
     
-    var waitOverlayViewController: WaitOverlayView?
+//    var waitOverlayViewController: WaitOverlayView?
     
-    init(navigationController: UINavigationController, pingOneWalletHelper: PingOneWalletHelper) {
-        self.navigationController = navigationController
+    init(pingOneWalletHelper: PingOneWalletHelper) {
+//        self.navigationController = navigationController
         self.eventObserver = EventObserver()
         self.pingOneWalletHelper = pingOneWalletHelper
         
@@ -31,7 +31,7 @@ public class WalletCoordinator {
     }
     
     private func checkConnectivity() -> Bool {
-        return ConnectivityUtils.checkNetworkStatus()
+        return Connectivity.checkNetworkStatus()
     }
     
     private func registerObservers() {
@@ -59,70 +59,70 @@ public class WalletCoordinator {
         self.eventObserver.removeObservers()
     }
     
-    public func showWaitOverlay(_ message: String) {
-        DispatchQueue.main.async {
-            self.waitOverlayViewController = WaitOverlayView.instantiate()
-            self.waitOverlayViewController!.setMessage(message)
-            self.waitOverlayViewController!.modalPresentationStyle = .fullScreen
-            self.navigationController.present(self.waitOverlayViewController!, animated: false)
-        }
-    }
-    
-    public func hideWaitOverlay(completion: (() -> Void)? = nil) {
-        DispatchQueue.main.async {
-            self.waitOverlayViewController?.dismiss(animated: false, completion: completion)
-        }
-    }
-    
-    public func showHomeView() {
-        DispatchQueue.main.async {
-            let homeView = HomeView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
-            self.navigationController.navigationBar.isHidden = false
-            self.navigationController.setViewControllers([homeView.getViewController()], animated: false)
-        }
-    }
-    
-    public func pushCredentialDetails(_ credential: Claim) {
-        DispatchQueue.main.async {
-            let credentialDetailsView = CredentialDetailsView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
-            credentialDetailsView.viewModel.setCredential(credential)
-            credentialDetailsView.viewModel.setCredentialAction(.DELETE)
-            self.navigationController.pushViewController(credentialDetailsView.getViewController(), animated: true)
-        }
-    }
-    
-//    public func showQrScanner() {
-//        #if targetEnvironment(simulator) //Strictly for local testing
-//        let alertController = UIAlertController(title: "Copy the URL for execution", message: "", preferredStyle: .alert)
-//        alertController.addTextField()
-//        let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
-//            guard let text = alertController.textFields?.first?.text else {
-//                return
-//            }
-//            logattention("Processing URL - \(text)")
-//            self.pingOneWalletHelper.processPingOneRequest(text)
-//        }
-//        alertController.addAction(submitAction)
-//        self.navigationController.present(alertController, animated: true)
-//        #else
+//    public func showWaitOverlay(_ message: String) {
 //        DispatchQueue.main.async {
-//            let qrScannerView = QRScannerView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
-//            let qrScannerViewController = qrScannerView.getViewController()
-//            //        qrScannerViewController.modalPresentationStyle = .currentContext
-//            self.navigationController.present(qrScannerViewController, animated: true)
+//            self.waitOverlayViewController = WaitOverlayView.instantiate()
+//            self.waitOverlayViewController!.setMessage(message)
+//            self.waitOverlayViewController!.modalPresentationStyle = .fullScreen
+//            self.navigationController.present(self.waitOverlayViewController!, animated: false)
 //        }
-//        #endif
 //    }
     
-    public func showPicker(_ items: [PickerItem], pickerListener: PickerListener) {
-        DispatchQueue.main.async {
-            let pickerView = PickerView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
-            pickerView.viewModel.setPickerItems(items)
-            pickerView.viewModel.setPickerListener(pickerListener)
-            self.navigationController.present(pickerView.getViewController(), animated: true)
-        }
+//    public func hideWaitOverlay(completion: (() -> Void)? = nil) {
+//        DispatchQueue.main.async {
+//            self.waitOverlayViewController?.dismiss(animated: false, completion: completion)
+//        }
+//    }
+    
+//    public func showHomeView() {
+//        DispatchQueue.main.async {
+//            let homeView = HomeView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
+//            self.navigationController.navigationBar.isHidden = false
+//            self.navigationController.setViewControllers([homeView.getViewController()], animated: false)
+//        }
+//    }
+    
+    public func pushCredentialDetails(_ credential: Claim) {
+//        DispatchQueue.main.async {
+//            let credentialDetailsView = CredentialDetailsView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
+//            credentialDetailsView.viewModel.setCredential(credential)
+//            credentialDetailsView.viewModel.setCredentialAction(.DELETE)
+//            self.navigationController.pushViewController(credentialDetailsView.getViewController(), animated: true)
+//        }
     }
     
+    public func showQrScanner() {
+        #if targetEnvironment(simulator) //Strictly for local testing
+        let alertController = UIAlertController(title: "Copy the URL for execution", message: "", preferredStyle: .alert)
+        alertController.addTextField()
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+            guard let text = alertController.textFields?.first?.text else {
+                return
+            }
+            logattention("Processing URL - \(text)")
+            self.pingOneWalletHelper.processPingOneRequest(text)
+        }
+        alertController.addAction(submitAction)
+        self.navigationController.present(alertController, animated: true)
+        #else
+        DispatchQueue.main.async {
+            WalletViewModel.shared.presentQrScanner = true
+        }
+        #endif
+    }
+    
+//    public func showPicker(_ items: [PickerItem], pickerListener: PickerListener) {
+//        DispatchQueue.main.async {
+//            let pickerView = PickerView(coordinator: self, pingOneWalletHelper: self.pingOneWalletHelper)
+//            pickerView.viewModel.setPickerItems(items)
+//            pickerView.viewModel.setPickerListener(pickerListener)
+//            self.navigationController.present(pickerView.getViewController(), animated: true)
+//        }
+//    }
+    
+    public func processPairingUrl(qrContent: String) {
+        pingOneWalletHelper.processPingOneRequest(qrContent)
+    }
 }
 
 extension WalletCoordinator: ApplicationUiCallbackHandler {
@@ -139,7 +139,7 @@ extension WalletCoordinator: ApplicationUiCallbackHandler {
         let claims = credentials.filter { $0.getData()[ClaimKeys.cardType] != nil }
         let pickerItems = credentials.compactMap { DefaultCredentialPicker.getPickerItemFromClaims($0, isRevoked: self.pingOneWalletHelper.getDataRepository().isCredentialRevoked(credentialId: $0.getId())) }
         
-        self.showPicker(pickerItems, pickerListener: ItemPickerListener(claims: claims, onItemPicked: onItemPicked))
+//        self.showPicker(pickerItems, pickerListener: ItemPickerListener(claims: claims, onItemPicked: onItemPicked))
     }
     
     public func showToast(message: String, hideAfter duration: TimeInterval) {
@@ -157,6 +157,13 @@ extension WalletCoordinator: ApplicationUiCallbackHandler {
     public func openUrl(url: String, onComplete: @escaping (Bool, String) -> Void) {
         self.applicationUiHandler.openUrl(url: url, onComplete: onComplete)
     }
+}
+
+public protocol PickerListener {
+    
+    func onItemPicked(index: Int)
+    func onPickerCanceled()
+    
 }
 
 class ItemPickerListener: PickerListener {

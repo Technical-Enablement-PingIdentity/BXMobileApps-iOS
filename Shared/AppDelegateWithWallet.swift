@@ -9,7 +9,7 @@ import SwiftUI
 import DIDSDK
 import PingOneWallet
 
-class AppDelegateWithWallet: AppDelegate {
+extension AppDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         PingOneWalletHelper.initializeWallet()
@@ -18,13 +18,12 @@ class AppDelegateWithWallet: AppDelegate {
                 ApplicationUiHandler().showErrorAlert(title: "Error", message: "Error initializing Wallet, app may behave unexpectedly.", actionTitle: "Okay", actionHandler: nil)
             }
             .onResult { pingOneWalletHelper in
-                let coordinator = WalletCoordinator(navigationController: navigationController, pingOneWalletHelper: pingOneWalletHelper)
+                let coordinator = WalletCoordinator(pingOneWalletHelper: pingOneWalletHelper)
                 pingOneWalletHelper.setApplicationUiCallbackHandler(coordinator)
                 pingOneWalletHelper.setCredentialPicker(DefaultCredentialPicker(applicationUiCallbackHandler: coordinator))
-                coordinator.showHomeView()
+                WalletViewModel.shared.walletSuccessfullyInitialized(coordinator: coordinator)
                 pingOneWalletHelper.processLaunchOptions(launchOptions)
             }
-        
         
         return true
     }

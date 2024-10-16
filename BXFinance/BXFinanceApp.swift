@@ -15,6 +15,9 @@ struct BXFinanceApp: App {
     var body: some Scene {
         WindowGroup {
             FinanceRootView()
+                .onOpenURL { url in
+                    EventObserverUtils.broadcastAppOpenUrlNotification(url.absoluteString)
+                }
         }
     }
 }

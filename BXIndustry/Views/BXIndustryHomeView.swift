@@ -95,7 +95,7 @@ struct BXIndustryHomeView: View {
                 model.showConfigurator = true
             }
         }
-        /* Hack to force view to update, otherwise buttons some of the colors will be stuck */
+        /* Hack to force view to update, otherwise some of the colors will be stuck */
         .onChange(of: model.showConfigurator) { newValue in
             if (!newValue) {
                 updateView.toggle()

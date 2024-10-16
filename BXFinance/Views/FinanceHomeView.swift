@@ -14,11 +14,7 @@ struct FinanceHomeView: View {
     
     @ObservedObject private var homeModel: FinanceHomeViewModel
     
-    @State var selectedTab = "home"
-    @State var lastActiveTab = "home"
-    
     init() {
-        
         let model = FinanceHomeViewModel.shared
         homeModel = model
 
@@ -29,7 +25,7 @@ struct FinanceHomeView: View {
     
     var body: some View {
         Group {
-            TabView(selection: $selectedTab) {
+            TabView(selection: $homeModel.selectedTab) {
                 VStack {
                     AddDeviceView(issuer: K.issuer, redirectUri: K.redirectUri, clientId: K.clientId)
                 }
@@ -90,15 +86,6 @@ struct FinanceHomeView: View {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
             .accentColor(Color.white)
-            .onChange(of: selectedTab) { newValue in
-                let activeTabs = ["home", "protect", "wallet", "verify"]
-                if activeTabs.contains(newValue) {
-                    selectedTab = newValue
-                    lastActiveTab = newValue
-                } else {
-                    selectedTab = lastActiveTab
-                }
-            }
         }
         .alert("Client Builder Error".localizedForApp(), isPresented: $homeModel.displayClientBuilderErrorAlert, actions: {
             Button("Okay") {
@@ -114,6 +101,9 @@ struct FinanceHomeView: View {
         }, message: {
             Text("All documents\(self.homeModel.documentSubmissionNameResult != nil ? " for " + self.homeModel.documentSubmissionNameResult! : "") have been submitted and verification has successfully completed.")
         })
+        .onChange(of: homeModel.selectedTab) { newValue in
+            homeModel.switchToTab(newValue)
+        }
     }
 }
 

@@ -103,7 +103,7 @@ public class WalletCoordinator {
             self.pingOneWalletHelper.processPingOneRequest(text)
         }
         alertController.addAction(submitAction)
-        self.navigationController.present(alertController, animated: true)
+//        self.navigationController.present(alertController, animated: true)
         #else
         DispatchQueue.main.async {
             WalletViewModel.shared.presentQrScanner = true
@@ -121,6 +121,7 @@ public class WalletCoordinator {
 //    }
     
     public func processPairingUrl(qrContent: String) {
+        print("Process Request \(qrContent)")
         pingOneWalletHelper.processPingOneRequest(qrContent)
     }
 }

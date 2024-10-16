@@ -16,6 +16,7 @@ class WalletViewModel: ObservableObject {
     @Published var scanResult: String? = nil
     
     @Published var walletInitialized = false
+    @Published var pairing = false
     @Published var credentials: [Credential] = []
     
     var coordinator: WalletCoordinator? = nil
@@ -26,6 +27,8 @@ class WalletViewModel: ObservableObject {
         self.coordinator = coordinator
         
         refreshCredentials()
+        observeAppOpenUrl()
+        observeCredentialUpdates()
     }
     
     func processPairingQrCode() {
@@ -35,6 +38,7 @@ class WalletViewModel: ObservableObject {
         }
         
         presentQrScanner = false
+        pairing = true
         coordinator?.processPairingUrl(qrContent: scanResult)
     }
     
@@ -43,13 +47,32 @@ class WalletViewModel: ObservableObject {
             DispatchQueue.main.async {
                 let claims = self.coordinator!.pingOneWalletHelper.getDataRepository().getAllCredentials()
                 self.credentials = claims.map { Credential(claim: $0) }
+                if self.credentials.count > 0 {
+                    self.pairing = false
+                }
             }
         }
     }
     
-    func observeCredentialUpdates(/*onUpdate: @escaping () -> Void*/) {
+    func observeCredentialUpdates() {
         self.getEventObserver().observeCredentialUpdates {
             self.refreshCredentials()
+        }
+    }
+    
+    func observeAppOpenUrl() {
+        self.getEventObserver().observeAppOpenUrl { [self] url in
+            if url.contains("/wallet/") {
+                guard let coordinator else {
+                    print("Wallet not yet initialized, can't pair wallet")
+                    return
+                }
+                
+                pairing = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    coordinator.processPairingUrl(qrContent: url)
+                }
+            }
         }
     }
     
@@ -59,7 +82,7 @@ class WalletViewModel: ObservableObject {
             return
         }
         
-        self.coordinator?.pingOneWalletHelper.deleteCredentials()
+        coordinator.pingOneWalletHelper.deleteCredentials()
         
         DispatchQueue.main.async {
             self.refreshCredentials()

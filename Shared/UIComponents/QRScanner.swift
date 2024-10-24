@@ -11,9 +11,10 @@ import AVFoundation
 struct QRScanner: UIViewControllerRepresentable {
     
     @Binding var result: String?
+    @Binding var loadingCamera: Bool
 
     func makeUIViewController(context: Context) -> QRScannerController {
-        let controller = QRScannerController()
+        let controller = QRScannerController($loadingCamera)
         controller.delegate = context.coordinator
 
         return controller
@@ -28,18 +29,49 @@ struct QRScanner: UIViewControllerRepresentable {
 }
 
 class QRScannerController: UIViewController {
+    
+    @Binding var loadingCamera: Bool
+    
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
 
     var delegate: AVCaptureMetadataOutputObjectsDelegate?
+    
+    static var shared: QRScannerController?
+    
+    init(_ loadingCamera: Binding<Bool>, nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
+        self._loadingCamera = loadingCamera
+        super.init(nibName:nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateCameraLoading(loading: Bool) {
+        DispatchQueue.main.async {
+            self.loadingCamera = loading
+        }
+    }
+    
+    func closeCameraSession() {
+        if captureSession.isRunning {
+            captureSession.stopRunning()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        QRScannerController.shared = self
+        
+        updateCameraLoading(loading: true)
 
         // Get the back-facing camera for capturing videos
         guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
             print("Failed to get the camera device")
+            updateCameraLoading(loading: false)
             return
         }
 
@@ -52,6 +84,7 @@ class QRScannerController: UIViewController {
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
             print(error)
+            updateCameraLoading(loading: false)
             return
         }
 
@@ -75,6 +108,7 @@ class QRScannerController: UIViewController {
         // Start video capture.
         DispatchQueue.global(qos: .background).async {
             self.captureSession.startRunning()
+            self.updateCameraLoading(loading: false)
         }
 
     }

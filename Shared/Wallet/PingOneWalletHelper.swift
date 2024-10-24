@@ -128,10 +128,16 @@ public class PingOneWalletHelper {
         return self.pingoneWalletClient.getDataRepository()
     }
     
-    public func deleteCredentials() {
-        let repo = self.getDataRepository()
-        repo.getAllCredentials().forEach { claim in
-            repo.deleteCredential(forId: claim.getId())
+    public func deleteCredentials(onDelete: @escaping () -> Void) {
+        self.askUserPermission(title: "Delete Credentials", message: "Please confirm you wish to delete all of your credentials. You will need to re-pair your wallet through the BXF site.") { userConfirmedAction in
+            if userConfirmedAction {
+                let repo = self.getDataRepository()
+                repo.getAllCredentials().forEach { claim in
+                    repo.deleteCredential(forId: claim.getId())
+                }
+                
+                onDelete()
+            }
         }
     }
     
@@ -199,7 +205,7 @@ extension PingOneWalletHelper: WalletCallbackHandler {
             return
         }
         
-        let message: String = matchingCredentials.count == credentialMatcherResults.count ? "Please confirm to present the requested credentials from your wallet." : "You wallet does not have all the requested credentials. Would you like to share partial information?"
+        let message: String = matchingCredentials.count == credentialMatcherResults.count ? "Please confirm to present the requested credentials from your wallet." : "Your wallet does not have all the requested credentials. Would you like to share partial information?"
         let title: String = matchingCredentials.count == credentialMatcherResults.count ? "Share Information" : "Missing Credentials"
         
         self.askUserPermission(title: title , message: message) { isPositiveAction in
@@ -261,6 +267,7 @@ extension PingOneWalletHelper {
         self.askUserPermission(title: "Pair Wallet", message: "Please confirm to pair your wallet to receive a credential.") { isPositiveAction in
             guard (isPositiveAction) else {
                 logattention("Pairing canceled by user")
+                EventObserverUtils.broadcastUserCancelledPairing()
                 return
             }
             self.pingoneWalletClient.pairWallet(for: pairingRequest)

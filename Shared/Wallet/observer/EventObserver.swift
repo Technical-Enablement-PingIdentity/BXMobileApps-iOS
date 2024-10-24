@@ -15,6 +15,7 @@ public class EventObserver {
     var appOpenUrlObserver: NSObjectProtocol?
     var credentialUpdatesObserver: NSObjectProtocol?
     var remoteNotificationObserver: NSObjectProtocol?
+    var userCancelledPairingObserver: NSObjectProtocol?
     
     public func observeNetworkReachability(onUpdate: @escaping (NetworkReachability.NetworkReachabilityStatus) -> Void) {
         self.networkReachabilityObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(NetworkReachability.NETWORK_REACHABILITY_UPDATED), object: nil, queue: nil) { (notification) in
@@ -54,11 +55,18 @@ public class EventObserver {
         }
     }
     
+    public func observeUserCancelledPairing(onUpdate: @escaping () -> Void) {
+        self.userCancelledPairingObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(EventObserverUtils.USER_CANCELLED_PAIRING_KEY), object: nil, queue: nil) { _ in
+            onUpdate()
+        }
+    }
+    
     public func removeObservers() {
         Self.removeObserver(self.networkReachabilityObserver)
         Self.removeObserver(self.pushTokenRegistrationObserver)
         Self.removeObserver(self.credentialUpdatesObserver)
         Self.removeObserver(self.remoteNotificationObserver)
+        Self.removeObserver(self.userCancelledPairingObserver)
     }
     
     class func removeObserver(_ observer: NSObjectProtocol?) {

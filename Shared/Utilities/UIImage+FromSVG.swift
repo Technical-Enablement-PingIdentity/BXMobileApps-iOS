@@ -15,7 +15,6 @@ extension UIImage {
     
     static func fromClaim(_ claim: Claim, size: CGSize?) -> UIImage? {
         if let cardImageStr = CredentialUtils.getCardImageFromClaim(claim) ?? claim.getData()[ClaimKeys.cardImage] {
-            print(cardImageStr)
            return fromSvg(cardImageStr, size: size)
         }
         logerror("Failed to parse svg image")

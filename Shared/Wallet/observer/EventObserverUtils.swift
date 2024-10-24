@@ -14,6 +14,7 @@ public class EventObserverUtils {
     public static let APP_OPEN_URL_NOTIFICATION_KEY = "app_open_url_notification_key"
     public static let CREDENTIALS_UPDATED_NOTIFICATION_KEY = "credentials_updated_notification_key"
     public static let REMOTE_NOTIFICATION_RECEIVED_KEY = "remote_notification_received_key"
+    public static let USER_CANCELLED_PAIRING_KEY = "user_cancelled_pairing"
     
     public static let PUSH_TOKEN_USERINFO_KEY = "push_token_userinfo_key"
     public static let APP_OPEN_URL_USERINFO_KEY = "app_open_url_userinfo_key"
@@ -36,6 +37,10 @@ public class EventObserverUtils {
     
     public class func broadcastRemoteNotificationReceived(_ notificationUserInfo: [AnyHashable: Any]?) {
         NotificationCenter.default.post(name: NSNotification.Name(EventObserverUtils.REMOTE_NOTIFICATION_RECEIVED_KEY), object: nil, userInfo: notificationUserInfo)
+    }
+    
+    public class func broadcastUserCancelledPairing() {
+        NotificationCenter.default.post(name: NSNotification.Name(EventObserverUtils.USER_CANCELLED_PAIRING_KEY), object: nil)
     }
 
 }

@@ -14,6 +14,7 @@ class WalletViewModel: ObservableObject {
     
     @Published var presentQrScanner = false
     @Published var scanResult: String? = nil
+    @Published var loadingCamera = false
     
     @Published var walletInitialized = false
     @Published var pairing = false
@@ -29,17 +30,19 @@ class WalletViewModel: ObservableObject {
         refreshCredentials()
         observeAppOpenUrl()
         observeCredentialUpdates()
+        observeUserCancelledPairingRequest()
     }
     
-    func processPairingQrCode() {
+    func processQrCode(_ isPairing: Bool) {
         guard let scanResult else {
             print("scanResult is nil, nothing to process")
             return;
         }
         
         presentQrScanner = false
-        pairing = true
+        pairing = isPairing
         coordinator?.processPairingUrl(qrContent: scanResult)
+        self.scanResult = nil
     }
     
     func refreshCredentials() {
@@ -51,6 +54,12 @@ class WalletViewModel: ObservableObject {
                     self.pairing = false
                 }
             }
+        }
+    }
+    
+    func observeUserCancelledPairingRequest() {
+        self.getEventObserver().observeUserCancelledPairing {
+            self.pairing = false
         }
     }
     
@@ -82,10 +91,10 @@ class WalletViewModel: ObservableObject {
             return
         }
         
-        coordinator.pingOneWalletHelper.deleteCredentials()
-        
-        DispatchQueue.main.async {
-            self.refreshCredentials()
+        coordinator.pingOneWalletHelper.deleteCredentials {
+            DispatchQueue.main.async {
+                self.refreshCredentials()
+            }
         }
 
     }

@@ -32,16 +32,45 @@
 		10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F552A5F05DB004A60E1 /* BXHealthApp.swift */; };
 		10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F592A5F05DD004A60E1 /* Assets.xcassets */; };
 		10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */; };
-		101D0ABD2AE6C7F50038F4C5 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */; };
-		101D0ABE2AE6C7F50038F4C5 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		101D0AC02AE6C7F70038F4C5 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */; };
-		101D0AC12AE6C7F70038F4C5 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		101D0AC22AE6C7F80038F4C5 /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */; };
-		101D0AC32AE6C7F80038F4C5 /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		102712C72C93661800492869 /* BXIndustryRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102712C62C93661800492869 /* BXIndustryRootView.swift */; };
+		102712C82C9366B500492869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85492A6062AD00C77793 /* AppDelegate.swift */; };
+		102712C92C9366B700492869 /* DevicePairingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */; };
+		102712CA2C9366BA00492869 /* OidcConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */; };
+		102712CF2C93779E00492869 /* BXIndustryMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102712CE2C93779E00492869 /* BXIndustryMainViewModel.swift */; };
+		102712D02C9377FE00492869 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
+		102712D22C93795D00492869 /* BXIndustryConfiguratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102712D12C93795D00492869 /* BXIndustryConfiguratorView.swift */; };
+		102712D42C937E6F00492869 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 102712D32C937E6F00492869 /* PingOneSDK */; };
+		102712D62C937E6F00492869 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 102712D52C937E6F00492869 /* AppAuth */; };
+		102712D82C9383DA00492869 /* BXIndustryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102712D72C9383DA00492869 /* BXIndustryHomeView.swift */; };
 		102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85492A6062AD00C77793 /* AppDelegate.swift */; };
 		102C85502A60742800C77793 /* FinanceRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C854F2A60742800C77793 /* FinanceRootView.swift */; };
 		102C85522A607CD900C77793 /* HealthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85512A607CD900C77793 /* HealthRootView.swift */; };
-		103654182A6AD0DB0036DB3F /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103654172A6AD0DB0036DB3F /* NetworkCalls.swift */; };
+		103654182A6AD0DB0036DB3F /* ProtectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103654172A6AD0DB0036DB3F /* ProtectClient.swift */; };
+		105FAA132C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
+		105FAA142C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
+		105FAA152C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
+		105FAA162C9A2173006BE8BF /* String+LocalizedForApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */; };
+		105FAA172C9A22E2006BE8BF /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA032A6096D900ADB773 /* AddDeviceView.swift */; };
+		105FAA182C9A22F0006BE8BF /* BXButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D21D2A5F184B0073ADD2 /* BXButton.swift */; };
+		105FAA192C9A2301006BE8BF /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA2E2A65922E00ADB773 /* UIUtilities.swift */; };
+		105FAA1A2C9A231E006BE8BF /* Color+BrandConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */; };
+		105FAA1B2C9A2346006BE8BF /* ProtectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103654172A6AD0DB0036DB3F /* ProtectClient.swift */; };
+		105FAA1C2C9A2349006BE8BF /* VerifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA122A60A37500ADB773 /* VerifyClient.swift */; };
+		105FAA1D2C9A234F006BE8BF /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */; };
+		105FAA1E2C9A2353006BE8BF /* AddDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */; };
+		105FAA1F2C9A2361006BE8BF /* View+dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */; };
+		105FAA212C9A237E006BE8BF /* TabViewTransparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */; };
+		105FAA222C9A255F006BE8BF /* PingOneProtectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */; };
+		105FAA242C9A261F006BE8BF /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 105FAA232C9A261F006BE8BF /* PingOneSignals */; };
+		105FAA2D2C9A26A5006BE8BF /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA2C2C9A26A5006BE8BF /* SharedConstants.swift */; };
+		105FAA2E2C9A26A5006BE8BF /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA2C2C9A26A5006BE8BF /* SharedConstants.swift */; };
+		105FAA2F2C9A26A5006BE8BF /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA2C2C9A26A5006BE8BF /* SharedConstants.swift */; };
+		105FAA312C9A2CC2006BE8BF /* String+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA302C9A2CC2006BE8BF /* String+asColor.swift */; };
+		105FAA322C9A2CC2006BE8BF /* String+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA302C9A2CC2006BE8BF /* String+asColor.swift */; };
+		105FAA332C9A2CC2006BE8BF /* String+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA302C9A2CC2006BE8BF /* String+asColor.swift */; };
+		105FAA382C9B1C08006BE8BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA352C9B1C08006BE8BF /* Constants.swift */; };
+		105FAA392C9B7E84006BE8BF /* Array+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */; };
+		105FAA3A2C9B7E86006BE8BF /* Array+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */; };
 		1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2152A5F0F940073ADD2 /* WelcomeView.swift */; };
 		1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2152A5F0F940073ADD2 /* WelcomeView.swift */; };
 		1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */; };
@@ -60,6 +89,72 @@
 		1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1076D2452A5F52F20073ADD2 /* PingOneSDK */; };
 		1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
+		108733992CB98DB60071630C /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 108733982CB98DB60071630C /* SVGKit */; };
+		10A0FDAC2C989645000E2E12 /* View+defaultBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A10862A68610D00E59B99 /* View+defaultBackground.swift */; };
+		10A0FDB12C98BD09000E2E12 /* Array+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */; };
+		10B0D6452CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */; };
+		10B0D6472CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */; };
+		10B0D64A2CB0697100422E01 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6482CB0696800422E01 /* Connectivity.swift */; };
+		10B0D64B2CB0697100422E01 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6482CB0696800422E01 /* Connectivity.swift */; };
+		10B0D64D2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */; };
+		10B0D64E2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */; };
+		10B0D6502CB06EC200422E01 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64F2CB06EBF00422E01 /* PickerItem.swift */; };
+		10B0D6512CB06EC200422E01 /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D64F2CB06EBF00422E01 /* PickerItem.swift */; };
+		10B0D6532CB06F0300422E01 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6522CB06F0000422E01 /* Date.swift */; };
+		10B0D6552CB06F0300422E01 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6522CB06F0000422E01 /* Date.swift */; };
+		10B0D6592CB06FAD00422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65A2CB06FAD00422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65B2CB06FD400422E01 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6572CB06FAA00422E01 /* Date+String.swift */; };
+		10B0D65D2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */; };
+		10B0D65E2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */; };
+		10B50D752CADD65F00BD8187 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */; };
+		10B50D762CADD65F00BD8187 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D772CADD66000BD8187 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */; };
+		10B50D782CADD66000BD8187 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D792CADD66100BD8187 /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5F2CADD64300BD8187 /* CommunicationManager.xcframework */; };
+		10B50D7A2CADD66200BD8187 /* CommunicationManager.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D5F2CADD64300BD8187 /* CommunicationManager.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D7B2CADD66300BD8187 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D602CADD64300BD8187 /* CryptoTools.xcframework */; };
+		10B50D7C2CADD66300BD8187 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D602CADD64300BD8187 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D7D2CADD66400BD8187 /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D612CADD64300BD8187 /* DIDSDK.xcframework */; };
+		10B50D7E2CADD66400BD8187 /* DIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D612CADD64300BD8187 /* DIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D7F2CADD66B00BD8187 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D622CADD64300BD8187 /* JOSESwift.xcframework */; };
+		10B50D802CADD66B00BD8187 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D622CADD64300BD8187 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D812CADD66D00BD8187 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D632CADD64300BD8187 /* JoseTools.xcframework */; };
+		10B50D822CADD66D00BD8187 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D632CADD64300BD8187 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D832CADD66E00BD8187 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D642CADD64300BD8187 /* libsecp256k1.xcframework */; };
+		10B50D842CADD66E00BD8187 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D642CADD64300BD8187 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D852CADD66F00BD8187 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D652CADD64300BD8187 /* PingOneVerify.xcframework */; };
+		10B50D862CADD66F00BD8187 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D652CADD64300BD8187 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D872CADD67000BD8187 /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D662CADD64300BD8187 /* PingOneWallet.xcframework */; };
+		10B50D882CADD67000BD8187 /* PingOneWallet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D662CADD64300BD8187 /* PingOneWallet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D892CADD67200BD8187 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D672CADD64300BD8187 /* secp256k1Wrapper.xcframework */; };
+		10B50D8A2CADD67200BD8187 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D672CADD64300BD8187 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D8B2CADD67300BD8187 /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D682CADD64300BD8187 /* VoiceSdk.xcframework */; };
+		10B50D8C2CADD67300BD8187 /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10B50D682CADD64300BD8187 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10B50D932CADD94E00BD8187 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D912CADD94E00BD8187 /* WalletView.swift */; };
+		10B50D942CADD94E00BD8187 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D912CADD94E00BD8187 /* WalletView.swift */; };
+		10B50D962CADD96600BD8187 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D952CADD96600BD8187 /* WalletViewModel.swift */; };
+		10B50D982CADD96600BD8187 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D952CADD96600BD8187 /* WalletViewModel.swift */; };
+		10B50D9B2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */; };
+		10B50D9C2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */; };
+		10B50DA02CADDF4200BD8187 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */; };
+		10B50DA12CADDF4200BD8187 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */; };
+		10B50DA42CADDF6700BD8187 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */; };
+		10B50DA52CADDF6700BD8187 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */; };
+		10B50DA92CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */; };
+		10B50DAA2CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */; };
+		10B50DAC2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */; };
+		10B50DAE2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */; };
+		10B50DB02CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */; };
+		10B50DB12CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */; };
+		10B50DB82CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
+		10B50DB92CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
+		10B50DBA2CADEDA900BD8187 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DB72CADEDA000BD8187 /* QRScanner.swift */; };
+		10B50DBC2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */; };
+		10B50DBD2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */; };
+		10B84FA82C88D99E00930B75 /* BXIndustryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B84FA72C88D99E00930B75 /* BXIndustryApp.swift */; };
+		10B84FAC2C88D9A100930B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B84FAB2C88D9A100930B75 /* Assets.xcassets */; };
+		10B84FAF2C88D9A100930B75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B84FAE2C88D9A100930B75 /* Preview Assets.xcassets */; };
 		10CE192D2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */; };
 		10CE192E2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */; };
 		10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */; };
@@ -77,9 +172,28 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				101D0ABE2AE6C7F50038F4C5 /* BlinkID.xcframework in Embed Frameworks */,
-				101D0AC32AE6C7F80038F4C5 /* VoiceSdk.xcframework in Embed Frameworks */,
-				101D0AC12AE6C7F70038F4C5 /* PingOneVerify.xcframework in Embed Frameworks */,
+				10B50D862CADD66F00BD8187 /* PingOneVerify.xcframework in Embed Frameworks */,
+				10B50D882CADD67000BD8187 /* PingOneWallet.xcframework in Embed Frameworks */,
+				10B50D8A2CADD67200BD8187 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
+				10B50D7C2CADD66300BD8187 /* CryptoTools.xcframework in Embed Frameworks */,
+				10B50D822CADD66D00BD8187 /* JoseTools.xcframework in Embed Frameworks */,
+				10B50D842CADD66E00BD8187 /* libsecp256k1.xcframework in Embed Frameworks */,
+				10B50D7E2CADD66400BD8187 /* DIDSDK.xcframework in Embed Frameworks */,
+				10B50D8C2CADD67300BD8187 /* VoiceSdk.xcframework in Embed Frameworks */,
+				10B50D762CADD65F00BD8187 /* AnyCoder.xcframework in Embed Frameworks */,
+				10B50D7A2CADD66200BD8187 /* CommunicationManager.xcframework in Embed Frameworks */,
+				10B50D802CADD66B00BD8187 /* JOSESwift.xcframework in Embed Frameworks */,
+				10B50D782CADD66000BD8187 /* BlinkID.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105FAA2B2C9A262B006BE8BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,13 +222,18 @@
 		10109F552A5F05DB004A60E1 /* BXHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHealthApp.swift; sourceTree = "<group>"; };
 		10109F592A5F05DD004A60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
-		101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneVerify.xcframework; sourceTree = "<group>"; };
-		101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VoiceSdk.xcframework; sourceTree = "<group>"; };
+		102712C62C93661800492869 /* BXIndustryRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXIndustryRootView.swift; sourceTree = "<group>"; };
+		102712CE2C93779E00492869 /* BXIndustryMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXIndustryMainViewModel.swift; sourceTree = "<group>"; };
+		102712D12C93795D00492869 /* BXIndustryConfiguratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXIndustryConfiguratorView.swift; sourceTree = "<group>"; };
+		102712D72C9383DA00492869 /* BXIndustryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXIndustryHomeView.swift; sourceTree = "<group>"; };
 		102C85492A6062AD00C77793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		102C854F2A60742800C77793 /* FinanceRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceRootView.swift; sourceTree = "<group>"; };
 		102C85512A607CD900C77793 /* HealthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRootView.swift; sourceTree = "<group>"; };
-		103654172A6AD0DB0036DB3F /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
+		103654172A6AD0DB0036DB3F /* ProtectClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectClient.swift; sourceTree = "<group>"; };
+		105FAA122C9A1B76006BE8BF /* View+conditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+conditional.swift"; sourceTree = "<group>"; };
+		105FAA2C2C9A26A5006BE8BF /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
+		105FAA302C9A2CC2006BE8BF /* String+asColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+asColor.swift"; sourceTree = "<group>"; };
+		105FAA352C9B1C08006BE8BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1076D2152A5F0F940073ADD2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+BrandConstants.swift"; sourceTree = "<group>"; };
 		1076D21D2A5F184B0073ADD2 /* BXButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXButton.swift; sourceTree = "<group>"; };
@@ -128,6 +247,42 @@
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+asColor.swift"; sourceTree = "<group>"; };
+		10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUiHandler.swift; sourceTree = "<group>"; };
+		10B0D6482CB0696800422E01 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCredentialPicker.swift; sourceTree = "<group>"; };
+		10B0D64F2CB06EBF00422E01 /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
+		10B0D6522CB06F0000422E01 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		10B0D6572CB06FAA00422E01 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromSVG.swift"; sourceTree = "<group>"; };
+		10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
+		10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
+		10B50D5F2CADD64300BD8187 /* CommunicationManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CommunicationManager.xcframework; sourceTree = "<group>"; };
+		10B50D602CADD64300BD8187 /* CryptoTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CryptoTools.xcframework; sourceTree = "<group>"; };
+		10B50D612CADD64300BD8187 /* DIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DIDSDK.xcframework; sourceTree = "<group>"; };
+		10B50D622CADD64300BD8187 /* JOSESwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JOSESwift.xcframework; sourceTree = "<group>"; };
+		10B50D632CADD64300BD8187 /* JoseTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JoseTools.xcframework; sourceTree = "<group>"; };
+		10B50D642CADD64300BD8187 /* libsecp256k1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libsecp256k1.xcframework; sourceTree = "<group>"; };
+		10B50D652CADD64300BD8187 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneVerify.xcframework; sourceTree = "<group>"; };
+		10B50D662CADD64300BD8187 /* PingOneWallet.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneWallet.xcframework; sourceTree = "<group>"; };
+		10B50D672CADD64300BD8187 /* secp256k1Wrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = secp256k1Wrapper.xcframework; sourceTree = "<group>"; };
+		10B50D682CADD64300BD8187 /* VoiceSdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VoiceSdk.xcframework; sourceTree = "<group>"; };
+		10B50D912CADD94E00BD8187 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		10B50D952CADD96600BD8187 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCoordinator.swift; sourceTree = "<group>"; };
+		10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObserver.swift; sourceTree = "<group>"; };
+		10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObserverUtils.swift; sourceTree = "<group>"; };
+		10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneWalletHelper.swift; sourceTree = "<group>"; };
+		10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialPicker.swift; sourceTree = "<group>"; };
+		10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUiCallbackHandler.swift; sourceTree = "<group>"; };
+		10B50DB72CADEDA000BD8187 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateWithWallet.swift; sourceTree = "<group>"; };
+		10B84FA52C88D99E00930B75 /* BXIndustry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXIndustry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10B84FA72C88D99E00930B75 /* BXIndustryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXIndustryApp.swift; sourceTree = "<group>"; };
+		10B84FAB2C88D9A100930B75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10B84FAE2C88D9A100930B75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10B84FB32C88D9B200930B75 /* BXIndustry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXIndustry.entitlements; sourceTree = "<group>"; };
+		10B84FB42C88D9C500930B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dismissKeyboard.swift"; sourceTree = "<group>"; };
 		10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneProtectView.swift; sourceTree = "<group>"; };
 		10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTransparentBackground.swift; sourceTree = "<group>"; };
@@ -138,11 +293,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B50D7B2CADD66300BD8187 /* CryptoTools.xcframework in Frameworks */,
+				10B50D792CADD66100BD8187 /* CommunicationManager.xcframework in Frameworks */,
+				10B50D752CADD65F00BD8187 /* AnyCoder.xcframework in Frameworks */,
+				10B50D8B2CADD67300BD8187 /* VoiceSdk.xcframework in Frameworks */,
 				1076D2422A5F52D80073ADD2 /* PingOneSDK in Frameworks */,
-				101D0AC22AE6C7F80038F4C5 /* VoiceSdk.xcframework in Frameworks */,
+				10B50D852CADD66F00BD8187 /* PingOneVerify.xcframework in Frameworks */,
+				10B50D772CADD66000BD8187 /* BlinkID.xcframework in Frameworks */,
+				10B50D7F2CADD66B00BD8187 /* JOSESwift.xcframework in Frameworks */,
+				10B50D892CADD67200BD8187 /* secp256k1Wrapper.xcframework in Frameworks */,
+				10B50D872CADD67000BD8187 /* PingOneWallet.xcframework in Frameworks */,
+				10B50D832CADD66E00BD8187 /* libsecp256k1.xcframework in Frameworks */,
+				10B50D7D2CADD66400BD8187 /* DIDSDK.xcframework in Frameworks */,
 				10D4133D2A65EC7E00BC8DC4 /* PingOneSignals in Frameworks */,
-				101D0AC02AE6C7F70038F4C5 /* PingOneVerify.xcframework in Frameworks */,
-				101D0ABD2AE6C7F50038F4C5 /* BlinkID.xcframework in Frameworks */,
+				10B50D812CADD66D00BD8187 /* JoseTools.xcframework in Frameworks */,
+				108733992CB98DB60071630C /* SVGKit in Frameworks */,
 				1000FA1C2A60B40400ADB773 /* AppAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +321,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10B84FA22C88D99E00930B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105FAA242C9A261F006BE8BF /* PingOneSignals in Frameworks */,
+				102712D62C937E6F00492869 /* AppAuth in Frameworks */,
+				102712D42C937E6F00492869 /* PingOneSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -164,7 +339,6 @@
 			children = (
 				102C854F2A60742800C77793 /* FinanceRootView.swift */,
 				1000F9F02A60867100ADB773 /* FinanceHomeView.swift */,
-				10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +363,10 @@
 		1000FA312A65928000ADB773 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */,
+				10B0D6482CB0696800422E01 /* Connectivity.swift */,
+				10B0D6522CB06F0000422E01 /* Date.swift */,
+				10B0D65C2CB0700900422E01 /* UIImage+FromSVG.swift */,
 				1000FA2E2A65922E00ADB773 /* UIUtilities.swift */,
 			);
 			path = Utilities;
@@ -197,12 +375,13 @@
 		10109F352A5F0541004A60E1 = {
 			isa = PBXGroup;
 			children = (
+				10B50D5C2CADD60F00BD8187 /* Frameworks */,
 				1076D2322A5F2D8C0073ADD2 /* Localizable.strings */,
 				1076D2142A5F09B20073ADD2 /* Shared */,
 				10109F402A5F0541004A60E1 /* BXFinance */,
 				10109F542A5F05DB004A60E1 /* BXHealth */,
+				10B84FA62C88D99E00930B75 /* BXIndustry */,
 				10109F3F2A5F0541004A60E1 /* Products */,
-				1076D2442A5F52F20073ADD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +390,7 @@
 			children = (
 				10109F3E2A5F0541004A60E1 /* BXFinance.app */,
 				10109F532A5F05DB004A60E1 /* BXHealth.app */,
+				10B84FA52C88D99E00930B75 /* BXIndustry.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,9 +403,7 @@
 				1076D23F2A5F528C0073ADD2 /* Info.plist */,
 				1076D23E2A5F523B0073ADD2 /* BXFinance.entitlements */,
 				10109F412A5F0541004A60E1 /* BXFinanceApp.swift */,
-				103654172A6AD0DB0036DB3F /* NetworkCalls.swift */,
 				1000FA252A61C1CE00ADB773 /* Constants.swift */,
-				100A10862A68610D00E59B99 /* View+defaultBackground.swift */,
 				10109F452A5F0543004A60E1 /* Assets.xcassets */,
 				1076D22E2A5F2C480073ADD2 /* OverrideLocalizable.strings */,
 				10109F472A5F0543004A60E1 /* Preview Content */,
@@ -264,18 +442,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		102712C52C93660100492869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				102712D12C93795D00492869 /* BXIndustryConfiguratorView.swift */,
+				102712C62C93661800492869 /* BXIndustryRootView.swift */,
+				102712D72C9383DA00492869 /* BXIndustryHomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		102712CB2C93772C00492869 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				102712CE2C93779E00492869 /* BXIndustryMainViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1076D2142A5F09B20073ADD2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				1000FA312A65928000ADB773 /* Utilities */,
-				1076D2202A5F22050073ADD2 /* UIComponents */,
 				1076D2192A5F11870073ADD2 /* Extensions */,
 				1076D2482A5F5DC10073ADD2 /* Models */,
+				1076D2202A5F22050073ADD2 /* UIComponents */,
+				1000FA312A65928000ADB773 /* Utilities */,
 				1076D2182A5F117D0073ADD2 /* Views */,
+				10B50D992CADDE9900BD8187 /* Wallet */,
 				102C85492A6062AD00C77793 /* AppDelegate.swift */,
-				1000FA122A60A37500ADB773 /* VerifyClient.swift */,
+				10B50DBB2CADF80C00BD8187 /* AppDelegateWithWallet.swift */,
 				1000FA1D2A61BDA200ADB773 /* DevicePairingClient.swift */,
 				1000FA2B2A61CDE600ADB773 /* OidcConstants.swift */,
+				105FAA2C2C9A26A5006BE8BF /* SharedConstants.swift */,
+				103654172A6AD0DB0036DB3F /* ProtectClient.swift */,
+				1000FA122A60A37500ADB773 /* VerifyClient.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -283,9 +483,11 @@
 		1076D2182A5F117D0073ADD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1076D2152A5F0F940073ADD2 /* WelcomeView.swift */,
 				1000FA032A6096D900ADB773 /* AddDeviceView.swift */,
+				10D413422A66E05700BC8DC4 /* PingOneProtectView.swift */,
 				10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */,
+				10B50D912CADD94E00BD8187 /* WalletView.swift */,
+				1076D2152A5F0F940073ADD2 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,9 +496,14 @@
 			isa = PBXGroup;
 			children = (
 				1076D21A2A5F11A10073ADD2 /* Color+BrandConstants.swift */,
+				10B0D6572CB06FAA00422E01 /* Date+String.swift */,
 				1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */,
+				105FAA302C9A2CC2006BE8BF /* String+asColor.swift */,
 				1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */,
+				105FAA122C9A1B76006BE8BF /* View+conditional.swift */,
+				100A10862A68610D00E59B99 /* View+defaultBackground.swift */,
 				10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */,
+				10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,29 +511,86 @@
 		1076D2202A5F22050073ADD2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				10B50DB72CADEDA000BD8187 /* QRScanner.swift */,
 				1076D21D2A5F184B0073ADD2 /* BXButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		1076D2442A5F52F20073ADD2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				101D0AB52AE6C5740038F4C5 /* BlinkID.xcframework */,
-				101D0AB62AE6C57E0038F4C5 /* PingOneVerify.xcframework */,
-				101D0AB72AE6C57F0038F4C5 /* VoiceSdk.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1076D2482A5F5DC10073ADD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */,
 				1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */,
 				1000FA182A60B25F00ADB773 /* VerifyViewModel.swift */,
-				1000FA202A61BDF000ADB773 /* AddDeviceViewModel.swift */,
+				10B50D952CADD96600BD8187 /* WalletViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		10B50D5C2CADD60F00BD8187 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10B50D5D2CADD64300BD8187 /* AnyCoder.xcframework */,
+				10B50D5E2CADD64300BD8187 /* BlinkID.xcframework */,
+				10B50D5F2CADD64300BD8187 /* CommunicationManager.xcframework */,
+				10B50D602CADD64300BD8187 /* CryptoTools.xcframework */,
+				10B50D612CADD64300BD8187 /* DIDSDK.xcframework */,
+				10B50D622CADD64300BD8187 /* JOSESwift.xcframework */,
+				10B50D632CADD64300BD8187 /* JoseTools.xcframework */,
+				10B50D642CADD64300BD8187 /* libsecp256k1.xcframework */,
+				10B50D652CADD64300BD8187 /* PingOneVerify.xcframework */,
+				10B50D662CADD64300BD8187 /* PingOneWallet.xcframework */,
+				10B50D672CADD64300BD8187 /* secp256k1Wrapper.xcframework */,
+				10B50D682CADD64300BD8187 /* VoiceSdk.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		10B50D992CADDE9900BD8187 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				10B50D9E2CADDF2500BD8187 /* observer */,
+				10B50DAF2CADE00800BD8187 /* ApplicationUiCallbackHandler.swift */,
+				10B50DAB2CADDFC900BD8187 /* CredentialPicker.swift */,
+				10B0D64C2CB06E7800422E01 /* DefaultCredentialPicker.swift */,
+				10B0D64F2CB06EBF00422E01 /* PickerItem.swift */,
+				10B50DA72CADDF9900BD8187 /* PingOneWalletHelper.swift */,
+				10B50D9A2CADDEE000BD8187 /* WalletCoordinator.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		10B50D9E2CADDF2500BD8187 /* observer */ = {
+			isa = PBXGroup;
+			children = (
+				10B50D9F2CADDF3D00BD8187 /* EventObserver.swift */,
+				10B50DA32CADDF6000BD8187 /* EventObserverUtils.swift */,
+			);
+			path = observer;
+			sourceTree = "<group>";
+		};
+		10B84FA62C88D99E00930B75 /* BXIndustry */ = {
+			isa = PBXGroup;
+			children = (
+				102712CB2C93772C00492869 /* Models */,
+				102712C52C93660100492869 /* Views */,
+				10B84FB42C88D9C500930B75 /* Info.plist */,
+				10B84FB32C88D9B200930B75 /* BXIndustry.entitlements */,
+				10B84FA72C88D99E00930B75 /* BXIndustryApp.swift */,
+				105FAA352C9B1C08006BE8BF /* Constants.swift */,
+				10B84FAB2C88D9A100930B75 /* Assets.xcassets */,
+				10B84FAD2C88D9A100930B75 /* Preview Content */,
+			);
+			path = BXIndustry;
+			sourceTree = "<group>";
+		};
+		10B84FAD2C88D9A100930B75 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				10B84FAE2C88D9A100930B75 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +614,7 @@
 				1076D2412A5F52D80073ADD2 /* PingOneSDK */,
 				1000FA1B2A60B40400ADB773 /* AppAuth */,
 				10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */,
+				108733982CB98DB60071630C /* SVGKit */,
 			);
 			productName = BXFinance;
 			productReference = 10109F3E2A5F0541004A60E1 /* BXFinance.app */;
@@ -376,6 +641,29 @@
 			productReference = 10109F532A5F05DB004A60E1 /* BXHealth.app */;
 			productType = "com.apple.product-type.application";
 		};
+		10B84FA42C88D99E00930B75 /* BXIndustry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10B84FB22C88D9A100930B75 /* Build configuration list for PBXNativeTarget "BXIndustry" */;
+			buildPhases = (
+				10B84FA12C88D99E00930B75 /* Sources */,
+				10B84FA22C88D99E00930B75 /* Frameworks */,
+				10B84FA32C88D99E00930B75 /* Resources */,
+				105FAA2B2C9A262B006BE8BF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BXIndustry;
+			packageProductDependencies = (
+				102712D32C937E6F00492869 /* PingOneSDK */,
+				102712D52C937E6F00492869 /* AppAuth */,
+				105FAA232C9A261F006BE8BF /* PingOneSignals */,
+			);
+			productName = BXIndustry;
+			productReference = 10B84FA52C88D99E00930B75 /* BXIndustry.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -383,14 +671,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					10109F3D2A5F0541004A60E1 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					10109F522A5F05DB004A60E1 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					10B84FA42C88D99E00930B75 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -407,6 +698,7 @@
 				1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */,
 				1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
 				10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */,
+				108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -414,6 +706,7 @@
 			targets = (
 				10109F3D2A5F0541004A60E1 /* BXFinance */,
 				10109F522A5F05DB004A60E1 /* BXHealth */,
+				10B84FA42C88D99E00930B75 /* BXIndustry */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +734,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10B84FA32C88D99E00930B75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10B84FAF2C88D9A100930B75 /* Preview Assets.xcassets in Resources */,
+				10B84FAC2C88D9A100930B75 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -449,29 +751,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				1000FA262A61C1CE00ADB773 /* Constants.swift in Sources */,
+				10B50DAA2CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */,
+				10B50D9C2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */,
 				102C854A2A6062AD00C77793 /* AppDelegate.swift in Sources */,
 				1000FA2C2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
-				103654182A6AD0DB0036DB3F /* NetworkCalls.swift in Sources */,
+				10B50DA42CADDF6700BD8187 /* EventObserverUtils.swift in Sources */,
+				10B50DBC2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */,
+				103654182A6AD0DB0036DB3F /* ProtectClient.swift in Sources */,
 				1000FA132A60A37500ADB773 /* VerifyClient.swift in Sources */,
+				10B0D65D2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */,
 				100A10872A68610D00E59B99 /* View+defaultBackground.swift in Sources */,
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
+				10B0D64B2CB0697100422E01 /* Connectivity.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
 				10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
 				1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
+				10B0D64E2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */,
+				10B0D6532CB06F0300422E01 /* Date.swift in Sources */,
+				10B50D942CADD94E00BD8187 /* WalletView.swift in Sources */,
+				105FAA2D2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
 				10D413432A66E05700BC8DC4 /* PingOneProtectView.swift in Sources */,
+				10B50DAE2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */,
 				1000FA042A6096D900ADB773 /* AddDeviceView.swift in Sources */,
+				10B50DB12CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */,
+				105FAA392C9B7E84006BE8BF /* Array+asColor.swift in Sources */,
 				1000FA162A60A4D400ADB773 /* FinanceHomeViewModel.swift in Sources */,
 				1076D23C2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
 				10CE192D2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */,
+				10B0D6502CB06EC200422E01 /* PickerItem.swift in Sources */,
 				1000FA192A60B25F00ADB773 /* VerifyViewModel.swift in Sources */,
+				10B0D6472CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */,
 				1000FA2F2A65922E00ADB773 /* UIUtilities.swift in Sources */,
 				102C85502A60742800C77793 /* FinanceRootView.swift in Sources */,
+				10B50DA02CADDF4200BD8187 /* EventObserver.swift in Sources */,
 				1000FA1E2A61BDA200ADB773 /* DevicePairingClient.swift in Sources */,
 				1000F9F12A60867100ADB773 /* FinanceHomeView.swift in Sources */,
 				10109F422A5F0541004A60E1 /* BXFinanceApp.swift in Sources */,
+				105FAA132C9A1B76006BE8BF /* View+conditional.swift in Sources */,
+				10B50D962CADD96600BD8187 /* WalletViewModel.swift in Sources */,
+				10B0D6592CB06FAD00422E01 /* Date+String.swift in Sources */,
 				1076D21E2A5F184B0073ADD2 /* BXButton.swift in Sources */,
+				105FAA312C9A2CC2006BE8BF /* String+asColor.swift in Sources */,
+				10B50DB82CADEDA900BD8187 /* QRScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,11 +802,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B0D65B2CB06FD400422E01 /* Date+String.swift in Sources */,
 				1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */,
 				1076D2172A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				1076D21C2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
 				10D413472A67242600BC8DC4 /* AddDeviceViewModel.swift in Sources */,
 				10CE192E2A70381100B52F49 /* View+dismissKeyboard.swift in Sources */,
+				105FAA322C9A2CC2006BE8BF /* String+asColor.swift in Sources */,
 				1000F9E72A6080EA00ADB773 /* AppDelegate.swift in Sources */,
 				1000FA2A2A61C3AA00ADB773 /* Constants.swift in Sources */,
 				1000FA302A65922E00ADB773 /* UIUtilities.swift in Sources */,
@@ -491,12 +816,67 @@
 				1000FA052A6096D900ADB773 /* AddDeviceView.swift in Sources */,
 				102C85522A607CD900C77793 /* HealthRootView.swift in Sources */,
 				1000FA1F2A61BDC000ADB773 /* DevicePairingClient.swift in Sources */,
+				105FAA3A2C9B7E86006BE8BF /* Array+asColor.swift in Sources */,
 				1000FA2D2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D23D2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
+				10B50DB92CADEDA900BD8187 /* QRScanner.swift in Sources */,
 				1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */,
+				105FAA2E2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
+				105FAA142C9A1B76006BE8BF /* View+conditional.swift in Sources */,
 				1076D21F2A5F184B0073ADD2 /* BXButton.swift in Sources */,
 				10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10B84FA12C88D99E00930B75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105FAA162C9A2173006BE8BF /* String+LocalizedForApp.swift in Sources */,
+				102712D02C9377FE00492869 /* MainViewModel.swift in Sources */,
+				102712CA2C9366BA00492869 /* OidcConstants.swift in Sources */,
+				10B50D932CADD94E00BD8187 /* WalletView.swift in Sources */,
+				10A0FDB12C98BD09000E2E12 /* Array+asColor.swift in Sources */,
+				10B50DBA2CADEDA900BD8187 /* QRScanner.swift in Sources */,
+				10B0D64D2CB06E7E00422E01 /* DefaultCredentialPicker.swift in Sources */,
+				105FAA1F2C9A2361006BE8BF /* View+dismissKeyboard.swift in Sources */,
+				102712CF2C93779E00492869 /* BXIndustryMainViewModel.swift in Sources */,
+				10B0D64A2CB0697100422E01 /* Connectivity.swift in Sources */,
+				105FAA212C9A237E006BE8BF /* TabViewTransparentBackground.swift in Sources */,
+				10B50DAC2CADDFCE00BD8187 /* CredentialPicker.swift in Sources */,
+				105FAA222C9A255F006BE8BF /* PingOneProtectView.swift in Sources */,
+				105FAA1D2C9A234F006BE8BF /* VerifyViewModel.swift in Sources */,
+				10B50DB02CADE01000BD8187 /* ApplicationUiCallbackHandler.swift in Sources */,
+				10B0D6452CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */,
+				105FAA182C9A22F0006BE8BF /* BXButton.swift in Sources */,
+				105FAA192C9A2301006BE8BF /* UIUtilities.swift in Sources */,
+				105FAA2F2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
+				102712C82C9366B500492869 /* AppDelegate.swift in Sources */,
+				10B50DBD2CADF81500BD8187 /* AppDelegateWithWallet.swift in Sources */,
+				10B50DA52CADDF6700BD8187 /* EventObserverUtils.swift in Sources */,
+				102712C92C9366B700492869 /* DevicePairingClient.swift in Sources */,
+				10B50DA12CADDF4200BD8187 /* EventObserver.swift in Sources */,
+				10B0D65E2CB0701000422E01 /* UIImage+FromSVG.swift in Sources */,
+				105FAA1E2C9A2353006BE8BF /* AddDeviceViewModel.swift in Sources */,
+				102712C72C93661800492869 /* BXIndustryRootView.swift in Sources */,
+				105FAA172C9A22E2006BE8BF /* AddDeviceView.swift in Sources */,
+				10B0D6512CB06EC200422E01 /* PickerItem.swift in Sources */,
+				10A0FDAC2C989645000E2E12 /* View+defaultBackground.swift in Sources */,
+				105FAA332C9A2CC2006BE8BF /* String+asColor.swift in Sources */,
+				102712D22C93795D00492869 /* BXIndustryConfiguratorView.swift in Sources */,
+				102712D82C9383DA00492869 /* BXIndustryHomeView.swift in Sources */,
+				10B50DA92CADDF9F00BD8187 /* PingOneWalletHelper.swift in Sources */,
+				10B84FA82C88D99E00930B75 /* BXIndustryApp.swift in Sources */,
+				105FAA1C2C9A2349006BE8BF /* VerifyClient.swift in Sources */,
+				105FAA1A2C9A231E006BE8BF /* Color+BrandConstants.swift in Sources */,
+				105FAA1B2C9A2346006BE8BF /* ProtectClient.swift in Sources */,
+				10B0D6552CB06F0300422E01 /* Date.swift in Sources */,
+				10B0D65A2CB06FAD00422E01 /* Date+String.swift in Sources */,
+				105FAA152C9A1B76006BE8BF /* View+conditional.swift in Sources */,
+				105FAA382C9B1C08006BE8BF /* Constants.swift in Sources */,
+				10B50D982CADD96600BD8187 /* WalletViewModel.swift in Sources */,
+				10B50D9B2CADDEE500BD8187 /* WalletCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +906,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -587,6 +968,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -645,7 +1027,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -663,7 +1045,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.7;
+				MARKETING_VERSION = 3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -679,7 +1061,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -697,7 +1079,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.7;
+				MARKETING_VERSION = 3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -772,6 +1154,83 @@
 			};
 			name = Release;
 		};
+		10B84FB02C88D9A100930B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BXIndustry/BXIndustry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BXIndustry/Preview Content\"";
+				DEVELOPMENT_TEAM = YZYUGL7S48;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXIndustry/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BXIndustry;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxindustry.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10B84FB12C88D9A100930B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BXIndustry/BXIndustry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BXIndustry/Preview Content\"";
+				DEVELOPMENT_TEAM = YZYUGL7S48;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXIndustry/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BXIndustry;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxindustry.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -802,6 +1261,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		10B84FB22C88D9A100930B75 /* Build configuration list for PBXNativeTarget "BXIndustry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10B84FB02C88D9A100930B75 /* Debug */,
+				10B84FB12C88D9A100930B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -821,6 +1289,14 @@
 				kind = branch;
 			};
 		};
+		108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bhavyachauhan-ping/SVGKit/";
+			requirement = {
+				branch = 3.x_bk;
+				kind = branch;
+			};
+		};
 		10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pingidentity/pingone-signals-sdk-ios";
@@ -837,6 +1313,21 @@
 			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
 			productName = AppAuth;
 		};
+		102712D32C937E6F00492869 /* PingOneSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
+			productName = PingOneSDK;
+		};
+		102712D52C937E6F00492869 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+		105FAA232C9A261F006BE8BF /* PingOneSignals */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */;
+			productName = PingOneSignals;
+		};
 		1076D2412A5F52D80073ADD2 /* PingOneSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
@@ -846,6 +1337,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
 			productName = PingOneSDK;
+		};
+		108733982CB98DB60071630C /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
 		};
 		10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */ = {
 			isa = XCSwiftPackageProductDependency;

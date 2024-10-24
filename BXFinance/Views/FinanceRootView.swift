@@ -30,7 +30,7 @@ struct FinanceRootView: View {
             
             Spacer().frame(height: 50)
         }
-        .defaultBackground()
+        .colorBackground(color: Color.secondaryColor)
         .animation(.default, value: model.currentRoute)
         .alert("Authorize Request".localizedForApp(), isPresented: $model.displayAuthenticationAlert) {
             Button("Approve".localizedForApp()) {

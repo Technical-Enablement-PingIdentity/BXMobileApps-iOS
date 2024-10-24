@@ -5,7 +5,11 @@
 	<key>aps-environment</key>
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
-	<array/>
+	<array>
+		<string>applinks:bxfinance-qa-api.ping-devops.com</string>
+		<string>applinks:api.bxfinance.org</string>
+		<string>applinks:bxfinance-oct-ea2-api.ping-devops.com</string>
+	</array>
 	<key>com.apple.developer.usernotifications.time-sensitive</key>
 	<true/>
 </dict>

@@ -14,11 +14,7 @@ struct FinanceHomeView: View {
     
     @ObservedObject private var homeModel: FinanceHomeViewModel
     
-    @State var selectedTab = "home"
-    @State var lastActiveTab = "home"
-    
     init() {
-        
         let model = FinanceHomeViewModel.shared
         homeModel = model
 
@@ -29,17 +25,11 @@ struct FinanceHomeView: View {
     
     var body: some View {
         Group {
-            TabView(selection: $selectedTab) {
+            TabView(selection: $homeModel.selectedTab) {
                 VStack {
                     AddDeviceView(issuer: K.issuer, redirectUri: K.redirectUri, clientId: K.clientId)
-                        .padding(.top, 36)
-                        .padding(.bottom, 12)
-                    BXButton(text: "Verify Your Identity".localizedForApp()) {
-                        verifyClient.launchVerify()
-                    }
-                    Spacer()
                 }
-                .defaultBackground()
+                .colorBackground(color: Color.secondaryColor)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -47,9 +37,31 @@ struct FinanceHomeView: View {
                 .tag("home")
                 
                 VStack {
-                    PingOneProtectView(homeModel: homeModel)
+                    BXButton(text: "Verify Your Identity".localizedForApp()) {
+                        verifyClient.launchVerify()
+                    }
                 }
-                .defaultBackground()
+                .colorBackground(color: Color.secondaryColor)
+                .tabItem {
+                    Image(systemName: "person.badge.shield.checkmark.fill")
+                    Text("Verify")
+                }
+                .tag("verify")
+                
+                VStack {
+                    WalletView()
+                }
+                .colorBackground(color: Color.secondaryColor)
+                .tabItem {
+                    Image(systemName: "wallet.bifold.fill")
+                    Text("Wallet")
+                }
+                .tag("wallet")
+                
+                VStack {
+                    PingOneProtectView(apiBaseUrl: K.apiBaseUrl)
+                }
+                .colorBackground(color: Color.secondaryColor)
                 .tabItem {
                     Image(systemName: "lock.shield")
                     Text("Protect")
@@ -59,32 +71,12 @@ struct FinanceHomeView: View {
                 VStack {
                     Text("Nothing to see here")
                 }
-                .defaultBackground()
+                .colorBackground(color: Color.secondaryColor)
                 .tabItem {
                     Image(systemName: "building.columns")
                     Text("Accounts")
                 }
                 .tag("accounts")
-                
-                VStack {
-                    Text("Nothing to see here")
-                }
-                .defaultBackground()
-                .tabItem {
-                    Image(systemName: "creditcard")
-                    Text("Loans")
-                }
-                .tag("loans")
-                
-                VStack {
-                    Text("Nothing to see here")
-                }
-                .defaultBackground()
-                .tabItem {
-                    Image(systemName: "chart.line.uptrend.xyaxis")
-                    Text("Investments")
-                }
-                .tag("investments")
             }
             .onAppear() {
                 let tabBarAppearance = UITabBarAppearance()
@@ -94,15 +86,6 @@ struct FinanceHomeView: View {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
             .accentColor(Color.white)
-            .onChange(of: selectedTab) { newValue in
-                let activeTabs = ["home", "protect"]
-                if activeTabs.contains(newValue) {
-                    selectedTab = newValue
-                    lastActiveTab = newValue
-                } else {
-                    selectedTab = lastActiveTab
-                }
-            }
         }
         .alert("Client Builder Error".localizedForApp(), isPresented: $homeModel.displayClientBuilderErrorAlert, actions: {
             Button("Okay") {
@@ -118,6 +101,9 @@ struct FinanceHomeView: View {
         }, message: {
             Text("All documents\(self.homeModel.documentSubmissionNameResult != nil ? " for " + self.homeModel.documentSubmissionNameResult! : "") have been submitted and verification has successfully completed.")
         })
+        .onChange(of: homeModel.selectedTab) { newValue in
+            homeModel.switchToTab(newValue)
+        }
     }
 }
 

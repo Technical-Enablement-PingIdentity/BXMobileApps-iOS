@@ -17,6 +17,4 @@ struct K {
     static let pingOneEnvId = "6c77a243-4622-4c89-a0ca-5905fb4eb3f4"
     
     static let apiBaseUrl = "https://api.bxfinance.org"
-    
-    static let ipAddressApiUrl = "https://api.ipify.org?format=json"
 }

@@ -53,7 +53,7 @@ struct FinanceHomeView: View {
                 }
                 .colorBackground(color: Color.secondaryColor)
                 .tabItem {
-                    Image(systemName: "wallet.bifold.fill")
+                    Image(systemName: "wallet.pass.fill")
                     Text("Wallet")
                 }
                 .tag("wallet")

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,8 @@
 		102C85502A60742800C77793 /* FinanceRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C854F2A60742800C77793 /* FinanceRootView.swift */; };
 		102C85522A607CD900C77793 /* HealthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C85512A607CD900C77793 /* HealthRootView.swift */; };
 		103654182A6AD0DB0036DB3F /* ProtectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103654172A6AD0DB0036DB3F /* ProtectClient.swift */; };
+		105979682D078953009A7610 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 105979672D078953009A7610 /* SwiftyJSON */; };
+		1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 1059796E2D08ABD6009A7610 /* PingOneSignals */; };
 		105FAA132C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
 		105FAA142C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
 		105FAA152C9A1B76006BE8BF /* View+conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FAA122C9A1B76006BE8BF /* View+conditional.swift */; };
@@ -90,6 +92,12 @@
 		1076D24A2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		1076D24B2A5F5E0C0073ADD2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */; };
 		108733992CB98DB60071630C /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 108733982CB98DB60071630C /* SVGKit */; };
+		108733C92CCC48A80071630C /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 108733C82CCC48A80071630C /* AppAuth */; };
+		108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 108733CA2CCC48B00071630C /* PingOneSDK */; };
+		109FB3142D0B60AB003A6C5C /* String+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FB3132D0B60A7003A6C5C /* String+random.swift */; };
+		109FB3152D0B60AB003A6C5C /* String+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FB3132D0B60A7003A6C5C /* String+random.swift */; };
+		109FB3162D0B60AB003A6C5C /* String+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FB3132D0B60A7003A6C5C /* String+random.swift */; };
+		109FB3172D0B6119003A6C5C /* String+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FB3132D0B60A7003A6C5C /* String+random.swift */; };
 		10A0FDAC2C989645000E2E12 /* View+defaultBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A10862A68610D00E59B99 /* View+defaultBackground.swift */; };
 		10A0FDB12C98BD09000E2E12 /* Array+asColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */; };
 		10B0D6452CB05B6000422E01 /* ApplicationUiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */; };
@@ -247,6 +255,8 @@
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		1076D2492A5F5E0C0073ADD2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		108733A02CCC2F730071630C /* BXFinanceNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXFinanceNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		109FB3132D0B60A7003A6C5C /* String+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+random.swift"; sourceTree = "<group>"; };
 		10A0FDAE2C98BC9C000E2E12 /* Array+asColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+asColor.swift"; sourceTree = "<group>"; };
 		10B0D6442CB05B5600422E01 /* ApplicationUiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUiHandler.swift; sourceTree = "<group>"; };
 		10B0D6482CB0696800422E01 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
@@ -288,6 +298,20 @@
 		10D413442A66EC2500BC8DC4 /* TabViewTransparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTransparentBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		108733C72CCC44720071630C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1087339F2CCC2F730071630C /* BXFinanceNew */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		108733A12CCC2F730071630C /* BXFinanceNew */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (108733C72CCC44720071630C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BXFinanceNew; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		10109F3B2A5F0541004A60E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -318,6 +342,17 @@
 			files = (
 				10D4133F2A65ECA000BC8DC4 /* AppAuth in Frameworks */,
 				1076D2462A5F52F20073ADD2 /* PingOneSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1087339D2CCC2F730071630C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105979682D078953009A7610 /* SwiftyJSON in Frameworks */,
+				108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */,
+				108733C92CCC48A80071630C /* AppAuth in Frameworks */,
+				1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +414,7 @@
 				1076D2322A5F2D8C0073ADD2 /* Localizable.strings */,
 				1076D2142A5F09B20073ADD2 /* Shared */,
 				10109F402A5F0541004A60E1 /* BXFinance */,
+				108733A12CCC2F730071630C /* BXFinanceNew */,
 				10109F542A5F05DB004A60E1 /* BXHealth */,
 				10B84FA62C88D99E00930B75 /* BXIndustry */,
 				10109F3F2A5F0541004A60E1 /* Products */,
@@ -391,6 +427,7 @@
 				10109F3E2A5F0541004A60E1 /* BXFinance.app */,
 				10109F532A5F05DB004A60E1 /* BXHealth.app */,
 				10B84FA52C88D99E00930B75 /* BXIndustry.app */,
+				108733A02CCC2F730071630C /* BXFinanceNew.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -500,6 +537,7 @@
 				1076D2352A5F2DC70073ADD2 /* String+LocalizedForApp.swift */,
 				105FAA302C9A2CC2006BE8BF /* String+asColor.swift */,
 				1076D23B2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift */,
+				109FB3132D0B60A7003A6C5C /* String+random.swift */,
 				105FAA122C9A1B76006BE8BF /* View+conditional.swift */,
 				100A10862A68610D00E59B99 /* View+defaultBackground.swift */,
 				10CE192C2A70381100B52F49 /* View+dismissKeyboard.swift */,
@@ -641,6 +679,32 @@
 			productReference = 10109F532A5F05DB004A60E1 /* BXHealth.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1087339F2CCC2F730071630C /* BXFinanceNew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 108733AB2CCC2F740071630C /* Build configuration list for PBXNativeTarget "BXFinanceNew" */;
+			buildPhases = (
+				1087339C2CCC2F730071630C /* Sources */,
+				1087339D2CCC2F730071630C /* Frameworks */,
+				1087339E2CCC2F730071630C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				108733A12CCC2F730071630C /* BXFinanceNew */,
+			);
+			name = BXFinanceNew;
+			packageProductDependencies = (
+				108733C82CCC48A80071630C /* AppAuth */,
+				108733CA2CCC48B00071630C /* PingOneSDK */,
+				105979672D078953009A7610 /* SwiftyJSON */,
+				1059796E2D08ABD6009A7610 /* PingOneSignals */,
+			);
+			productName = BXFinanceNew;
+			productReference = 108733A02CCC2F730071630C /* BXFinanceNew.app */;
+			productType = "com.apple.product-type.application";
+		};
 		10B84FA42C88D99E00930B75 /* BXIndustry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10B84FB22C88D9A100930B75 /* Build configuration list for PBXNativeTarget "BXIndustry" */;
@@ -671,7 +735,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					10109F3D2A5F0541004A60E1 = {
@@ -679,6 +743,9 @@
 					};
 					10109F522A5F05DB004A60E1 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					1087339F2CCC2F730071630C = {
+						CreatedOnToolsVersion = 16.0;
 					};
 					10B84FA42C88D99E00930B75 = {
 						CreatedOnToolsVersion = 15.4;
@@ -699,6 +766,7 @@
 				1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
 				10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */,
 				108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */,
+				105979662D078953009A7610 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -707,6 +775,7 @@
 				10109F3D2A5F0541004A60E1 /* BXFinance */,
 				10109F522A5F05DB004A60E1 /* BXHealth */,
 				10B84FA42C88D99E00930B75 /* BXIndustry */,
+				1087339F2CCC2F730071630C /* BXFinanceNew */,
 			);
 		};
 /* End PBXProject section */
@@ -731,6 +800,13 @@
 				1076D2342A5F2D8C0073ADD2 /* Localizable.strings in Resources */,
 				1076D22F2A5F2C4F0073ADD2 /* OverrideLocalizable.strings in Resources */,
 				10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1087339E2CCC2F730071630C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +841,7 @@
 				1076D2162A5F0F940073ADD2 /* WelcomeView.swift in Sources */,
 				10B0D64B2CB0697100422E01 /* Connectivity.swift in Sources */,
 				1076D21B2A5F11A10073ADD2 /* Color+BrandConstants.swift in Sources */,
+				109FB3152D0B60AB003A6C5C /* String+random.swift in Sources */,
 				1000FA212A61BDF000ADB773 /* AddDeviceViewModel.swift in Sources */,
 				10D413452A66EC2500BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
 				1076D2362A5F2DC70073ADD2 /* String+LocalizedForApp.swift in Sources */,
@@ -820,12 +897,21 @@
 				1000FA2D2A61CDE600ADB773 /* OidcConstants.swift in Sources */,
 				1076D23D2A5F51210073ADD2 /* WelcomeView+RegisterNotifications.swift in Sources */,
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
+				109FB3162D0B60AB003A6C5C /* String+random.swift in Sources */,
 				10B50DB92CADEDA900BD8187 /* QRScanner.swift in Sources */,
 				1000F9EF2A60862B00ADB773 /* HealthHomeView.swift in Sources */,
 				105FAA2E2C9A26A5006BE8BF /* SharedConstants.swift in Sources */,
 				105FAA142C9A1B76006BE8BF /* View+conditional.swift in Sources */,
 				1076D21F2A5F184B0073ADD2 /* BXButton.swift in Sources */,
 				10D413462A66EC2F00BC8DC4 /* TabViewTransparentBackground.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1087339C2CCC2F730071630C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				109FB3172D0B6119003A6C5C /* String+random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +957,7 @@
 				105FAA1C2C9A2349006BE8BF /* VerifyClient.swift in Sources */,
 				105FAA1A2C9A231E006BE8BF /* Color+BrandConstants.swift in Sources */,
 				105FAA1B2C9A2346006BE8BF /* ProtectClient.swift in Sources */,
+				109FB3142D0B60AB003A6C5C /* String+random.swift in Sources */,
 				10B0D6552CB06F0300422E01 /* Date.swift in Sources */,
 				10B0D65A2CB06FAD00422E01 /* Date+String.swift in Sources */,
 				105FAA152C9A1B76006BE8BF /* View+conditional.swift in Sources */,
@@ -1154,6 +1241,87 @@
 			};
 			name = Release;
 		};
+		108733AC2CCC2F740071630C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXFinanceNew/BXFinanceNew.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 40;
+				DEVELOPMENT_ASSET_PATHS = "\"BXFinanceNew/Preview Content\"";
+				DEVELOPMENT_TEAM = YZYUGL7S48;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXFinanceNew/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		108733AD2CCC2F740071630C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXFinanceNew/BXFinanceNew.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 40;
+				DEVELOPMENT_ASSET_PATHS = "\"BXFinanceNew/Preview Content\"";
+				DEVELOPMENT_TEAM = YZYUGL7S48;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXFinanceNew/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		10B84FB02C88D9A100930B75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1261,6 +1429,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		108733AB2CCC2F740071630C /* Build configuration list for PBXNativeTarget "BXFinanceNew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				108733AC2CCC2F740071630C /* Debug */,
+				108733AD2CCC2F740071630C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		10B84FB22C88D9A100930B75 /* Build configuration list for PBXNativeTarget "BXIndustry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1279,6 +1456,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		105979662D078953009A7610 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
 			};
 		};
 		1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */ = {
@@ -1323,6 +1508,16 @@
 			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
 			productName = AppAuth;
 		};
+		105979672D078953009A7610 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 105979662D078953009A7610 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		1059796E2D08ABD6009A7610 /* PingOneSignals */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */;
+			productName = PingOneSignals;
+		};
 		105FAA232C9A261F006BE8BF /* PingOneSignals */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */;
@@ -1342,6 +1537,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKit;
+		};
+		108733C82CCC48A80071630C /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1000FA1A2A60B40400ADB773 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+		108733CA2CCC48B00071630C /* PingOneSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
+			productName = PingOneSDK;
 		};
 		10D4133C2A65EC7E00BC8DC4 /* PingOneSignals */ = {
 			isa = XCSwiftPackageProductDependency;

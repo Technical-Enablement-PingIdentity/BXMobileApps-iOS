@@ -10,8 +10,10 @@ import PingOneSignals
 
 @MainActor
 class LoginViewModel: ObservableObject {
-    private var loginCompleteCallback: ((String, String) -> Void)
+    
     private var pingFedAuthClient: PingFedAuthnClient
+    
+    var loginCompleteCallback: ((String, String) -> Void)?
     
     @Published var loginStep: LoginStep = .unknown
     @Published var username: String?
@@ -19,12 +21,12 @@ class LoginViewModel: ObservableObject {
     @Published var fatalErrorMessage: String?
     @Published var processingPingFedCall = true
     
-    init(pingFedBaseUrl: String, loginCompleteCallback: @escaping (String, String) -> Void) {
+    init(pingFedBaseUrl: String) {
         pingFedAuthClient = PingFedAuthnClient(appUrl: pingFedBaseUrl)
-        self.loginCompleteCallback = loginCompleteCallback
     }
     
-    func startAuthentication() async throws {
+    func startAuthentication(loginCompleteHandler: @escaping (String, String) -> Void) async throws {
+        self.loginCompleteCallback = loginCompleteHandler
         processingPingFedCall = true
         defer { processingPingFedCall = false }
         
@@ -49,7 +51,7 @@ class LoginViewModel: ObservableObject {
                 try await submitDeviceProfile()
             } else if loginStep == .failed {
                 validationMessage = "User not found, please ensure you have entered a valid username"
-                try await startAuthentication()
+                try await startAuthentication(loginCompleteHandler: self.loginCompleteCallback!)
             } else {
                 self.username = pingFedAuthClient.storedUsername
             }
@@ -64,7 +66,7 @@ class LoginViewModel: ObservableObject {
         defer { processingPingFedCall = false }
         
         do {
-            let signalsData = try await getSignalsData()
+            let signalsData = try await ProtectClient.getSignalsData()
             let validationMessage = try await pingFedAuthClient.submitPassword(password: password, signalsData: signalsData)
             
             if validationMessage != nil {
@@ -94,7 +96,7 @@ class LoginViewModel: ObservableObject {
         defer { processingPingFedCall = false }
         
         do {
-            let signalsData = try await getSignalsData()
+            let signalsData = try await ProtectClient.getSignalsData()
             try await pingFedAuthClient.submitDeviceProfile(signalsData: signalsData)
             setLoginStep()
             checkIfCompleted()
@@ -111,31 +113,13 @@ class LoginViewModel: ObservableObject {
                 return
             }
             
-            loginCompleteCallback(accessToken, pingFedAuthClient.idToken ?? "")
-        }
-    }
-    
-    private func getSignalsData() async throws -> String {
-        return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<String, Error>) in
-            guard let signals = PingOneSignals.sharedInstance() else {
-                continuation.resume(throwing: PingOneSignalsError(description: "Could not get shared PingOneSignals instance"))
+            guard let loginCompleteCallback else {
+                fatalErrorMessage = "The login complete callback is nil, please contact support"
                 return
             }
             
-            signals.getData { data, error in
-                if let error {
-                    continuation.resume(throwing: PingOneSignalsError(description: "An error occurred getting signals data \(error.localizedDescription)"))
-                    return
-                }
-                
-                guard let data else {
-                    continuation.resume(throwing: PingOneSignalsError(description: "Signals data is nil"))
-                    return
-                }
-                
-                continuation.resume(returning: data)
-            }
-        })
+            loginCompleteCallback(accessToken, pingFedAuthClient.idToken ?? "")
+        }
     }
     
     private func setLoginStep() {

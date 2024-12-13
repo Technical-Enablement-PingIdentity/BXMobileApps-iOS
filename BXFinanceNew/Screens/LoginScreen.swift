@@ -14,10 +14,16 @@ struct LoginScreen: View {
     
     @StateObject private var model: LoginViewModel
     
+    @EnvironmentObject var globalModel: GlobalViewModel
     @EnvironmentObject var router: RouterViewModel
     
-    init(onLoggedIn: @escaping (String, String) -> Void) {
-        _model = StateObject(wrappedValue: LoginViewModel(pingFedBaseUrl: K.Environment.baseUrl, loginCompleteCallback: onLoggedIn))
+    init() {
+        _model = StateObject(wrappedValue: LoginViewModel(pingFedBaseUrl: K.Environment.baseUrl))
+    }
+    
+    func loginComplete(accessToken: String, idToken: String) {
+        globalModel.setTokens(accessToken: accessToken, idToken: idToken)
+        router.navigateTo(.dashboard)
     }
     
     var body: some View {
@@ -64,7 +70,7 @@ struct LoginScreen: View {
         .padding()
         .task {
             do {
-                try await model.startAuthentication()
+                try await model.startAuthentication(loginCompleteHandler: loginComplete)
                 print("Session started \(model.loginStep)")
             } catch {
                 print("Could not start authentication session")
@@ -76,8 +82,7 @@ struct LoginScreen: View {
 
 #Preview {
     NavigationStack {
-        LoginScreen { accessToken, idToken in
-            print("Access Token: \(accessToken), ID Token: \(idToken)")
-        }.environmentObject(RouterViewModel())
+        LoginScreen()
+            .environmentObject(RouterViewModel())
     }
 }

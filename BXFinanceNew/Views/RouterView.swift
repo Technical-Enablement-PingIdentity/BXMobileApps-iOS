@@ -31,7 +31,9 @@ class RouterViewModel: ObservableObject {
     enum Route: Hashable {
         case welcome
         case login
-        case dashboard(String, String)
+        case dashboard
+        case profileInformation
+        case protect(String)
     }
     
     @Published var path = NavigationPath()
@@ -41,11 +43,13 @@ class RouterViewModel: ObservableObject {
         case .welcome:
             WelcomeScreen()
         case .login:
-            LoginScreen { accessToken, idToken in
-                self.navigateTo(.dashboard(accessToken, idToken))
-            }
-        case .dashboard(let accessToken, let idToken):
-            DashboardScreen(accessToken: accessToken, idToken: idToken)
+            LoginScreen()
+        case .dashboard:
+            DashboardScreen()
+        case .profileInformation:
+            ProfileInformationScreen()
+        case .protect(let username):
+            ProtectScreen(username: username)
         }
     }
     

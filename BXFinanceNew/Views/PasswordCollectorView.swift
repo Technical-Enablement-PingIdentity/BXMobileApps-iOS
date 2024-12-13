@@ -61,7 +61,7 @@ struct PasswordCollectorView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     struct Preview: View {
         @State var password = ""
         @State var validationMessage: String? = "Some issue with the password"

@@ -163,7 +163,7 @@ final class PingFedAuthnClient {
         }
         
         if let idToken = json["authorizeResponse"]["id_token"].string {
-            guard JWTUtils.decode(jwt: idToken)["nonce"] as? String ?? "" == nonce else {
+            guard JWTUtilities.decode(jwt: idToken)["nonce"] as? String ?? "" == nonce else {
                 self.nonce = ""
                 throw PingFedNetworkError(description: "Nonce doesn't match with id_token")
             }

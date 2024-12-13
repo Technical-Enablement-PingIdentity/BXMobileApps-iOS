@@ -11,6 +11,8 @@ import PingOneSignals
 @main
 struct BXFinanceNewApp: App {
     
+    @State private var toast: Toast?
+    
     @StateObject private var model = GlobalViewModel()
     
     init() {
@@ -43,6 +45,8 @@ struct BXFinanceNewApp: App {
                 }, message: {
                     Text(model.confirmationMessage)
                 })
+                .toastView(toast: $model.toast)
         }
     }
 }
+

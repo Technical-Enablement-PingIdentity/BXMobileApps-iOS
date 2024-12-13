@@ -57,8 +57,11 @@ struct K {
     
     struct Environment {
         static let baseUrl = "https://bxfinance-dec-ea.ping-devops.com"
+        static let baseApiUrl = "https://bxfinance-dec-ea-api.ping-devops.com"
         static let loginClientId = "bxFinanceMobile"
         static let openBankingBaseUrl = "https://openbanking-qa.ping-devops.com"
         static let openBankingBalancesEndpoint = "/OpenBanking/v2/balances"
+        static let ipAddressApiUrl = "https://api.ipify.org?format=json"
     }
+    
 }

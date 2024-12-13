@@ -9,18 +9,18 @@ import SwiftUI
 
 struct WelcomeScreen: View {
     
+    @EnvironmentObject private var globalModel: GlobalViewModel
+    
     @EnvironmentObject private var router: RouterViewModel
 
     var body: some View {
         VStack {
             Spacer()
-            Image("BXFinanceLogo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 280)
+            LogoView(size: .large)
             Text(K.Strings.Login.Welcome)
                 .font(.system(size: 28))
             Spacer()
+            
             Button(K.Strings.Login.Login) {
                 router.navigateTo(.login)
             }
@@ -35,4 +35,5 @@ struct WelcomeScreen: View {
 #Preview {
     WelcomeScreen()
         .environmentObject(RouterViewModel())
+        .environmentObject(GlobalViewModel.preview)
 }

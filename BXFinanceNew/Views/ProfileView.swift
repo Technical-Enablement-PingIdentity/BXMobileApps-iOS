@@ -13,12 +13,16 @@ struct ProfileView: View {
         case profileInformation
         case pairDevice
         case protect
+        case wallet
+        case signOut
     }
     
     private let pages = [
-        ProfilePage(icon: "person.crop.circle.fill", name: "Profile Information", route: .profileInformation),
-        ProfilePage(icon: "iphone.gen2", name: "Pair Device", route: .pairDevice),
-        ProfilePage(icon: "lock.shield", name: "Protect Result", route: .protect),
+        ProfilePage(icon: "person.crop.circle.fill", name: "Profile Information", route: .profileInformation, requiresAuthentication: true),
+        ProfilePage(icon: "iphone.gen2", name: "Pair Device", route: .pairDevice, requiresAuthentication: false),
+        ProfilePage(icon: "lock.shield", name: "Protect Result", route: .protect, requiresAuthentication: true),
+        ProfilePage(icon: "wallet.pass", name: "Configure Digital Wallet", route: .wallet, requiresAuthentication: false),
+        ProfilePage(icon: "person.slash", name: "Sign Out", route: .signOut, requiresAuthentication: false)
     ]
     
     @EnvironmentObject var router: RouterViewModel
@@ -26,25 +30,42 @@ struct ProfileView: View {
     
     var body: some View {
         List(pages) { page in
-            HStack {
-                Image(systemName: page.icon)
-                    .frame(width: 20)
+            if !page.requiresAuthentication || !globalModel.accessToken.isEmpty {
+                HStack {
+                    Image(systemName: page.icon)
+                        .frame(width: 20)
+                        
+                    Text(page.name == "Sign Out" && globalModel.accessToken.isEmpty ? "Back to Sign In" : page.name)
                     
-                Text(page.name)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-            }
-            .onTapGesture {
-                switch page.route {
-                case .profileInformation:
-                    router.navigateTo(.profileInformation)
-                case .pairDevice:
-                    print("TK")
-                case .protect:
-                    print("Navigating to protect")
-                    router.navigateTo(.protect(JWTUtilities.decode(jwt: globalModel.accessToken)["sub"] as? String ?? ""))
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                }
+                .onTapGesture {
+                    switch page.route {
+                    case .profileInformation:
+                        router.navigateTo(.profileInformation)
+                    case .pairDevice:
+                        router.navigateTo(.pairDevice)
+                    case .protect:
+                        router.navigateTo(.protect(JWTUtilities.decode(jwt: globalModel.accessToken)["sub"] as? String ?? ""))
+                    case .wallet:
+                        router.navigateTo(.wallet)
+                    case .signOut:
+                        if !globalModel.accessToken.isEmpty {
+                            Task {
+                                do {
+                                    try await PingFedAuthnClient(appUrl: K.Environment.baseUrl).logout()
+                                    globalModel.clearTokens()
+                                    globalModel.showToast(style: .success, message: "You have successfully logged out")
+                                } catch {
+                                    print("Could not logout: \(error.localizedDescription)")
+                                }
+                            }
+                        }
+
+                        router.popToRoot()
+                    }
                 }
             }
         }
@@ -55,6 +76,7 @@ struct ProfileView: View {
         let icon: String
         let name: String
         let route: ProfileRoute
+        let requiresAuthentication: Bool
     }
 }
 

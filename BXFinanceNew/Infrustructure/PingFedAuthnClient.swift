@@ -26,11 +26,29 @@ final class PingFedAuthnClient {
         self.appUrl = appUrl
     }
     
+    func logout() async throws -> Void {
+        guard let url = URL(string: "\(appUrl)/idp/startSLO.ping") else {
+            throw PingFedNetworkError(description: "Could not logout, invalid URL")
+        }
+        
+        do {
+            let request = URLRequest(url: url)
+            
+            let (data, _) = try await URLSession.shared.data(for: request)
+            
+            if !String(decoding: data, as: UTF8.self).contains("Sign Off Successful") {
+                throw PingFedNetworkError(description: "Could not logout, unexpected response")
+            }
+        } catch {
+            throw PingFedNetworkError(description: "Could not logout, \(error)")
+        }
+    }
+    
     func startAuthn() async throws -> Void {
         // Set a new nonce for authn flow
         nonce = String.random(length: 24)
         
-        guard let url = URL(string: "\(appUrl)\(K.PingFed.authnEndpoint)?client_id=\(K.Environment.loginClientId)&response_type=\(K.PingFed.responseType)&response_mode=\(K.PingFed.responseMode)&scope=openid profile email phone address&nonce=\(nonce)") else {
+        guard let url = URL(string: "\(appUrl)\(K.PingFed.authnEndpoint)?client_id=\(K.Environment.loginClientId)&response_type=\(K.PingFed.responseType)&response_mode=\(K.PingFed.responseMode)&scope=\(K.PingFed.scopes)&nonce=\(nonce)") else {
             throw PingFedNetworkError(description: "Could not start Authentication session, invalid URL")
         }
         
@@ -48,6 +66,11 @@ final class PingFedAuthnClient {
                 if let status = json["status"].string {
                     currentStatus = status
                 }
+                
+                if currentStatus == "COMPLETED" {
+                    try grabTokensFromResponse(json: json)
+                }
+                
                 
                 print("Successfully started Authentication session flowId: \(flowId ?? "nil"), status: \(currentStatus ?? "nil")")
             }

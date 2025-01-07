@@ -9,9 +9,11 @@ import SwiftUI
 
 struct DashboardScreen: View {
     
+    @State var loadingAccounts = false
     @State var accounts: [Account] = []
     
     @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var router: RouterViewModel
     
     var body: some View {
         VStack {
@@ -24,19 +26,34 @@ struct DashboardScreen: View {
                         .font(.system(size: 24))
                         .padding(.horizontal)
                     
-                    List(accounts) { account in
-                        AccountView(account: account)
-                    }
-                        .listStyle(.plain)
-                        .padding(.horizontal)
-                        .refreshable {
-                            await loadAccounts()
+                    if loadingAccounts {
+                        Spacer()
+                        ProgressView()
+                            .tint(Color.gray)
+                        Spacer()
+                    } else {
+                        if accounts.count == 0 {
+                            Spacer()
+                            Text("Please sign in to view your accounts")
+                            Button(K.Strings.Login.Login) {
+                                router.popToRoot()
+                            }
+                            Spacer()
+                        } else {
+                            List(accounts) { account in
+                                AccountView(account: account)
+                            }
+                            .listStyle(.plain)
+                            .padding(.horizontal)
+                            .refreshable {
+                                await loadAccounts()
+                            }
                         }
+                    }
                 }
                 
                 Tab("Wallet", systemImage: "wallet.pass.fill") {
-//                    WalletView()
-                    Text("TK")
+                    WalletView()
                 }
                 
                 Tab("Verify", systemImage: "person.badge.shield.checkmark.fill") {
@@ -58,12 +75,14 @@ struct DashboardScreen: View {
     }
     
     func loadAccounts() async {
-        do {
-            accounts = try await OpenBankingClient.getBalances(accessToken: globalModel.accessToken)
-            
-            print(accounts)
-        } catch {
-            print("Couldn't fetch accounts \(error.localizedDescription)")
+        if !globalModel.accessToken.isEmpty {
+            do {
+                defer { loadingAccounts = false }
+                loadingAccounts = true
+                accounts = try await OpenBankingClient.getBalances(accessToken: globalModel.accessToken)
+            } catch {
+                print("Couldn't fetch accounts \(error.localizedDescription)")
+            }
         }
     }
 }
@@ -72,5 +91,6 @@ struct DashboardScreen: View {
     NavigationStack {
         DashboardScreen()
             .environmentObject(GlobalViewModel.preview)
+            .environmentObject(RouterViewModel())
     }
 }

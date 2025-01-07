@@ -34,6 +34,8 @@ class RouterViewModel: ObservableObject {
         case dashboard
         case profileInformation
         case protect(String)
+        case wallet
+        case pairDevice
     }
     
     @Published var path = NavigationPath()
@@ -50,6 +52,10 @@ class RouterViewModel: ObservableObject {
             ProfileInformationScreen()
         case .protect(let username):
             ProtectScreen(username: username)
+        case .wallet:
+            ConfigureWalletScreen()
+        case .pairDevice:
+            PairDeviceScreen()
         }
     }
     

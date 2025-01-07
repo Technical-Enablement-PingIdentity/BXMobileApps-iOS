@@ -33,6 +33,7 @@ class LoginViewModel: ObservableObject {
         do {
             try await pingFedAuthClient.startAuthn()
             setLoginStep()
+            checkIfCompleted()
         } catch {
             fatalErrorMessage = "Could not start an authentication session, please try again or contact support"
         }

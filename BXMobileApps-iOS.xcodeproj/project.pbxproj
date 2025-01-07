@@ -212,6 +212,10 @@
 		10EEFF622D0CB41C00B89DF7 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF402D0CB41C00B89DF7 /* K.swift */; };
 		10EEFF632D0CB41C00B89DF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EEFF212D0CB41C00B89DF7 /* Preview Assets.xcassets */; };
 		10EEFF642D0CB41C00B89DF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EEFF3C2D0CB41C00B89DF7 /* Assets.xcassets */; };
+		10EEFF672D0CBB9400B89DF7 /* ConfigureWalletScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */; };
+		10EEFF692D0CBCA400B89DF7 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF682D0CBCA200B89DF7 /* WalletView.swift */; };
+		10FED8BA2D13762900432A81 /* PairDeviceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED8B92D13762500432A81 /* PairDeviceScreen.swift */; };
+		10FED8BE2D14795D00432A81 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED8BD2D14795700432A81 /* ConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -375,6 +379,10 @@
 		10EEFF3E2D0CB41C00B89DF7 /* BXFinanceNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXFinanceNewApp.swift; sourceTree = "<group>"; };
 		10EEFF3F2D0CB41C00B89DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EEFF402D0CB41C00B89DF7 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureWalletScreen.swift; sourceTree = "<group>"; };
+		10EEFF682D0CBCA200B89DF7 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		10FED8B92D13762500432A81 /* PairDeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceScreen.swift; sourceTree = "<group>"; };
+		10FED8BD2D14795700432A81 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -746,11 +754,13 @@
 		10EEFF282D0CB41C00B89DF7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */,
 				10EEFF232D0CB41C00B89DF7 /* DashboardScreen.swift */,
 				10EEFF242D0CB41C00B89DF7 /* LoginScreen.swift */,
 				10EEFF252D0CB41C00B89DF7 /* ProfileInformationScreen.swift */,
 				10EEFF262D0CB41C00B89DF7 /* ProtectScreen.swift */,
 				10EEFF272D0CB41C00B89DF7 /* WelcomeScreen.swift */,
+				10FED8B92D13762500432A81 /* PairDeviceScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -776,6 +786,8 @@
 		10EEFF3A2D0CB41C00B89DF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10FED8BD2D14795700432A81 /* ConfirmationView.swift */,
+				10EEFF682D0CBCA200B89DF7 /* WalletView.swift */,
 				10EEFF2F2D0CB41C00B89DF7 /* AccountView.swift */,
 				10EEFF302D0CB41C00B89DF7 /* ContentView.swift */,
 				10EEFF312D0CB41C00B89DF7 /* FormFieldLabelView.swift */,
@@ -1098,12 +1110,16 @@
 				10EEFF452D0CB41C00B89DF7 /* OpenBankingClient.swift in Sources */,
 				10EEFF462D0CB41C00B89DF7 /* PingFedAuthnClient.swift in Sources */,
 				10EEFF472D0CB41C00B89DF7 /* ProtectClient.swift in Sources */,
+				10FED8BA2D13762900432A81 /* PairDeviceScreen.swift in Sources */,
 				10EEFF482D0CB41C00B89DF7 /* VerifyClient.swift in Sources */,
+				10FED8BE2D14795D00432A81 /* ConfirmationView.swift in Sources */,
 				10EEFF492D0CB41C00B89DF7 /* GlobalViewModel.swift in Sources */,
 				10EEFF4A2D0CB41C00B89DF7 /* LoginViewModel.swift in Sources */,
 				10EEFF4B2D0CB41C00B89DF7 /* MockData.swift in Sources */,
+				10EEFF692D0CBCA400B89DF7 /* WalletView.swift in Sources */,
 				10EEFF4C2D0CB41C00B89DF7 /* DashboardScreen.swift in Sources */,
 				10EEFF4D2D0CB41C00B89DF7 /* LoginScreen.swift in Sources */,
+				10EEFF672D0CBB9400B89DF7 /* ConfigureWalletScreen.swift in Sources */,
 				10EEFF4E2D0CB41C00B89DF7 /* ProfileInformationScreen.swift in Sources */,
 				10EEFF4F2D0CB41C00B89DF7 /* ProtectScreen.swift in Sources */,
 				10EEFF502D0CB41C00B89DF7 /* WelcomeScreen.swift in Sources */,
@@ -1470,6 +1486,7 @@
 				INFOPLIST_FILE = BXFinanceNew/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used to capture your selfie and IDs as well as to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1511,6 +1528,7 @@
 				INFOPLIST_FILE = BXFinanceNew/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BXFinance;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used to capture your selfie and IDs as well as to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

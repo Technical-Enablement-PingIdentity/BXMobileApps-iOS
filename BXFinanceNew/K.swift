@@ -18,7 +18,7 @@ struct K {
         
         struct Login {
             static let Welcome = "Welcome!"
-            static let Login = "Login"
+            static let Login = "Sign In"
             static let Username = "Username"
             static let Password = "Password"
             static let Submit = "Submit"
@@ -43,6 +43,7 @@ struct K {
         static let authnEndpoint = "/as/authorization.oauth2"
         static let authnFlowEndpoint = "/pf-ws/authn/flows"
         static let responseType = "token id_token"
+        static let scopes = "openid profile email phone address"
         static let responseMode = "pi.flow"
         static let contentTypeHeader = "Content-Type"
         static let xsrfHeader = "X-XSRF-Header"
@@ -56,10 +57,10 @@ struct K {
     }
     
     struct Environment {
-        static let baseUrl = "https://bxfinance-dec-ea.ping-devops.com"
-        static let baseApiUrl = "https://bxfinance-dec-ea-api.ping-devops.com"
+        static let baseUrl = "https://demo.bxfinance.org"
+        static let baseApiUrl = "https://api.bxfinance.org"
         static let loginClientId = "bxFinanceMobile"
-        static let openBankingBaseUrl = "https://openbanking-qa.ping-devops.com"
+        static let openBankingBaseUrl = "https://bank-api.dev"
         static let openBankingBalancesEndpoint = "/OpenBanking/v2/balances"
         static let ipAddressApiUrl = "https://api.ipify.org?format=json"
     }

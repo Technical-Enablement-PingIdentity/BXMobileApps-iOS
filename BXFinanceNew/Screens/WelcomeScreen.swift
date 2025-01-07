@@ -26,6 +26,16 @@ struct WelcomeScreen: View {
             }
             .buttonStyle(FinanceFullWidthButtonStyle())
             .padding(.bottom, 16)
+            
+            Button("Continue without Signing In") {
+                router.navigateTo(.dashboard)
+            }.tint(Color(K.Colors.Primary))
+            
+            Button("Test Alert") {
+                globalModel.presentUserConfirmation(title: "Approve Sign In?", message: "You're trying to login, would you like to approve this login request?") { userApproved in
+                    print("Confirmed \(userApproved ? "yes" : "no")")
+                }
+            }
         }
         .padding()
 

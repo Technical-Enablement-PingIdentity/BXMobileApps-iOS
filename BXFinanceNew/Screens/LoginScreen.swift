@@ -76,7 +76,7 @@ struct LoginScreen: View {
                 print("Could not start authentication session")
             }
         }
-        .navigationTitle("Login")
+        .navigationTitle(K.Strings.Login.Login)
     }
 }
 

@@ -34,19 +34,18 @@ struct BXFinanceNewApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(model)
-                .alert(model.confirmationTitle, isPresented: $model.displayConfirmation, actions: {
-                    Button("Cancel", role: .cancel) {
-                        model.completeConfirmation(userDidApprove: false)
-                    }
-                    Button("Confirm") {
-                        model.completeConfirmation(userDidApprove: true)
-                    }
-                }, message: {
-                    Text(model.confirmationMessage)
-                })
                 .toastView(toast: $model.toast)
+                .overlay(alignment: .bottom) {
+                    if model.presentConfirmation {
+                        ConfirmationView()
+                            .transition(.move(edge: .bottom))
+                            .zIndex(1)
+                    }
+                    
+                }
+                .environmentObject(model)
         }
     }
+
 }
 

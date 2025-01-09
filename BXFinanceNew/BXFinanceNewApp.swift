@@ -11,9 +11,9 @@ import PingOneSignals
 @main
 struct BXFinanceNewApp: App {
     
-    @State private var toast: Toast?
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject private var model = GlobalViewModel()
+    @StateObject private var model = GlobalViewModel.shared
     
     init() {
         // Initialize PingOneSignals SDK
@@ -44,8 +44,14 @@ struct BXFinanceNewApp: App {
                     
                 }
                 .environmentObject(model)
+                .onOpenURL { url in
+                    print("We're here")
+                    if let authorizationflow = DevicePairingClient.currentAuthorizationFlow {
+                        authorizationflow.resumeExternalUserAgentFlow(with: url)
+                        DevicePairingClient.currentAuthorizationFlow = nil
+                    }
+                }
         }
     }
-
 }
 

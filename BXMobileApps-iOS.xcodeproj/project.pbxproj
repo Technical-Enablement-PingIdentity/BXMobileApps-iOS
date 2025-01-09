@@ -786,9 +786,8 @@
 		10EEFF3A2D0CB41C00B89DF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				10FED8BD2D14795700432A81 /* ConfirmationView.swift */,
-				10EEFF682D0CBCA200B89DF7 /* WalletView.swift */,
 				10EEFF2F2D0CB41C00B89DF7 /* AccountView.swift */,
+				10FED8BD2D14795700432A81 /* ConfirmationView.swift */,
 				10EEFF302D0CB41C00B89DF7 /* ContentView.swift */,
 				10EEFF312D0CB41C00B89DF7 /* FormFieldLabelView.swift */,
 				10EEFF322D0CB41C00B89DF7 /* LogoView.swift */,
@@ -799,6 +798,7 @@
 				10EEFF372D0CB41C00B89DF7 /* ToastView.swift */,
 				10EEFF382D0CB41C00B89DF7 /* UsernameCollectorView.swift */,
 				10EEFF392D0CB41C00B89DF7 /* VerifyView.swift */,
+				10EEFF682D0CBCA200B89DF7 /* WalletView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

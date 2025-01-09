@@ -11,18 +11,17 @@ import PingOneSDK
 
 class DevicePairingClient {
     
-    private let issuer: URL
-    private let redirectUri: URL
-    private let clientId: String
+    // Need this to be a singleton
+    public static var currentAuthorizationFlow: OIDExternalUserAgentSession? = nil
     
     private var oidcConfiguration: OIDServiceConfiguration? = nil
     
-    init(issuer: URL, redirectUri: URL, clientId: String, completionHandler: @escaping (Bool) -> Void) {
-        self.issuer = issuer
-        self.redirectUri = redirectUri
-        self.clientId = clientId
+    init(completionHandler: @escaping (Bool) -> Void) {
+        guard let issuer = URL(string: K.PingOne.issuer) else {
+            fatalError( "Issuer URL in constants is invalid")
+        }
         
-        OIDAuthorizationService.discoverConfiguration(forIssuer: self.issuer) { config, error in
+        OIDAuthorizationService.discoverConfiguration(forIssuer: issuer) { config, error in
             guard let config else {
                 print("Error retrieving discovery configuration \(error?.localizedDescription ?? "Unknown Error")")
                 completionHandler(false)
@@ -36,19 +35,35 @@ class DevicePairingClient {
         }
     }
     
-    func pairDevice(appDelegate: AppDelegate, viewController: UIViewController, approvePairingHandler: @escaping (PairingObject?) -> Void) {
+    func pairDevice(username: String? = nil, approvePairingHandler: @escaping (PairingObject?) -> Void) {
         
         guard let oidcConfiguration else {
             print("Unable to pair a device, oidcConfiguration is nil")
             return
         }
         
+        guard let redirectUrl = URL(string: K.PingOne.redirectUri) else {
+            print("Unable to pair a device, redirect URL is invalid")
+            return
+        }
+        
+        guard let viewController = UIUtilities.getRootViewController() else {
+            print("Unable to get root view controller")
+            return
+        }
+        
         do {
             let payload = try PingOne.generateMobilePayload()
             
-            let authRequest = OIDAuthorizationRequest(configuration: oidcConfiguration, clientId: clientId, clientSecret: nil, scopes: [OIDScopeOpenID, OIDScopeProfile], redirectURL: redirectUri, responseType: OIDResponseTypeCode, additionalParameters: [K.Oidc.MobilePayload: payload, K.Oidc.Prompt: K.Oidc.LoginPrompt])
+            var additionalParameters = [K.Oidc.MobilePayload: payload, K.Oidc.Prompt: K.Oidc.LoginPrompt]
             
-            appDelegate.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: authRequest, presenting: viewController) { authState, error in
+            if let username {
+                additionalParameters[K.Oidc.LoginHint] = username
+            }
+            
+            let authRequest = OIDAuthorizationRequest(configuration: oidcConfiguration, clientId: K.PingOne.clientId, clientSecret: nil, scopes: [OIDScopeOpenID, OIDScopeProfile], redirectURL: redirectUrl, responseType: OIDResponseTypeCode, additionalParameters: additionalParameters)
+            
+            DevicePairingClient.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: authRequest, presenting: viewController) { authState, error in
                 if let tokenResponse = authState?.lastTokenResponse {
                     print("Got authorization tokens. Access token: \(tokenResponse.accessToken ?? "nil")")
                     

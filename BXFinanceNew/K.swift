@@ -23,12 +23,18 @@ struct K {
             static let Password = "Password"
             static let Submit = "Submit"
         }
+        
+        struct Confirmation {
+            static let Title = "Approve Sign In?"
+            static let Message = "It looks like you're trying to sign in. Would you like to approve the sign in request?"
+        }
     }
     
     struct Oidc {
         static let MobilePayload = "mobilePayload"
         static let Prompt = "prompt"
         static let LoginPrompt = "login"
+        static let LoginHint = "login_hint"
     }
     
     struct PingOne {

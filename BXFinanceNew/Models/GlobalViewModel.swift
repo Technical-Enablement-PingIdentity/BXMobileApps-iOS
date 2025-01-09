@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import AppAuth
 
 class GlobalViewModel: ObservableObject {
+    
+    static let shared = GlobalViewModel()
     
     @Published var presentConfirmation = false
     @Published var confirmationTitle = ""
     @Published var confirmationMessage = ""
+    @Published var confirmationSymbol = ""
+    
     var confirmationCompletionHandler: ((Bool) -> Void)? = nil
     
     @Published var toast: Toast?
@@ -24,18 +29,26 @@ class GlobalViewModel: ObservableObject {
         self.idToken = idToken
     }
     
-    func presentUserConfirmation(title: String, message: String, completionHandler: @escaping (Bool) -> Void) {
-        self.presentConfirmation = true
-        self.confirmationTitle = title
-        self.confirmationMessage = message
-        self.confirmationCompletionHandler = completionHandler
+    func presentUserConfirmation(title: String, message: String, image: String, completionHandler: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            self.presentConfirmation = true
+            self.confirmationTitle = title
+            self.confirmationMessage = message
+            self.confirmationSymbol = image
+            self.confirmationCompletionHandler = completionHandler
+        }
     }
     
     func completeConfirmation(userDidApprove: Bool) {
         self.presentConfirmation = false
-        self.confirmationTitle = ""
-        self.confirmationMessage = ""
-        
+
+        // When these resets aren't in a slight delay the confirmation jumps a little bit when dismissed
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.confirmationTitle = ""
+            self.confirmationMessage = ""
+            self.confirmationSymbol = ""
+        }
+
         if let completionHandler = self.confirmationCompletionHandler {
             completionHandler(userDidApprove)
             self.confirmationCompletionHandler = nil
@@ -62,7 +75,9 @@ class GlobalViewModel: ObservableObject {
     }
     
     func showToast(style: ToastStyle, message: String) {
-        self.toast = Toast(style: style, message: message)
+        DispatchQueue.main.async {
+            self.toast = Toast(style: style, message: message)
+        }
     }
     
     enum TokenType {

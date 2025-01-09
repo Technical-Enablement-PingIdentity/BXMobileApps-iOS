@@ -11,8 +11,6 @@ import AppAuth
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
-    var currentAuthorizationFlow: OIDExternalUserAgentSession? = nil
-    
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
 
@@ -51,7 +49,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
             else if let notificationObject {
                 if notificationObject.notificationType == .authentication {
-//                    MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
+                    self.handleUserAuthentication(notificationObject: notificationObject)
                     completionHandler(UIBackgroundFetchResult.newData)
                     return
                 }
@@ -59,15 +57,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             
             completionHandler(UIBackgroundFetchResult.noData)
         }
-    }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: url) {
-            self.currentAuthorizationFlow = nil
-            return true
-        }
-
-        return false
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -80,11 +69,35 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                     // Remote notification may not have been from PingOne
                 }
             } else if let notificationObject {
-//                MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
+                self.handleUserAuthentication(notificationObject: notificationObject)
             }
             
             DispatchQueue.main.async {
                 completionHandler()
+            }
+        }
+    }
+    
+    private func handleUserAuthentication(notificationObject: NotificationObject) {
+        print(notificationObject)
+        GlobalViewModel.shared.presentUserConfirmation(title: K.Strings.Confirmation.Title, message: K.Strings.Confirmation.Message, image: "person.badge.shield.checkmark") { userConfirmed in
+            
+            if userConfirmed {
+                notificationObject.approve(withAuthenticationMethod: "user") { error in
+                    if let error {
+                        print("An error occurred approving notificationObject \(error.localizedDescription)")
+                    } else {
+                        print("User approved notification")
+                    }
+                }
+            } else {
+                notificationObject.deny { error in
+                    if let error {
+                        print("An error occurred denying notificationObject \(error.localizedDescription)")
+                    } else {
+                        print("User denied notification")
+                    }
+                }
             }
         }
     }

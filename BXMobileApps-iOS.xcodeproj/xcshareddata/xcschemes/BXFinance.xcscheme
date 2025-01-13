@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10109F3D2A5F0541004A60E1"
+               BlueprintIdentifier = "1087339F2CCC2F730071630C"
                BuildableName = "BXFinance.app"
                BlueprintName = "BXFinance"
                ReferencedContainer = "container:BXMobileApps-iOS.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10109F3D2A5F0541004A60E1"
+            BlueprintIdentifier = "1087339F2CCC2F730071630C"
             BuildableName = "BXFinance.app"
             BlueprintName = "BXFinance"
             ReferencedContainer = "container:BXMobileApps-iOS.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10109F3D2A5F0541004A60E1"
+            BlueprintIdentifier = "1087339F2CCC2F730071630C"
             BuildableName = "BXFinance.app"
             BlueprintName = "BXFinance"
             ReferencedContainer = "container:BXMobileApps-iOS.xcodeproj">

@@ -14,12 +14,17 @@ struct VerifyView: View {
     @EnvironmentObject var globalModel: GlobalViewModel
     
     func submissionComplete(verifyResult: String) {
-        globalModel.showToast(style: .success, message: verifyResult)
+        ToastPresenter.show(style: .success, toast: verifyResult)
         verifiedScale = 1.0
     }
     
     func submissionError(error: String) {
-        globalModel.showToast(style: .error, message: error)
+        if error.contains("Invalid URL") {
+            ToastPresenter.show(style: .error, toast: "Invalid URL for ID Verification, please ensure you aren't scanning a QR code meant for wallet pairing or credential verificaiton")
+        } else {
+            ToastPresenter.show(style: .error, toast: error)
+        }
+        
     }
     
     var body: some View {

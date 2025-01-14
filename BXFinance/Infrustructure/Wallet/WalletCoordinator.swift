@@ -38,7 +38,7 @@ public class WalletCoordinator {
         self.eventObserver.observeNetworkReachability { status in
             if (status == .unavailable) {
                 self.showErrorAlert(title: "Not connected", message: "Make sure you're connected to internet and restart the app.", actionTitle: "Ok") {
-                    GlobalViewModel.shared.showToast(style: .error, message: "Network not available")
+                    ToastPresenter.show(style: .error, toast: "Network not available")
                 }
             }
         }

@@ -363,7 +363,7 @@ extension PingOneWalletHelper {
     
     private func notifyUser(message: String) {
         logattention(message)
-        GlobalViewModel.shared.showToast(style: .info, message: message)
+        ToastPresenter.show(style: .info, toast: message)
     }
     
     private func askUserPermission(title: String, message: String, actionHandler: @escaping (Bool) -> Void, positiveActionTitle: String = "Confirm", cancelActionTitle: String = "Cancel") {

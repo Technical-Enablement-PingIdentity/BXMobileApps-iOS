@@ -57,7 +57,7 @@ struct ProfileView: View {
                                 do {
                                     try await PingFedAuthnClient(appUrl: K.Environment.baseUrl).logout()
                                     globalModel.clearTokens()
-                                    globalModel.showToast(style: .success, message: "You have successfully logged out")
+                                    ToastPresenter.show(style: .success, toast: "You have successfully logged out")
                                 } catch {
                                     print("Could not logout: \(error.localizedDescription)")
                                 }

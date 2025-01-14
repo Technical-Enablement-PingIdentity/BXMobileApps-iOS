@@ -18,8 +18,6 @@ class GlobalViewModel: ObservableObject {
     @Published var confirmationSymbol = ""
     
     var confirmationCompletionHandler: ((Bool) -> Void)? = nil
-    
-    @Published var toast: Toast?
 
     @Published var accessToken: String
     @Published var idToken: String
@@ -71,12 +69,6 @@ class GlobalViewModel: ObservableObject {
             return JWTUtilities.decode(jwt: accessToken)[attribute] as? String ?? ""
         case .idToken:
             return JWTUtilities.decode(jwt: idToken)[attribute] as? String ?? ""
-        }
-    }
-    
-    func showToast(style: ToastStyle, message: String) {
-        DispatchQueue.main.async {
-            self.toast = Toast(style: style, message: message)
         }
     }
     

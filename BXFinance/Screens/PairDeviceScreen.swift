@@ -41,7 +41,7 @@ struct PairDeviceScreen: View {
                     let username = model.getAttributeFromToken(attribute: "sub", type: .accessToken)
                     devicePairingClient?.pairDevice(username: username.isEmpty ? nil : username) { pairingObject in
                         guard let pairingObject else {
-                            model.showToast(style: .error, message: "An error occurred pairing device. Pairing Object was nil")
+                            ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Pairing Object was nil")
                             print("Error pairing object was nil")
                             return
                         }
@@ -50,14 +50,14 @@ struct PairDeviceScreen: View {
                             if userConfirmed {
                                 pairingObject.approve { response, error in
                                     if let error {
-                                        model.showToast(style: .error, message: "An error occurred pairing device. Unsuccessful response.")
+                                        ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Unsuccessful response.")
                                         print("An error occured while pairing device: \(error)")
                                     } else {
-                                        model.showToast(style: .success, message: "Device was successfully paired!")
+                                        ToastPresenter.show(style: .success, toast: "Device was successfully paired!")
                                     }
                                 }
                             } else {
-                                model.showToast(style: .error, message: "Device pairing was cancelled.")
+                                ToastPresenter.show(style: .error, toast: "Device pairing was cancelled.")
                             }
                         }
                     }

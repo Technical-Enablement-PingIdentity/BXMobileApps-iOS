@@ -12,6 +12,7 @@ struct ConfigureWalletScreen: View {
     
     @EnvironmentObject var walletModel: WalletViewModel
     @EnvironmentObject var router: RouterViewModel
+    @EnvironmentObject var globalModel: GlobalViewModel
     
     var body: some View {
         if walletModel.walletInitialized {
@@ -27,6 +28,7 @@ struct ConfigureWalletScreen: View {
                                 walletModel.processQrCode(true)
                             }
                         }
+
                     if (walletModel.loadingCamera) {
                         VStack {
                             Spacer()

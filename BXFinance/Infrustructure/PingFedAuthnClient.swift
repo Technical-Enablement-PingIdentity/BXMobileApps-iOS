@@ -115,11 +115,9 @@ final class PingFedAuthnClient {
                 }
                 
                 if json["code"].string == "VALIDATION_ERROR" {
-                    print("here \(json["details"]), \(json["details"][0]) \(json["details"][0]["userMessage"])")
                     return json["details"][0]["userMessage"].string
                 }
                 
-
                 print("Successfully submitted password, username: \(storedUsername) status: \(currentStatus ?? "nil")")
             }
             return nil
@@ -144,6 +142,108 @@ final class PingFedAuthnClient {
             }
         } catch {
             throw PingFedNetworkError(description: "An error occurred submitting risk data to ping federate")
+        }
+    }
+    
+    func submitAuthenticate() async throws -> [SelectableDevice] {
+        do {
+            if let json = try await submitStep(bodyString: "{}", contentType: K.PingFed.Headers.authenticate) {
+                if let status = json["status"].string {
+                    currentStatus = status
+                }
+                
+                var devices: [SelectableDevice] = []
+                
+                if currentStatus == "DEVICE_SELECTION_REQUIRED" {
+                    if let rawDevices = json["devices"].array {
+                        for device in rawDevices {
+                            devices.append(try SelectableDevice(device: device))
+                        }
+                    }
+                }
+                
+                if currentStatus == "COMPLETED" {
+                    try grabTokensFromResponse(json: json)
+                }
+                
+                print("Successfully continued authentication")
+                return devices
+            }
+            
+            return []
+        } catch {
+            throw PingFedNetworkError(description: "An error occurred continuing authentication")
+        }
+    }
+    
+    func submitDeviceSelection(deviceId: String) async throws -> SelectableDevice? {
+        do {
+            if let json = try await submitStep(bodyString: "{\"deviceRef\": {\"id\":\"\(deviceId)\"}}", contentType: K.PingFed.Headers.selectDevice) {
+                if let status = json["status"].string {
+                    currentStatus = status
+                }
+                
+                if currentStatus == "OTP_REQUIRED",
+                    let selectedDeviceId = json["selectedDeviceRef"]["id"].string,
+                    let devices = json["devices"].array {
+                    if let rawDevice = devices.first(where: { $0["id"].string == selectedDeviceId }) {
+                        return try SelectableDevice(device: rawDevice)
+                    }
+                }
+            }
+            
+            return nil
+        } catch {
+            throw PingFedNetworkError(description: "An error occurred selecting device for authentication")
+        }
+    }
+    
+    func submitOneTimePasscode(otp: String) async throws -> String? {
+        do {
+            if let json = try await submitStep(bodyString: "{\"otp\":\"\(otp)\"}", contentType: K.PingFed.Headers.checkOtp) {
+                if let status = json["status"].string {
+                    currentStatus = status
+                }
+                
+                if currentStatus == "COMPLETED" {
+                    try grabTokensFromResponse(json: json)
+                }
+                
+                let code = json["code"].string
+                
+                if code == "VALIDATION_ERROR" {
+                    print("here \(json["details"]), \(json["details"][0]) \(json["details"][0]["userMessage"])")
+                    return json["details"][0]["userMessage"].string
+                }
+                
+                if code == "REQUEST_FAILED" {
+                    currentStatus = "FAILED"
+                }
+                
+                print("Successfully submitted one time passcode otp: \(otp) status: \(currentStatus ?? "nil")")
+            }
+            
+            return nil
+        } catch {
+            throw PingFedNetworkError(description: "An error occurred submitting one time passcode")
+        }
+    }
+    
+    func submitContinueAuthentication() async throws -> Void {
+        do {
+            if let json = try await submitStep(bodyString: "{}", contentType: K.PingFed.Headers.continueAuthentication) {
+                if let status = json["status"].string {
+                    currentStatus = status
+                }
+                
+                if currentStatus == "COMPLETED" {
+                    try grabTokensFromResponse(json: json)
+                }
+                
+                print("Successfully continued authentication")
+            }
+        } catch {
+            throw PingFedNetworkError(description: "An error occurred continuing authentication")
         }
     }
     
@@ -201,3 +301,43 @@ struct PingFedNetworkError: LocalizedError {
     let description: String
 }
 
+struct SelectableDevice: Identifiable {
+    let id: String
+    let type: SelectableDeviceType
+    let target: String
+    
+    init(device: JSON) throws {
+        if let jsonId = device["id"].string,
+            let jsonType = device["type"].string {
+            
+            let jsonTarget = device["target"].string
+            
+            id = jsonId
+            
+            switch jsonType.lowercased() {
+            case "email":
+                type = .email
+                target = jsonTarget ?? "Email Address"
+            case "sms":
+                type = .sms
+                target = jsonTarget ?? "Phone Number"
+            case "totp":
+                type = .totp
+                target = jsonTarget ?? "Authenticator App"
+            default:
+                type = .hidden
+                target = jsonTarget ?? ""
+            }
+            
+        } else {
+            throw PingFedNetworkError(description: "Invalid device, id or type is missing, id: (\(device["id"].string ?? "nil")), type: (\(device["type"].string ?? "nil"))")
+        }
+    }
+}
+
+enum SelectableDeviceType {
+    case email
+    case sms
+    case totp
+    case hidden
+}

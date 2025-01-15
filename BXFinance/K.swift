@@ -59,6 +59,10 @@ struct K {
             static let submitIdentifier = "application/vnd.pingidentity.submitIdentifier+json"
             static let submitUsernamePassword = "application/vnd.pingidentity.checkUsernamePassword+json"
             static let submitDeviceProfile = "application/vnd.pingidentity.submitDeviceProfile+json"
+            static let authenticate = "application/vnd.pingidentity.authenticate+json"
+            static let selectDevice = "application/vnd.pingidentity.selectDevice+json"
+            static let checkOtp = "application/vnd.pingidentity.checkOtp+json"
+            static let continueAuthentication = "application/vnd.pingidentity.continueAuthentication+json"
         }
     }
     

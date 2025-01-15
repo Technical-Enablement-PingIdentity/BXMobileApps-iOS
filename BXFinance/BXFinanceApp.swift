@@ -35,12 +35,8 @@ struct BXFinanceApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .overlay(alignment: .bottom) {
-                    if model.presentConfirmation {
-                        ConfirmationView()
-                            .transition(.move(edge: .bottom))
-                            .zIndex(1)
-                    }
+                .fullScreenCover(isPresented: $model.presentConfirmation) {
+                    ConfirmationView()
                 }
                 .onChange(of: walletModel.presentQrScanner) { oldValue, newValue in
                     if !newValue {

@@ -33,8 +33,16 @@ struct WelcomeScreen: View {
             Button("Continue without Signing In") {
                 router.navigateTo(.dashboard)
             }.tint(Color(K.Colors.Primary))
+            
+//            Button("test confirm") {
+//                globalModel.presentUserConfirmation(title: "Test Title", message: "Test Message", image: "") { approved in
+//                }
+//            }
         }
         .padding()
+//        .fullScreenCover(isPresented: $globalModel.presentConfirmation) {
+//            ConfirmationView()
+//        }
         .alert("Notifications Disabled", isPresented: $showNotificationDeniedAlert, actions: {
             Button("Dismiss", role: .cancel) {
                 showNotificationDeniedAlert = false
@@ -49,7 +57,6 @@ struct WelcomeScreen: View {
             Text("If you do not wish to enable notifications you will need to be in the BXFinance App on your phone before you attempt to use it for MFA.")
         })
         .onAppear {
-            
             let center = UNUserNotificationCenter.current()
             
             center.getNotificationSettings { settings in

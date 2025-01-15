@@ -11,6 +11,7 @@ struct LoginScreen: View {
 
     @State private var username = ""
     @State private var password = ""
+    @State private var oneTimePasscode = ""
     
     @StateObject private var model: LoginViewModel
     
@@ -64,6 +65,36 @@ struct LoginScreen: View {
                             }
                         }
                     }
+                }
+                
+                if model.loginStep == .deviceSelection {
+                    DeviceSelectionCollectorView(selectableDevices: model.selectableDevices) { device in
+                        Task {
+                            do {
+                                try await model.submitDeviceSelection(id: device.id)
+                            } catch {
+                                print("An error occurred submitting device selection \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                }
+                
+                if model.loginStep == .otpRequired {
+                    if model.selectedDevice == nil {
+                        Text("An error occurred, selected device not found in Ping Federate response")
+                    } else {
+                        OneTimePasscodeCollectorView(selectedDevice: model.selectedDevice!, oneTimePasscode: $oneTimePasscode, validationMessage: $model.validationMessage) {
+                            Task {
+                                do {
+                                    try await model.submitOneTimePasscode(otp: oneTimePasscode)
+                                    oneTimePasscode = ""
+                                } catch {
+                                    print("An error occurred submitting one time passcode \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                    }
+                    
                 }
             }
         }

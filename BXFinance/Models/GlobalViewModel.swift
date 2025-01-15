@@ -29,19 +29,25 @@ class GlobalViewModel: ObservableObject {
     
     func presentUserConfirmation(title: String, message: String, image: String, completionHandler: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
-            self.presentConfirmation = true
             self.confirmationTitle = title
             self.confirmationMessage = message
             self.confirmationSymbol = image
             self.confirmationCompletionHandler = completionHandler
         }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.presentConfirmation = true
+//        }
     }
     
     func completeConfirmation(userDidApprove: Bool) {
-        self.presentConfirmation = false
+        
+        DispatchQueue.main.async {
+            self.presentConfirmation = false
+        }
 
         // When these resets aren't in a slight delay the confirmation jumps a little bit when dismissed
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.confirmationTitle = ""
             self.confirmationMessage = ""
             self.confirmationSymbol = ""

@@ -46,7 +46,6 @@ struct ToastView: View {
     var style: ToastStyle
     var message: String
     var width = CGFloat.infinity
-    var onCancelTapped: (() -> Void)?
 
     var body: some View {
         HStack(alignment: .center) {
@@ -80,41 +79,44 @@ struct ToastView: View {
 
 struct ToastPresenter {
     static func show(style: ToastStyle, toast: String) {
-        guard
-            let scene = UIApplication.shared.connectedScenes.first
-                as? UIWindowScene
-        else { return }
-        let toastWindow = UIWindow(windowScene: scene)
-        toastWindow.backgroundColor = .clear
+        DispatchQueue.main.async {
+            guard
+                let scene = UIApplication.shared.connectedScenes.first
+                    as? UIWindowScene
+            else { return }
+            let toastWindow = UIWindow(windowScene: scene)
+            toastWindow.backgroundColor = .clear
 
-        // Start with the window off-screen at the top
-        toastWindow.frame = CGRect(x: 50, y: -100, width: 300, height: 200)
+            // Start with the window off-screen at the top
+            toastWindow.frame = CGRect(x: 50, y: -100, width: 300, height: 200)
 
-        let view = ToastView(style: style, message: toast)
+            let view = ToastView(style: style, message: toast)
 
-        toastWindow.rootViewController = UIHostingController(rootView: view)
-        toastWindow.rootViewController?.view.backgroundColor = .clear
-        toastWindow.makeKeyAndVisible()
+            toastWindow.rootViewController = UIHostingController(rootView: view)
+            toastWindow.rootViewController?.view.backgroundColor = .clear
+            toastWindow.makeKeyAndVisible()
 
-        // Animate the window sliding down
-        UIView.animate(
-            withDuration: 0.5,
-            animations: {
-                toastWindow.frame = CGRect(
-                    x: 50, y: 50, width: 300, height: 200)
-            })
-
-        // Hide the toast automatically after 2 seconds with slide up animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            // Animate the window sliding down
             UIView.animate(
                 withDuration: 0.5,
                 animations: {
                     toastWindow.frame = CGRect(
-                        x: 50, y: -100, width: 300, height: 100)
+                        x: 50, y: 0, width: 300, height: 200)
+                })
+
+            // Hide the toast automatically after 2 seconds with slide up animation
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                UIView.animate(
+                    withDuration: 0.5,
+                    animations: {
+                        toastWindow.frame = CGRect(
+                            x: 50, y: -200, width: 300, height: 200)
+                    }
+                ) { _ in
+                    toastWindow.isHidden = true
                 }
-            ) { _ in
-                toastWindow.isHidden = true
             }
         }
+
     }
 }

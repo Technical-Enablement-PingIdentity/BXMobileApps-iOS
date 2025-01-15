@@ -20,6 +20,8 @@ class LoginViewModel: ObservableObject {
     @Published var validationMessage: String?
     @Published var fatalErrorMessage: String?
     @Published var processingPingFedCall = true
+    @Published var selectableDevices: [SelectableDevice] = []
+    @Published var selectedDevice: SelectableDevice?
     
     init(pingFedBaseUrl: String) {
         pingFedAuthClient = PingFedAuthnClient(appUrl: pingFedBaseUrl)
@@ -53,6 +55,10 @@ class LoginViewModel: ObservableObject {
             } else if loginStep == .failed {
                 validationMessage = "User not found, please ensure you have entered a valid username"
                 try await startAuthentication(loginCompleteHandler: self.loginCompleteCallback!)
+            } else if loginStep == .authenticationRequired {
+                selectableDevices = try await pingFedAuthClient.submitAuthenticate()
+                setLoginStep()
+                checkIfCompleted()
             } else {
                 self.username = pingFedAuthClient.storedUsername
             }
@@ -107,6 +113,48 @@ class LoginViewModel: ObservableObject {
         }
     }
     
+    func submitDeviceSelection(id: String) async throws {
+        validationMessage = nil
+        processingPingFedCall = true
+        defer { processingPingFedCall = false }
+        
+        do {
+            selectedDevice = try await pingFedAuthClient.submitDeviceSelection(deviceId: id)
+            setLoginStep()
+        } catch {
+            print(error.localizedDescription)
+            fatalErrorMessage = "Could not submit device selection, please try again or contact support"
+        }
+    }
+    
+    func submitOneTimePasscode(otp: String) async throws {
+        validationMessage = nil
+        processingPingFedCall = true
+        defer { processingPingFedCall = false }
+        
+        do {
+            let validationMessage = try await pingFedAuthClient.submitOneTimePasscode(otp: otp)
+            
+            if validationMessage != nil {
+                self.validationMessage = validationMessage
+                print("Server returned validation error \(validationMessage ?? "nil")")
+                return
+            }
+            
+            setLoginStep()
+            
+            if loginStep == .failed {
+                self.fatalErrorMessage = "You've reached the maximum number of attempts. Please try again."
+            } else if loginStep == .mfaCompleted {
+                try await pingFedAuthClient.submitContinueAuthentication()
+                setLoginStep()
+                checkIfCompleted()
+            }
+        } catch {
+            
+        }
+    }
+    
     func checkIfCompleted() {
         if loginStep == .completed {
             guard let accessToken = pingFedAuthClient.accessToken else {
@@ -129,6 +177,14 @@ class LoginViewModel: ObservableObject {
             loginStep = .username
         case "USERNAME_PASSWORD_REQUIRED":
             loginStep = .password
+        case "AUTHENTICATION_REQUIRED":
+            loginStep = .authenticationRequired
+        case "DEVICE_SELECTION_REQUIRED":
+            loginStep = .deviceSelection
+        case "OTP_REQUIRED":
+            loginStep = .otpRequired
+        case "MFA_COMPLETED":
+            loginStep = .mfaCompleted
         case "COMPLETED":
             loginStep = .completed
         case "FAILED":
@@ -143,7 +199,7 @@ class LoginViewModel: ObservableObject {
 }
 
 enum LoginStep {
-    case username, password, deviceProfileRequired, failed, completed, unknown
+    case username, password, authenticationRequired, deviceSelection, otpRequired, mfaCompleted, deviceProfileRequired, failed, completed, unknown
 }
 
 

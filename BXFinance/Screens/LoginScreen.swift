@@ -82,6 +82,8 @@ struct LoginScreen: View {
                 if model.loginStep == .otpRequired {
                     if model.selectedDevice == nil {
                         Text("An error occurred, selected device not found in Ping Federate response")
+                            .foregroundStyle(.red)
+                            .multilineTextAlignment(.center)
                     } else {
                         OneTimePasscodeCollectorView(selectedDevice: model.selectedDevice!, oneTimePasscode: $oneTimePasscode, validationMessage: $model.validationMessage) {
                             Task {

@@ -58,6 +58,11 @@ class LoginViewModel: ObservableObject {
             } else if loginStep == .authenticationRequired {
                 selectableDevices = try await pingFedAuthClient.submitAuthenticate()
                 setLoginStep()
+                
+                if loginStep == .otpRequired {
+                    selectedDevice = selectableDevices.first
+                }
+                
                 checkIfCompleted()
             } else {
                 self.username = pingFedAuthClient.storedUsername

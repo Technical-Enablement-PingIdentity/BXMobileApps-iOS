@@ -51,7 +51,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
             else if let notificationObject {
                 if notificationObject.notificationType == .authentication {
-                    self.handleUserAuthentication(notificationObject: notificationObject)
+                    self.handleUserAuthentication(notificationObject: notificationObject, userInfo: userInfo)
                     completionHandler(UIBackgroundFetchResult.newData)
                     return
                 }
@@ -71,7 +71,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                     // Remote notification may not have been from PingOne
                 }
             } else if let notificationObject {
-                self.handleUserAuthentication(notificationObject: notificationObject)
+                self.handleUserAuthentication(notificationObject: notificationObject, userInfo: response.notification.request.content.userInfo)
             }
             
             DispatchQueue.main.async {
@@ -98,9 +98,18 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         return true
     }
     
-    private func handleUserAuthentication(notificationObject: NotificationObject) {
-        print(notificationObject)
-        GlobalViewModel.shared.presentUserConfirmation(title: K.Strings.Confirmation.Title, message: K.Strings.Confirmation.Message, image: "person.badge.shield.checkmark") { userConfirmed in
+    private func handleUserAuthentication(notificationObject: NotificationObject, userInfo: [AnyHashable : Any]) {
+        var title: String? = nil
+        var description: String? = nil
+        
+        if let apsDict = userInfo["aps"] as? NSDictionary {
+            if let alert = apsDict["alert"] as? NSDictionary {
+                title = alert["title-loc-key"] as? String
+                description = (alert["loc-key"] as? String ?? "").components(separatedBy: "[").first
+            }
+        }
+        
+        GlobalViewModel.shared.presentUserConfirmation(title: (title ?? "").isEmpty ? K.Strings.Confirmation.Title : title!, message: (description ?? "").isEmpty ? K.Strings.Confirmation.Message : description!, image: "person.badge.shield.checkmark") { userConfirmed in
             
             if userConfirmed {
                 notificationObject.approve(withAuthenticationMethod: "user") { error in

@@ -25,8 +25,8 @@ struct K {
         }
         
         struct Confirmation {
-            static let Title = "Approve Sign In?"
-            static let Message = "It looks like you're trying to sign in. Would you like to approve the sign in request?"
+            static let Title = "Approve Authentication Request?"
+            static let Message = "It looks like you're trying to authenticate. Would you like to approve the request?"
         }
     }
     

@@ -22,6 +22,9 @@ struct WelcomeScreen: View {
             LogoView(size: .large)
             Text(K.Strings.Login.Welcome)
                 .font(.system(size: 28))
+            Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
+                .font(.system(size: 12))
+                .padding(.top, 16)
             Spacer()
             
             Button(K.Strings.Login.Login) {
@@ -33,16 +36,8 @@ struct WelcomeScreen: View {
             Button("Continue without Signing In") {
                 router.navigateTo(.dashboard)
             }.tint(Color(K.Colors.Primary))
-            
-//            Button("test confirm") {
-//                globalModel.presentUserConfirmation(title: "Test Title", message: "Test Message", image: "") { approved in
-//                }
-//            }
         }
         .padding()
-//        .fullScreenCover(isPresented: $globalModel.presentConfirmation) {
-//            ConfirmationView()
-//        }
         .alert("Notifications Disabled", isPresented: $showNotificationDeniedAlert, actions: {
             Button("Dismiss", role: .cancel) {
                 showNotificationDeniedAlert = false

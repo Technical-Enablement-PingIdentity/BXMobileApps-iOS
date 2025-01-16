@@ -33,11 +33,8 @@ class GlobalViewModel: ObservableObject {
             self.confirmationMessage = message
             self.confirmationSymbol = image
             self.confirmationCompletionHandler = completionHandler
-        }
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.presentConfirmation = true
-//        }
+        }
     }
     
     func completeConfirmation(userDidApprove: Bool) {

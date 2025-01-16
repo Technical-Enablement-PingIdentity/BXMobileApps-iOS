@@ -24,7 +24,11 @@ struct ProfileInformationScreen: View {
     }
 }
 
-#Preview {
-    ProfileInformationScreen()
-        .environmentObject(GlobalViewModel.preview)
+#if DEBUG
+struct ProfileInformationScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileInformationScreen()
+            .environmentObject(GlobalViewModel.preview)
+    }
 }
+#endif

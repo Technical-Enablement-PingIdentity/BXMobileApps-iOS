@@ -63,19 +63,23 @@ struct ConfirmationView: View {
     }
 }
 
-#Preview {
-    let globalModel = GlobalViewModel.preview
-
-    VStack {
-        ConfirmationView()
-    }
-    .environmentObject(globalModel)
-    .onAppear {
-        globalModel.presentUserConfirmation(
-            title: K.Strings.Confirmation.Title,
-            message: K.Strings.Confirmation.Message, image: "lock.open.iphone"
-        ) { approved in
-            print("User approved: \(approved)")
+#if DEBUG
+struct ConfirmationView_Previews: PreviewProvider {
+    static var previews: some View {
+        let globalModel = GlobalViewModel.preview
+        
+        VStack {
+            ConfirmationView()
+        }
+        .environmentObject(globalModel)
+        .onAppear {
+            globalModel.presentUserConfirmation(
+                title: K.Strings.Confirmation.Title,
+                message: K.Strings.Confirmation.Message, image: "lock.open.iphone"
+            ) { approved in
+                print("User approved: \(approved)")
+            }
         }
     }
 }
+#endif

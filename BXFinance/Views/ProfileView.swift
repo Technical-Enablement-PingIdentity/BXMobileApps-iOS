@@ -80,8 +80,12 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView()
-        .environmentObject(RouterViewModel())
-        .environmentObject(GlobalViewModel.preview)
+#if DEBUG
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+            .environmentObject(RouterViewModel())
+            .environmentObject(GlobalViewModel.preview)
+    }
 }
+#endif

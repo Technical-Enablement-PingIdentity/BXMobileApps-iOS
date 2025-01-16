@@ -78,8 +78,12 @@ struct DeviceSelectionCollectorView: View {
     }
 }
 
-#Preview {
-    DeviceSelectionCollectorView(selectableDevices: MockDevices().devices) { device in
-        print("Selected Device: \(device.id)")
+#if DEBUG
+struct DeviceSelectionCollectorView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeviceSelectionCollectorView(selectableDevices: MockDevices().devices) { device in
+            print("Selected Device: \(device.id)")
+        }
     }
 }
+#endif

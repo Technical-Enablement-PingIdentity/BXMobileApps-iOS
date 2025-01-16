@@ -87,10 +87,14 @@ struct DashboardScreen: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        DashboardScreen()
-            .environmentObject(GlobalViewModel.preview)
-            .environmentObject(RouterViewModel())
+#if DEBUG
+struct DashboardScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            DashboardScreen()
+                .environmentObject(GlobalViewModel.preview)
+                .environmentObject(RouterViewModel())
+        }
     }
 }
+#endif

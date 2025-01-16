@@ -22,9 +22,6 @@ struct WelcomeScreen: View {
             LogoView(size: .large)
             Text(K.Strings.Login.Welcome)
                 .font(.system(size: 28))
-            Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
-                .font(.system(size: 12))
-                .padding(.top, 16)
             Spacer()
             
             Button(K.Strings.Login.Login) {
@@ -35,7 +32,12 @@ struct WelcomeScreen: View {
             
             Button("Continue without Signing In") {
                 router.navigateTo(.dashboard)
-            }.tint(Color(K.Colors.Primary))
+            }
+            .tint(Color(K.Colors.Primary))
+            .padding(.bottom, 8)
+            
+            Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
+                .font(.system(size: 12))
         }
         .padding()
         .alert("Notifications Disabled", isPresented: $showNotificationDeniedAlert, actions: {
@@ -79,8 +81,12 @@ struct WelcomeScreen: View {
     }
 }
 
-#Preview {
-    WelcomeScreen()
-        .environmentObject(RouterViewModel())
-        .environmentObject(GlobalViewModel.preview)
+#if DEBUG
+struct WelcomeScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeScreen()
+            .environmentObject(RouterViewModel())
+            .environmentObject(GlobalViewModel.preview)
+    }
 }
+#endif

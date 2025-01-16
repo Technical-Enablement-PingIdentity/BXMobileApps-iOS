@@ -58,7 +58,11 @@ struct VerifyView: View {
     }
 }
 
-#Preview {
-    VerifyView()
-        .environmentObject(GlobalViewModel.preview)
+#if DEBUG
+struct VerifyView_Previews: PreviewProvider {
+    static var previews: some View {
+        VerifyView()
+            .environmentObject(GlobalViewModel.preview)
+    }
 }
+#endif

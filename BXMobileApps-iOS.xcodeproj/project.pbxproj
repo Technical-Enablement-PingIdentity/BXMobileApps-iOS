@@ -1284,7 +1284,7 @@
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 40;
-				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1326,7 +1326,7 @@
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 40;
-				DEVELOPMENT_ASSET_PATHS = "\"BXFinance/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;

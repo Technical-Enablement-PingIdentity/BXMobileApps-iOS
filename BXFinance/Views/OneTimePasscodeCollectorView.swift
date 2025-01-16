@@ -107,20 +107,24 @@ struct OneTimePasscodeCollectorView: View {
     }
 }
 
-#Preview {
-    struct Preview: View {
-        @State var oneTimePasscode = ""
-        @State var validationMessage: String? = "Some issue with the one time passcode"
-        
-        var body: some View {
-            VStack {
-                OneTimePasscodeCollectorView(selectedDevice: MockDevices().devices[3], oneTimePasscode: $oneTimePasscode, validationMessage: $validationMessage) {
-                    print("Submitted \(oneTimePasscode)")
+#if DEBUG
+struct OneTimePasscodeCollectorView_Previews: PreviewProvider {
+    static var previews: some View {
+        struct Preview: View {
+            @State var oneTimePasscode = ""
+            @State var validationMessage: String? = "Some issue with the one time passcode"
+            
+            var body: some View {
+                VStack {
+                    OneTimePasscodeCollectorView(selectedDevice: MockDevices().devices[3], oneTimePasscode: $oneTimePasscode, validationMessage: $validationMessage) {
+                        print("Submitted \(oneTimePasscode)")
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
+        
+        return Preview()
     }
-    
-    return Preview()
 }
+#endif

@@ -1,13 +1,13 @@
 {
-  "originHash" : "09ce25e12fab69f1fb51750b89fb2390eac0ce1b829d998fff96d9e094271226",
+  "originHash" : "a66953e6929b316d2aef59edb259074800d440f3be6d7e329c697908100b2507",
   "pins" : [
     {
       "identity" : "appauth-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/openid/AppAuth-iOS.git",
       "state" : {
-        "revision" : "c89ed571ae140f8eb1142735e6e23d7bb8c34cb2",
-        "version" : "1.7.5"
+        "revision" : "2781038865a80e2c425a1da12cc1327bcd56501f",
+        "version" : "1.7.6"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/pingidentity/pingone-signals-sdk-ios",
       "state" : {
         "branch" : "main",
-        "revision" : "59fde21ecebaaf1b20046e79f55f05f4beb7a74d"
+        "revision" : "2f47da5704ed7bacc3eb507db2f3a4ecc873c05d"
       }
     },
     {
@@ -51,8 +51,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log",
       "state" : {
-        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
-        "version" : "1.6.1"
+        "revision" : "96a2f8a0fa41e9e09af4585e2724c4e825410b91",
+        "version" : "1.6.2"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
+      "state" : {
+        "revision" : "af76cf3ef710b6ca5f8c05f3a31307d44a3c5828",
+        "version" : "5.0.2"
       }
     }
   ],

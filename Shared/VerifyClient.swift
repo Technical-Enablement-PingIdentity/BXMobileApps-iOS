@@ -9,9 +9,9 @@ import SwiftUI
 import PingOneVerify
 
 class VerifyClient {
-    private var model: VerifyViewModel
+    private var model: GlobalViewModel
     
-    init(model: VerifyViewModel) {
+    init(model: GlobalViewModel) {
         self.model = model
     }
     

@@ -20,7 +20,7 @@ struct VerifyView: View {
     
     func submissionError(error: String) {
         if error.contains("Invalid URL") {
-            ToastPresenter.show(style: .error, toast: "Invalid URL for ID Verification, please ensure you aren't scanning a QR code meant for wallet pairing or credential verificaiton")
+            ToastPresenter.show(style: .error, toast: "Invalid URL for ID Verification, please ensure you aren't scanning a QR code meant for wallet pairing or credential verification")
         } else {
             ToastPresenter.show(style: .error, toast: error)
         }

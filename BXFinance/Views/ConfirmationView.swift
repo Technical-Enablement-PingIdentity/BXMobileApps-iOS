@@ -34,7 +34,7 @@ struct ConfirmationView: View {
                 .multilineTextAlignment(.center)
 
             HStack {
-                Button("Deny") {
+                Button(LocalizedStringKey("deny")) {
                     model.completeConfirmation(userDidApprove: false)
                 }
                 .buttonStyle(
@@ -43,7 +43,7 @@ struct ConfirmationView: View {
                 .padding(.leading)
                 .padding(.trailing, 4)
 
-                Button("Approve") {
+                Button(LocalizedStringKey("approve")) {
 
                     model.completeConfirmation(userDidApprove: true)
                 }
@@ -74,8 +74,8 @@ struct ConfirmationView_Previews: PreviewProvider {
         .environmentObject(globalModel)
         .onAppear {
             globalModel.presentUserConfirmation(
-                title: K.Strings.Confirmation.Title,
-                message: K.Strings.Confirmation.Message, image: "lock.open.iphone"
+                title: String(localized: "confirmation.title"),
+                message: String(localized: "confirmation.message"), image: "lock.open.iphone"
             ) { approved in
                 print("User approved: \(approved)")
             }

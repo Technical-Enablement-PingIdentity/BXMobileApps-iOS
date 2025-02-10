@@ -37,7 +37,7 @@ class LoginViewModel: ObservableObject {
             setLoginStep()
             checkIfCompleted()
         } catch {
-            fatalErrorMessage = "Could not start an authentication session, please try again or contact support"
+            fatalErrorMessage = String(localized: "authentication.error")
         }
     }
     
@@ -53,7 +53,7 @@ class LoginViewModel: ObservableObject {
             if loginStep == .deviceProfileRequired {
                 try await submitDeviceProfile()
             } else if loginStep == .failed {
-                validationMessage = "User not found, please ensure you have entered a valid username"
+                validationMessage = String(localized: "authentication.username.not_found")
                 try await startAuthentication(loginCompleteHandler: self.loginCompleteCallback!)
             } else if loginStep == .authenticationRequired {
                 selectableDevices = try await pingFedAuthClient.submitAuthenticate()
@@ -68,7 +68,7 @@ class LoginViewModel: ObservableObject {
                 self.username = pingFedAuthClient.storedUsername
             }
         } catch {
-            fatalErrorMessage = "Could not submit username, please try again or contact support"
+            fatalErrorMessage = String(localized: "authentication.username.error")
         }
     }
     
@@ -92,13 +92,13 @@ class LoginViewModel: ObservableObject {
             if loginStep == .deviceProfileRequired {
                 try await submitDeviceProfile()
             } else if loginStep == .failed {
-                self.fatalErrorMessage = "Could not authenticate user, your account is locked for 1 minute after 3 failed attempts. Please try again."
+                self.fatalErrorMessage = String(localized: "authentication.password.lockout")
             } else {
                 // This will probably never get hit but will allow app to successfully log in still if we ever remove the protect step from the AuthN API
                 checkIfCompleted()
             }
         } catch {
-            fatalErrorMessage = "Could not submit password, please try again or contact support"
+            fatalErrorMessage = String(localized: "authentication.password.error")
         }
     }
     
@@ -114,7 +114,7 @@ class LoginViewModel: ObservableObject {
             checkIfCompleted()
         } catch {
             print(error.localizedDescription)
-            fatalErrorMessage = "Could not submit device profile, please try again or contact support"
+            fatalErrorMessage = String(localized: "authentication.device_profile.error")
         }
     }
     
@@ -128,7 +128,7 @@ class LoginViewModel: ObservableObject {
             setLoginStep()
         } catch {
             print(error.localizedDescription)
-            fatalErrorMessage = "Could not submit device selection, please try again or contact support"
+            fatalErrorMessage = String(localized: "authentication.device_selection.error")
         }
     }
     
@@ -149,7 +149,7 @@ class LoginViewModel: ObservableObject {
             setLoginStep()
             
             if loginStep == .failed {
-                self.fatalErrorMessage = "You've reached the maximum number of attempts. Please try again."
+                self.fatalErrorMessage = String(localized: "authentication.otp.error")
             } else if loginStep == .mfaCompleted {
                 try await pingFedAuthClient.submitContinueAuthentication()
                 setLoginStep()
@@ -163,12 +163,12 @@ class LoginViewModel: ObservableObject {
     func checkIfCompleted() {
         if loginStep == .completed {
             guard let accessToken = pingFedAuthClient.accessToken else {
-                fatalErrorMessage = "Received completed result from Ping Federate but access token is nil, please contact support"
+                fatalErrorMessage = String(localized: "authentication.missing_access_token")
                 return
             }
             
             guard let loginCompleteCallback else {
-                fatalErrorMessage = "The login complete callback is nil, please contact support"
+                fatalErrorMessage = String(localized: "authentication.missing_callback")
                 return
             }
             

@@ -13,7 +13,7 @@ struct BXHealthApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HealthRootView()
+            Text("Test")
         }
     }
 }

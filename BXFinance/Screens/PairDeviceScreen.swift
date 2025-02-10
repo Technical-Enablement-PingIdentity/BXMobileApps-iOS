@@ -27,37 +27,37 @@ struct PairDeviceScreen: View {
         VStack {
             if !pairingClientReady && !pairingClientInitializationError {
                 Spacer()
-                Text("Loading...")
+                Text(LocalizedStringKey("loading"))
                 ProgressView()
                 Spacer()
             }
             
             if pairingClientInitializationError {
-                Text("An error occurred initializing pairing client, please contact support.")
+                Text(LocalizedStringKey("pairing.initialization_error"))
             }
             
             if pairingClientReady {
-                Button("Pair Device") {
+                Button(LocalizedStringKey("pairing.pair_device")) {
                     let username = model.getAttributeFromToken(attribute: "sub", type: .accessToken)
                     devicePairingClient?.pairDevice(username: username.isEmpty ? nil : username) { pairingObject in
                         guard let pairingObject else {
-                            ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Pairing Object was nil")
+                            ToastPresenter.show(style: .error, toast: String(localized: "pairing.error"))
                             print("Error pairing object was nil")
                             return
                         }
                         
-                        model.presentUserConfirmation(title: "Approve Pairing", message: "Would you like to pair this device with your BXFinance account?", image: "lock.open.iphone") { userConfirmed in
+                        model.presentUserConfirmation(title: String(localized: "pairing.approve.title"), message: String(localized: "pairing.approve.message"), image: "lock.open.iphone") { userConfirmed in
                             if userConfirmed {
                                 pairingObject.approve { response, error in
                                     if let error {
-                                        ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Unsuccessful response.")
+                                        ToastPresenter.show(style: .error, toast: String(localized: "pairing.response_unsuccessful"))
                                         print("An error occured while pairing device: \(error)")
                                     } else {
-                                        ToastPresenter.show(style: .success, toast: "Device was successfully paired!")
+                                        ToastPresenter.show(style: .success, toast: String(localized: "pairing.successful"))
                                     }
                                 }
                             } else {
-                                ToastPresenter.show(style: .error, toast: "Device pairing was cancelled.")
+                                ToastPresenter.show(style: .error, toast: String(localized: "pairing.cancelled"))
                             }
                         }
                     }

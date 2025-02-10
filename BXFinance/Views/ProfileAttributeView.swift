@@ -9,11 +9,11 @@ import SwiftUI
 
 public struct ProfileAttributeView: View {
     
-    let label: String
+    let label: LocalizedStringKey
     let value: String
     let valueSizeOverride: CGFloat
     
-    init(label: String, value: String, valueSizeOverride: CGFloat = 28) {
+    init(label: LocalizedStringKey, value: String, valueSizeOverride: CGFloat = 28) {
         self.label = label
         self.value = value
         self.valueSizeOverride = valueSizeOverride

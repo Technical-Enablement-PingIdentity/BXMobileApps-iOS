@@ -26,8 +26,8 @@ struct UsernameCollectorView: View {
     
     var body: some View {
         VStack {
-            Section(header: FormFieldLabelView(K.Strings.Login.Username)) {
-                TextField(K.Strings.Login.Username, text: $username)
+            Section(header: FormFieldLabelView(LocalizedStringKey("authentication.username.label"))) {
+                TextField(LocalizedStringKey("authentication.username.label"), text: $username)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(RoundedBorderTextFieldCustomStyle())
@@ -45,7 +45,7 @@ struct UsernameCollectorView: View {
             
             Spacer()
             
-            Button(K.Strings.Login.Submit) {
+            Button(LocalizedStringKey("submit")) {
                 submitCompletionHandler()
             }
             .disabled(!isUsernameValid)

@@ -10,25 +10,24 @@ struct K {
         static let Primary = "AccentColor"
     }
     
-    struct Strings {
-        struct Shared {
-            static let Back = "Back"
-            static let Submit = "Submit"
-        }
-        
-        struct Login {
-            static let Welcome = "Welcome!"
-            static let Login = "Sign In"
-            static let Username = "Username"
-            static let Password = "Password"
-            static let Submit = "Submit"
-        }
-        
-        struct Confirmation {
-            static let Title = "Approve Authentication Request?"
-            static let Message = "It looks like you're trying to authenticate. Would you like to approve the request?"
-        }
-    }
+//    struct Strings {
+//        struct Shared {
+//            static let Back = "Back"
+//            static let Submit = "Submit"
+//        }
+//        
+//        struct Login {
+//            static let Welcome = "Welcome!"
+//            static let Username = "Username"
+//            static let Password = "Password"
+//            static let Submit = "Submit"
+//        }
+//        
+//        struct Confirmation {
+//            static let Title = "Approve Authentication Request?"
+//            static let Message = "It looks like you're trying to authenticate. Would you like to approve the request?"
+//        }
+//    }
     
     struct Oidc {
         static let MobilePayload = "mobilePayload"

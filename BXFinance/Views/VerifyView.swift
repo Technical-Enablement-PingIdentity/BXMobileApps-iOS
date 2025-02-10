@@ -20,7 +20,7 @@ struct VerifyView: View {
     
     func submissionError(error: String) {
         if error.contains("Invalid URL") {
-            ToastPresenter.show(style: .error, toast: "Invalid URL for ID Verification, please ensure you aren't scanning a QR code meant for wallet pairing or credential verification")
+            ToastPresenter.show(style: .error, toast: String(localized: "verify.invalid_url"))
         } else {
             ToastPresenter.show(style: .error, toast: error)
         }
@@ -29,7 +29,7 @@ struct VerifyView: View {
     
     var body: some View {
         VStack {
-            Text("To verify your identity for a shine rewards card please have your ID or Passport ready and scan the QR code displayed on your application through the BXFinance website.")
+            Text(LocalizedStringKey("verify.message"))
                 .font(.system(size: 14))
             Spacer()
 
@@ -38,7 +38,7 @@ struct VerifyView: View {
                 Image(systemName: "person.crop.circle.badge.checkmark")
                     .font(.system(size: 150))
                     .foregroundStyle(Color(K.Colors.Primary))
-                Text("You've successfully verified your identity")
+                Text(LocalizedStringKey("verify.success"))
                     .font(.system(size: 24))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color(K.Colors.Primary))
@@ -47,7 +47,7 @@ struct VerifyView: View {
             .scaleEffect(verifiedScale)
             .animation(.easeInOut(duration: 1), value: verifiedScale)
 
-            Button("Verify Identity") {
+            Button(LocalizedStringKey("verify.identity")) {
                 let verifyClient = VerifyClient(submissionCompleteCallback: submissionComplete, submissionErrorCallback: submissionError)
                 
                 verifyClient.launchVerify()

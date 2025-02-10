@@ -29,7 +29,7 @@ struct AccountView: View {
                 .padding(.bottom, 2)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(account.type == .creditCard ? "Current Balance" : "Available Balance")
+            Text(account.type == .creditCard ? String(localized: "account.current_balance") : String(localized: "account.available_balance"))
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding()
@@ -41,9 +41,9 @@ struct AccountView: View {
     
     func accountName(type: AccountType) -> String {
         switch type {
-        case .checking: return "BXChecking"
-        case .savings: return "BXSavings"
-        case .creditCard: return "BXFinance Rewards Visa"
+        case .checking: return String(localized: "account.checking")
+        case .savings: return String(localized: "account.savings")
+        case .creditCard: return String(localized: "account.rewards")
         }
     }
 }

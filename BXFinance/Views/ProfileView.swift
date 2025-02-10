@@ -19,10 +19,10 @@ struct ProfileView: View {
     
     private let pages = [
         ProfilePage(icon: "person.crop.circle.fill", name: "Profile Information", route: .profileInformation, requiresAuthentication: true),
-        ProfilePage(icon: "iphone.gen2", name: "Pair Device", route: .pairDevice, requiresAuthentication: false),
-        ProfilePage(icon: "lock.shield", name: "Protect Result", route: .protect, requiresAuthentication: true),
-        ProfilePage(icon: "wallet.pass", name: "Configure Digital Wallet", route: .wallet, requiresAuthentication: false),
-        ProfilePage(icon: "person.slash", name: "Sign Out", route: .signOut, requiresAuthentication: false)
+        ProfilePage(icon: "iphone.gen2", name: String(localized: "profile.pair_device"), route: .pairDevice, requiresAuthentication: false),
+        ProfilePage(icon: "lock.shield", name: String(localized: "profile.protect"), route: .protect, requiresAuthentication: true),
+        ProfilePage(icon: "wallet.pass", name: String(localized: "profile.wallet"), route: .wallet, requiresAuthentication: false),
+        ProfilePage(icon: "person.slash", name: String(localized: "profile.sign_out"), route: .signOut, requiresAuthentication: false)
     ]
     
     @EnvironmentObject var router: RouterViewModel
@@ -35,7 +35,7 @@ struct ProfileView: View {
                     Image(systemName: page.icon)
                         .frame(width: 20)
                         
-                    Text(page.name == "Sign Out" && globalModel.accessToken.isEmpty ? "Back to Sign In" : page.name)
+                    Text(page.name == String(localized: "profile.sign_out") && globalModel.accessToken.isEmpty ? String(localized: "profile.sign_in") : page.name)
                     
                     Spacer()
                     
@@ -57,7 +57,7 @@ struct ProfileView: View {
                                 do {
                                     try await PingFedAuthnClient(appUrl: K.Environment.baseUrl).logout()
                                     globalModel.clearTokens()
-                                    ToastPresenter.show(style: .success, toast: "You have successfully logged out")
+                                    ToastPresenter.show(style: .success, toast: String(localized: "profile.sign_out_successful"))
                                 } catch {
                                     print("Could not logout: \(error.localizedDescription)")
                                 }

@@ -20,17 +20,17 @@ struct WelcomeScreen: View {
         VStack {
             Spacer()
             LogoView(size: .large)
-            Text(K.Strings.Login.Welcome)
+            Text(LocalizedStringKey("welcome"))
                 .font(.system(size: 28))
             Spacer()
             
-            Button(K.Strings.Login.Login) {
+            Button(LocalizedStringKey("sign_in")) {
                 router.navigateTo(.login)
             }
             .buttonStyle(FinanceFullWidthButtonStyle())
             .padding(.bottom, 16)
             
-            Button("Continue without Signing In") {
+            Button(LocalizedStringKey("skip_sign_in")) {
                 router.navigateTo(.dashboard)
             }
             .tint(Color(K.Colors.Primary))
@@ -40,18 +40,18 @@ struct WelcomeScreen: View {
                 .font(.system(size: 12))
         }
         .padding()
-        .alert("Notifications Disabled", isPresented: $showNotificationDeniedAlert, actions: {
-            Button("Dismiss", role: .cancel) {
+        .alert(LocalizedStringKey("notifications.disabled"), isPresented: $showNotificationDeniedAlert, actions: {
+            Button("dismiss", role: .cancel) {
                 showNotificationDeniedAlert = false
             }
-            Button("Go to Settings") {
+            Button(LocalizedStringKey("go_to_settings")) {
                 showNotificationDeniedAlert = false
                 if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsUrl)
                 }
             }
         }, message: {
-            Text("If you do not wish to enable notifications you will need to be in the BXFinance App on your phone before you attempt to use it for MFA.")
+            Text(LocalizedStringKey("notifications.warning"))
         })
         .onAppear {
             let center = UNUserNotificationCenter.current()
@@ -75,9 +75,7 @@ struct WelcomeScreen: View {
                     }
                 }
             }
-            
         }
-
     }
 }
 

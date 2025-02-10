@@ -1,21 +1,26 @@
 //
-//  AppDelegateWithWallet.swift
+//  AppDelegate.swift
 //  BXMobileApps-iOS
 //
-//  Created by Eric Anderson on 10/2/24.
+//  Created by Eric Anderson on 10/25/24.
 //
 
-import SwiftUI
-import DIDSDK
+import AppAuth
+import PingOneSDK
 import PingOneWallet
+import SwiftUI
 
 extension AppDelegate {
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         PingOneWalletHelper.initializeWallet()
             .onError { error in
                 logerror("Error initializing SDK: \(error.localizedDescription)")
-                ApplicationUiHandler().showErrorAlert(title: "Error", message: "Error initializing Wallet, app may behave unexpectedly.", actionTitle: "Okay", actionHandler: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    ApplicationUiHandler().showErrorAlert(title: String(localized: "error"), message: String(localized: "wallet.initialization.error"), actionTitle: String(localized: "okay"), actionHandler: nil)
+                }
+                
             }
             .onResult { pingOneWalletHelper in
                 let coordinator = WalletCoordinator(pingOneWalletHelper: pingOneWalletHelper)
@@ -27,4 +32,5 @@ extension AppDelegate {
         
         return true
     }
+    
 }

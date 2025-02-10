@@ -15,10 +15,10 @@ struct WalletView: View {
     var body: some View {
         if walletModel.credentials.isEmpty {
             VStack(spacing: 16) {
-                Text("No credentials in wallet, please configure from the profile screen or tap the button below to set up your wallet. If you just completed pairing it may take a few minutes for credentials to be issued.")
+                Text(LocalizedStringKey("wallet.empty"))
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
-                Button("Configure Wallet"){
+                Button(LocalizedStringKey("wallet.configure")){
                     router.navigateTo(.wallet)
                 }
                 .tint(Color(K.Colors.Primary))
@@ -32,14 +32,14 @@ struct WalletView: View {
                             .aspectRatio(contentMode: .fit)
                             .padding(.horizontal)
                     } else {
-                        Text("Error loading credential image")
+                        Text(LocalizedStringKey("wallet.image_error"))
                     }
                 }
             }
             
             Spacer()
             
-            Button("Scan Verification QR Code") {
+            Button(LocalizedStringKey("wallet.scan_code")) {
                 walletModel.presentQrScanner = true
             }
             .buttonStyle(FinanceButtonStyle())
@@ -56,7 +56,7 @@ struct WalletView: View {
                     if (walletModel.loadingCamera) {
                         VStack {
                             Spacer()
-                            Text("Loading camera. This may take a moment the first time.")
+                            Text(LocalizedStringKey("wallet.camera.loading"))
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal, 16)
                                 .font(.system(size: 20))
@@ -65,7 +65,7 @@ struct WalletView: View {
                             Spacer()
                         }
                     } else {
-                        Text("Scan your verification QR Code")
+                        Text(LocalizedStringKey("wallet.camera.message"))
                             .padding()
                             .background(.accent)
                             .foregroundColor(.white)

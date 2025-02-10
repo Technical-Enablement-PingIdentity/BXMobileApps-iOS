@@ -28,7 +28,7 @@ struct OneTimePasscodeCollectorView: View {
     
     var body: some View {
         VStack {
-            Text("Please enter your OTP")
+            Text(LocalizedStringKey("authentication.totp.message"))
                 .padding(.bottom, 8)
                 .font(.system(size: 24))
                 .multilineTextAlignment(.center)
@@ -49,8 +49,8 @@ struct OneTimePasscodeCollectorView: View {
             .padding(.bottom, 16)
 
             
-            Section(header: FormFieldLabelView("One Time Passcode")) {
-                TextField("One Time Passcode", text: $oneTimePasscode)
+            Section(header: FormFieldLabelView(LocalizedStringKey("authentication.totp.label"))) {
+                TextField(LocalizedStringKey("authentication.totp.label"), text: $oneTimePasscode)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(RoundedBorderTextFieldCustomStyle())
@@ -69,7 +69,7 @@ struct OneTimePasscodeCollectorView: View {
             
             Spacer()
             
-            Button(K.Strings.Login.Submit) {
+            Button(LocalizedStringKey("submit")) {
                 submitCompletionHandler()
             }
             .disabled(!isOtpValid)
@@ -83,11 +83,11 @@ struct OneTimePasscodeCollectorView: View {
     func getHeaderText() -> String {
         switch selectedDevice.type {
         case .email:
-            return "We sent a 6 digit verification code to \(selectedDevice.target)"
+            return "\(String(localized: "authentication.email.header")) \(selectedDevice.target)"
         case .sms:
-            return "We sent a 6 digit verification code to \(selectedDevice.target)"
+            return "\(String(localized: "authentication.sms.header")) \(selectedDevice.target)"
         case .totp:
-            return "Please get a TOTP from your authenticator app"
+            return String(localized: "authentication.totp.header")
         default:
             return ""
         }

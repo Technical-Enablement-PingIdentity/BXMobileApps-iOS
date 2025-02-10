@@ -37,8 +37,8 @@ public class WalletCoordinator {
     private func registerObservers() {
         self.eventObserver.observeNetworkReachability { status in
             if (status == .unavailable) {
-                self.showErrorAlert(title: "Not connected", message: "Make sure you're connected to internet and restart the app.", actionTitle: "Ok") {
-                    ToastPresenter.show(style: .error, toast: "Network not available")
+                self.showErrorAlert(title: String(localized: "network.error.title"), message: String(localized: "network.error.message"), actionTitle: String(localized: "okay")) {
+                    ToastPresenter.show(style: .error, toast: String(localized: "network.toast"))
                 }
             }
         }

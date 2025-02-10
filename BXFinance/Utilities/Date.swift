@@ -11,8 +11,6 @@ import PingOneWallet
 
 class DateUtils {
     
-    
-    
     static func getIssueDate(from claim: Claim) -> String? {
         return getDisplayStringFromISO8691(claim.getCreateDate())
     }

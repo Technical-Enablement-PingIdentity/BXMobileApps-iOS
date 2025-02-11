@@ -13,8 +13,6 @@ struct WelcomeScreen: View {
     @EnvironmentObject private var globalModel: GlobalViewModel
     
     @EnvironmentObject private var router: RouterViewModel
-    
-    @State private var showNotificationDeniedAlert: Bool = false
 
     var body: some View {
         VStack {
@@ -40,42 +38,6 @@ struct WelcomeScreen: View {
                 .font(.system(size: 12))
         }
         .padding()
-        .alert(LocalizedStringKey("notifications.disabled"), isPresented: $showNotificationDeniedAlert, actions: {
-            Button("dismiss", role: .cancel) {
-                showNotificationDeniedAlert = false
-            }
-            Button(LocalizedStringKey("go_to_settings")) {
-                showNotificationDeniedAlert = false
-                if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-                    UIApplication.shared.open(settingsUrl)
-                }
-            }
-        }, message: {
-            Text(LocalizedStringKey("notifications.warning"))
-        })
-        .onAppear {
-            let center = UNUserNotificationCenter.current()
-            
-            center.getNotificationSettings { settings in
-                if settings.authorizationStatus == .notDetermined {
-                    center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
-                        // Need to do this either way so the Alert will pop up in the app even if they do not want push notifications.
-                        if error == nil {
-                            center.setNotificationCategories(PingOne.getUNNotificationCategories())
-                            DispatchQueue.main.async {
-                                print("Registering for remote notifications")
-                                UIApplication.shared.registerForRemoteNotifications()
-                            }
-                        }
-                        
-                        if !granted {
-                            print("User denied permission for push notifications.")
-                            showNotificationDeniedAlert = true
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

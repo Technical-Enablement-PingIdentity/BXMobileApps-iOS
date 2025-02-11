@@ -21,6 +21,7 @@ class DevicePairingClient {
             fatalError( "Issuer URL in constants is invalid")
         }
         
+
         OIDAuthorizationService.discoverConfiguration(forIssuer: issuer) { config, error in
             guard let config else {
                 print("Error retrieving discovery configuration \(error?.localizedDescription ?? "Unknown Error")")
@@ -33,6 +34,7 @@ class DevicePairingClient {
             self.oidcConfiguration = config
             completionHandler(true)
         }
+
     }
     
     func pairDevice(username: String? = nil, approvePairingHandler: @escaping (PairingObject?) -> Void) {
@@ -72,12 +74,12 @@ class DevicePairingClient {
                     } else {
                         print("No ID Token present on token reponse")
                     }
-
+                    
                 } else {
                     print("Authorization Error: \(error?.localizedDescription ?? "Unknown Error")")
                 }
             }
-        } catch let error {
+        } catch {
             print("Error creating auth request: \(error)")
         }
     }

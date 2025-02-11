@@ -13,6 +13,8 @@ struct PairDeviceScreen: View {
     @State private var pairingClientInitializationError = false
     @State private var devicePairingClient: DevicePairingClient? = nil
     
+    @State private var showNotificationDeniedAlert: Bool = false
+    
     @EnvironmentObject var model: GlobalViewModel
     
     func pairingClientReady(successful: Bool) {
@@ -66,17 +68,36 @@ struct PairDeviceScreen: View {
             }
 
         }
-        .onAppear {
-            let client = DevicePairingClient {
-                successful in
-                if successful {
-                    self.pairingClientReady = true
-                } else {
-                    self.pairingClientInitializationError = true
+        .alert(LocalizedStringKey("notifications.disabled"), isPresented: $showNotificationDeniedAlert, actions: {
+            Button("dismiss", role: .cancel) {
+                showNotificationDeniedAlert = false
+            }
+            Button(LocalizedStringKey("go_to_settings")) {
+                showNotificationDeniedAlert = false
+                if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsUrl)
                 }
             }
-            
-            self.devicePairingClient = client
+        }, message: {
+            Text(LocalizedStringKey("notifications.warning"))
+        })
+        .onAppear {
+            PushNotificationService.registerForPushNotifications { granted in
+                if !granted {
+                    showNotificationDeniedAlert = true
+                }
+                
+                let client = DevicePairingClient {
+                    successful in
+                    if successful {
+                        self.pairingClientReady = true
+                    } else {
+                        self.pairingClientInitializationError = true
+                    }
+                }
+                
+                self.devicePairingClient = client
+            }
         }
     }
 }

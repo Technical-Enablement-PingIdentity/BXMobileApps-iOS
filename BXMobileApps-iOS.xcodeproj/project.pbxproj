@@ -11,6 +11,8 @@
 		100CEC5B2D381C3C000B73E5 /* OneTimePasscodeCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CEC5A2D381C2D000B73E5 /* OneTimePasscodeCollectorView.swift */; };
 		100CEC5D2D38209E000B73E5 /* DeviceSelectionCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CEC5C2D382096000B73E5 /* DeviceSelectionCollectorView.swift */; };
 		100F18182D5AC7D300875591 /* SendLogsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F18172D5AC7CD00875591 /* SendLogsScreen.swift */; };
+		100F181A2D5BAE3B00875591 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F18192D5BAE3600875591 /* PushNotificationService.swift */; };
+		100F181B2D5BAE3B00875591 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F18192D5BAE3600875591 /* PushNotificationService.swift */; };
 		10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F552A5F05DB004A60E1 /* BXHealthApp.swift */; };
 		10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F592A5F05DD004A60E1 /* Assets.xcassets */; };
 		10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */; };
@@ -169,6 +171,7 @@
 		100CEC5A2D381C2D000B73E5 /* OneTimePasscodeCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimePasscodeCollectorView.swift; sourceTree = "<group>"; };
 		100CEC5C2D382096000B73E5 /* DeviceSelectionCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelectionCollectorView.swift; sourceTree = "<group>"; };
 		100F18172D5AC7CD00875591 /* SendLogsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLogsScreen.swift; sourceTree = "<group>"; };
+		100F18192D5BAE3600875591 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 		10109F532A5F05DB004A60E1 /* BXHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10109F552A5F05DB004A60E1 /* BXHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHealthApp.swift; sourceTree = "<group>"; };
 		10109F592A5F05DD004A60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -430,6 +433,7 @@
 		10987DB12D5685970010FE09 /* Infrustructure */ = {
 			isa = PBXGroup;
 			children = (
+				100F18192D5BAE3600875591 /* PushNotificationService.swift */,
 				10EEFF162D0CB41C00B89DF7 /* DevicePairingClient.swift */,
 				10EEFF1B2D0CB41C00B89DF7 /* VerifyClient.swift */,
 			);
@@ -746,6 +750,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100F181B2D5BAE3B00875591 /* PushNotificationService.swift in Sources */,
 				10987DA62D5680F00010FE09 /* AppDelegate.swift in Sources */,
 				10987DB32D5685BA0010FE09 /* DevicePairingClient.swift in Sources */,
 				10987DB22D5685B50010FE09 /* VerifyClient.swift in Sources */,
@@ -782,6 +787,7 @@
 				10EEFF512D0CB41C00B89DF7 /* FinanceButtonStyle.swift in Sources */,
 				10EEFF522D0CB41C00B89DF7 /* RoundedBorderTextFieldCustomStyle.swift in Sources */,
 				10EEFF532D0CB41C00B89DF7 /* JWTUtilities.swift in Sources */,
+				100F181A2D5BAE3B00875591 /* PushNotificationService.swift in Sources */,
 				10EEFF542D0CB41C00B89DF7 /* UIUtilities.swift in Sources */,
 				100F18182D5AC7D300875591 /* SendLogsScreen.swift in Sources */,
 				10222F162D35879D00295B35 /* Connectivity.swift in Sources */,

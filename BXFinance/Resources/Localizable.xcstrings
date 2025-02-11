@@ -749,6 +749,17 @@
         }
       }
     },
+    "profile.send_logs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send PingOne Logs"
+          }
+        }
+      }
+    },
     "profile.sign_in" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -833,6 +844,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Risk Assessment for %1$@"
+          }
+        }
+      }
+    },
+    "send_logs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Logs to PingOne"
+          }
+        }
+      }
+    },
+    "send_logs.support_id %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successfully sent logs. Support ID: %1$@"
           }
         }
       }

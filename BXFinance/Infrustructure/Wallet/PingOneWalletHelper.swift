@@ -367,7 +367,7 @@ extension PingOneWalletHelper {
     }
     
     private func askUserPermission(title: String, message: String, actionHandler: @escaping (Bool) -> Void, positiveActionTitle: String = String(localized: "confirm"), cancelActionTitle: String = String(localized: "cancel")) {
-        GlobalViewModel.shared.presentUserConfirmation(title: title, message: message, image: "wallet.pass", completionHandler: actionHandler)
+        ConfirmationViewModel.shared.presentUserConfirmation(title: title, message: message, image: "wallet.pass", completionHandler: actionHandler)
     }
     
     private func showError(title: String, message: String) {

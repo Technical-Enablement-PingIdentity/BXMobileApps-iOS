@@ -25,7 +25,7 @@ struct SendLogsScreen: View {
                     }
                 }
             }
-            .buttonStyle(FinanceButtonStyle())
+            .buttonStyle(BXButtonStyle())
             
             if supportId != nil {
                 Text(LocalizedStringKey("send_logs.support_id \(supportId!)"))

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ProfileInformationScreen: View {
     
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
     var body: some View {
-        LogoView()
+        LogoView(assetName: K.Assets.Logo)
         
         ScrollView {
             ProfileAttributeView(label: LocalizedStringKey("profile.username"), value: globalModel.getAttributeFromToken(attribute: "sub", type: .idToken))
@@ -28,7 +28,7 @@ struct ProfileInformationScreen: View {
 struct ProfileInformationScreen_Previews: PreviewProvider {
     static var previews: some View {
         ProfileInformationScreen()
-            .environmentObject(GlobalViewModel.preview)
+            .environmentObject(FinanceGlobalViewModel.preview)
     }
 }
 #endif

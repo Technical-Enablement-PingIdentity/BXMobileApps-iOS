@@ -12,7 +12,7 @@ struct ConfigureWalletScreen: View {
     
     @EnvironmentObject var walletModel: WalletViewModel
     @EnvironmentObject var router: RouterViewModel
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct ConfigureWalletScreen: View {
                     Button(LocalizedStringKey("wallet.pair")) {
                         walletModel.presentQrScanner = true
                     }
-                    .buttonStyle(FinanceButtonStyle())
+                    .buttonStyle(BXButtonStyle())
                     .popover(isPresented: $walletModel.presentQrScanner) {
                         QRScanner(result: $walletModel.scanResult, loadingCamera: $walletModel.loadingCamera)
                             .onChange(of: walletModel.scanResult) { oldValue, newValue in
@@ -77,7 +77,7 @@ struct ConfigureWalletScreen: View {
                         Button(LocalizedStringKey("wallet.reset")) {
                         walletModel.deleteCredentials()
                     }
-                    .buttonStyle(FinanceButtonStyle())
+                    .buttonStyle(BXButtonStyle())
                     .padding(.bottom, 66)
                 }
             } else {

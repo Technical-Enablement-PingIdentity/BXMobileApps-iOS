@@ -7,11 +7,12 @@
 
 import AppAuth
 import PingOneSDK
-import PingOneWallet
 import SwiftUI
 
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
+    
+    var confirmationModel: ConfirmationViewModel?
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
@@ -91,7 +92,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
         }
         
-        GlobalViewModel.shared.presentUserConfirmation(title: (title ?? "").isEmpty ? String(localized: "confirmation.title") : title!, message: (description ?? "").isEmpty ? String(localized: "confirmation.message") : description!, image: "person.badge.shield.checkmark") { userConfirmed in
+        guard let confirmationModel else {
+            fatalError("confirmationModel is nil, make sure to set in initialization")
+        }
+        
+        confirmationModel.presentUserConfirmation(title: (title ?? "").isEmpty ? String(localized: "confirmation.title") : title!, message: (description ?? "").isEmpty ? String(localized: "confirmation.message") : description!, image: "person.badge.shield.checkmark") { userConfirmed in
             
             if userConfirmed {
                 notificationObject.approve(withAuthenticationMethod: "user") { error in

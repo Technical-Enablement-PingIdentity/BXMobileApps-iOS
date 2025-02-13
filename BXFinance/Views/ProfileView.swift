@@ -28,7 +28,7 @@ struct ProfileView: View {
     ]
     
     @EnvironmentObject var router: RouterViewModel
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
     var body: some View {
         List(pages) { page in
@@ -89,7 +89,7 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .environmentObject(RouterViewModel())
-            .environmentObject(GlobalViewModel.preview)
+            .environmentObject(FinanceGlobalViewModel.preview)
     }
 }
 #endif

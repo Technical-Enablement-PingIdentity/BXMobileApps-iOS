@@ -49,7 +49,7 @@ struct UsernameCollectorView: View {
                 submitCompletionHandler()
             }
             .disabled(!isUsernameValid)
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
         }
         .onAppear {
             focusedField = .username

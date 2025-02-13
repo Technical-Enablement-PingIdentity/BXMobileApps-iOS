@@ -13,10 +13,13 @@ struct BXFinanceApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject private var model = GlobalViewModel.shared
+    @StateObject private var confirmationModel = ConfirmationViewModel.shared
     @StateObject private var walletModel = WalletViewModel.shared
+    @StateObject private var financeModel = FinanceGlobalViewModel.shared
     
     init() {
+        appDelegate.confirmationModel = ConfirmationViewModel.shared
+        
         // Initialize PingOneSignals SDK
         let initParams = POInitParams()
         initParams.envId = K.PingOne.pingOneEnvId
@@ -35,7 +38,7 @@ struct BXFinanceApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .fullScreenCover(isPresented: $model.presentConfirmation) {
+                .fullScreenCover(isPresented: $confirmationModel.presentConfirmation) {
                     ConfirmationView()
                 }
                 .onChange(of: walletModel.presentQrScanner) { oldValue, newValue in
@@ -43,8 +46,9 @@ struct BXFinanceApp: App {
                         QRScannerController.shared?.closeCameraSession()
                     }
                 }
-                .environmentObject(model)
+                .environmentObject(confirmationModel)
                 .environmentObject(walletModel)
+                .environmentObject(financeModel)
                 .onOpenURL { url in
                     if let authorizationflow = DevicePairingClient.currentAuthorizationFlow {
                         authorizationflow.resumeExternalUserAgentFlow(with: url)

@@ -1,5 +1,5 @@
 //
-//  DashboardView.swift
+//  DashboardScreen.swift
 //  BXMobileApps-iOS
 //
 //  Created by Eric Anderson on 10/25/24.
@@ -12,12 +12,12 @@ struct DashboardScreen: View {
     @State var loadingAccounts = false
     @State var accounts: [Account] = []
     
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     @EnvironmentObject var router: RouterViewModel
     
     var body: some View {
         VStack {
-            LogoView()
+            LogoView(assetName: K.Assets.Logo)
                 
             TabView {
                 Tab(LocalizedStringKey("accounts"), systemImage: "building.columns") {
@@ -92,7 +92,7 @@ struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             DashboardScreen()
-                .environmentObject(GlobalViewModel.preview)
+                .environmentObject(FinanceGlobalViewModel.preview)
                 .environmentObject(RouterViewModel())
         }
     }

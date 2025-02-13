@@ -53,7 +53,7 @@ struct PasswordCollectorView: View {
                 submitCompletionHandler()
             }
             .disabled(!isPasswordValid)
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
         }
         .onAppear {
             focusedField = .password

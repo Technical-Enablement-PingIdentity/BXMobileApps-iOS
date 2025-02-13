@@ -11,7 +11,7 @@ struct ConfirmationView: View {
 
     @Environment(\.colorScheme) var colorScheme
 
-    @EnvironmentObject var model: GlobalViewModel
+    @EnvironmentObject var model: ConfirmationViewModel
 
     var body: some View {
         VStack(spacing: 16) {
@@ -37,20 +37,14 @@ struct ConfirmationView: View {
                 Button(LocalizedStringKey("deny")) {
                     model.completeConfirmation(userDidApprove: false)
                 }
-                .buttonStyle(
-                    FinanceFullWidthButtonStyle(backgroundColor: Color.red)
-                )
+                .buttonStyle(BXFullWidthButtonStyle(backgroundColor: .red))
                 .padding(.leading)
                 .padding(.trailing, 4)
 
                 Button(LocalizedStringKey("approve")) {
-
                     model.completeConfirmation(userDidApprove: true)
                 }
-                .buttonStyle(
-                    FinanceFullWidthButtonStyle(
-                        backgroundColor: Color.green)
-                )
+                .buttonStyle(BXFullWidthButtonStyle(backgroundColor: .green))
                 .padding(.leading, 4)
                 .padding(.trailing)
             }
@@ -66,14 +60,15 @@ struct ConfirmationView: View {
 #if DEBUG
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        let globalModel = GlobalViewModel.preview
+        
+        let confirmationModel = ConfirmationViewModel()
         
         VStack {
             ConfirmationView()
         }
-        .environmentObject(globalModel)
+        .environmentObject(confirmationModel)
         .onAppear {
-            globalModel.presentUserConfirmation(
+            confirmationModel.presentUserConfirmation(
                 title: String(localized: "confirmation.title"),
                 message: String(localized: "confirmation.message"), image: "lock.open.iphone"
             ) { approved in

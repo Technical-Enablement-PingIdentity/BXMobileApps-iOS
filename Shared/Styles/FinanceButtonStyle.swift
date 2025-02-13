@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FinanceButtonStyle: ButtonStyle {
+struct BXButtonStyle: ButtonStyle {
     
     let backgroundColor: Color
     
@@ -30,7 +30,7 @@ struct FinanceButtonStyle: ButtonStyle {
     }
 }
 
-struct FinanceFullWidthButtonStyle: ButtonStyle {
+struct BXFullWidthButtonStyle: ButtonStyle {
     let backgroundColor: Color
     
     init(backgroundColor: Color? = nil) {

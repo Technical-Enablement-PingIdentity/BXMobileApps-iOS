@@ -28,14 +28,19 @@ class VerifyClient {
         
         let primaryColor = UIColor(named: K.Colors.Primary) ?? .accent
         
+        let solidButtonAppearance = ButtonAppearance(backgroundColor: primaryColor, textColor: .white, borderColor: primaryColor)
+        let borderedButtonAppearance = ButtonAppearance(backgroundColor: .white, textColor: .black, borderColor: primaryColor)
+        
         var appearanceSettings = UIAppearanceSettings()
+            .setSolidButtonAppearance(solidButtonAppearance)
+            .setBorderedButtonAppearance(borderedButtonAppearance)
             .setBackgroundColor(.white)
             .setBodyTextColor(.black)
-            .setHeadingTextColor(.black)
+            .setHeadingTextColor(.white)
             .setNavigationBarColor(primaryColor)
             .setNavigationBarTextColor(.white)
         
-        if let logo = UIImage(named: "BXFinanceLogo") {
+        if let logo = UIImage(named: "LogoWhite") {
             appearanceSettings = appearanceSettings.setLogoImage(logo)
         }
         

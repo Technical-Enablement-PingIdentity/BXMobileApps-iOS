@@ -16,7 +16,7 @@ struct ProtectScreen: View {
     
     var body: some View {
         VStack {
-            LogoView()
+            LogoView(assetName: "BXFinanceLogo")
             
             Text(LocalizedStringKey("protect.risk_assessment \(username)"))
                 .frame(maxWidth: .infinity, alignment: .leading)

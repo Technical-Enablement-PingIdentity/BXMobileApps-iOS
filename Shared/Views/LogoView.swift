@@ -1,5 +1,5 @@
 //
-//  DashboardLogoView.swift
+//  LogoView.swift
 //  BXMobileApps-iOS
 //
 //  Created by Eric Anderson on 12/12/24.
@@ -14,13 +14,15 @@ struct LogoView: View {
     }
     
     let size: LogoSize
+    let assetName: String
     
-    init (size: LogoSize = .small) {
+    init (assetName: String, size: LogoSize = .small) {
         self.size = size
+        self.assetName = assetName
     }
     
     var body: some View {
-        Image("BXFinanceLogo")
+        Image(assetName)
             .resizable()
             .scaledToFit()
             .frame(width: size == .large ? 280 : 200)
@@ -28,5 +30,5 @@ struct LogoView: View {
 }
 
 #Preview {
-    LogoView()
+    LogoView(assetName: "BXFinanceLogo")
 }

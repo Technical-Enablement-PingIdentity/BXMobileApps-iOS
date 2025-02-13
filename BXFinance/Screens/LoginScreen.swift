@@ -15,7 +15,7 @@ struct LoginScreen: View {
     
     @StateObject private var model: LoginViewModel
     
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     @EnvironmentObject var router: RouterViewModel
     
     init() {

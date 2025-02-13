@@ -71,12 +71,6 @@ struct ToastView: View {
     }
 }
 
-#Preview {
-    Button("Success toast") {
-        ToastPresenter.show(style: .success, toast: "An example Success Toast")
-    }
-}
-
 struct ToastPresenter {
     static func show(style: ToastStyle, toast: String) {
         DispatchQueue.main.async {
@@ -118,5 +112,11 @@ struct ToastPresenter {
             }
         }
 
+    }
+}
+
+#Preview {
+    Button("Success toast") {
+        ToastPresenter.show(style: .success, toast: "An example Success Toast")
     }
 }

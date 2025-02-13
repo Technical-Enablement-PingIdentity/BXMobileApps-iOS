@@ -8,9 +8,9 @@
 import SwiftUI
 import AppAuth
 
-class GlobalViewModel: ObservableObject {
+class ConfirmationViewModel: ObservableObject {
     
-    static let shared = GlobalViewModel()
+    static let shared = ConfirmationViewModel()
     
     @Published var presentConfirmation = false
     @Published var confirmationTitle = ""
@@ -18,14 +18,6 @@ class GlobalViewModel: ObservableObject {
     @Published var confirmationSymbol = ""
     
     var confirmationCompletionHandler: ((Bool) -> Void)? = nil
-
-    @Published var accessToken: String
-    @Published var idToken: String
-    
-    init(accessToken: String = "", idToken: String = "") {
-        self.accessToken = accessToken
-        self.idToken = idToken
-    }
     
     func presentUserConfirmation(title: String, message: String, image: String, completionHandler: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
@@ -54,29 +46,5 @@ class GlobalViewModel: ObservableObject {
             completionHandler(userDidApprove)
             self.confirmationCompletionHandler = nil
         }
-    }
-    
-    func setTokens(accessToken: String, idToken: String) {
-        self.accessToken = accessToken
-        self.idToken = idToken
-    }
-    
-    func clearTokens() {
-        self.accessToken = ""
-        self.idToken = ""
-    }
-    
-    func getAttributeFromToken(attribute: String, type: TokenType) -> String {
-        switch type {
-        case .accessToken:
-            return JWTUtilities.decode(jwt: accessToken)[attribute] as? String ?? ""
-        case .idToken:
-            return JWTUtilities.decode(jwt: idToken)[attribute] as? String ?? ""
-        }
-    }
-    
-    enum TokenType {
-        case accessToken
-        case idToken
     }
 }

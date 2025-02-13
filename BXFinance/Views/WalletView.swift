@@ -42,7 +42,7 @@ struct WalletView: View {
             Button(LocalizedStringKey("wallet.scan_code")) {
                 walletModel.presentQrScanner = true
             }
-            .buttonStyle(FinanceButtonStyle())
+            .buttonStyle(BXButtonStyle())
             .padding(.bottom, 66)
             .popover(isPresented: $walletModel.presentQrScanner) {
                 ZStack(alignment: .bottom) {

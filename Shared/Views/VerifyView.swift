@@ -11,8 +11,6 @@ struct VerifyView: View {
     
     @State var verifiedScale = 0.0
     
-    @EnvironmentObject var globalModel: GlobalViewModel
-    
     func submissionComplete(verifyResult: String) {
         ToastPresenter.show(style: .success, toast: verifyResult)
         verifiedScale = 1.0
@@ -52,7 +50,7 @@ struct VerifyView: View {
                 
                 verifyClient.launchVerify()
             }
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
         }
         .padding()
     }
@@ -62,7 +60,6 @@ struct VerifyView: View {
 struct VerifyView_Previews: PreviewProvider {
     static var previews: some View {
         VerifyView()
-            .environmentObject(GlobalViewModel.preview)
     }
 }
 #endif

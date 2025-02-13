@@ -73,7 +73,7 @@ struct OneTimePasscodeCollectorView: View {
                 submitCompletionHandler()
             }
             .disabled(!isOtpValid)
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
         }
         .onAppear {
             focusedField = .otp

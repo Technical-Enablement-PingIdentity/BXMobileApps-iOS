@@ -9,74 +9,12 @@ import SwiftUI
 
 struct PairDeviceScreen: View {
     
-    @State private var pairingClientReady = false
-    @State private var pairingClientInitializationError = false
-    @State private var devicePairingClient: DevicePairingClient? = nil
-    
-    @EnvironmentObject var model: GlobalViewModel
-    
-    func pairingClientReady(successful: Bool) {
-        if successful {
-            self.pairingClientReady = true
-        } else {
-            self.pairingClientInitializationError = true
-        }
-    }
+    @EnvironmentObject var financeModel: FinanceGlobalViewModel
     
     var body: some View {
         VStack {
-            if !pairingClientReady && !pairingClientInitializationError {
-                Spacer()
-                Text("Loading...")
-                ProgressView()
-                Spacer()
-            }
-            
-            if pairingClientInitializationError {
-                Text("An error occurred initializing pairing client, please contact support.")
-            }
-            
-            if pairingClientReady {
-                Button("Pair Device") {
-                    let username = model.getAttributeFromToken(attribute: "sub", type: .accessToken)
-                    devicePairingClient?.pairDevice(username: username.isEmpty ? nil : username) { pairingObject in
-                        guard let pairingObject else {
-                            ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Pairing Object was nil")
-                            print("Error pairing object was nil")
-                            return
-                        }
-                        
-                        model.presentUserConfirmation(title: "Approve Pairing", message: "Would you like to pair this device with your BXFinance account?", image: "lock.open.iphone") { userConfirmed in
-                            if userConfirmed {
-                                pairingObject.approve { response, error in
-                                    if let error {
-                                        ToastPresenter.show(style: .error, toast: "An error occurred pairing device. Unsuccessful response.")
-                                        print("An error occured while pairing device: \(error)")
-                                    } else {
-                                        ToastPresenter.show(style: .success, toast: "Device was successfully paired!")
-                                    }
-                                }
-                            } else {
-                                ToastPresenter.show(style: .error, toast: "Device pairing was cancelled.")
-                            }
-                        }
-                    }
-                }
-                .buttonStyle(FinanceButtonStyle())
-            }
-
-        }
-        .onAppear {
-            let client = DevicePairingClient {
-                successful in
-                if successful {
-                    self.pairingClientReady = true
-                } else {
-                    self.pairingClientInitializationError = true
-                }
-            }
-            
-            self.devicePairingClient = client
+            let username = financeModel.getAttributeFromToken(attribute: "sub", type: .accessToken)
+            PairDeviceView(username: username)
         }
     }
 }

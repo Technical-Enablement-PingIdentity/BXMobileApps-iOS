@@ -26,13 +26,13 @@ struct PasswordCollectorView: View {
     
     var body: some View {
         VStack {
-            Text("Please enter password for \(username ?? "nil")")
+            Text(LocalizedStringKey("authentication.password.header \(username ?? "nil")"))
                 .padding(.bottom, 16)
                 .font(.system(size: 24))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Section(header: FormFieldLabelView(K.Strings.Login.Password)) {
-                SecureField(K.Strings.Login.Password, text: $password)
+            Section(header: FormFieldLabelView(LocalizedStringKey("authentication.password.label"))) {
+                SecureField(LocalizedStringKey("authentication.password.label"), text: $password)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(RoundedBorderTextFieldCustomStyle())
@@ -49,11 +49,11 @@ struct PasswordCollectorView: View {
             
             Spacer()
             
-            Button(K.Strings.Login.Submit) {
+            Button(LocalizedStringKey("submit")) {
                 submitCompletionHandler()
             }
             .disabled(!isPasswordValid)
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
         }
         .onAppear {
             focusedField = .password

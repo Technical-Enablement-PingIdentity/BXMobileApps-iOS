@@ -14,19 +14,21 @@ struct ProfileView: View {
         case pairDevice
         case protect
         case wallet
+        case sendLogs
         case signOut
     }
     
     private let pages = [
         ProfilePage(icon: "person.crop.circle.fill", name: "Profile Information", route: .profileInformation, requiresAuthentication: true),
-        ProfilePage(icon: "iphone.gen2", name: "Pair Device", route: .pairDevice, requiresAuthentication: false),
-        ProfilePage(icon: "lock.shield", name: "Protect Result", route: .protect, requiresAuthentication: true),
-        ProfilePage(icon: "wallet.pass", name: "Configure Digital Wallet", route: .wallet, requiresAuthentication: false),
-        ProfilePage(icon: "person.slash", name: "Sign Out", route: .signOut, requiresAuthentication: false)
+        ProfilePage(icon: "iphone.gen2", name: String(localized: "profile.pair_device"), route: .pairDevice, requiresAuthentication: false),
+        ProfilePage(icon: "lock.shield", name: String(localized: "profile.protect"), route: .protect, requiresAuthentication: true),
+        ProfilePage(icon: "wallet.pass", name: String(localized: "profile.wallet"), route: .wallet, requiresAuthentication: false),
+        ProfilePage(icon: "note.text", name: String(localized: "profile.send_logs"), route: .sendLogs, requiresAuthentication: false),
+        ProfilePage(icon: "person.slash", name: String(localized: "profile.sign_out"), route: .signOut, requiresAuthentication: false)
     ]
     
     @EnvironmentObject var router: RouterViewModel
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
     var body: some View {
         List(pages) { page in
@@ -35,7 +37,7 @@ struct ProfileView: View {
                     Image(systemName: page.icon)
                         .frame(width: 20)
                         
-                    Text(page.name == "Sign Out" && globalModel.accessToken.isEmpty ? "Back to Sign In" : page.name)
+                    Text(page.name == String(localized: "profile.sign_out") && globalModel.accessToken.isEmpty ? String(localized: "profile.sign_in") : page.name)
                     
                     Spacer()
                     
@@ -51,13 +53,15 @@ struct ProfileView: View {
                         router.navigateTo(.protect(JWTUtilities.decode(jwt: globalModel.accessToken)["sub"] as? String ?? ""))
                     case .wallet:
                         router.navigateTo(.wallet)
+                    case .sendLogs:
+                        router.navigateTo(.sendLogs)
                     case .signOut:
                         if !globalModel.accessToken.isEmpty {
                             Task {
                                 do {
                                     try await PingFedAuthnClient(appUrl: K.Environment.baseUrl).logout()
                                     globalModel.clearTokens()
-                                    ToastPresenter.show(style: .success, toast: "You have successfully logged out")
+                                    ToastPresenter.show(style: .success, toast: String(localized: "profile.sign_out_successful"))
                                 } catch {
                                     print("Could not logout: \(error.localizedDescription)")
                                 }
@@ -85,7 +89,7 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .environmentObject(RouterViewModel())
-            .environmentObject(GlobalViewModel.preview)
+            .environmentObject(FinanceGlobalViewModel.preview)
     }
 }
 #endif

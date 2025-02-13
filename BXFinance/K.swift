@@ -10,24 +10,8 @@ struct K {
         static let Primary = "AccentColor"
     }
     
-    struct Strings {
-        struct Shared {
-            static let Back = "Back"
-            static let Submit = "Submit"
-        }
-        
-        struct Login {
-            static let Welcome = "Welcome!"
-            static let Login = "Sign In"
-            static let Username = "Username"
-            static let Password = "Password"
-            static let Submit = "Submit"
-        }
-        
-        struct Confirmation {
-            static let Title = "Approve Authentication Request?"
-            static let Message = "It looks like you're trying to authenticate. Would you like to approve the request?"
-        }
+    struct Assets {
+        static let Logo = "BXFinanceLogo"
     }
     
     struct Oidc {
@@ -42,7 +26,6 @@ struct K {
         static let clientId = "028887be-5d57-4cb8-aeb9-874c4f202ae0"
         static let redirectUri = "pingonesdk://sample"
         static let pingOneEnvId = "6c77a243-4622-4c89-a0ca-5905fb4eb3f4"
-        static let apiBaseUrl = "https://api.bxfinance.org"
     }
     
     struct PingFed {

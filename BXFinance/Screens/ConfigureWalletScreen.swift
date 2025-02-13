@@ -12,16 +12,16 @@ struct ConfigureWalletScreen: View {
     
     @EnvironmentObject var walletModel: WalletViewModel
     @EnvironmentObject var router: RouterViewModel
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
     var body: some View {
         VStack {
             if walletModel.walletInitialized {
                 if walletModel.credentials.isEmpty && !walletModel.pairing {
-                    Button("Pair Wallet") {
+                    Button(LocalizedStringKey("wallet.pair")) {
                         walletModel.presentQrScanner = true
                     }
-                    .buttonStyle(FinanceButtonStyle())
+                    .buttonStyle(BXButtonStyle())
                     .popover(isPresented: $walletModel.presentQrScanner) {
                         QRScanner(result: $walletModel.scanResult, loadingCamera: $walletModel.loadingCamera)
                             .onChange(of: walletModel.scanResult) { oldValue, newValue in
@@ -33,7 +33,7 @@ struct ConfigureWalletScreen: View {
                         if (walletModel.loadingCamera) {
                             VStack {
                                 Spacer()
-                                Text("Loading camera. This may take a moment the first time.")
+                                Text(LocalizedStringKey("wallet.loading_camera"))
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 16)
                                     .font(.system(size: 20))
@@ -42,7 +42,7 @@ struct ConfigureWalletScreen: View {
                                 Spacer()
                             }
                         } else {
-                            Text("Scan your pairing QR Code")
+                            Text(LocalizedStringKey("wallet.pairing_code"))
                                 .padding()
                                 .background(.accent)
                                 .foregroundColor(.white)
@@ -53,7 +53,7 @@ struct ConfigureWalletScreen: View {
                         await checkCameraAccess()
                     }
                 } else if walletModel.pairing {
-                    Text("Pairing your wallet and issuing your rewards credential. It may take a few minutes for it to appear.")
+                    Text(LocalizedStringKey("wallet.pairing_message"))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 16)
                         .font(.system(size: 20))
@@ -61,7 +61,7 @@ struct ConfigureWalletScreen: View {
                         .controlSize(.large)
                 } else {
                     Spacer()
-                    Text("Your digital wallet is paired! Navigate to the wallet screen to view your credential.")
+                    Text(LocalizedStringKey("wallet.paired_message"))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 16)
                     Image(systemName: "checkmark.rectangle.stack")
@@ -74,14 +74,14 @@ struct ConfigureWalletScreen: View {
                         .clipShape(Circle())
                     
                     Spacer()
-                    Button("Reset Wallet") {
+                        Button(LocalizedStringKey("wallet.reset")) {
                         walletModel.deleteCredentials()
                     }
-                    .buttonStyle(FinanceButtonStyle())
+                    .buttonStyle(BXButtonStyle())
                     .padding(.bottom, 66)
                 }
             } else {
-                Text("Initializing wallet")
+                Text(LocalizedStringKey("wallet.initializing"))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .font(.system(size: 20))

@@ -11,9 +11,9 @@ struct FormFieldLabelView : View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    private let label: String
+    private let label: LocalizedStringKey
     
-    init(_ label: String) {
+    init(_ label: LocalizedStringKey) {
         self.label = label
     }
     

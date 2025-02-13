@@ -366,13 +366,13 @@ extension PingOneWalletHelper {
         ToastPresenter.show(style: .info, toast: message)
     }
     
-    private func askUserPermission(title: String, message: String, actionHandler: @escaping (Bool) -> Void, positiveActionTitle: String = "Confirm", cancelActionTitle: String = "Cancel") {
-        GlobalViewModel.shared.presentUserConfirmation(title: title, message: message, image: "wallet.pass", completionHandler: actionHandler)
+    private func askUserPermission(title: String, message: String, actionHandler: @escaping (Bool) -> Void, positiveActionTitle: String = String(localized: "confirm"), cancelActionTitle: String = String(localized: "cancel")) {
+        ConfirmationViewModel.shared.presentUserConfirmation(title: title, message: message, image: "wallet.pass", completionHandler: actionHandler)
     }
     
     private func showError(title: String, message: String) {
         logerror("\(title): \(message)")
-        self.applicationUiCallbackHandler?.showErrorAlert(title: title, message: message, actionTitle: "Okay", actionHandler: nil)
+        self.applicationUiCallbackHandler?.showErrorAlert(title: title, message: message, actionTitle: String(localized: "okay"), actionHandler: nil)
     }
     
 }

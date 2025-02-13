@@ -2,16 +2,17 @@
 //  AppDelegate.swift
 //  BXMobileApps-iOS
 //
-//  Created by Eric Anderson on 7/13/23.
+//  Created by Eric Anderson on 10/25/24.
 //
 
-import SwiftUI
-import PingOneSDK
 import AppAuth
+import PingOneSDK
+import SwiftUI
+
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
-    var currentAuthorizationFlow: OIDExternalUserAgentSession? = nil
+    var confirmationModel: ConfirmationViewModel?
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
@@ -51,7 +52,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
             else if let notificationObject {
                 if notificationObject.notificationType == .authentication {
-                    MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
+                    self.handleUserAuthentication(notificationObject: notificationObject, userInfo: userInfo)
                     completionHandler(UIBackgroundFetchResult.newData)
                     return
                 }
@@ -59,15 +60,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             
             completionHandler(UIBackgroundFetchResult.noData)
         }
-    }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: url) {
-            self.currentAuthorizationFlow = nil
-            return true
-        }
-
-        return false
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -80,11 +72,48 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                     // Remote notification may not have been from PingOne
                 }
             } else if let notificationObject {
-                MainViewModel.shared.promptUserForAuthentication(notificationObject: notificationObject)
+                self.handleUserAuthentication(notificationObject: notificationObject, userInfo: response.notification.request.content.userInfo)
             }
             
             DispatchQueue.main.async {
                 completionHandler()
+            }
+        }
+    }
+    
+    private func handleUserAuthentication(notificationObject: NotificationObject, userInfo: [AnyHashable : Any]) {
+        var title: String? = nil
+        var description: String? = nil
+        
+        if let apsDict = userInfo["aps"] as? NSDictionary {
+            if let alert = apsDict["alert"] as? NSDictionary {
+                title = alert["title-loc-key"] as? String
+                description = (alert["loc-key"] as? String ?? "").components(separatedBy: "[").first
+            }
+        }
+        
+        guard let confirmationModel else {
+            fatalError("confirmationModel is nil, make sure to set in initialization")
+        }
+        
+        confirmationModel.presentUserConfirmation(title: (title ?? "").isEmpty ? String(localized: "confirmation.title") : title!, message: (description ?? "").isEmpty ? String(localized: "confirmation.message") : description!, image: "person.badge.shield.checkmark") { userConfirmed in
+            
+            if userConfirmed {
+                notificationObject.approve(withAuthenticationMethod: "user") { error in
+                    if let error {
+                        print("An error occurred approving notificationObject \(error.localizedDescription)")
+                    } else {
+                        print("User approved notification")
+                    }
+                }
+            } else {
+                notificationObject.deny { error in
+                    if let error {
+                        print("An error occurred denying notificationObject \(error.localizedDescription)")
+                    } else {
+                        print("User denied notification")
+                    }
+                }
             }
         }
     }

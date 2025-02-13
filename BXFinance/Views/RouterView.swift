@@ -35,6 +35,7 @@ class RouterViewModel: ObservableObject {
         case profileInformation
         case protect(String)
         case wallet
+        case sendLogs
         case pairDevice
     }
     
@@ -54,6 +55,8 @@ class RouterViewModel: ObservableObject {
             ProtectScreen(username: username)
         case .wallet:
             ConfigureWalletScreen()
+        case .sendLogs:
+            SendLogsScreen()
         case .pairDevice:
             PairDeviceScreen()
         }

@@ -16,14 +16,14 @@ struct ProtectScreen: View {
     
     var body: some View {
         VStack {
-            LogoView()
+            LogoView(assetName: "BXFinanceLogo")
             
-            Text("Risk Assessment for \(username)")
+            Text(LocalizedStringKey("protect.risk_assessment \(username)"))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 8)
                 .font(.system(size: 24))
             
-            Text("** Please note a risk assessment is generated in PingOne through the log in flow. You can view those events in the audit logs. **")
+            Text(LocalizedStringKey("protect.message"))
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 .font(.system(size: 12))
@@ -31,7 +31,7 @@ struct ProtectScreen: View {
             if loading {
                 VStack {
                     Spacer()
-                    Text("Loading...")
+                    Text(LocalizedStringKey("loading"))
                     ProgressView()
                     Spacer()
                 }
@@ -48,7 +48,7 @@ struct ProtectScreen: View {
                 riskAssessment = try await ProtectClient.getRiskEvaluation(username: username)
                 loading = false
             } catch {
-                riskAssessment = "An error occurred getting risk assessment: \(error.localizedDescription)"
+                riskAssessment = "\(String(localized: "protect.error")) \(error.localizedDescription)"
                 loading = false
             }
         }

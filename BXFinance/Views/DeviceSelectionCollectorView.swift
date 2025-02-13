@@ -15,7 +15,7 @@ struct DeviceSelectionCollectorView: View {
     var deviceSelectedHandler: (SelectableDevice) -> Void
     
     var body: some View {
-        Text("How would you like to sign in?")
+        Text(LocalizedStringKey("device.selection"))
             .font(.system(size: 20))
             .fontWeight(.bold)
             .padding(.bottom, 16)
@@ -67,13 +67,13 @@ struct DeviceSelectionCollectorView: View {
     func getDeviceName(type: SelectableDeviceType) -> String {
         switch type {
         case .sms:
-            return "Text me a one-time passcode"
+            return String(localized: "device.sms.description")
         case .email:
-            return "Email me a one-time passcode"
+            return String(localized: "device.email.description")
         case .totp:
-            return "Authenticator App (TOTP)"
+            return String(localized: "device.totp.description")
         default:
-            return "Unknown"
+            return String(localized: "device.unknown")
         }
     }
 }

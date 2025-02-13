@@ -28,7 +28,7 @@ public class ApplicationUiHandler {
     public func showErrorAlert(title: String, message: String, actionTitle: String?, actionHandler: (() -> Void)?) {
         DispatchQueue.main.async {
             let alertVc = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertVc.addAction(UIAlertAction(title: actionTitle ?? "Okay", style: .default, handler: { _ in
+            alertVc.addAction(UIAlertAction(title: actionTitle ?? String(localized: "okay"), style: .default, handler: { _ in
                 actionHandler?()
                 alertVc.dismiss(animated: false)
             }))

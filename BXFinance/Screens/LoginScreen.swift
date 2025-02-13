@@ -15,7 +15,7 @@ struct LoginScreen: View {
     
     @StateObject private var model: LoginViewModel
     
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     @EnvironmentObject var router: RouterViewModel
     
     init() {
@@ -38,7 +38,7 @@ struct LoginScreen: View {
             } else if model.processingPingFedCall {
                 Spacer()
                 ProgressView().controlSize(.large)
-                Text("Please wait...")
+                Text(LocalizedStringKey("please_wait"))
                 Spacer()
             } else {
                 if model.loginStep == .username {
@@ -81,7 +81,7 @@ struct LoginScreen: View {
                 
                 if model.loginStep == .otpRequired {
                     if model.selectedDevice == nil {
-                        Text("An error occurred, selected device not found in Ping Federate response")
+                        Text(LocalizedStringKey("authentication.missing_device"))
                             .foregroundStyle(.red)
                             .multilineTextAlignment(.center)
                     } else {
@@ -109,7 +109,7 @@ struct LoginScreen: View {
                 print("Could not start authentication session")
             }
         }
-        .navigationTitle(K.Strings.Login.Login)
+        .navigationTitle(LocalizedStringKey("sign_in"))
     }
 }
 

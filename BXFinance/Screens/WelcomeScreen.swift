@@ -10,27 +10,25 @@ import PingOneSDK
 
 struct WelcomeScreen: View {
     
-    @EnvironmentObject private var globalModel: GlobalViewModel
+    @EnvironmentObject private var globalModel: FinanceGlobalViewModel
     
     @EnvironmentObject private var router: RouterViewModel
-    
-    @State private var showNotificationDeniedAlert: Bool = false
 
     var body: some View {
         VStack {
             Spacer()
-            LogoView(size: .large)
-            Text(K.Strings.Login.Welcome)
+            LogoView(assetName: K.Assets.Logo, size: .large)
+            Text(LocalizedStringKey("welcome"))
                 .font(.system(size: 28))
             Spacer()
             
-            Button(K.Strings.Login.Login) {
+            Button(LocalizedStringKey("sign_in")) {
                 router.navigateTo(.login)
             }
-            .buttonStyle(FinanceFullWidthButtonStyle())
+            .buttonStyle(BXFullWidthButtonStyle())
             .padding(.bottom, 16)
             
-            Button("Continue without Signing In") {
+            Button(LocalizedStringKey("skip_sign_in")) {
                 router.navigateTo(.dashboard)
             }
             .tint(Color(K.Colors.Primary))
@@ -40,44 +38,6 @@ struct WelcomeScreen: View {
                 .font(.system(size: 12))
         }
         .padding()
-        .alert("Notifications Disabled", isPresented: $showNotificationDeniedAlert, actions: {
-            Button("Dismiss", role: .cancel) {
-                showNotificationDeniedAlert = false
-            }
-            Button("Go to Settings") {
-                showNotificationDeniedAlert = false
-                if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-                    UIApplication.shared.open(settingsUrl)
-                }
-            }
-        }, message: {
-            Text("If you do not wish to enable notifications you will need to be in the BXFinance App on your phone before you attempt to use it for MFA.")
-        })
-        .onAppear {
-            let center = UNUserNotificationCenter.current()
-            
-            center.getNotificationSettings { settings in
-                if settings.authorizationStatus == .notDetermined {
-                    center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
-                        // Need to do this either way so the Alert will pop up in the app even if they do not want push notifications.
-                        if error == nil {
-                            center.setNotificationCategories(PingOne.getUNNotificationCategories())
-                            DispatchQueue.main.async {
-                                print("Registering for remote notifications")
-                                UIApplication.shared.registerForRemoteNotifications()
-                            }
-                        }
-                        
-                        if !granted {
-                            print("User denied permission for push notifications.")
-                            showNotificationDeniedAlert = true
-                        }
-                    }
-                }
-            }
-            
-        }
-
     }
 }
 
@@ -86,7 +46,7 @@ struct WelcomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeScreen()
             .environmentObject(RouterViewModel())
-            .environmentObject(GlobalViewModel.preview)
+            .environmentObject(FinanceGlobalViewModel.preview)
     }
 }
 #endif

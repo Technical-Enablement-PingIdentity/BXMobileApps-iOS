@@ -1,5 +1,5 @@
 //
-//  DashboardView.swift
+//  DashboardScreen.swift
 //  BXMobileApps-iOS
 //
 //  Created by Eric Anderson on 10/25/24.
@@ -12,16 +12,16 @@ struct DashboardScreen: View {
     @State var loadingAccounts = false
     @State var accounts: [Account] = []
     
-    @EnvironmentObject var globalModel: GlobalViewModel
+    @EnvironmentObject var globalModel: FinanceGlobalViewModel
     @EnvironmentObject var router: RouterViewModel
     
     var body: some View {
         VStack {
-            LogoView()
+            LogoView(assetName: K.Assets.Logo)
                 
             TabView {
-                Tab("Accounts", systemImage: "building.columns") {
-                    Text("Welcome \(JWTUtilities.decode(jwt: globalModel.idToken)["first_name"] ?? "")")
+                Tab(LocalizedStringKey("accounts"), systemImage: "building.columns") {
+                    Text("\(String(localized: "dashboard.welcome")) \(JWTUtilities.decode(jwt: globalModel.idToken)["first_name"] ?? "")")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .padding(.horizontal)
@@ -34,8 +34,8 @@ struct DashboardScreen: View {
                     } else {
                         if accounts.count == 0 {
                             Spacer()
-                            Text("Please sign in to view your accounts")
-                            Button(K.Strings.Login.Login) {
+                            Text(LocalizedStringKey("accounts.sign_in"))
+                            Button(LocalizedStringKey("sign_in")) {
                                 router.popToRoot()
                             }
                             Spacer()
@@ -52,15 +52,15 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                Tab("Wallet", systemImage: "wallet.pass.fill") {
+                Tab(LocalizedStringKey("wallet"), systemImage: "wallet.pass.fill") {
                     WalletView()
                 }
                 
-                Tab("Verify", systemImage: "person.badge.shield.checkmark.fill") {
+                Tab(LocalizedStringKey("verify"), systemImage: "person.badge.shield.checkmark.fill") {
                     VerifyView()
                 }
                 
-                Tab("Profile", systemImage: "person.circle") {
+                Tab(LocalizedStringKey("profile"), systemImage: "person.circle") {
                     ProfileView()
                 }
                 
@@ -92,7 +92,7 @@ struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             DashboardScreen()
-                .environmentObject(GlobalViewModel.preview)
+                .environmentObject(FinanceGlobalViewModel.preview)
                 .environmentObject(RouterViewModel())
         }
     }

@@ -55,7 +55,14 @@
       }
     },
     "dismiss" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        }
+      }
     },
     "find_doctor" : {
       "extractionState" : "manual",

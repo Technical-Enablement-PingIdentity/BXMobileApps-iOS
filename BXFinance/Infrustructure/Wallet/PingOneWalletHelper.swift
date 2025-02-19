@@ -134,6 +134,7 @@ public class PingOneWalletHelper {
                 let repo = self.getDataRepository()
                 repo.getAllCredentials().forEach { claim in
                     repo.deleteCredential(forId: claim.getId())
+                    self.pingoneWalletClient.reportCredentialDeletion(claim: claim)
                 }
                 
                 onDelete()
@@ -156,7 +157,7 @@ extension PingOneWalletHelper: WalletCallbackHandler {
     /// - Returns: True if the user has accepted the credential, False if the user has rejected the credential
     public func handleCredentialIssuance(issuer: String, message: String?, challenge: Challenge?, claim: Claim, errors: [PingOneWallet.WalletException]) -> Bool {
         logattention("Credential received: Issuer: \(issuer), message: \(message ?? "none")")
-        self.notifyUser(message: "Received a new credential")
+        self.notifyUser(message: "Received a new credential", style: .success)
         EventObserverUtils.broadcastCredentialsUpdatedNotification(delayBy: 1)
         return true
     }
@@ -172,6 +173,7 @@ extension PingOneWalletHelper: WalletCallbackHandler {
     public func handleCredentialRevocation(issuer: String, message: String?, challenge: Challenge?, claimReference: ClaimReference, errors: [PingOneWallet.WalletException]) -> Bool {
         logattention("Credential revoked: Issuer: \(issuer), message: \(message ?? "none")")
         self.notifyUser(message: "Credential Revoked")
+        self.pingoneWalletClient.getDataRepository().deleteCredential(forId: claimReference.getId())
         EventObserverUtils.broadcastCredentialsUpdatedNotification(delayBy: 1)
         return true
     }
@@ -212,7 +214,7 @@ extension PingOneWalletHelper: WalletCallbackHandler {
             if (isPositiveAction) {
                 self.selectCredential(presentationRequest, credentialMatcherResults: credentialMatcherResults)
             } else {
-                self.notifyUser(message: "Presentation canceled")
+                self.notifyUser(message: "Presentation canceled", style: .warning)
             }
         }
     }
@@ -220,7 +222,7 @@ extension PingOneWalletHelper: WalletCallbackHandler {
     private func selectCredential(_ presentationRequest: PresentationRequest, credentialMatcherResults: [CredentialMatcherResult]) {
         self.credentialPicker?.selectCredentialFor(presentationRequest: presentationRequest, credentialMatcherResults: credentialMatcherResults, onResult: { result in
             guard let result = result, !result.isEmpty() else {
-                self.notifyUser(message: "Presentation canceled")
+                self.notifyUser(message: "Presentation canceled", style: .warning)
                 return
             }
             
@@ -256,7 +258,7 @@ extension PingOneWalletHelper {
         case .PAIRING_RESPONSE:
             logattention("Wallet paired: \(String(describing: event.isSuccess())) - error: \(event.getError()?.localizedDescription ?? "None")")
             if let isSuccess = event.isSuccess() {
-                self.notifyUser(message: isSuccess ? "Wallet paired successfully" : "Wallet pairing failed")
+                self.notifyUser(message: isSuccess ? "Wallet paired successfully" : "Wallet pairing failed", style: isSuccess ? .success : .error)
             }
         @unknown default:
             fatalError("Unhandled Pairing Event")
@@ -276,7 +278,7 @@ extension PingOneWalletHelper {
                 })
                 .onError { err in
                     logerror("Wallet pairing failed: \(err.localizedDescription)")
-                    self.notifyUser(message: "Wallet pairing failed")
+                    self.notifyUser(message: "Wallet pairing failed", style: .error)
                 }
         }
     }
@@ -284,7 +286,7 @@ extension PingOneWalletHelper {
     private func handlePairingRequest(_ presentationRequest: PresentationRequest) {
         guard let pairingRequest = presentationRequest.getPairingRequest() else {
             logerror("Wallet pairing failed: Invalid request for pairing")
-            self.notifyUser(message: "Wallet pairing failed")
+            self.notifyUser(message: "Wallet pairing failed", style: .error)
             return
         }
         self.handlePairingRequest(pairingRequest)
@@ -299,10 +301,10 @@ extension PingOneWalletHelper {
             .onResult { result in
                 switch result.getPresentationStatus() {
                 case .success:
-                    self.notifyUser(message: "Information sent successfully")
+                    self.notifyUser(message: "Information sent successfully", style: .success)
                 case .failure:
                     logerror("Error sharing information: \(result.getDetails()?.debugDescription ?? "None")")
-                    self.notifyUser(message: "Failed to present credential")
+                    self.notifyUser(message: "Failed to present credential", style: .error)
                 case .requiresAction(let action):
                     self.handlePresentationAction(action)
                 @unknown default:
@@ -331,7 +333,7 @@ extension PingOneWalletHelper {
         switch errorEvent.getError() {
         case .cannotProcessUrl(let url, let debugDescription):
             logerror("Failed to process url: \(url) - \(debugDescription ?? "None")")
-            self.notifyUser(message: "Failed to process request")
+            self.notifyUser(message: "Failed to process request", style: .error)
         default:
             logerror("Error in wallet callback handler: \(errorEvent.getError().localizedDescription)")
         }
@@ -361,9 +363,9 @@ extension PingOneWalletHelper {
 
 extension PingOneWalletHelper {
     
-    private func notifyUser(message: String) {
+    private func notifyUser(message: String, style: ToastStyle = .info) {
         logattention(message)
-        ToastPresenter.show(style: .info, toast: message)
+        ToastPresenter.show(style: style, toast: message)
     }
     
     private func askUserPermission(title: String, message: String, actionHandler: @escaping (Bool) -> Void, positiveActionTitle: String = String(localized: "confirm"), cancelActionTitle: String = String(localized: "cancel")) {

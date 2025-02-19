@@ -1068,13 +1068,24 @@
         }
       }
     },
-    "wallet.pair" : {
+    "wallet.pair.button" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pair Wallet"
+          }
+        }
+      }
+    },
+    "wallet.pair.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click the button below to open QR Scanner to complete the pairing process, alternatively you can open the link the sent to you via SMS or Email to pair. Please note each BXFinance user can only have one wallet paired, if you attempt to pair on a second device credentials for older wallets will be revoked."
           }
         }
       }

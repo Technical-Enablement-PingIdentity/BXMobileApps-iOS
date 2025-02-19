@@ -18,7 +18,10 @@ struct ConfigureWalletScreen: View {
         VStack {
             if walletModel.walletInitialized {
                 if walletModel.credentials.isEmpty && !walletModel.pairing {
-                    Button(LocalizedStringKey("wallet.pair")) {
+                    Text(LocalizedStringKey("wallet.pair.message"))
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Button(LocalizedStringKey("wallet.pair.button")) {
                         walletModel.presentQrScanner = true
                     }
                     .buttonStyle(BXButtonStyle())

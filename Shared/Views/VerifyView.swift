@@ -12,11 +12,13 @@ struct VerifyView: View {
     @State var verifiedScale = 0.0
     
     func submissionComplete(verifyResult: String) {
+        GoogleAnalytics.userCompletedAction(actionName: "id_verification")
         ToastPresenter.show(style: .success, toast: verifyResult)
         verifiedScale = 1.0
     }
     
     func submissionError(error: String) {
+        GoogleAnalytics.userCompletedAction(actionName: "id_verification", actionSuccesful: false)
         if error.contains("Invalid URL") {
             ToastPresenter.show(style: .error, toast: String(localized: "verify.invalid_url"))
         } else {
@@ -46,6 +48,7 @@ struct VerifyView: View {
             .animation(.easeInOut(duration: 1), value: verifiedScale)
 
             Button(LocalizedStringKey("verify.identity")) {
+                GoogleAnalytics.userTappedButton(buttonName: "verify_identity")
                 let verifyClient = VerifyClient(submissionCompleteCallback: submissionComplete, submissionErrorCallback: submissionError)
                 
                 verifyClient.launchVerify()

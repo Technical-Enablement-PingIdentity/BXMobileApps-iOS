@@ -15,6 +15,9 @@ struct PairDeviceScreen: View {
         VStack {
             let username = financeModel.getAttributeFromToken(attribute: "sub", type: .accessToken)
             PairDeviceView(username: username)
+                .onAppear {
+                    GoogleAnalytics.userViewedScreen(screenName: "pair_device_screen")
+                }
         }
     }
 }

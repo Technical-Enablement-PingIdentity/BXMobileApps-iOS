@@ -23,12 +23,14 @@ struct WelcomeScreen: View {
             Spacer()
             
             Button(LocalizedStringKey("sign_in")) {
+                GoogleAnalytics.userTappedButton(buttonName: "sign_in")
                 router.navigateTo(.login)
             }
             .buttonStyle(BXFullWidthButtonStyle())
             .padding(.bottom, 16)
             
             Button(LocalizedStringKey("skip_sign_in")) {
+                GoogleAnalytics.userTappedButton(buttonName: "skip_sign_in")
                 router.navigateTo(.dashboard)
             }
             .tint(Color(K.Colors.Primary))
@@ -38,6 +40,9 @@ struct WelcomeScreen: View {
                 .font(.system(size: 12))
         }
         .padding()
+        .onAppear {
+            GoogleAnalytics.userViewedScreen(screenName: "welcome_screen")
+        }
     }
 }
 

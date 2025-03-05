@@ -23,6 +23,7 @@ struct DeviceSelectionCollectorView: View {
             ForEach(selectableDevices) { device in
                 if device.type != .hidden {
                     Button(action: {
+                        GoogleAnalytics.userTappedButton(buttonName: "device_selection")
                         deviceSelectedHandler(device)
                     }, label: {
                         HStack {

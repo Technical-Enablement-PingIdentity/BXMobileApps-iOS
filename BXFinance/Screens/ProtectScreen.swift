@@ -45,6 +45,7 @@ struct ProtectScreen: View {
         .navigationBarBackButtonHidden(false)
         .task {
             do {
+                GoogleAnalytics.userViewedScreen(screenName: "protect_screen")
                 riskAssessment = try await ProtectClient.getRiskEvaluation(username: username)
                 loading = false
             } catch {

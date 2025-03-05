@@ -50,6 +50,7 @@ struct PasswordCollectorView: View {
             Spacer()
             
             Button(LocalizedStringKey("submit")) {
+                GoogleAnalytics.userTappedButton(buttonName: "submit_password")
                 submitCompletionHandler()
             }
             .disabled(!isPasswordValid)

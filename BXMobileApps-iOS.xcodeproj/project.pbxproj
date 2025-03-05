@@ -67,6 +67,13 @@
 		103147792D5BDCB50049F8AD /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; };
 		1031477A2D5BDCB50049F8AD /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1036486A2D5A51BB00418CD4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 103648692D5A51BB00418CD4 /* Localizable.xcstrings */; };
+		104DD8662D78C68300C25A26 /* AppDelegate+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD8652D78C68300C25A26 /* AppDelegate+Firebase.swift */; };
+		104DD8682D78C6EF00C25A26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8672D78C6EF00C25A26 /* GoogleService-Info.plist */; };
+		104DD86B2D78C76800C25A26 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 104DD86A2D78C76800C25A26 /* FirebaseAnalytics */; };
+		104DD86D2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */; };
+		104DD86E2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */; };
+		104DD8702D78D99F00C25A26 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 104DD86F2D78D99F00C25A26 /* FirebaseAnalytics */; };
+		104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */; };
 		105979682D078953009A7610 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 105979672D078953009A7610 /* SwiftyJSON */; };
 		1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 1059796E2D08ABD6009A7610 /* PingOneSignals */; };
 		105FAA242C9A261F006BE8BF /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 105FAA232C9A261F006BE8BF /* PingOneSignals */; };
@@ -219,6 +226,10 @@
 		1031476C2D5BD5D60049F8AD /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
 		1031476E2D5BDAC90049F8AD /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
 		103648692D5A51BB00418CD4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		104DD8652D78C68300C25A26 /* AppDelegate+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Firebase.swift"; sourceTree = "<group>"; };
+		104DD8672D78C6EF00C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
+		104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		105FAA352C9B1C08006BE8BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceView.swift; sourceTree = "<group>"; };
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -295,6 +306,7 @@
 			files = (
 				103147742D5BDCA70049F8AD /* PingOneVerify.xcframework in Frameworks */,
 				103147732D5BDC790049F8AD /* PingOneSDK in Frameworks */,
+				104DD86B2D78C76800C25A26 /* FirebaseAnalytics in Frameworks */,
 				103147712D5BDC730049F8AD /* AppAuth in Frameworks */,
 				103147792D5BDCB50049F8AD /* VoiceSdk.xcframework in Frameworks */,
 				103147772D5BDCB50049F8AD /* BlinkID.xcframework in Frameworks */,
@@ -313,6 +325,7 @@
 				105979682D078953009A7610 /* SwiftyJSON in Frameworks */,
 				10222EE42D357FB500295B35 /* CryptoTools.xcframework in Frameworks */,
 				10222EEE2D357FB500295B35 /* PingOneWallet.xcframework in Frameworks */,
+				104DD8702D78D99F00C25A26 /* FirebaseAnalytics in Frameworks */,
 				108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */,
 				10222EF02D357FB500295B35 /* secp256k1Wrapper.xcframework in Frameworks */,
 				10EEFF132D0CB41200B89DF7 /* PingOneVerify.xcframework in Frameworks */,
@@ -374,10 +387,12 @@
 			children = (
 				10A040242D5BC4CC00816220 /* Resources */,
 				1000F9EC2A60861100ADB773 /* Screens */,
+				104DD8652D78C68300C25A26 /* AppDelegate+Firebase.swift */,
 				10109F592A5F05DD004A60E1 /* Assets.xcassets */,
 				10109F552A5F05DB004A60E1 /* BXHealthApp.swift */,
 				1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */,
 				1076D2432A5F52EB0073ADD2 /* Info.plist */,
+				104DD8672D78C6EF00C25A26 /* GoogleService-Info.plist */,
 				1000FA282A61C3AA00ADB773 /* K.swift */,
 				10109F5B2A5F05DD004A60E1 /* Preview Content */,
 			);
@@ -467,6 +482,7 @@
 		10987DB12D5685970010FE09 /* Infrustructure */ = {
 			isa = PBXGroup;
 			children = (
+				104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */,
 				100F18192D5BAE3600875591 /* PushNotificationService.swift */,
 				10EEFF162D0CB41C00B89DF7 /* DevicePairingClient.swift */,
 				10EEFF1B2D0CB41C00B89DF7 /* VerifyClient.swift */,
@@ -652,6 +668,7 @@
 				10EEFF3D2D0CB41C00B89DF7 /* BXFinance.entitlements */,
 				10EEFF3E2D0CB41C00B89DF7 /* BXFinanceApp.swift */,
 				10EEFF3F2D0CB41C00B89DF7 /* Info.plist */,
+				104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */,
 				10EEFF402D0CB41C00B89DF7 /* K.swift */,
 				10EEFF222D0CB41C00B89DF7 /* Preview Content */,
 			);
@@ -678,6 +695,7 @@
 			packageProductDependencies = (
 				103147702D5BDC730049F8AD /* AppAuth */,
 				103147722D5BDC790049F8AD /* PingOneSDK */,
+				104DD86A2D78C76800C25A26 /* FirebaseAnalytics */,
 			);
 			productName = BXHealth;
 			productReference = 10109F532A5F05DB004A60E1 /* BXHealth.app */;
@@ -703,6 +721,7 @@
 				105979672D078953009A7610 /* SwiftyJSON */,
 				1059796E2D08ABD6009A7610 /* PingOneSignals */,
 				10222F122D35876300295B35 /* SVGKit */,
+				104DD86F2D78D99F00C25A26 /* FirebaseAnalytics */,
 			);
 			productName = BXFinance;
 			productReference = 108733A02CCC2F730071630C /* BXFinance.app */;
@@ -767,6 +786,7 @@
 				10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */,
 				108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */,
 				105979662D078953009A7610 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				104DD8692D78C76800C25A26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 10109F3F2A5F0541004A60E1 /* Products */;
 			projectDirPath = "";
@@ -785,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */,
+				104DD8682D78C6EF00C25A26 /* GoogleService-Info.plist in Resources */,
 				10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */,
 				10A040262D5BC4E000816220 /* Localizable.xcstrings in Resources */,
 			);
@@ -795,6 +816,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10EEFF632D0CB41C00B89DF7 /* Preview Assets.xcassets in Resources */,
+				104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */,
 				1036486A2D5A51BB00418CD4 /* Localizable.xcstrings in Resources */,
 				10EEFF642D0CB41C00B89DF7 /* Assets.xcassets in Resources */,
 			);
@@ -823,6 +845,7 @@
 				106EE2A12D5D1D8E002E6BE5 /* ToastView.swift in Sources */,
 				106EE2A52D5E6EDE002E6BE5 /* PairDeviceView.swift in Sources */,
 				10987DB32D5685BA0010FE09 /* DevicePairingClient.swift in Sources */,
+				104DD8662D78C68300C25A26 /* AppDelegate+Firebase.swift in Sources */,
 				10987DB22D5685B50010FE09 /* VerifyClient.swift in Sources */,
 				10A040282D5BC50500816220 /* WelcomeScreen.swift in Sources */,
 				10A0402F2D5BC89500816220 /* ConfirmationViewModel.swift in Sources */,
@@ -832,6 +855,7 @@
 				1000FA2A2A61C3AA00ADB773 /* K.swift in Sources */,
 				10A0402C2D5BC77900816220 /* UIUtilities.swift in Sources */,
 				10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */,
+				104DD86D2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */,
 				1031476F2D5BDAD00049F8AD /* DashboardScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,6 +918,7 @@
 				10EEFF5F2D0CB41C00B89DF7 /* VerifyView.swift in Sources */,
 				10EEFF602D0CB41C00B89DF7 /* AppDelegate+Wallet.swift in Sources */,
 				10222F092D3580EC00295B35 /* WalletViewModel.swift in Sources */,
+				104DD86E2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */,
 				10EEFF612D0CB41C00B89DF7 /* BXFinanceApp.swift in Sources */,
 				10EEFF622D0CB41C00B89DF7 /* K.swift in Sources */,
 				10987DA52D5680F00010FE09 /* AppDelegate.swift in Sources */,
@@ -1318,6 +1343,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		104DD8692D78C76800C25A26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
 		105979662D078953009A7610 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -1377,6 +1410,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
 			productName = PingOneSDK;
+		};
+		104DD86A2D78C76800C25A26 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104DD8692D78C76800C25A26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		104DD86F2D78D99F00C25A26 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104DD8692D78C76800C25A26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 		105979672D078953009A7610 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

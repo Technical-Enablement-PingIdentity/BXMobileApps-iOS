@@ -41,6 +41,9 @@ struct WelcomeScreen: View {
                 }
             }
         }
+        .onAppear {
+            GoogleAnalytics.userViewedScreen(screenName: "welcome_screen")
+        }
 
     }
     

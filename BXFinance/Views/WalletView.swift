@@ -40,6 +40,7 @@ struct WalletView: View {
             Spacer()
             
             Button(LocalizedStringKey("wallet.scan_code")) {
+                GoogleAnalytics.userTappedButton(buttonName: "scan_credential_verification_qr")
                 walletModel.presentQrScanner = true
             }
             .buttonStyle(BXButtonStyle())

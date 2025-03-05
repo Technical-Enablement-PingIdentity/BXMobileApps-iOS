@@ -99,6 +99,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         confirmationModel.presentUserConfirmation(title: (title ?? "").isEmpty ? String(localized: "confirmation.title") : title!, message: (description ?? "").isEmpty ? String(localized: "confirmation.message") : description!, image: "person.badge.shield.checkmark") { userConfirmed in
             
             if userConfirmed {
+                GoogleAnalytics.userCompletedAction(actionName: "approved_notification", type: title)
                 notificationObject.approve(withAuthenticationMethod: "user") { error in
                     if let error {
                         print("An error occurred approving notificationObject \(error.localizedDescription)")
@@ -108,6 +109,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 }
             } else {
                 notificationObject.deny { error in
+                    GoogleAnalytics.userCompletedAction(actionName: "denied_notification", type: title)
                     if let error {
                         print("An error occurred denying notificationObject \(error.localizedDescription)")
                     } else {

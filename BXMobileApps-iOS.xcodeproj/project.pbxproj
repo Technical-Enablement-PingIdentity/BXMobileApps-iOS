@@ -74,6 +74,8 @@
 		104DD86E2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */; };
 		104DD8702D78D99F00C25A26 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 104DD86F2D78D99F00C25A26 /* FirebaseAnalytics */; };
 		104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */; };
+		104DD8752D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */; };
+		104DD8762D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */; };
 		105979682D078953009A7610 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 105979672D078953009A7610 /* SwiftyJSON */; };
 		1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 1059796E2D08ABD6009A7610 /* PingOneSignals */; };
 		105FAA242C9A261F006BE8BF /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 105FAA232C9A261F006BE8BF /* PingOneSignals */; };
@@ -230,6 +232,7 @@
 		104DD8672D78C6EF00C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
 		104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		104DD8742D7903BA00C25A26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PingOneVerifyLocalizable.strings; sourceTree = "<group>"; };
 		105FAA352C9B1C08006BE8BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceView.swift; sourceTree = "<group>"; };
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -363,6 +366,7 @@
 		10109F352A5F0541004A60E1 = {
 			isa = PBXGroup;
 			children = (
+				104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */,
 				10EEFEF12D0CB3CE00B89DF7 /* Frameworks */,
 				10EEFF412D0CB41C00B89DF7 /* BXFinance */,
 				10109F542A5F05DB004A60E1 /* BXHealth */,
@@ -804,6 +808,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104DD8762D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */,
 				10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */,
 				104DD8682D78C6EF00C25A26 /* GoogleService-Info.plist in Resources */,
 				10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */,
@@ -815,6 +820,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104DD8752D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */,
 				10EEFF632D0CB41C00B89DF7 /* Preview Assets.xcassets in Resources */,
 				104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */,
 				1036486A2D5A51BB00418CD4 /* Localizable.xcstrings in Resources */,
@@ -941,6 +947,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				104DD8742D7903BA00C25A26 /* en */,
+			);
+			name = PingOneVerifyLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		10109F4A2A5F0543004A60E1 /* Debug */ = {

@@ -22,6 +22,7 @@ struct ConfigureWalletScreen: View {
                         .multilineTextAlignment(.center)
                         .padding()
                     Button(LocalizedStringKey("wallet.pair.button")) {
+                        GoogleAnalytics.userTappedButton(buttonName: "pair_wallet")
                         walletModel.presentQrScanner = true
                     }
                     .buttonStyle(BXButtonStyle())
@@ -77,7 +78,8 @@ struct ConfigureWalletScreen: View {
                         .clipShape(Circle())
                     
                     Spacer()
-                        Button(LocalizedStringKey("wallet.reset")) {
+                    Button(LocalizedStringKey("wallet.reset")) {
+                        GoogleAnalytics.userTappedButton(buttonName: "reset_wallet")
                         walletModel.deleteCredentials()
                     }
                     .buttonStyle(BXButtonStyle())
@@ -92,6 +94,9 @@ struct ConfigureWalletScreen: View {
                     .controlSize(.large)
             }
             
+        }
+        .onAppear {
+            GoogleAnalytics.userViewedScreen(screenName: "configure_wallet_screen")
         }
     }
     

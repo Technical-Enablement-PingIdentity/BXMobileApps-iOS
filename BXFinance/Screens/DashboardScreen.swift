@@ -25,6 +25,9 @@ struct DashboardScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .padding(.horizontal)
+                        .onAppear {
+                            GoogleAnalytics.userViewedScreen(screenName: "accounts_screen")
+                        }
                     
                     if loadingAccounts {
                         Spacer()
@@ -51,17 +54,26 @@ struct DashboardScreen: View {
                         }
                     }
                 }
-                
+
                 Tab(LocalizedStringKey("wallet"), systemImage: "wallet.pass.fill") {
                     WalletView()
+                        .onAppear {
+                            GoogleAnalytics.userViewedScreen(screenName: "wallet_screen")
+                        }
                 }
                 
                 Tab(LocalizedStringKey("verify"), systemImage: "person.badge.shield.checkmark.fill") {
                     VerifyView()
+                        .onAppear {
+                            GoogleAnalytics.userViewedScreen(screenName: "verify_screen")
+                        }
                 }
                 
                 Tab(LocalizedStringKey("profile"), systemImage: "person.circle") {
                     ProfileView()
+                        .onAppear {
+                            GoogleAnalytics.userViewedScreen(screenName: "profile_screen")
+                        }
                 }
                 
             }

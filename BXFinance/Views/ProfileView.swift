@@ -58,6 +58,7 @@ struct ProfileView: View {
                     case .signOut:
                         if !globalModel.accessToken.isEmpty {
                             Task {
+                                GoogleAnalytics.userTappedButton(buttonName: "sign_out")
                                 do {
                                     try await PingFedAuthnClient(appUrl: K.Environment.baseUrl).logout()
                                     globalModel.clearTokens()

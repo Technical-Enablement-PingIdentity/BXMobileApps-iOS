@@ -46,6 +46,7 @@ struct UsernameCollectorView: View {
             Spacer()
             
             Button(LocalizedStringKey("submit")) {
+                GoogleAnalytics.userTappedButton(buttonName: "submit_username")
                 submitCompletionHandler()
             }
             .disabled(!isUsernameValid)

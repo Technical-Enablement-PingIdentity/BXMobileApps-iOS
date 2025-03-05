@@ -21,6 +21,9 @@ struct ProfileInformationScreen: View {
             ProfileAttributeView(label: LocalizedStringKey("profile.email"), value: globalModel.getAttributeFromToken(attribute: "email", type: .idToken))
         }
         .padding(.horizontal, 16)
+        .onAppear {
+            GoogleAnalytics.userViewedScreen(screenName: "profile_information_screen")
+        }
     }
 }
 

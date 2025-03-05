@@ -258,6 +258,7 @@ extension PingOneWalletHelper {
         case .PAIRING_RESPONSE:
             logattention("Wallet paired: \(String(describing: event.isSuccess())) - error: \(event.getError()?.localizedDescription ?? "None")")
             if let isSuccess = event.isSuccess() {
+                GoogleAnalytics.userCompletedAction(actionName: "wallet_paired", actionSuccesful: isSuccess)
                 self.notifyUser(message: isSuccess ? "Wallet paired successfully" : "Wallet pairing failed", style: isSuccess ? .success : .error)
             }
         @unknown default:
@@ -268,6 +269,7 @@ extension PingOneWalletHelper {
     private func handlePairingRequest(_ pairingRequest: PairingRequest) {
         self.askUserPermission(title: "Pair Wallet", message: "Please confirm to pair your wallet to receive a credential.") { isPositiveAction in
             guard (isPositiveAction) else {
+                GoogleAnalytics.userCompletedAction(actionName: "cancelled_pairing")
                 logattention("Pairing canceled by user")
                 EventObserverUtils.broadcastUserCancelledPairing()
                 return
@@ -302,9 +304,11 @@ extension PingOneWalletHelper {
                 switch result.getPresentationStatus() {
                 case .success:
                     self.notifyUser(message: "Information sent successfully", style: .success)
+                    GoogleAnalytics.userCompletedAction(actionName: "verified_credential")
                 case .failure:
                     logerror("Error sharing information: \(result.getDetails()?.debugDescription ?? "None")")
                     self.notifyUser(message: "Failed to present credential", style: .error)
+                    GoogleAnalytics.userCompletedAction(actionName: "verified_credential", actionSuccesful: false)
                 case .requiresAction(let action):
                     self.handlePresentationAction(action)
                 @unknown default:

@@ -70,6 +70,7 @@ struct OneTimePasscodeCollectorView: View {
             Spacer()
             
             Button(LocalizedStringKey("submit")) {
+                GoogleAnalytics.userTappedButton(buttonName: "submit_otp")
                 submitCompletionHandler()
             }
             .disabled(!isOtpValid)

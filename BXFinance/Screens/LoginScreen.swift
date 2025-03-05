@@ -22,9 +22,10 @@ struct LoginScreen: View {
         _model = StateObject(wrappedValue: LoginViewModel(pingFedBaseUrl: K.Environment.baseUrl))
     }
     
-    func loginComplete(accessToken: String, idToken: String) {
+    func loginComplete(accessToken: String, idToken: String, isPasswordUser: Bool) {
         globalModel.setTokens(accessToken: accessToken, idToken: idToken)
         router.navigateTo(.dashboard)
+        GoogleAnalytics.userLoggedIn(loginMethod: isPasswordUser ? "password" : "device")
     }
     
     var body: some View {

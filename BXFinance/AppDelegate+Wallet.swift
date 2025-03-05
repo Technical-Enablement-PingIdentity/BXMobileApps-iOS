@@ -9,10 +9,13 @@ import AppAuth
 import PingOneSDK
 import PingOneWallet
 import SwiftUI
+import Firebase
 
 extension AppDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        FirebaseApp.configure()
 
         PingOneWalletHelper.initializeWallet()
             .onError { error in

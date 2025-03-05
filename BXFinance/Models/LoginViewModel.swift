@@ -13,7 +13,7 @@ class LoginViewModel: ObservableObject {
     
     private var pingFedAuthClient: PingFedAuthnClient
     
-    var loginCompleteCallback: ((String, String) -> Void)?
+    var loginCompleteCallback: ((String, String, Bool) -> Void)?
     
     @Published var loginStep: LoginStep = .unknown
     @Published var username: String?
@@ -22,12 +22,13 @@ class LoginViewModel: ObservableObject {
     @Published var processingPingFedCall = true
     @Published var selectableDevices: [SelectableDevice] = []
     @Published var selectedDevice: SelectableDevice?
+    @Published var isPasswordUser = false
     
     init(pingFedBaseUrl: String) {
         pingFedAuthClient = PingFedAuthnClient(appUrl: pingFedBaseUrl)
     }
     
-    func startAuthentication(loginCompleteHandler: @escaping (String, String) -> Void) async throws {
+    func startAuthentication(loginCompleteHandler: @escaping (String, String, Bool) -> Void) async throws {
         self.loginCompleteCallback = loginCompleteHandler
         processingPingFedCall = true
         defer { processingPingFedCall = false }
@@ -73,6 +74,7 @@ class LoginViewModel: ObservableObject {
     }
     
     func submitPassword(password: String) async throws {
+        self.isPasswordUser = true
         validationMessage = nil
         processingPingFedCall = true
         defer { processingPingFedCall = false }
@@ -172,7 +174,7 @@ class LoginViewModel: ObservableObject {
                 return
             }
             
-            loginCompleteCallback(accessToken, pingFedAuthClient.idToken ?? "")
+            loginCompleteCallback(accessToken, pingFedAuthClient.idToken ?? "", isPasswordUser)
         }
     }
     

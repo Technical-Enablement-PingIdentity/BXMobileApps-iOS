@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct DashboardScreen: View {
     enum Tab {
@@ -24,6 +25,9 @@ struct DashboardScreen: View {
         TabView(selection: $selection) {
             VStack {
                 PairDeviceView()
+                    .onAppear {
+                        GoogleAnalytics.userViewedScreen(screenName: "pair_device")
+                    }
             }
             .tabItem {
                 Text(LocalizedStringKey("pair_device"))
@@ -32,6 +36,9 @@ struct DashboardScreen: View {
             
             VStack {
                 VerifyView()
+                    .onAppear {
+                        GoogleAnalytics.userViewedScreen(screenName: "verify_identity")
+                    }
             }
             .tabItem {
                 Text(LocalizedStringKey("verify_user"))

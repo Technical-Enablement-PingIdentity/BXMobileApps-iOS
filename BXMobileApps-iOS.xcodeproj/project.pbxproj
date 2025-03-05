@@ -1070,7 +1070,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -1089,7 +1089,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1105,7 +1105,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -1124,7 +1124,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1140,7 +1140,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -1161,7 +1161,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.1;
+				MARKETING_VERSION = 4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1182,7 +1182,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				DEVELOPMENT_TEAM = YZYUGL7S48;
 				ENABLE_PREVIEWS = YES;
@@ -1203,7 +1203,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.1;
+				MARKETING_VERSION = 4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

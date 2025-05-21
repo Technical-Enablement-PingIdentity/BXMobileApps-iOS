@@ -19,21 +19,18 @@ class UserViewModel: ObservableObject {
     ///   - Other optional fields
     public let loginFlowClient: DaVinci
     
-    // First and last name are not necessarily guaranteed to be present on a user if they haven't save any profile details yet
-    @Published var firstName: String?
-    @Published var lastName: String?
-    @Published var phone: String?
-    @Published var streetAddress: String?
-    @Published var city: String?
-    @Published var postalCode: String?
-    
-    // Email will always be present for a logged in user since it's required to make an account
     @Published var email = ""
+    @Published var firstName = ""
+    @Published var lastName = ""
+    @Published var phone = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    @Published var postalCode = ""
     
     @Published var isLoggedIn = false
     
     var displayName: String {
-        return firstName ?? email
+        return firstName.isEmpty ? email : firstName
     }
     
     init() {
@@ -57,13 +54,13 @@ class UserViewModel: ObservableObject {
                 
                 let address = userInfoDictionary["address"] as? [String: String]
                 
-                firstName = userInfoDictionary["given_name"] as? String
-                lastName = userInfoDictionary["family_name"] as? String
+                firstName = userInfoDictionary["given_name"] as? String ?? ""
+                lastName = userInfoDictionary["family_name"] as? String ?? ""
                 email = userInfoDictionary["email"] as? String ?? ""
-                phone = userInfoDictionary["mobile_phone"] as? String
-                streetAddress = address?["street_address"] as? String
-                city = address?["locality"] as? String
-                postalCode = address?["postal_code"] as? String
+                phone = userInfoDictionary["mobile_phone"] as? String ?? ""
+                streetAddress = address?["street_address"] as? String ?? ""
+                city = address?["locality"] as? String ?? ""
+                postalCode = address?["postal_code"] as? String ?? ""
             }
         case .failure(let error):
             print("Unexpected Failure fetching userInfo \(error)")
@@ -81,11 +78,11 @@ class UserViewModel: ObservableObject {
     func resetModel() async {
         await MainActor.run {
             isLoggedIn = false
-            firstName = nil
-            lastName = nil
-            streetAddress = nil
-            city = nil
-            postalCode = nil
+            firstName = ""
+            lastName = ""
+            streetAddress = ""
+            city = ""
+            postalCode = ""
             email = ""
         }
     }

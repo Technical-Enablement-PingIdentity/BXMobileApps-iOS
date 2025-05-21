@@ -29,12 +29,11 @@ struct DaVinciErrorMessageView: View {
         if errors.isEmpty {
             EmptyView()
         } else {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 0) {
                 ForEach(errors, id: \.self) { error in
                     Text(error)
                         .font(.footnote)
                         .foregroundColor(.red)
-                        .padding(.vertical, 4)
                 }
             }
             .padding(2)

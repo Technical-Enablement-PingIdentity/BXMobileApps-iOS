@@ -18,10 +18,12 @@ struct DaVinciConnectorView: View {
     /// The next node to process in the flow.
     public var node: ContinueNode
     
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         VStack {
             /// App logo displayed at the top of the view
-            LogoView(assetName: K.Assets.Logo)
+            LogoView(assetName: colorScheme == .light ? K.Assets.Logo : K.Assets.LogoWhite)
             
             /// The main node view that handles user interactions with the current flow step
             DaVinciContinueNodeView(continueNode: node,

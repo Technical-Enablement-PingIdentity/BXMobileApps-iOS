@@ -51,8 +51,12 @@ struct MainScreen: View {
                         }
                         .padding(.horizontal)
                     }
+                    .tint(.blue)
                     .onAppear {
-                        GoogleAnalytics.userViewedScreen(screenName: "home_tab")
+                        Task {
+                            GoogleAnalytics.userViewedScreen(screenName: "home_tab")
+                            await userViewModel.fetchUserInfo()
+                        }
                     }
                 }
                 
@@ -73,15 +77,15 @@ struct MainScreen: View {
                         .onAppear {
                             GoogleAnalytics.userViewedScreen(screenName: "account_tab")
                         }
+                        .tint(.blue)
                 }
             }
-            .accentColor(.white)
+            .tint(.white)
             .onAppear {
                 let appearance = UITabBar.appearance()
                 appearance.backgroundColor = UIColor(named: K.Colors.Primary)
                 appearance.barTintColor = UIColor(named: K.Colors.Primary)
                 appearance.unselectedItemTintColor = UIColor(named: K.Colors.PrimaryLight)
-                
                 Task {
                     await userViewModel.fetchUserInfo()
                 }
@@ -89,10 +93,6 @@ struct MainScreen: View {
             .onChange(of: selection) { oldValue, newValue in
                 if (newValue != .home && newValue != .account) {
                     selection = oldValue
-                }
-                
-                Task {
-                    await userViewModel.fetchUserInfo()
                 }
             }
         }

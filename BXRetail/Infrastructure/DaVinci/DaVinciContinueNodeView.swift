@@ -25,21 +25,27 @@ struct DaVinciContinueNodeView: View {
     /// The validation view model shared across collectors to manage form validation state.
     @EnvironmentObject var validationViewModel: DaVinciValidationViewModel
     
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 4) {
             /// Title display showing the node name
             Text(continueNode.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundStyle(Color.black)
+                .foregroundStyle(colorScheme == .light ? .black : .white)
             /// Description text providing context about the current step
             Text(continueNode.description)
                 .font(.subheadline)
+                .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundStyle(Color.black)
+                .foregroundStyle(colorScheme == .light ? .black : .white)
+                .padding(.bottom, 8)
             
             Divider()
+                .padding(.bottom, 8)
             
             /// Renders the appropriate view for each collector in the node
             ForEach(continueNode.collectors , id: \.id) { collector in
@@ -107,6 +113,5 @@ struct DaVinciContinueNodeView: View {
                 .padding(.top, 16)
             }
         }
-        .padding()
     }
 }

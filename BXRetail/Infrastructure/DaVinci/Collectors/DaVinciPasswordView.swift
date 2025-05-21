@@ -43,7 +43,7 @@ struct DaVinciPasswordView: View {
         VStack(alignment: .leading, spacing: 8) {
             // Password Input Field
             VStack(alignment: .leading) {
-                SecureFieldView(
+                DaVinciSecureFieldView(
                     label: field.required ? "\(field.label)*" : field.label,
                     value: $text,
                     isPasswordVisible: $passwordVisibility,
@@ -57,6 +57,7 @@ struct DaVinciPasswordView: View {
                     isError: !isValid,
                     errorMessages: field.validate().map { $0.errorMessage }.sorted()
                 )
+                .padding(.bottom, 8)
             }
             .onChange(of: validationViewModel.shouldValidate) { _, newValue in
                 if newValue {
@@ -66,7 +67,7 @@ struct DaVinciPasswordView: View {
             
             // Password Verification Field
             if field.type == "PASSWORD_VERIFY" {
-                SecureFieldView(
+                DaVinciSecureFieldView(
                     label: "Verify Password*",
                     value: $verify,
                     isPasswordVisible: $verifyPasswordVisibility,
@@ -98,7 +99,7 @@ struct DaVinciPasswordView: View {
 /// - errorMessages: Array of error messages to display
 ///
 /// The view toggles between SecureField and TextField based on the visibility state.
-struct SecureFieldView: View {
+struct DaVinciSecureFieldView: View {
     let label: String
     @Binding var value: String
     @Binding var isPasswordVisible: Bool
@@ -108,12 +109,15 @@ struct SecureFieldView: View {
     var errorMessages: [String]
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(label)
+                .font(.system(size: 14))
+                .padding(.bottom, 4)
             HStack {
                 if isPasswordVisible {
-                    TextField(label, text: $value)
+                    TextField(label.replacingOccurrences(of: "*", with: ""), text: $value)
                 } else {
-                    SecureField(label, text: $value)
+                    SecureField(label.replacingOccurrences(of: "*", with: ""), text: $value)
                 }
                 Button(action: { isPasswordVisible.toggle() }) {
                     Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
@@ -125,7 +129,7 @@ struct SecureFieldView: View {
             .onChange(of: value) { newValue, _ in
                 onValueChange(value)
             }
-            .padding()
+            .padding(8)
             .background(
                 RoundedRectangle(cornerRadius: 2)
                     .stroke(isError ? Color.red : Color.gray, lineWidth: 1)
@@ -136,5 +140,6 @@ struct SecureFieldView: View {
                 DaVinciErrorMessageView(errors: errorMessages)
             }
         }
+        .padding(.bottom, 8)
     }
 }

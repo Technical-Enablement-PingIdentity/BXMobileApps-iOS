@@ -36,14 +36,17 @@ struct DaVinciTextView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(field.required ? "\(field.label)*" : field.label)
+                    .font(.system(size: 14))
+                    .padding(.bottom, 4)
                 TextField(
-                    field.required ? "\(field.label)*" : field.label,
+                    field.label,
                     text: $text
                 )
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
-                .padding()
+                .padding(8)
                 .background(
                     RoundedRectangle(cornerRadius: 2)
                         .stroke(isValid ? Color.gray : Color.red, lineWidth: 1)
@@ -61,11 +64,11 @@ struct DaVinciTextView: View {
                 }
             }
         }
+        .padding(.horizontal)
         .onChange(of: validationViewModel.shouldValidate) { _, newValue in
             if newValue {
                 isValid = field.validate().isEmpty
             }
         }
-        .padding()
     }
 }

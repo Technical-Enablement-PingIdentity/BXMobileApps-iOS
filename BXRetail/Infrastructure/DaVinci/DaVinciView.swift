@@ -56,9 +56,9 @@ struct DaVinciView: View {
                         // TODO - It would be ideal to do allow users to view previous node and re-submit but unfortunately the SDK doesn't currently allow for that
                         
                         /// Provides a way to return to the previous valid node if available
-//                        if let nextNode = daVinciViewModel.state.previous as? ContinueNode {
-//                            DaVinciConnectorView(daVinciClient: daVinciClient, daVinciViewModel: daVinciViewModel, node: nextNode)
-//                        }
+                        if let nextNode = daVinciViewModel.state.previous as? ContinueNode {
+                            DaVinciConnectorView(daVinciClient: daVinciClient, daVinciViewModel: daVinciViewModel, node: nextNode)
+                        }
                     default:
                         // Show an empty view for unhandled cases.
                         EmptyView()

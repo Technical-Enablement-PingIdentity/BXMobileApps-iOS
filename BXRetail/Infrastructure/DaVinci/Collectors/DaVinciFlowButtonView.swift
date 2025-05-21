@@ -36,7 +36,6 @@ struct DaVinciFlowButtonView: View {
                 }) {
                     Text(field.label)
                         .foregroundColor(Color(K.Colors.Primary))
-                        .underline()
                 }
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -52,6 +51,7 @@ struct DaVinciFlowButtonView: View {
             }
         }
         .padding(4)
+        .padding(.bottom, 8)
         .frame(maxWidth: .infinity)
         .onAppear {
             field.value = ""

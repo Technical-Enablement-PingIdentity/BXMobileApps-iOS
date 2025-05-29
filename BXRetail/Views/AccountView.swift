@@ -33,7 +33,6 @@ struct AccountView: View {
                                 ProgressView()
                                     .onAppear {
                                         Task {
-                                            print("here")
                                             GoogleAnalytics.userTappedButton(buttonName: "sign_out")
                                             await userViewModel.logoutUser()
                                         }

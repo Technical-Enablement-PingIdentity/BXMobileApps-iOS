@@ -27,6 +27,50 @@ struct DaVinciContinueNodeView: View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
+    var orderedCollectors: [any Collector] {
+        get {
+            switch continueNode.name {
+            case "Sign On":
+                return [
+                    continueNode.collectors.first(where: {$0.id == "user.email"})!,
+                    continueNode.collectors.first(where: {$0.id == "user.password"})!,
+                    continueNode.collectors.first(where: {$0.id == "submit"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-register"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-password-reset"})!
+                ]
+            case "Create Profile":
+                return [
+                    continueNode.collectors.first(where: {$0.id == "user.email"})!,
+                    continueNode.collectors.first(where: {$0.id == "user.password"})!,
+                    continueNode.collectors.first(where: {$0.id == "submit"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-cancel"})!
+                ]
+            case "Recovery Email":
+                return [
+                    continueNode.collectors.first(where: {$0.id == "user.email"})!,
+                    continueNode.collectors.first(where: {$0.id == "submit"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-back"})!,
+                ]
+            case "Forgot Password":
+                return [
+                    continueNode.collectors.first(where: {$0.id == "recovery-code-field"})!,
+                    continueNode.collectors.first(where: {$0.id == "user.newPassword"})!,
+                    continueNode.collectors.first(where: {$0.id == "submit"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-resend"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-cancel"})!,
+                ]
+            case "Verification Code":
+                return [
+                    continueNode.collectors.first(where: {$0.id == "verificaiton-code-field"})!,
+                    continueNode.collectors.first(where: {$0.id == "submit"})!,
+                    continueNode.collectors.first(where: {$0.id == "link-resend"})!,
+                ]
+            default:
+                return continueNode.collectors
+            }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             /// Title display showing the node name
@@ -48,7 +92,7 @@ struct DaVinciContinueNodeView: View {
                 .padding(.bottom, 8)
             
             /// Renders the appropriate view for each collector in the node
-            ForEach(continueNode.collectors , id: \.id) { collector in
+            ForEach(orderedCollectors , id: \.id) { collector in
                 switch collector {
                 case is FlowCollector:
                     if let flowCollector = collector as? FlowCollector {

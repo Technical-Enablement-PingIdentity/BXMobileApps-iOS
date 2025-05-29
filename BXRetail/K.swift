@@ -19,10 +19,9 @@ struct K {
     }
     
     struct DaVinci {
-        static let clientId = "c96f25c5-926d-4072-a49e-0c2c68547467"
+        static let clientId = "3bcf850a-e29d-47ba-9d71-d13db2262b15"
         static let scopes = ["openid", "address", "email", "phone", "profile"]
         static let redirectUri = "com.pingIdentity.p14c.bxretail.sample://oauth2redirect"
-        static let discoveryEndpoint = "https://auth.pingone.com/aee45a8e-40c8-4d24-becf-7a0b0063970d/as/.well-known/openid-configuration"
-//        static let discoveryEndpoint = "https://demo-bxretail-auth-may-ea.ping-devops.com/as/.well-known/openid-configuration"
+        static let discoveryEndpoint = "https://auth.pingone.com/94897424-28fc-428e-8cea-1889e93a28bc/as/.well-known/openid-configuration"
     }
 }

@@ -13,7 +13,7 @@ struct ContinueShoppingView: View {
     
     var body: some View {
         VStack {
-            Text(LocalizedStringKey("welcome \(userViewModel.displayName)"))
+            Text("welcome \(userViewModel.displayName)")
                 .lineLimit(1)
                 .font(.system(size: 24, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)

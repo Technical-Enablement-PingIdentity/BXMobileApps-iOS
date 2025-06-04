@@ -34,16 +34,6 @@
         }
       }
     },
-    "App Version: v%@ (%@)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "App Version: v%1$@ (%2$@)"
-          }
-        }
-      }
-    },
     "app_info" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -51,6 +41,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Info"
+          }
+        }
+      }
+    },
+    "app_version %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Version: v%1$@ (%2$@)"
           }
         }
       }
@@ -140,8 +140,17 @@
         }
       }
     },
-    "PingSDK Version: v1.1.0" : {
-
+    "ping_sdk_version" : {
+      "comment" : "Sadly this version must be hardcoded 😔",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PingSDK Version: v1.1.0"
+          }
+        }
+      }
     },
     "profile" : {
       "extractionState" : "manual",

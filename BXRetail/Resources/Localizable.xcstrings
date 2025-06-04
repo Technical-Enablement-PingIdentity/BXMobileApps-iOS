@@ -34,6 +34,27 @@
         }
       }
     },
+    "App Version: v%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "App Version: v%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "app_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Info"
+          }
+        }
+      }
+    },
     "continue_shopping" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -118,6 +139,9 @@
           }
         }
       }
+    },
+    "PingSDK Version: v1.1.0" : {
+
     },
     "profile" : {
       "extractionState" : "manual",

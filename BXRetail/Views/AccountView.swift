@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PingDavinci
 
 struct AccountView: View {
     
@@ -15,6 +16,7 @@ struct AccountView: View {
         AccountAction(id: "purchase_history", icon: "cart.badge.clock.fill", active: false),
         AccountAction(id: "account_settings", icon: "gearshape.fill", active: false),
         AccountAction(id: "extraordinary_club", icon: "star.square.on.square.fill", active: false),
+        AccountAction(id: "app_info", icon: "info.circle.fill", active: true),
         AccountAction(id: "sign_out", icon: "person.slash", active: true)
     ]
     
@@ -23,12 +25,17 @@ struct AccountView: View {
     var body: some View {
         VStack {
             if userViewModel.isLoggedIn {
+
                 NavigationStack() {
                     List(actions) { action in
                         NavigationLink(destination: {
                             switch action.id {
                             case "profile":
-                                ProfileView()
+                                ScrollView {
+                                    ProfileView()
+                                }
+                            case "app_info":
+                                VersionView()
                             case "sign_out":
                                 ProgressView()
                                     .onAppear {
@@ -52,8 +59,11 @@ struct AccountView: View {
                     }
                 }
             } else {
+                Spacer()
                 SignInCardView(note: "account.not_signed_in".resource)
                     .padding(.horizontal)
+                Spacer()
+                VersionView()
             }
         }
     }

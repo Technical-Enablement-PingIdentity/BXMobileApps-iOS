@@ -34,6 +34,27 @@
         }
       }
     },
+    "app_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Info"
+          }
+        }
+      }
+    },
+    "app_version %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Version: v%1$@ (%2$@)"
+          }
+        }
+      }
+    },
     "continue_shopping" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -115,6 +136,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okay"
+          }
+        }
+      }
+    },
+    "ping_sdk_version" : {
+      "comment" : "Sadly this version must be hardcoded 😔",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PingSDK Version: v1.1.0"
           }
         }
       }

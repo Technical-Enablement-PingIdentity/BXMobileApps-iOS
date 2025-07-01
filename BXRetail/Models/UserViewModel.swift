@@ -17,7 +17,9 @@ class UserViewModel: ObservableObject {
     ///   - Redirect URI
     ///   - Discovery Endpoint
     ///   - Other optional fields
-    public let loginFlowClient: DaVinci
+    public var loginFlowClient: DaVinci
+    private var clientUsingQa: Bool
+    
     
     @Published var email = ""
     @Published var firstName = ""
@@ -34,13 +36,17 @@ class UserViewModel: ObservableObject {
     }
     
     init() {
-        loginFlowClient = DaVinci.createDaVinci { config in
-            config.module(OidcModule.config) { oidcValue in
-                oidcValue.clientId = K.DaVinci.clientId
-                oidcValue.scopes = Set(K.DaVinci.scopes)
-                oidcValue.redirectUri = K.DaVinci.redirectUri
-                oidcValue.discoveryEndpoint = K.DaVinci.discoveryEndpoint
-            }
+        clientUsingQa = UserDefaults.standard.bool(forKey: "use_qa_environment")
+        loginFlowClient = UserViewModel.createClient()
+    }
+    
+    func refreshLoginClient() async {
+        let useQaSetting = UserDefaults.standard.bool(forKey: "use_qa_environment")
+        if useQaSetting != clientUsingQa {
+            print("User changed setting, refreshing client")
+            await logoutUser()
+            clientUsingQa = useQaSetting
+            loginFlowClient = UserViewModel.createClient()
         }
     }
     
@@ -84,6 +90,19 @@ class UserViewModel: ObservableObject {
             city = ""
             postalCode = ""
             email = ""
+        }
+    }
+    
+    static func createClient() -> DaVinci {
+        return DaVinci.createDaVinci { config in
+            config.module(OidcModule.config) { oidcValue in
+                let useQaEnvironment = UserDefaults.standard.bool(forKey: "use_qa_environment")
+                
+                oidcValue.clientId = useQaEnvironment ? K.DaVinci.qaClientId : K.DaVinci.productionClientId
+                oidcValue.scopes = Set(K.DaVinci.scopes)
+                oidcValue.redirectUri = K.DaVinci.redirectUri
+                oidcValue.discoveryEndpoint = useQaEnvironment ? K.DaVinci.qaIssuer : K.DaVinci.productionIssuer
+            }
         }
     }
 }

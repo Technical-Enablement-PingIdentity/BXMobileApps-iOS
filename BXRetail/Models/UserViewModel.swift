@@ -18,8 +18,8 @@ class UserViewModel: ObservableObject {
     ///   - Discovery Endpoint
     ///   - Other optional fields
     public var loginFlowClient: DaVinci
-    private var clientUsingQa: Bool
     
+    @Published var clientUsingQa: Bool
     
     @Published var email = ""
     @Published var firstName = ""
@@ -36,17 +36,17 @@ class UserViewModel: ObservableObject {
     }
     
     init() {
-        clientUsingQa = UserDefaults.standard.bool(forKey: "use_qa_environment")
-        loginFlowClient = UserViewModel.createClient()
+        UserDefaults.standard.synchronize()
+        (loginFlowClient, clientUsingQa) = UserViewModel.createClient()
     }
     
     func refreshLoginClient() async {
-        let useQaSetting = UserDefaults.standard.bool(forKey: "use_qa_environment")
+        UserDefaults.standard.synchronize()
+        let useQaSetting = UserDefaults.standard.bool(forKey: K.DaVinci.useQaSettingKey)
         if useQaSetting != clientUsingQa {
             print("User changed setting, refreshing client")
             await logoutUser()
-            clientUsingQa = useQaSetting
-            loginFlowClient = UserViewModel.createClient()
+            (loginFlowClient, clientUsingQa) = UserViewModel.createClient()
         }
     }
     
@@ -93,16 +93,15 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    static func createClient() -> DaVinci {
-        return DaVinci.createDaVinci { config in
+    static func createClient() -> (DaVinci, Bool) {
+        let useQaEnvironment = UserDefaults.standard.bool(forKey: K.DaVinci.useQaSettingKey)
+        return (DaVinci.createDaVinci { config in
             config.module(OidcModule.config) { oidcValue in
-                let useQaEnvironment = UserDefaults.standard.bool(forKey: "use_qa_environment")
-                
                 oidcValue.clientId = useQaEnvironment ? K.DaVinci.qaClientId : K.DaVinci.productionClientId
                 oidcValue.scopes = Set(K.DaVinci.scopes)
                 oidcValue.redirectUri = K.DaVinci.redirectUri
                 oidcValue.discoveryEndpoint = useQaEnvironment ? K.DaVinci.qaIssuer : K.DaVinci.productionIssuer
             }
-        }
+        }, useQaEnvironment)
     }
 }

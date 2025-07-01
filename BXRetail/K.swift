@@ -19,6 +19,8 @@ struct K {
     }
     
     struct DaVinci {
+        static let useQaSettingKey = "use_qa_environment"
+        
         static let qaClientId = "688fec80-fc99-440b-bd22-4d8d8532103d"
         static let qaIssuer = "https://auth.pingone.com/13d707b7-4df9-47fa-a198-bfa32005ba93/as/.well-known/openid-configuration"
         

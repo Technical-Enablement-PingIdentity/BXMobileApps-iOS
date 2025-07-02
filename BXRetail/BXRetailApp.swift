@@ -13,10 +13,21 @@ struct BXRetailApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @Environment(\.scenePhase) var scenePhase
+    
+    var userViewModel = UserViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(UserViewModel())
+                .environmentObject(userViewModel)
+                .onChange(of: scenePhase) { _, newValue in
+                    if newValue == .active {
+                        Task {
+                            await userViewModel.refreshLoginClient()
+                        }
+                    }
+                }
         }
     }
 }

@@ -17,7 +17,9 @@ class UserViewModel: ObservableObject {
     ///   - Redirect URI
     ///   - Discovery Endpoint
     ///   - Other optional fields
-    public let loginFlowClient: DaVinci
+    public var loginFlowClient: DaVinci
+    
+    @Published var clientUsingQa: Bool
     
     @Published var email = ""
     @Published var firstName = ""
@@ -34,13 +36,17 @@ class UserViewModel: ObservableObject {
     }
     
     init() {
-        loginFlowClient = DaVinci.createDaVinci { config in
-            config.module(OidcModule.config) { oidcValue in
-                oidcValue.clientId = K.DaVinci.clientId
-                oidcValue.scopes = Set(K.DaVinci.scopes)
-                oidcValue.redirectUri = K.DaVinci.redirectUri
-                oidcValue.discoveryEndpoint = K.DaVinci.discoveryEndpoint
-            }
+        UserDefaults.standard.synchronize()
+        (loginFlowClient, clientUsingQa) = UserViewModel.createClient()
+    }
+    
+    func refreshLoginClient() async {
+        UserDefaults.standard.synchronize()
+        let useQaSetting = UserDefaults.standard.bool(forKey: K.DaVinci.useQaSettingKey)
+        if useQaSetting != clientUsingQa {
+            print("User changed setting, refreshing client")
+            await logoutUser()
+            (loginFlowClient, clientUsingQa) = UserViewModel.createClient()
         }
     }
     
@@ -85,5 +91,17 @@ class UserViewModel: ObservableObject {
             postalCode = ""
             email = ""
         }
+    }
+    
+    static func createClient() -> (DaVinci, Bool) {
+        let useQaEnvironment = UserDefaults.standard.bool(forKey: K.DaVinci.useQaSettingKey)
+        return (DaVinci.createDaVinci { config in
+            config.module(OidcModule.config) { oidcValue in
+                oidcValue.clientId = useQaEnvironment ? K.DaVinci.qaClientId : K.DaVinci.productionClientId
+                oidcValue.scopes = Set(K.DaVinci.scopes)
+                oidcValue.redirectUri = K.DaVinci.redirectUri
+                oidcValue.discoveryEndpoint = useQaEnvironment ? K.DaVinci.qaIssuer : K.DaVinci.productionIssuer
+            }
+        }, useQaEnvironment)
     }
 }

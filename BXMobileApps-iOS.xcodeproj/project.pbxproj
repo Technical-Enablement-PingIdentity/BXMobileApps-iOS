@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1000FA2A2A61C3AA00ADB773 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000FA282A61C3AA00ADB773 /* K.swift */; };
+		1004C5682E146CDC007BCF20 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1004C5672E146CDC007BCF20 /* Settings.bundle */; };
 		100CEC5B2D381C3C000B73E5 /* OneTimePasscodeCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CEC5A2D381C2D000B73E5 /* OneTimePasscodeCollectorView.swift */; };
 		100CEC5D2D38209E000B73E5 /* DeviceSelectionCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CEC5C2D382096000B73E5 /* DeviceSelectionCollectorView.swift */; };
 		100F18182D5AC7D300875591 /* SendLogsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F18172D5AC7CD00875591 /* SendLogsScreen.swift */; };
@@ -242,6 +243,7 @@
 
 /* Begin PBXFileReference section */
 		1000FA282A61C3AA00ADB773 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		1004C5672E146CDC007BCF20 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		100CEC5A2D381C2D000B73E5 /* OneTimePasscodeCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimePasscodeCollectorView.swift; sourceTree = "<group>"; };
 		100CEC5C2D382096000B73E5 /* DeviceSelectionCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelectionCollectorView.swift; sourceTree = "<group>"; };
 		100F18172D5AC7CD00875591 /* SendLogsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLogsScreen.swift; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 				103501E32DD78E30005F2E74 /* GoogleService-Info.plist */,
 				10C6AC882DD500AA0041BB5D /* K.swift */,
 				10C6AC8C2DD501F70041BB5D /* Launch Screen.storyboard */,
+				1004C5672E146CDC007BCF20 /* Settings.bundle */,
 			);
 			path = BXRetail;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 			files = (
 				10C6AC8D2DD501F70041BB5D /* Launch Screen.storyboard in Resources */,
 				103501E42DD78E30005F2E74 /* GoogleService-Info.plist in Resources */,
+				1004C5682E146CDC007BCF20 /* Settings.bundle in Resources */,
 				109EBFA72DD2403300D59128 /* Assets.xcassets in Resources */,
 				10F1EEEF2DD512CD00244DD6 /* Localizable.xcstrings in Resources */,
 			);
@@ -1520,7 +1524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1539,7 +1543,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxretail.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -1555,7 +1559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1574,7 +1578,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxretail.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

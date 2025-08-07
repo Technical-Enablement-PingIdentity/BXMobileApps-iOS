@@ -24,27 +24,26 @@ struct WalletView: View {
                 .tint(Color(K.Colors.Primary))
             }
         } else {
-            ScrollView {
-                ForEach(walletModel.credentials, id: \.id) {
-                    if let uiImage = UIImage.fromClaim($0.claim, size: nil) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.horizontal)
-                    } else {
-                        Text(LocalizedStringKey("wallet.image_error"))
-                    }
-                }
-            }
+            FinanceCredentialListView(isSelecting: false)
             
-            Spacer()
-            
-            Button(LocalizedStringKey("wallet.scan_code")) {
+            Button(action: {
                 GoogleAnalytics.userTappedButton(buttonName: "scan_credential_verification_qr")
                 walletModel.presentQrScanner = true
+            }) {
+                Image(systemName: "qrcode.viewfinder")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35, height: 35) // Adjust size as needed
+                    .foregroundColor(.white) // Set image color
+                    .padding(8)
             }
             .buttonStyle(BXButtonStyle())
-            .padding(.bottom, 66)
+            .clipShape(Circle())
+            .shadow(radius: 5)
+            .padding(.bottom, 24)
+            .popover(isPresented: $walletModel.presentCredentialPicker) {
+                FinanceCredentialListView(isSelecting: true)
+            }
             .popover(isPresented: $walletModel.presentQrScanner) {
                 ZStack(alignment: .bottom) {
                     QRScanner(result: $walletModel.scanResult, loadingCamera: $walletModel.loadingCamera)

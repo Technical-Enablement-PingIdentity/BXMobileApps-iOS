@@ -13,7 +13,7 @@ public protocol ApplicationUiCallbackHandler {
     
     func showConfirmationAlert(title: String, message: String, positiveActionTitle: String, cancelActionTitle: String, actionHandler: @escaping (Bool) -> Void)
     func showErrorAlert(title: String, message: String, actionTitle: String?, actionHandler: (() -> Void)?)
-    func selectCredentialForPresentation(_ credentials: [Claim], onItemPicked: @escaping ((Claim?) -> Void))
+    func selectCredentialForPresentation(_ credentials: [Claim], requestedKeys: [String], onItemPicked: @escaping ((Claim?,[String]) -> Void))
     func openUrl(url: String, onComplete: @escaping (Bool, String) -> Void)
     
 }

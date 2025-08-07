@@ -35,20 +35,18 @@ public class DefaultCredentialPicker: CredentialPicker {
             return
         }
         
-        if (credentialMatcherResult.claims.count == 1) {
-            listener.onCredentialPicked(credentialMatcherResult.claims[0], keys: credentialMatcherResult.requestedKeys)
-            self.selectCredentialToPresent(credentialMatcherResults, index: index + 1, listener: listener)
-        } else {
-            //MARK: UI Code
-            self.applicationUiCallbackHandler.selectCredentialForPresentation(credentialMatcherResult.claims) { selectedClaim in
-                guard let claim = selectedClaim else {
-                    listener.onPickerCanceled()
-                    return
-                }
-                listener.onCredentialPicked(claim, keys: credentialMatcherResult.requestedKeys)
-                self.selectCredentialToPresent(credentialMatcherResults, index: index + 1, listener: listener)
+        //MARK: UI Code
+        // Don't want to make CardType selectabled by user
+        self.applicationUiCallbackHandler.selectCredentialForPresentation(credentialMatcherResult.claims, requestedKeys: credentialMatcherResult.requestedKeys) { selectedClaim, selectedKeys in
+            guard let claim = selectedClaim else {
+                listener.onPickerCanceled()
+                return
             }
+            
+            listener.onCredentialPicked(claim, keys: selectedKeys) // Add cardType back in just in case, unsure if this is strictly necessary
+            self.selectCredentialToPresent(credentialMatcherResults, index: index + 1, listener: listener)
         }
+        
     }
     
     class func getPickerItemFromClaims(_ claim: Claim, isRevoked: Bool) -> PickerItem? {

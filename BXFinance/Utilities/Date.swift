@@ -22,4 +22,19 @@ class DateUtils {
         return date.toString(outputFormat: "MMM dd, yyyy")
     }
     
+    static func getFormattedDateFromClaimValue(date: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSSZ"
+        let localDate = formatter.date(from: date)
+        
+        if let localDate {
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            return formatter.string(from: localDate)
+        } else {
+            return ""
+        }
+        
+    }
+    
 }

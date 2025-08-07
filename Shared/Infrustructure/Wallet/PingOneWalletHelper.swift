@@ -128,7 +128,18 @@ public class PingOneWalletHelper {
         return self.pingoneWalletClient.getDataRepository()
     }
     
-    public func deleteCredentials(onDelete: @escaping () -> Void) {
+    public func deleteCredential(credential: Claim, credentialDescription: String, onDelete: @escaping () -> Void) {
+        self.askUserPermission(title: "Delete Credential", message: "Please confirm you wish to delete the credential for \(credentialDescription). You will need to re-pair the user through the BXF site.") { userConfirmedAction in
+            if (userConfirmedAction) {
+                self.getDataRepository().deleteCredential(forId: credential.getId())
+                self.pingoneWalletClient.reportCredentialDeletion(claim: credential)
+            }
+            
+            onDelete()
+        }
+    }
+    
+    public func deleteAllCredentials(onDelete: @escaping () -> Void) {
         self.askUserPermission(title: "Delete Credentials", message: "Please confirm you wish to delete all of your credentials. You will need to re-pair your wallet through the BXF site.") { userConfirmedAction in
             if userConfirmedAction {
                 let repo = self.getDataRepository()

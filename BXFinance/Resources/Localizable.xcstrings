@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      }
+    },
     "$%@" : {
       "comment" : "Dashboard account balance label",
       "localizations" : {
@@ -364,6 +374,16 @@
         }
       }
     },
+    "delete" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
     "deny" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -462,6 +482,9 @@
           }
         }
       }
+    },
+    "Issued: %@" : {
+
     },
     "loading" : {
       "extractionState" : "manual",
@@ -848,6 +871,9 @@
         }
       }
     },
+    "Rewards Account: #%@" : {
+
+    },
     "send_logs" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -980,6 +1006,17 @@
         }
       }
     },
+    "wallet.attributes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credential Attributes"
+          }
+        }
+      }
+    },
     "wallet.camera.loading" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -997,7 +1034,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scan your verification QR Code"
+            "value" : "Scan your QR Code"
           }
         }
       }
@@ -1096,7 +1133,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your digital wallet is paired! Navigate to the wallet screen to view your credential."
+            "value" : "Your digital wallet is paired! Navigate to the wallet screen to view your credentials."
           }
         }
       }
@@ -1140,7 +1177,17 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scan Verification QR Code"
+            "value" : "Scan QR"
+          }
+        }
+      }
+    },
+    "wallet.send_credential" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Credential"
           }
         }
       }

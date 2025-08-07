@@ -55,17 +55,6 @@ public class ApplicationUiHandler {
         }
     }
     
-    // Utils methods
-    
-    public static func pushViewControllerOnTopVc(_ viewController: UIViewController) {
-        let topViewController = UIUtilities.getRootViewController()
-        if let topNavController = topViewController as? UINavigationController {
-            topNavController.pushViewController(viewController, animated: true)
-        } else {
-            topViewController?.present(viewController, animated: true)
-        }
-    }
-    
     func openUrl(url: String, onComplete: @escaping (Bool, String) -> Void) {
         DispatchQueue.main.async {
             guard let redirectUri = URL(string: url),

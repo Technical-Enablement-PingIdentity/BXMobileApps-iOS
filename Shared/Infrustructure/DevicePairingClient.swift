@@ -54,33 +54,34 @@ class DevicePairingClient {
             return
         }
         
-        do {
-            let payload = try PingOne.generateMobilePayload()
-            
-            var additionalParameters = [K.Oidc.MobilePayload: payload, K.Oidc.Prompt: K.Oidc.LoginPrompt]
-            
-            if let username {
-                additionalParameters[K.Oidc.LoginHint] = username
-            }
-            
-            let authRequest = OIDAuthorizationRequest(configuration: oidcConfiguration, clientId: K.PingOne.clientId, clientSecret: nil, scopes: [OIDScopeOpenID, OIDScopeProfile], redirectURL: redirectUrl, responseType: OIDResponseTypeCode, additionalParameters: additionalParameters)
-            
-            DevicePairingClient.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: authRequest, presenting: viewController) { authState, error in
-                if let tokenResponse = authState?.lastTokenResponse {
-                    print("Got authorization tokens. Access token: \(tokenResponse.accessToken ?? "nil")")
-                    
-                    if let idToken = tokenResponse.idToken {
-                        self.processIdToken(idToken: idToken, approvePairingHandler: approvePairingHandler)
+
+        PingOne.generateMobilePayload { payload, error in
+            if let error {
+                print("Unable to generate mobile payload \(error)")
+            } else if let payload {
+                var additionalParameters = [K.Oidc.MobilePayload: payload, K.Oidc.Prompt: K.Oidc.LoginPrompt]
+                
+                if let username {
+                    additionalParameters[K.Oidc.LoginHint] = username
+                }
+                
+                let authRequest = OIDAuthorizationRequest(configuration: oidcConfiguration, clientId: K.PingOne.clientId, clientSecret: nil, scopes: [OIDScopeOpenID, OIDScopeProfile], redirectURL: redirectUrl, responseType: OIDResponseTypeCode, additionalParameters: additionalParameters)
+                
+                DevicePairingClient.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: authRequest, presenting: viewController) { authState, error in
+                    if let tokenResponse = authState?.lastTokenResponse {
+                        print("Got authorization tokens. Access token: \(tokenResponse.accessToken ?? "nil")")
+                        
+                        if let idToken = tokenResponse.idToken {
+                            self.processIdToken(idToken: idToken, approvePairingHandler: approvePairingHandler)
+                        } else {
+                            print("No ID Token present on token reponse")
+                        }
+                        
                     } else {
-                        print("No ID Token present on token reponse")
+                        print("Authorization Error: \(error?.localizedDescription ?? "Unknown Error")")
                     }
-                    
-                } else {
-                    print("Authorization Error: \(error?.localizedDescription ?? "Unknown Error")")
                 }
             }
-        } catch {
-            print("Error creating auth request: \(error)")
         }
     }
     

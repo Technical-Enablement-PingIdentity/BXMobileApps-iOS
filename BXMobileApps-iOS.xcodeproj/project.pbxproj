@@ -112,6 +112,8 @@
 		106EE2A22D5E60FF002E6BE5 /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF392D0CB41C00B89DF7 /* VerifyView.swift */; };
 		106EE2A42D5E6EDE002E6BE5 /* PairDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */; };
 		106EE2A52D5E6EDE002E6BE5 /* PairDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */; };
+		1072D79A2E43F5860086C8BA /* MultiSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7992E43F57F0086C8BA /* MultiSelectView.swift */; };
+		1072D79D2E43F5C20086C8BA /* FinanceCredentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D79C2E43F5BC0086C8BA /* FinanceCredentialView.swift */; };
 		108733C92CCC48A80071630C /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 108733C82CCC48A80071630C /* AppAuth */; };
 		108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 108733CA2CCC48B00071630C /* PingOneSDK */; };
 		10987DA52D5680F00010FE09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10987DA42D5680E40010FE09 /* AppDelegate.swift */; };
@@ -304,6 +306,8 @@
 		104DD8742D7903BA00C25A26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PingOneVerifyLocalizable.strings; sourceTree = "<group>"; };
 		105FAA352C9B1C08006BE8BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceView.swift; sourceTree = "<group>"; };
+		1072D7992E43F57F0086C8BA /* MultiSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectView.swift; sourceTree = "<group>"; };
+		1072D79C2E43F5BC0086C8BA /* FinanceCredentialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCredentialView.swift; sourceTree = "<group>"; };
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
 		108733A02CCC2F730071630C /* BXFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -638,6 +642,7 @@
 		10987DB12D5685970010FE09 /* Infrustructure */ = {
 			isa = PBXGroup;
 			children = (
+				10222EFB2D35801000295B35 /* Wallet */,
 				104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */,
 				100F18192D5BAE3600875591 /* PushNotificationService.swift */,
 				10EEFF162D0CB41C00B89DF7 /* DevicePairingClient.swift */,
@@ -678,6 +683,7 @@
 		10A040292D5BC5C700816220 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1072D7992E43F57F0086C8BA /* MultiSelectView.swift */,
 				10A040382D5BCDA500816220 /* ConfirmationView.swift */,
 				10EEFF322D0CB41C00B89DF7 /* LogoView.swift */,
 				106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */,
@@ -700,6 +706,7 @@
 			isa = PBXGroup;
 			children = (
 				10A0402E2D5BC89500816220 /* ConfirmationViewModel.swift */,
+				10222F082D3580EC00295B35 /* WalletViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -749,7 +756,6 @@
 		10EEFF1C2D0CB41C00B89DF7 /* Infrustructure */ = {
 			isa = PBXGroup;
 			children = (
-				10222EFB2D35801000295B35 /* Wallet */,
 				10EEFF182D0CB41C00B89DF7 /* OpenBankingClient.swift */,
 				10EEFF192D0CB41C00B89DF7 /* PingFedAuthnClient.swift */,
 				10EEFF1A2D0CB41C00B89DF7 /* ProtectClient.swift */,
@@ -762,7 +768,6 @@
 			children = (
 				10EEFF1D2D0CB41C00B89DF7 /* FinanceGlobalViewModel.swift */,
 				10EEFF1E2D0CB41C00B89DF7 /* LoginViewModel.swift */,
-				10222F082D3580EC00295B35 /* WalletViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 				10EEFF2F2D0CB41C00B89DF7 /* AccountView.swift */,
 				10EEFF302D0CB41C00B89DF7 /* ContentView.swift */,
 				100CEC5C2D382096000B73E5 /* DeviceSelectionCollectorView.swift */,
+				1072D79C2E43F5BC0086C8BA /* FinanceCredentialView.swift */,
 				10EEFF312D0CB41C00B89DF7 /* FormFieldLabelView.swift */,
 				100CEC5A2D381C2D000B73E5 /* OneTimePasscodeCollectorView.swift */,
 				10EEFF332D0CB41C00B89DF7 /* PasswordCollectorView.swift */,
@@ -1149,6 +1155,7 @@
 				10987DAB2D5682AD0010FE09 /* String+Random.swift in Sources */,
 				100CEC5B2D381C3C000B73E5 /* OneTimePasscodeCollectorView.swift in Sources */,
 				10A040302D5BC89500816220 /* ConfirmationViewModel.swift in Sources */,
+				1072D79A2E43F5860086C8BA /* MultiSelectView.swift in Sources */,
 				10222EFC2D35801000295B35 /* PickerItem.swift in Sources */,
 				100CEC5D2D38209E000B73E5 /* DeviceSelectionCollectorView.swift in Sources */,
 				10222EFD2D35801000295B35 /* WalletCoordinator.swift in Sources */,
@@ -1162,6 +1169,7 @@
 				10EEFF592D0CB41C00B89DF7 /* PasswordCollectorView.swift in Sources */,
 				10EEFF5A2D0CB41C00B89DF7 /* ProfileAttributeView.swift in Sources */,
 				10EEFF5B2D0CB41C00B89DF7 /* ProfileView.swift in Sources */,
+				1072D79D2E43F5C20086C8BA /* FinanceCredentialView.swift in Sources */,
 				10EEFF5C2D0CB41C00B89DF7 /* RouterView.swift in Sources */,
 				10EEFF5D2D0CB41C00B89DF7 /* ToastView.swift in Sources */,
 				10EEFF5E2D0CB41C00B89DF7 /* UsernameCollectorView.swift in Sources */,
@@ -1741,8 +1749,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pingidentity/pingone-mobile-sdk-ios.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		108733972CB98DB60071630C /* XCRemoteSwiftPackageReference "SVGKit" */ = {
@@ -1765,8 +1773,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pingidentity/pingone-signals-sdk-ios";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

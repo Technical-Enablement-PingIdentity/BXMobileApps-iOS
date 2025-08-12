@@ -21,8 +21,8 @@ class WalletViewModel: ObservableObject {
     @Published var credentials: [Credential] = []
     
     @Published var matchingCredentials: [Credential] = []
-    @Published var requestedKeys: [MultiSelectItem] = []
-    @Published var requestedKeysSelection = Set<MultiSelectItem>()
+    @Published var requestedKeys: [String] = []
+    @Published var optionalKeySelection: [String] = []
     @Published var presentCredentialPicker = false
     
     var coordinator: WalletCoordinator? = nil
@@ -95,21 +95,21 @@ class WalletViewModel: ObservableObject {
     
     func presentCredentialPicker(matchingClaims: [Claim], requestedKeys: [String]) {
         self.matchingCredentials = matchingClaims.map { Credential(claim: $0) }
-        self.requestedKeys = requestedKeys.map { MultiSelectItem(name: $0) }
-        self.requestedKeysSelection = Set(self.requestedKeys) // Select all by default
+        self.requestedKeys = requestedKeys
+        self.optionalKeySelection = []
         self.presentCredentialPicker = true
     }
     
     func credentialSelected(credential: Credential) {
         if coordinator != nil {
-            coordinator!.credentialSelected(claim: credential.rawClaim, selectedKeys: self.requestedKeysSelection.map { $0.name })
+            coordinator!.credentialSelected(claim: credential.rawClaim, selectedKeys: self.requestedKeys + self.optionalKeySelection)
         }
         
         DispatchQueue.main.async {
             self.presentCredentialPicker = false
             self.matchingCredentials = []
             self.requestedKeys = []
-            self.requestedKeysSelection = []
+            self.optionalKeySelection = []
         }
     }
     

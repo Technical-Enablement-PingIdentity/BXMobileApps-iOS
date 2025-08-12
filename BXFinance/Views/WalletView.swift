@@ -9,6 +9,9 @@ import SwiftUI
 
 struct WalletView: View {
     
+    let credentialTitleAttribute = "Email"
+    let credentialSubtitleAttributes = ["Rewards Account #", "Issued"]
+    
     @EnvironmentObject var router: RouterViewModel
     @EnvironmentObject var walletModel: WalletViewModel
     
@@ -24,7 +27,7 @@ struct WalletView: View {
                 .tint(Color(K.Colors.Primary))
             }
         } else {
-            FinanceCredentialListView(isSelecting: false)
+            CredentialListView(isSharing: false, titleAttribute: credentialTitleAttribute, subtitleAttributes: credentialSubtitleAttributes)
             
             Button(action: {
                 GoogleAnalytics.userTappedButton(buttonName: "scan_credential_verification_qr")
@@ -42,7 +45,7 @@ struct WalletView: View {
             .shadow(radius: 5)
             .padding(.bottom, 24)
             .popover(isPresented: $walletModel.presentCredentialPicker) {
-                FinanceCredentialListView(isSelecting: true)
+                CredentialListView(isSharing: true, titleAttribute: credentialTitleAttribute, subtitleAttributes: credentialSubtitleAttributes)
             }
             .popover(isPresented: $walletModel.presentQrScanner) {
                 ZStack(alignment: .bottom) {

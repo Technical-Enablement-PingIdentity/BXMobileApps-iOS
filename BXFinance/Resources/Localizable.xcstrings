@@ -483,9 +483,6 @@
         }
       }
     },
-    "Issued: %@" : {
-
-    },
     "loading" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -871,9 +868,6 @@
         }
       }
     },
-    "Rewards Account: #%@" : {
-
-    },
     "send_logs" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1039,6 +1033,17 @@
         }
       }
     },
+    "wallet.choose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Attributes to Share"
+          }
+        }
+      }
+    },
     "wallet.configure" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1105,6 +1110,17 @@
         }
       }
     },
+    "wallet.optional" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optional"
+          }
+        }
+      }
+    },
     "wallet.pair.button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1156,6 +1172,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pairing your wallet and issuing your rewards credential. It may take a few minutes for it to appear."
+          }
+        }
+      }
+    },
+    "wallet.required" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Required"
           }
         }
       }

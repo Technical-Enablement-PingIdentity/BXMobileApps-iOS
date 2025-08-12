@@ -1,0 +1,26 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Credentials" : {
+
+    },
+    "No credentials yet" : {
+
+    },
+    "Verify" : {
+
+    },
+    "verify.invalid_url" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid URL for ID Verification, please ensure you aren't scanning a QR code meant for wallet pairing or credential verification"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

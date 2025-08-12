@@ -20,13 +20,13 @@ class VerifyClient {
         self.submissionErrorCallback = submissionErrorCallback
     }
     
-    func launchVerify() {
+    func launchVerify(primaryColor: UIColor? = nil) {
         guard let rootViewController = UIUtilities.getRootViewController() else {
             print("rootViewController was null, cannot launch verify")
             return
         }
         
-        let primaryColor = UIColor(named: K.Colors.Primary) ?? .accent
+        let primaryColor = primaryColor ?? UIColor(named: K.Colors.Primary) ?? .accent
         
         let solidButtonAppearance = ButtonAppearance(backgroundColor: primaryColor, textColor: .white, borderColor: primaryColor)
         let borderedButtonAppearance = ButtonAppearance(backgroundColor: .white, textColor: .black, borderColor: primaryColor)

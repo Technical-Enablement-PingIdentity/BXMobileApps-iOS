@@ -208,8 +208,6 @@ extension PingOneWalletHelper: WalletCallbackHandler {
             return
         }
         
-        self.notifyUser(message: "Processing presentation request...")
-        
         let credentialMatcherResults = self.pingoneWalletClient.findMatchingCredentialsForRequest(presentationRequest).getResult()
         let matchingCredentials = credentialMatcherResults.filter { !$0.claims.isEmpty }
         

@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@: %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@: %2$@"
-          }
-        }
-      }
-    },
     "$%@" : {
       "comment" : "Dashboard account balance label",
       "localizations" : {
@@ -370,16 +360,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Welcome"
-          }
-        }
-      }
-    },
-    "delete" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete"
           }
         }
       }
@@ -1033,13 +1013,24 @@
         }
       }
     },
-    "wallet.choose" : {
+    "wallet.choose_attributes" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select Attributes to Share"
+          }
+        }
+      }
+    },
+    "wallet.choose_credential" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Credential"
           }
         }
       }
@@ -1106,6 +1097,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loading camera. This may take a moment the first time."
+          }
+        }
+      }
+    },
+    "wallet.no_credentials" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No credentials have been added yet"
           }
         }
       }

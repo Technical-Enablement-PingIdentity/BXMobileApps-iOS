@@ -9,7 +9,6 @@ import AppAuth
 import PingOneSDK
 import SwiftUI
 
-
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
     var confirmationModel: ConfirmationViewModel?

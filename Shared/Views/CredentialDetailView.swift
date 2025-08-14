@@ -10,8 +10,10 @@ import SwiftUI
 struct CredentialDetailView: View {
     let isSelecting: Bool
     let credential: Credential
+    let descriptionAttribute: String
     
     @EnvironmentObject var walletModel: WalletViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +27,7 @@ struct CredentialDetailView: View {
             }
             
             if isSelecting {
-                Text("wallet.choose")
+                Text("wallet.choose_attributes")
                     .font(.system(size: 20, weight: .bold))
                     .padding(.bottom, 8)
                 
@@ -54,13 +56,28 @@ struct CredentialDetailView: View {
                             Text(value)
                                 .font(.system(size: 18, weight: .bold))
                                 .padding(.bottom, 8)
+                                .lineLimit(1)
                         }
                     }.frame(maxWidth: .infinity, alignment: .leading)
-
                 }
             }
         }
         .padding(.horizontal)
+        .toolbar {
+            if !isSelecting {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        walletModel.deleteCredential(credential: credential, credentialDescription: credential.getClaimValue(descriptionAttribute)) { deleted in
+                            if deleted {
+                                dismiss()
+                            }
+                        }
+                    }) {
+                        Image(systemName: "trash")
+                    }
+                }
+            }
+        }
         
         if isSelecting {
             Button("wallet.send_credential") {

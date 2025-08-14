@@ -2,15 +2,14 @@
 //  AppDelegate.swift
 //  BXMobileApps-iOS
 //
-//  Created by Eric Anderson on 10/25/24.
+//  Created by Eric Anderson on 8/12/25.
 //
 
-import PingOneWallet
 import SwiftUI
 import Firebase
+import PingOneWallet
 
-extension AppDelegate {
-    
+class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
@@ -33,5 +32,6 @@ extension AppDelegate {
         
         return true
     }
-    
 }
+
+

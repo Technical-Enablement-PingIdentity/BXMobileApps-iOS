@@ -7,31 +7,29 @@
 
 import SwiftUI
 
-struct CredentialCard: View {
+struct CredentialCardView: View {
     let name: String
-    let issuer: String
+    let attributes: [String]
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(name)
                 .font(.title3)
                 .bold()
-            Text(issuer)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundColor(.bxPrimary)
+                .padding(.bottom, 4)
+            ForEach(attributes, id: \.self) {
+                Text($0)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(.systemBackground))
+                .fill(.cardBackground)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 3)
         )
     }
-}
-
-struct Credential: Identifiable {
-    let id = UUID()
-    let name: String
-    let issuer: String
 }

@@ -24,6 +24,7 @@ struct RouterView<Content: View>: View {
             }
         }
         .environmentObject(router)
+        .tint(Color(K.Colors.Primary))
     }
 }
 

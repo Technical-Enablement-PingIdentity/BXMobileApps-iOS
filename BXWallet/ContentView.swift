@@ -6,55 +6,34 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     
-    func submissionComplete(verifyResult: String) {
-        ToastPresenter.show(style: .success, toast: verifyResult)
+    @State var presentSideMenu = false
+    @State var updateView = false
+    
+    private func hideSideMenu() {
+        presentSideMenu = false
     }
     
-    func submissionError(error: String) {
-        if error.contains("Invalid URL") {
-            ToastPresenter.show(style: .error, toast: String(localized: "verify.invalid_url"))
-        } else {
-            ToastPresenter.show(style: .error, toast: error)
+    private func checkCameraAccess() async {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        if status == .notDetermined {
+            await AVCaptureDevice.requestAccess(for: .video)
         }
     }
     
     var body: some View {
-        NavigationStack {
-            HomeWalletView()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: {
-                            // Action for menu button
-                        }, label: {
-                            Image(systemName: "gearshape")
-                                .foregroundStyle(.gray)
-                        })
-                    }
-                    ToolbarItem(placement: .principal) {
-                        Image("AppLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            let verifyClient = VerifyClient(submissionCompleteCallback: submissionComplete, submissionErrorCallback: submissionError)
-                            
-                            verifyClient.launchVerify()
-                        }) {
-                            VStack {
-                                Image(systemName: "person.badge.shield.checkmark.fill")
-                                Text("Verify")
-                                    .font(.system(.caption))
-                            }
-                        }
-                    }
-                }
-                .navigationTitle("Credentials")
+        ZStack {
+            HomeWalletView(presentSideMenu: $presentSideMenu)
+            SideMenuView(isShowing: $presentSideMenu, content: AnyView(SettingsView(updateView: $updateView, closeTapped: hideSideMenu)))
         }
+        .task {
+            await checkCameraAccess()
+        }
+        .id(updateView)
     }
 }
 

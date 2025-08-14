@@ -113,15 +113,19 @@ class WalletViewModel: ObservableObject {
         }
     }
     
-    func deleteCredential(credential: Credential, credentialDescription: String) {
+    func deleteCredential(credential: Credential, credentialDescription: String, afterDelete: ((Bool) -> Void)? = nil) {
         guard let coordinator else {
             print("Coordinator is nil")
             return
         }
         
-        coordinator.pingOneWalletHelper.deleteCredential(credential: credential.rawClaim, credentialDescription: credentialDescription) {
+        coordinator.pingOneWalletHelper.deleteCredential(credential: credential.rawClaim, credentialDescription: credentialDescription) { deleted in
             DispatchQueue.main.async {
                 self.refreshCredentials()
+                
+                if let afterDelete {
+                    afterDelete(deleted)
+                }
             }
         }
     }
@@ -159,5 +163,10 @@ struct Credential: Identifiable {
         self.rawClaim = claim
         self.claimValues = claim.getData()
             .filter({ $0.key != ClaimKeys.cardImage })
+    }
+    
+    func getClaimValue(_ key: String, formatDate: Bool = false) -> String {
+        let claimValue = claimValues[key] ?? ""
+        return formatDate ? DateUtils.getFormattedDateFromClaimValue(date: claimValue) : claimValue
     }
 }

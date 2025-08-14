@@ -9,4 +9,8 @@ struct K {
     struct Colors {
         static let Primary = "AccentColor"
     }
+    
+    struct AppStorage {
+        static let PrimaryColor = "PRIMARY_COLOR"
+    }
 }

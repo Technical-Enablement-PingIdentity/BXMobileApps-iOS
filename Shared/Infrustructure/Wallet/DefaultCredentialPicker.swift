@@ -49,13 +49,6 @@ public class DefaultCredentialPicker: CredentialPicker {
         
     }
     
-    class func getPickerItemFromClaims(_ claim: Claim, isRevoked: Bool) -> PickerItem? {
-        guard let type = claim.getData()[ClaimKeys.cardType] else {
-            return nil
-        }
-        return PickerItem(id: claim.getId(), image: UIImage.fromClaim(claim, size: nil), label: type, secondaryLabel: DateUtils.getIssueDate(from: claim), showStaticLabel: isRevoked)
-    }
-    
 }
 
 class DefaultCredentialPickerListener: CredentialPickerListener {

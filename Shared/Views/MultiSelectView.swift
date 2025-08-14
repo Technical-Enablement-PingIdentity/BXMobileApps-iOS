@@ -57,6 +57,7 @@ struct MultiSelectRowView: View {
                     Text(option.value)
                         .foregroundStyle(colorScheme == .light ? .black : .white)
                         .fontWeight(.bold)
+                        .lineLimit(1)
                 }
                 
                 Spacer()

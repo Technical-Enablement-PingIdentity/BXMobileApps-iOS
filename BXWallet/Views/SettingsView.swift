@@ -9,13 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    let width = UIScreen.main.bounds.width - 50
-
-    @Binding var updateView: Bool
-    
     let closeTapped: () -> Void
     
+    private let width = UIScreen.main.bounds.width - 50
+    
     @State private var primaryColor: Color = .bxPrimary
+    
+    @Environment(\.colorScheme) private var colorScheme
+    
+    @EnvironmentObject var walletAppModel: WalletAppViewModel
     
     var body: some View {
         HStack {
@@ -30,27 +32,74 @@ struct SettingsView: View {
                         Text("app_settings")
                             .font(.title)
                         Spacer()
-                        Button("", systemImage: "xmark") {
+                        Button {
                             closeTapped()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.title2)
+                                .tint(colorScheme == .light ? .black : .white)
                         }
                         .padding(.top, 6)
-                        .font(.title2)
-                        .tint(.bxPrimary)
+                        .padding(.trailing, 4)
                     }
                     .padding(.top, 70)
                     .padding(.bottom)
                     
-                    ColorPicker("Primary Color", selection: $primaryColor, supportsOpacity: false)
-                        .onChange(of: primaryColor) { _, newValue in
-                            do {
-                                let data = try NSKeyedArchiver.archivedData(withRootObject: UIColor(newValue), requiringSecureCoding: false)
-                                UserDefaults.standard.set(data, forKey: K.AppStorage.PrimaryColor)
-                            } catch {
-                                print("Could not save color \(error.localizedDescription)")
-                            }
-                            
-                            updateView.toggle()
+                    Text("settings.logo_url")
+                        .bold()
+                        .padding(.top)
+                    TextField("settings.placeholder_url", text: $walletAppModel.appLogoUrl)
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                        .onChange(of: walletAppModel.appLogoUrl) { _, newValue in
+                            walletAppModel.updateAppLogoUrl(url: newValue)
                         }
+                        .padding(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                        )
+                    Text("settings.logo_url.note")
+                        .font(.system(size: 10))
+                        .padding(.bottom)
+                    
+                    
+                    ColorPicker(selection: $walletAppModel.primaryColor, supportsOpacity: false) {
+                        Text("settings.primary_color")
+                            .bold()
+                    }
+                    .onChange(of: walletAppModel.primaryColor) { _, newValue in
+                        walletAppModel.updatePrimaryColor(color: newValue)
+                    }
+                    
+                    Text("settings.description_key")
+                        .bold()
+                        .padding(.top)
+                    TextField("settings.placeholder_key", text: $walletAppModel.credentialDescriptionKey)
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                        .onChange(of: walletAppModel.credentialDescriptionKey) { _, newValue in
+                            walletAppModel.updateCredentialDescriptionKey(key: newValue)
+                        }
+                        .padding(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                        )
+                    Text("settings.issue_date_key")
+                        .bold()
+                        .padding(.top)
+                    TextField("settings.placeholder_key", text: $walletAppModel.credentialIssueDateKey)
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                        .onChange(of: walletAppModel.credentialIssueDateKey) { _, newValue in
+                            walletAppModel.updateCredentialIssueDateKey(key: newValue)
+                        }
+                        .padding(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                        )
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -66,7 +115,7 @@ struct SettingsView: View {
 
 #Preview {
     @Previewable @State var update: Bool = false
-    SettingsView(updateView: $update) {
+    SettingsView {
         print("tapped")
     }
 }

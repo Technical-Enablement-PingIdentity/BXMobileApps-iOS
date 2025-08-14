@@ -166,7 +166,10 @@ struct Credential: Identifiable {
     }
     
     func getClaimValue(_ key: String, formatDate: Bool = false) -> String {
-        let claimValue = claimValues[key] ?? ""
+        guard let claimValue = claimValues[key] else {
+            return "Attribute '\(key)' not found"
+        }
+        
         return formatDate ? DateUtils.getFormattedDateFromClaimValue(date: claimValue) : claimValue
     }
 }

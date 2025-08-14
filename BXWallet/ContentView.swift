@@ -15,6 +15,7 @@ struct ContentView: View {
     
     private func hideSideMenu() {
         presentSideMenu = false
+        updateView.toggle()
     }
     
     private func checkCameraAccess() async {
@@ -28,7 +29,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             HomeWalletView(presentSideMenu: $presentSideMenu)
-            SideMenuView(isShowing: $presentSideMenu, content: AnyView(SettingsView(updateView: $updateView, closeTapped: hideSideMenu)))
+            SideMenuView(isShowing: $presentSideMenu, content: AnyView(SettingsView(closeTapped: hideSideMenu)))
         }
         .task {
             await checkCameraAccess()

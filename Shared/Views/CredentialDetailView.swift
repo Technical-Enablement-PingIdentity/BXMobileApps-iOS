@@ -83,7 +83,7 @@ struct CredentialDetailView: View {
             Button("wallet.send_credential") {
                 walletModel.credentialSelected(credential: credential)
             }
-            .buttonStyle(BXButtonStyle())
+            .buttonStyle(BXButtonStyle(backgroundColor: .bxPrimary))
             .padding(.bottom)
         }
     }

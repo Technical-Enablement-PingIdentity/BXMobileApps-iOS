@@ -26,7 +26,7 @@ struct ConfirmationView: View {
                 .frame(width: 100, height: 100)
                 .padding(20)
                 .foregroundStyle(Color.white)
-                .background(Color(K.Colors.Primary))
+                .background(Color.bxPrimary)
                 .clipShape(Circle())
 
             Text(model.confirmationMessage)

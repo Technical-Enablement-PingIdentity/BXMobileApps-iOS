@@ -63,7 +63,7 @@ struct MultiSelectRowView: View {
                 Spacer()
                 
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(Color(K.Colors.Primary))
+                    .foregroundColor(.bxPrimary)
                     .font(.system(size: 20))
 
             }

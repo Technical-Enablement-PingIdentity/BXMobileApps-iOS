@@ -209,6 +209,7 @@
 		10CD05DB2E4E1A4100683E42 /* CredentialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7BC2E4A78360086C8BA /* CredentialCardView.swift */; };
 		10CD05DD2E4E2ABC00683E42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD05DC2E4E2ABA00683E42 /* Color.swift */; };
 		10CD05DE2E4E41EF00683E42 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222F152D35879D00295B35 /* Date.swift */; };
+		10CD05E42E4E66DE00683E42 /* WalletAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD05E32E4E66D300683E42 /* WalletAppViewModel.swift */; };
 		10D29E862DD511B900F1C4CA /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF322D0CB41C00B89DF7 /* LogoView.swift */; };
 		10EC3AC92DF096FD0012CD0E /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC3AC82DF096FA0012CD0E /* VersionView.swift */; };
 		10EEFF0C2D0CB3F600B89DF7 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; };
@@ -434,6 +435,8 @@
 		10C6AC882DD500AA0041BB5D /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		10C6AC8C2DD501F70041BB5D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		10CD05DC2E4E2ABA00683E42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		10CD05DF2E4E54B300683E42 /* BXWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXWallet.entitlements; sourceTree = "<group>"; };
+		10CD05E32E4E66D300683E42 /* WalletAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAppViewModel.swift; sourceTree = "<group>"; };
 		10EC3AC82DF096FA0012CD0E /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 		10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
 		10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
@@ -752,8 +755,10 @@
 		1072D7B62E4A75E30086C8BA /* BXWallet */ = {
 			isa = PBXGroup;
 			children = (
+				10CD05E52E4E66E400683E42 /* Models */,
 				1072D7D12E4B80220086C8BA /* Resources */,
 				109465AC2E4BB86D008B0151 /* Views */,
+				10CD05DF2E4E54B300683E42 /* BXWallet.entitlements */,
 				1072D7CC2E4B7BBA0086C8BA /* Info.plist */,
 				1072D7B32E4A75E30086C8BA /* Assets.xcassets */,
 				1072D7B42E4A75E30086C8BA /* BXWalletApp.swift */,
@@ -898,6 +903,14 @@
 				10B84FAE2C88D9A100930B75 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10CD05E52E4E66E400683E42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10CD05E32E4E66D300683E42 /* WalletAppViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		10EEFEF12D0CB3CE00B89DF7 /* Frameworks */ = {
@@ -1350,6 +1363,7 @@
 				109465B22E4BBA05008B0151 /* PingOneWalletHelper.swift in Sources */,
 				109465D32E4BBEC8008B0151 /* Connectivity.swift in Sources */,
 				1072D7B92E4A75E30086C8BA /* ContentView.swift in Sources */,
+				10CD05E42E4E66DE00683E42 /* WalletAppViewModel.swift in Sources */,
 				1072D7BF2E4A7E4C0086C8BA /* UIUtilities.swift in Sources */,
 				109465B32E4BBA0A008B0151 /* WalletCoordinator.swift in Sources */,
 			);
@@ -1689,6 +1703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXWallet/BXWallet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZYUGL7S48;
@@ -1725,6 +1740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXWallet/BXWallet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZYUGL7S48;

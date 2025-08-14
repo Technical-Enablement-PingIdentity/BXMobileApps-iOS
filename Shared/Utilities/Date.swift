@@ -21,7 +21,7 @@ class DateUtils {
             formatter.timeStyle = .short
             return formatter.string(from: localDate)
         } else {
-            return ""
+            return date
         }
     }
     

@@ -28,6 +28,7 @@ struct BXWalletApp: App {
                 }
                 .environmentObject(confirmationModel)
                 .environmentObject(walletModel)
+                .environmentObject(WalletAppViewModel())
                 .onOpenURL { url in
                     EventObserverUtils.broadcastAppOpenUrlNotification(url.absoluteString)
                 }

@@ -12,6 +12,17 @@
         }
       }
     },
+    "app_version %@ (%@)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Version: v%1$@ (%2$@)"
+          }
+        }
+      }
+    },
     "approve" : {
       "localizations" : {
         "en" : {
@@ -193,6 +204,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Primary Color"
+          }
+        }
+      }
+    },
+    "settings.reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset All Settings"
           }
         }
       }

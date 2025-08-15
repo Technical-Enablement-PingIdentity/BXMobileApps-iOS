@@ -48,7 +48,7 @@ class WalletAppViewModel: ObservableObject {
     }
     
     init() {
-        appLogoUrl = UserDefaults.standard.string(forKey: K.AppStorage.AppLogoUrl) ?? "https://bxverifiedob-my-colorado.bxverifiedonboarding.org/candidate/logo.png"
+        appLogoUrl = UserDefaults.standard.string(forKey: K.AppStorage.AppLogoUrl) ?? ""
         primaryColor = .bxPrimary
         credentialDescriptionKey = UserDefaults.standard.string(forKey: K.AppStorage.CredentialDescriptionKey) ?? K.Defaults.CredentialDescriptionKey
         credentialIssueDateKey = UserDefaults.standard.string(forKey: K.AppStorage.CredentialIssueKey) ?? K.Defaults.CredentialIssueKey
@@ -68,6 +68,18 @@ class WalletAppViewModel: ObservableObject {
     
     func updateCredentialIssueDateKey(key: String) {
         credentialIssueDateDebouncer(key)
+    }
+    
+    func resetAllSettings() {
+        appLogoUrl = ""
+        primaryColor = .accent
+        credentialDescriptionKey = K.Defaults.CredentialDescriptionKey
+        credentialIssueDateKey = K.Defaults.CredentialIssueKey
+        
+        UserDefaults.standard.removeObject(forKey: K.AppStorage.AppLogoUrl)
+        UserDefaults.standard.removeObject(forKey: K.AppStorage.PrimaryColor)
+        UserDefaults.standard.removeObject(forKey: K.AppStorage.CredentialDescriptionKey)
+        UserDefaults.standard.removeObject(forKey: K.AppStorage.CredentialIssueKey)
     }
     
     private static func debounce<T>(

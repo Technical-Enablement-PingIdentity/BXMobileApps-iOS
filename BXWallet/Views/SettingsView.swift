@@ -101,6 +101,24 @@ struct SettingsView: View {
                                 .stroke(.secondary.opacity(0.5), lineWidth: 1)
                         )
                     Spacer()
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Text("app_version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
+                                .font(.system(size: 12))
+                                .padding(.bottom, 2)
+                            Spacer()
+                        }.padding(.bottom)
+                    }
+                    HStack {
+                        Spacer()
+                        Button("settings.reset") {
+                            walletAppModel.resetAllSettings()
+                        }
+                        .buttonStyle(BXButtonStyle(backgroundColor: .red))
+                        .padding(.bottom, 16)
+                        Spacer()
+                    }.padding(.bottom, 24)
                 }
                 .padding(.horizontal)
                 .frame(width: width)

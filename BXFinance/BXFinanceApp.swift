@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PingOneSignals
+import PingOneSDK
 
 @main
 struct BXFinanceApp: App {
@@ -31,6 +32,12 @@ struct BXFinanceApp: App {
                 print("PingOne Signals init failed: \(error.localizedDescription)")
             } else {
                 print("PingOne Signals initialized!")
+            }
+        }
+        
+        PingOne.configure(geo: .NorthAmerica) { error in
+            if let error {
+                print(error.debugDescription)
             }
         }
     }

@@ -9,15 +9,7 @@ import SwiftUI
 
 struct BXButtonStyle: ButtonStyle {
     
-    let backgroundColor: Color
-    
-    init(backgroundColor: Color? = nil) {
-        if let backgroundColor {
-            self.backgroundColor = backgroundColor
-        } else {
-            self.backgroundColor = Color(K.Colors.Primary)
-        }
-    }
+    var backgroundColor = Color(K.Colors.Primary)
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

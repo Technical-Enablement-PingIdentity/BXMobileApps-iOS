@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PingOneSDK
 
 @main
 struct BXHealthApp: App {
@@ -16,6 +17,12 @@ struct BXHealthApp: App {
     
     init() {
         appDelegate.confirmationModel = ConfirmationViewModel.shared
+        
+        PingOne.configure(geo: .NorthAmerica) { error in
+            if let error {
+                print(error.debugDescription)
+            }
+        }
     }
     
     var body: some Scene {

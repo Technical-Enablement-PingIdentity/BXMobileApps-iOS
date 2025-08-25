@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCJTEgmGH1TB2U7KPMxx5IeT2-HOfj1juc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>172722138861</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pingIdentity.p14c.bxwallet.sample</string>
+	<key>PROJECT_ID</key>
+	<string>bxwallet---ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bxwallet---ios.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:172722138861:ios:8af179a4c1aa90670c66e4</string>
+</dict>
+</plist>

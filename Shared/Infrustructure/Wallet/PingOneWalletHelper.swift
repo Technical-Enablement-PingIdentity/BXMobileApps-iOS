@@ -128,8 +128,19 @@ public class PingOneWalletHelper {
         return self.pingoneWalletClient.getDataRepository()
     }
     
-    public func deleteCredentials(onDelete: @escaping () -> Void) {
-        self.askUserPermission(title: "Delete Credentials", message: "Please confirm you wish to delete all of your credentials. You will need to re-pair your wallet through the BXF site.") { userConfirmedAction in
+    public func deleteCredential(credential: Claim, credentialDescription: String, onDelete: @escaping (Bool) -> Void) {
+        self.askUserPermission(title: "Delete Credential", message: "Please confirm you wish to delete the credential for \(credentialDescription).") { userConfirmedAction in
+            if (userConfirmedAction) {
+                self.getDataRepository().deleteCredential(forId: credential.getId())
+                self.pingoneWalletClient.reportCredentialDeletion(claim: credential)
+            }
+            
+            onDelete(userConfirmedAction)
+        }
+    }
+    
+    public func deleteAllCredentials(onDelete: @escaping () -> Void) {
+        self.askUserPermission(title: "Delete Credentials", message: "Please confirm you wish to delete all of your credentials. You will need to re-pair your credentials.") { userConfirmedAction in
             if userConfirmedAction {
                 let repo = self.getDataRepository()
                 repo.getAllCredentials().forEach { claim in
@@ -197,8 +208,6 @@ extension PingOneWalletHelper: WalletCallbackHandler {
             return
         }
         
-        self.notifyUser(message: "Processing presentation request...")
-        
         let credentialMatcherResults = self.pingoneWalletClient.findMatchingCredentialsForRequest(presentationRequest).getResult()
         let matchingCredentials = credentialMatcherResults.filter { !$0.claims.isEmpty }
         
@@ -256,7 +265,7 @@ extension PingOneWalletHelper {
         case .PAIRING_REQUEST:
             self.handlePairingRequest(event.getPairingRequest())
         case .PAIRING_RESPONSE:
-            logattention("Wallet paired: \(String(describing: event.isSuccess())) - error: \(event.getError()?.localizedDescription ?? "None")")
+            logattention("Wallet pairing success: \(String(describing: event.isSuccess())) - error: \(event.getError()?.localizedDescription ?? "None")")
             if let isSuccess = event.isSuccess() {
                 GoogleAnalytics.userCompletedAction(actionName: "wallet_paired", actionSuccesful: isSuccess)
                 self.notifyUser(message: isSuccess ? "Wallet paired successfully" : "Wallet pairing failed", style: isSuccess ? .success : .error)

@@ -9,7 +9,6 @@ import AppAuth
 import PingOneSDK
 import SwiftUI
 
-
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
     var confirmationModel: ConfirmationViewModel?
@@ -36,9 +35,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         deviceTokenType = PingOne.APNSDeviceTokenType.sandbox
 #endif
         
-        PingOne.setDeviceToken(deviceToken, type: deviceTokenType) { error in
+        PingOne.setDeviceToken(token: deviceToken, type: deviceTokenType) { error in
             if let error {
-                print("Error setting device token in PingOne: \(error.localizedDescription)")
+                print("Error setting device token in PingOne: \(error)")
             }
         }
     }

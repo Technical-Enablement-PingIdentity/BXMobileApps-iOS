@@ -64,6 +64,7 @@ public class EventObserver {
     public func removeObservers() {
         Self.removeObserver(self.networkReachabilityObserver)
         Self.removeObserver(self.pushTokenRegistrationObserver)
+        Self.removeObserver(self.appOpenUrlObserver)
         Self.removeObserver(self.credentialUpdatesObserver)
         Self.removeObserver(self.remoteNotificationObserver)
         Self.removeObserver(self.userCancelledPairingObserver)

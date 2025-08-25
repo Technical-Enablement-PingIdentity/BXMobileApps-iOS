@@ -7,7 +7,7 @@
 
 import Foundation
 import DIDSDK
-
+import PingOneWallet
 
 class WalletViewModel: ObservableObject {
     static let shared = WalletViewModel()
@@ -19,6 +19,11 @@ class WalletViewModel: ObservableObject {
     @Published var walletInitialized = false
     @Published var pairing = false
     @Published var credentials: [Credential] = []
+    
+    @Published var matchingCredentials: [Credential] = []
+    @Published var requestedKeys: [String] = []
+    @Published var optionalKeySelection: [String] = []
+    @Published var presentCredentialPicker = false
     
     var coordinator: WalletCoordinator? = nil
     private var eventObserver: EventObserver!
@@ -88,13 +93,50 @@ class WalletViewModel: ObservableObject {
         }
     }
     
+    func presentCredentialPicker(matchingClaims: [Claim], requestedKeys: [String]) {
+        self.matchingCredentials = matchingClaims.map { Credential(claim: $0) }
+        self.requestedKeys = requestedKeys
+        self.optionalKeySelection = []
+        self.presentCredentialPicker = true
+    }
+    
+    func credentialSelected(credential: Credential) {
+        if coordinator != nil {
+            coordinator!.credentialSelected(claim: credential.rawClaim, selectedKeys: self.requestedKeys + self.optionalKeySelection)
+        }
+        
+        DispatchQueue.main.async {
+            self.presentCredentialPicker = false
+            self.matchingCredentials = []
+            self.requestedKeys = []
+            self.optionalKeySelection = []
+        }
+    }
+    
+    func deleteCredential(credential: Credential, credentialDescription: String, afterDelete: ((Bool) -> Void)? = nil) {
+        guard let coordinator else {
+            print("Coordinator is nil")
+            return
+        }
+        
+        coordinator.pingOneWalletHelper.deleteCredential(credential: credential.rawClaim, credentialDescription: credentialDescription) { deleted in
+            DispatchQueue.main.async {
+                self.refreshCredentials()
+                
+                if let afterDelete {
+                    afterDelete(deleted)
+                }
+            }
+        }
+    }
+    
     func deleteCredentials() {
         guard let coordinator else {
             print("Coordinator is nil")
             return
         }
         
-        coordinator.pingOneWalletHelper.deleteCredentials {
+        coordinator.pingOneWalletHelper.deleteAllCredentials {
             DispatchQueue.main.async {
                 self.refreshCredentials()
             }
@@ -111,7 +153,23 @@ class WalletViewModel: ObservableObject {
 
 }
 
-struct Credential {
-    let id = UUID()
-    let claim: Claim
+struct Credential: Identifiable {
+    let id: UUID
+    let rawClaim: Claim
+    let claimValues: [String : String]
+    
+    init(claim: Claim) {
+        self.id = UUID()
+        self.rawClaim = claim
+        self.claimValues = claim.getData()
+            .filter({ $0.key != ClaimKeys.cardImage })
+    }
+    
+    func getClaimValue(_ key: String, formatDate: Bool = false) -> String {
+        guard let claimValue = claimValues[key] else {
+            return "Attribute '\(key)' not found"
+        }
+        
+        return formatDate ? DateUtils.getFormattedDateFromClaimValue(date: claimValue) : claimValue
+    }
 }

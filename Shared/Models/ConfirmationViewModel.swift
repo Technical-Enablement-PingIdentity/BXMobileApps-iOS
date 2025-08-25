@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AppAuth
 
 class ConfirmationViewModel: ObservableObject {
     

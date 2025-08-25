@@ -24,55 +24,32 @@ struct WalletView: View {
                 .tint(Color(K.Colors.Primary))
             }
         } else {
-            ScrollView {
-                ForEach(walletModel.credentials, id: \.id) {
-                    if let uiImage = UIImage.fromClaim($0.claim, size: nil) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.horizontal)
-                    } else {
-                        Text(LocalizedStringKey("wallet.image_error"))
-                    }
-                }
-            }
+            CredentialListView(credentials: walletModel.credentials, isSelecting: false, credentialDescriptionAttribute: "Email", credentialIssuedAttribute: "Issued")
             
-            Spacer()
-            
-            Button(LocalizedStringKey("wallet.scan_code")) {
+            Button(action: {
                 GoogleAnalytics.userTappedButton(buttonName: "scan_credential_verification_qr")
                 walletModel.presentQrScanner = true
+            }) {
+                Image(systemName: "qrcode.viewfinder")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35, height: 35) // Adjust size as needed
+                    .foregroundColor(.white) // Set image color
+                    .padding(8)
             }
             .buttonStyle(BXButtonStyle())
-            .padding(.bottom, 66)
-            .popover(isPresented: $walletModel.presentQrScanner) {
-                ZStack(alignment: .bottom) {
-                    QRScanner(result: $walletModel.scanResult, loadingCamera: $walletModel.loadingCamera)
-                        .onChange(of: walletModel.scanResult) { oldValue, newValue in
-                            if newValue != nil {
-                                walletModel.processQrCode(false)
-                            }
-                        }
-                    
-                    if (walletModel.loadingCamera) {
-                        VStack {
-                            Spacer()
-                            Text(LocalizedStringKey("wallet.camera.loading"))
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 16)
-                                .font(.system(size: 20))
-                            ProgressView()
-                                .controlSize(.large)
-                            Spacer()
-                        }
-                    } else {
-                        Text(LocalizedStringKey("wallet.camera.message"))
-                            .padding()
-                            .background(.accent)
-                            .foregroundColor(.white)
-                            .padding(.bottom, 66)
-                    }
+            .clipShape(Circle())
+            .shadow(radius: 5)
+            .padding(.bottom, 24)
+            .fullScreenCover(isPresented: $walletModel.presentCredentialPicker) {
+                NavigationStack {
+                    CredentialListView(credentials: walletModel.matchingCredentials, isSelecting: true, credentialDescriptionAttribute: "Email", credentialIssuedAttribute: "Issued")
+                        .navigationTitle("wallet.choose_credential")
                 }
+                .tint(Color(K.Colors.Primary))
+            }
+            .popover(isPresented: $walletModel.presentQrScanner) {
+                QRScannerView()
             }
         }
     }

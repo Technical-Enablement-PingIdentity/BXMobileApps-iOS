@@ -980,6 +980,17 @@
         }
       }
     },
+    "wallet.attributes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credential Attributes"
+          }
+        }
+      }
+    },
     "wallet.camera.loading" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -997,7 +1008,29 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scan your verification QR Code"
+            "value" : "Scan your QR Code"
+          }
+        }
+      }
+    },
+    "wallet.choose_attributes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Attributes to Share"
+          }
+        }
+      }
+    },
+    "wallet.choose_credential" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Credential"
           }
         }
       }
@@ -1068,6 +1101,28 @@
         }
       }
     },
+    "wallet.no_credentials" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No credentials have been added yet"
+          }
+        }
+      }
+    },
+    "wallet.optional" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optional"
+          }
+        }
+      }
+    },
     "wallet.pair.button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1096,7 +1151,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your digital wallet is paired! Navigate to the wallet screen to view your credential."
+            "value" : "Your digital wallet is paired! Navigate to the wallet screen to view your credentials."
           }
         }
       }
@@ -1123,6 +1178,17 @@
         }
       }
     },
+    "wallet.required" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Required"
+          }
+        }
+      }
+    },
     "wallet.reset" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1140,7 +1206,17 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scan Verification QR Code"
+            "value" : "Scan QR"
+          }
+        }
+      }
+    },
+    "wallet.send_credential" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Credential"
           }
         }
       }

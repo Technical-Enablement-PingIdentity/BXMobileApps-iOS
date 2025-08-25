@@ -81,8 +81,11 @@ struct ToastPresenter {
             let toastWindow = UIWindow(windowScene: scene)
             toastWindow.backgroundColor = .clear
 
+            let toastFrameWidth = 300
+            let xOffset = (Int(UIScreen.main.bounds.width) - toastFrameWidth) / 2
+            
             // Start with the window off-screen at the top
-            toastWindow.frame = CGRect(x: 50, y: -100, width: 300, height: 200)
+            toastWindow.frame = CGRect(x: xOffset, y: -100, width: toastFrameWidth, height: 200)
 
             let view = ToastView(style: style, message: toast)
 
@@ -95,7 +98,7 @@ struct ToastPresenter {
                 withDuration: 0.5,
                 animations: {
                     toastWindow.frame = CGRect(
-                        x: 50, y: 0, width: 300, height: 200)
+                        x: xOffset, y: 0, width: toastFrameWidth, height: 200)
                 })
 
             // Hide the toast automatically after 2 seconds with slide up animation
@@ -104,7 +107,7 @@ struct ToastPresenter {
                     withDuration: 0.5,
                     animations: {
                         toastWindow.frame = CGRect(
-                            x: 50, y: -200, width: 300, height: 200)
+                            x: xOffset, y: -200, width: toastFrameWidth, height: 200)
                     }
                 ) { _ in
                     toastWindow.isHidden = true

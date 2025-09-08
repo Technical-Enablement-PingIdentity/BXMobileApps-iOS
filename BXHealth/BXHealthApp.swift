@@ -18,9 +18,11 @@ struct BXHealthApp: App {
     init() {
         appDelegate.confirmationModel = ConfirmationViewModel.shared
         
-        PingOne.configure(geo: .NorthAmerica) { error in
-            if let error {
-                print(error.debugDescription)
+        DispatchQueue.global().async {
+            PingOne.configure(geo: .NorthAmerica) { error in
+                if let error {
+                    print(error.debugDescription)
+                }
             }
         }
     }

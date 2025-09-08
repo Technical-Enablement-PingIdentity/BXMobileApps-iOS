@@ -131,6 +131,7 @@
 		1072D7D02E4B7C2D0086C8BA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1072D7CF2E4B7C2D0086C8BA /* Localizable.xcstrings */; };
 		1072D7D32E4B81640086C8BA /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7D22E4B81600086C8BA /* SideMenuView.swift */; };
 		1072D7D52E4B81CA0086C8BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7D42E4B81C60086C8BA /* SettingsView.swift */; };
+		107D4DB82E6F3C7C00092F66 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD05DC2E4E2ABA00683E42 /* Color.swift */; };
 		108733C92CCC48A80071630C /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 108733C82CCC48A80071630C /* AppAuth */; };
 		108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 108733CA2CCC48B00071630C /* PingOneSDK */; };
 		109465AD2E4BB9EB008B0151 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EF52D35801000295B35 /* ApplicationUiCallbackHandler.swift */; };
@@ -869,6 +870,7 @@
 				10222F0E2D35824900295B35 /* UIImage+FromSVG.swift */,
 				10EEFF2D2D0CB41C00B89DF7 /* UIUtilities.swift */,
 				10222F152D35879D00295B35 /* Date.swift */,
+				10CD05DC2E4E2ABA00683E42 /* Color.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -986,7 +988,6 @@
 		10EEFF2E2D0CB41C00B89DF7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				10CD05DC2E4E2ABA00683E42 /* Color.swift */,
 				10987DA92D5682AA0010FE09 /* String+Random.swift */,
 				10EEFF2C2D0CB41C00B89DF7 /* JWTUtilities.swift */,
 			);
@@ -1306,6 +1307,7 @@
 			files = (
 				100F181B2D5BAE3B00875591 /* PushNotificationService.swift in Sources */,
 				10A040392D5BCDA500816220 /* ConfirmationView.swift in Sources */,
+				107D4DB82E6F3C7C00092F66 /* Color.swift in Sources */,
 				106EE29F2D5D1734002E6BE5 /* ButtonStyles.swift in Sources */,
 				10987DA62D5680F00010FE09 /* AppDelegate.swift in Sources */,
 				106EE2A12D5D1D8E002E6BE5 /* ToastView.swift in Sources */,
@@ -1637,7 +1639,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1655,7 +1657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1671,7 +1673,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXHealth/BXHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"BXHealth/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1689,7 +1691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxhealth.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1780,7 +1782,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 46;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1801,7 +1803,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1822,7 +1824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 46;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1843,7 +1845,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

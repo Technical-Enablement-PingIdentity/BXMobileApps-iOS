@@ -258,6 +258,7 @@
 		10F1EEF72DD513A500244DD6 /* SignInCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1EEF62DD513A500244DD6 /* SignInCardView.swift */; };
 		10F1EEF92DD53BB600244DD6 /* ContinueShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1EEF82DD53BA700244DD6 /* ContinueShoppingView.swift */; };
 		10FED8BA2D13762900432A81 /* PairDeviceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED8B92D13762500432A81 /* PairDeviceScreen.swift */; };
+		529F5E2B2E67A72F007D6772 /* CameraAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F5E2A2E67A72F007D6772 /* CameraAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -491,6 +492,7 @@
 		10F1EEF62DD513A500244DD6 /* SignInCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCardView.swift; sourceTree = "<group>"; };
 		10F1EEF82DD53BA700244DD6 /* ContinueShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueShoppingView.swift; sourceTree = "<group>"; };
 		10FED8B92D13762500432A81 /* PairDeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceScreen.swift; sourceTree = "<group>"; };
+		529F5E2A2E67A72F007D6772 /* CameraAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -865,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				10A64D442DD626A200F16D87 /* String+resource.swift */,
+				529F5E2A2E67A72F007D6772 /* CameraAccess.swift */,
 				10222F0C2D35819B00295B35 /* QRScanner.swift */,
 				10222F0E2D35824900295B35 /* UIImage+FromSVG.swift */,
 				10EEFF2D2D0CB41C00B89DF7 /* UIUtilities.swift */,
@@ -1373,6 +1376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529F5E2B2E67A72F007D6772 /* CameraAccess.swift in Sources */,
 				10EEFF432D0CB41C00B89DF7 /* DevicePairingClient.swift in Sources */,
 				10EEFF452D0CB41C00B89DF7 /* OpenBankingClient.swift in Sources */,
 				10EEFF462D0CB41C00B89DF7 /* PingFedAuthnClient.swift in Sources */,
@@ -1782,6 +1786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
+				DEVELOPMENT_TEAM = 85W4LFM77V;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1824,6 +1829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
+				DEVELOPMENT_TEAM = 85W4LFM77V;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;

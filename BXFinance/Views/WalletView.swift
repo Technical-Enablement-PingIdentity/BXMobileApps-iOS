@@ -11,6 +11,8 @@ struct WalletView: View {
     
     @EnvironmentObject var router: RouterViewModel
     @EnvironmentObject var walletModel: WalletViewModel
+
+    private let applicationUiHandler = ApplicationUiHandler()
     
     var body: some View {
         if walletModel.credentials.isEmpty {
@@ -28,7 +30,11 @@ struct WalletView: View {
             
             Button(action: {
                 GoogleAnalytics.userTappedButton(buttonName: "scan_credential_verification_qr")
-                walletModel.presentQrScanner = true
+                Task {
+                    await CameraAccess.checkCameraAccess(applicationUiHandler: applicationUiHandler) {
+                        walletModel.presentQrScanner = true
+                    }
+                }
             }) {
                 Image(systemName: "qrcode.viewfinder")
                     .resizable()

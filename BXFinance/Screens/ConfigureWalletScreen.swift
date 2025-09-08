@@ -14,6 +14,8 @@ struct ConfigureWalletScreen: View {
     @EnvironmentObject var router: RouterViewModel
     @EnvironmentObject var globalModel: FinanceGlobalViewModel
     
+    private let applicationUiHandler = ApplicationUiHandler()
+
     var body: some View {
         VStack {
             if walletModel.walletInitialized {
@@ -23,7 +25,11 @@ struct ConfigureWalletScreen: View {
                         .padding()
                     Button(LocalizedStringKey("wallet.pair.button")) {
                         GoogleAnalytics.userTappedButton(buttonName: "pair_wallet")
-                        walletModel.presentQrScanner = true
+                        Task {
+                            await CameraAccess.checkCameraAccess(applicationUiHandler: applicationUiHandler) {
+                                walletModel.presentQrScanner = true
+                            }
+                        }
                     }
                     .buttonStyle(BXButtonStyle())
                     .popover(isPresented: $walletModel.presentQrScanner) {
@@ -52,9 +58,6 @@ struct ConfigureWalletScreen: View {
                                 .foregroundColor(.white)
                                 .padding(.bottom)
                         }
-                    }
-                    .task {
-                        await checkCameraAccess()
                     }
                 } else if walletModel.pairing {
                     Text(LocalizedStringKey("wallet.pairing_message"))
@@ -100,13 +103,6 @@ struct ConfigureWalletScreen: View {
         }
     }
     
-    private func checkCameraAccess() async {
-        let status = AVCaptureDevice.authorizationStatus(for: .video)
-        
-        if status == .notDetermined {
-            await AVCaptureDevice.requestAccess(for: .video)
-        }
-    }
 }
 
 #Preview {

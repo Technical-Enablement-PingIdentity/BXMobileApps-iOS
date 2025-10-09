@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:bxverifiedob-my-colorado.bxverifiedonboarding.org</string>
+		<string>applinks:encore.pingidentity.com</string>
 	</array>
 </dict>
 </plist>

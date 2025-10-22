@@ -30,7 +30,14 @@ struct BXWalletApp: App {
                 .environmentObject(walletModel)
                 .environmentObject(WalletAppViewModel())
                 .onOpenURL { url in
+                    // This handles link clicks from SMS/Email
                     EventObserverUtils.broadcastAppOpenUrlNotification(url.absoluteString)
+                }
+                .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                    // This handles QR scans from the iOS camera
+                    if let url = activity.webpageURL {
+                        EventObserverUtils.broadcastAppOpenUrlNotification(url.absoluteString)
+                    }
                 }
         }
     }

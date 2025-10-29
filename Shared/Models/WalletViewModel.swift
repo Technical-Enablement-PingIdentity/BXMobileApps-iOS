@@ -79,7 +79,7 @@ class WalletViewModel: ObservableObject {
     
     func observeAppOpenUrl() {
         self.getEventObserver().observeAppOpenUrl { [self] url in
-            if url.contains("/wallet/") {
+            if url.contains("/wallet") {
                 guard let coordinator else {
                     print("Wallet not yet initialized, can't pair wallet")
                     return

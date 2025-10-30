@@ -46,10 +46,6 @@ public class WalletCoordinator {
         self.eventObserver.observePushTokenRegistration { pushToken in
             self.pingOneWalletHelper.updatePushToken(pushToken)
         }
-        
-        self.eventObserver.observeAppOpenUrl { appOpenUrl in
-            self.pingOneWalletHelper.processPingOneRequest(appOpenUrl)
-        }
     }
     
     deinit {

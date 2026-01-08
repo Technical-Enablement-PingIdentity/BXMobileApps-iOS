@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "$%@" : {
       "comment" : "Dashboard account balance label",
       "localizations" : {
@@ -1129,7 +1139,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No credentials have been added yet"
+            "value" : "No credentials have been added yet. Please initialize pairing from the BXFinance web app on your user profile page to add a credential."
           }
         }
       }

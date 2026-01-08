@@ -130,20 +130,6 @@ class WalletViewModel: ObservableObject {
         }
     }
     
-    func deleteCredentials() {
-        guard let coordinator else {
-            print("Coordinator is nil")
-            return
-        }
-        
-        coordinator.pingOneWalletHelper.deleteAllCredentials {
-            DispatchQueue.main.async {
-                self.refreshCredentials()
-            }
-        }
-
-    }
-    
     private func getEventObserver() -> EventObserver {
         if self.eventObserver == nil {
             self.eventObserver = EventObserver()

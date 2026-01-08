@@ -35,7 +35,6 @@ class RouterViewModel: ObservableObject {
         case dashboard
         case profileInformation
         case protect(String)
-        case wallet
         case sendLogs
         case pairDevice
     }
@@ -54,8 +53,6 @@ class RouterViewModel: ObservableObject {
             ProfileInformationScreen()
         case .protect(let username):
             ProtectScreen(username: username)
-        case .wallet:
-            ConfigureWalletScreen()
         case .sendLogs:
             SendLogsScreen()
         case .pairDevice:

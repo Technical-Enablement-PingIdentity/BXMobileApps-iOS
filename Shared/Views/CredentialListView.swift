@@ -22,6 +22,7 @@ struct CredentialListView: View {
                 Spacer()
                 Text("wallet.no_credentials")
                     .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
                 Spacer()
             } else {
                 List(credentials, id: \.id) { credential in

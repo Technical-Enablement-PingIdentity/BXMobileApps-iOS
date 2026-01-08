@@ -139,20 +139,6 @@ public class PingOneWalletHelper {
         }
     }
     
-    public func deleteAllCredentials(onDelete: @escaping () -> Void) {
-        self.askUserPermission(title: "Delete Credentials", message: "Please confirm you wish to delete all of your credentials. You will need to re-pair your credentials.") { userConfirmedAction in
-            if userConfirmedAction {
-                let repo = self.getDataRepository()
-                repo.getAllCredentials().forEach { claim in
-                    repo.deleteCredential(forId: claim.getId())
-                    self.pingoneWalletClient.reportCredentialDeletion(claim: claim)
-                }
-                
-                onDelete()
-            }
-        }
-    }
-    
 }
 
 /// Extension to implement WalletCallbackHandler

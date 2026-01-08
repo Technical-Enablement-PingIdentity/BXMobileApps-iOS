@@ -251,7 +251,6 @@
 		10EEFF622D0CB41C00B89DF7 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF402D0CB41C00B89DF7 /* K.swift */; };
 		10EEFF632D0CB41C00B89DF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EEFF212D0CB41C00B89DF7 /* Preview Assets.xcassets */; };
 		10EEFF642D0CB41C00B89DF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EEFF3C2D0CB41C00B89DF7 /* Assets.xcassets */; };
-		10EEFF672D0CBB9400B89DF7 /* ConfigureWalletScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */; };
 		10EEFF692D0CBCA400B89DF7 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF682D0CBCA200B89DF7 /* WalletView.swift */; };
 		10F1EEEF2DD512CD00244DD6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 10F1EEEE2DD512CD00244DD6 /* Localizable.xcstrings */; };
 		10F1EEF32DD512FD00244DD6 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF292D0CB41C00B89DF7 /* ButtonStyles.swift */; };
@@ -486,7 +485,6 @@
 		10EEFF3E2D0CB41C00B89DF7 /* BXFinanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXFinanceApp.swift; sourceTree = "<group>"; };
 		10EEFF3F2D0CB41C00B89DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EEFF402D0CB41C00B89DF7 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureWalletScreen.swift; sourceTree = "<group>"; };
 		10EEFF682D0CBCA200B89DF7 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		10F1EEEE2DD512CD00244DD6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		10F1EEF42DD5132000244DD6 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -970,7 +968,6 @@
 			children = (
 				1031476C2D5BD5D60049F8AD /* DashboardScreen.swift */,
 				100F18172D5AC7CD00875591 /* SendLogsScreen.swift */,
-				10EEFF662D0CBB8F00B89DF7 /* ConfigureWalletScreen.swift */,
 				10EEFF242D0CB41C00B89DF7 /* LoginScreen.swift */,
 				10EEFF252D0CB41C00B89DF7 /* ProfileInformationScreen.swift */,
 				10EEFF262D0CB41C00B89DF7 /* ProtectScreen.swift */,
@@ -1195,7 +1192,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					10109F522A5F05DB004A60E1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -1391,7 +1388,6 @@
 				10EEFF692D0CBCA400B89DF7 /* WalletView.swift in Sources */,
 				10222F0D2D35819B00295B35 /* QRScanner.swift in Sources */,
 				10EEFF4D2D0CB41C00B89DF7 /* LoginScreen.swift in Sources */,
-				10EEFF672D0CBB9400B89DF7 /* ConfigureWalletScreen.swift in Sources */,
 				106EE2A02D5D17C2002E6BE5 /* ConfirmationView.swift in Sources */,
 				10222F0F2D35824900295B35 /* UIImage+FromSVG.swift in Sources */,
 				10EEFF4E2D0CB41C00B89DF7 /* ProfileInformationScreen.swift in Sources */,
@@ -1572,6 +1568,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1629,6 +1626,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

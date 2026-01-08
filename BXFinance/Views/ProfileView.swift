@@ -13,7 +13,6 @@ struct ProfileView: View {
         case profileInformation
         case pairDevice
         case protect
-        case wallet
         case sendLogs
         case signOut
     }
@@ -22,7 +21,6 @@ struct ProfileView: View {
         ProfilePage(icon: "person.crop.circle.fill", name: "Profile Information", route: .profileInformation, requiresAuthentication: true),
         ProfilePage(icon: "iphone.gen2", name: String(localized: "profile.pair_device"), route: .pairDevice, requiresAuthentication: false),
         ProfilePage(icon: "lock.shield", name: String(localized: "profile.protect"), route: .protect, requiresAuthentication: true),
-        ProfilePage(icon: "wallet.pass", name: String(localized: "profile.wallet"), route: .wallet, requiresAuthentication: false),
         ProfilePage(icon: "note.text", name: String(localized: "profile.send_logs"), route: .sendLogs, requiresAuthentication: false),
         ProfilePage(icon: "person.slash", name: String(localized: "profile.sign_out"), route: .signOut, requiresAuthentication: false)
     ]
@@ -51,8 +49,6 @@ struct ProfileView: View {
                         router.navigateTo(.pairDevice)
                     case .protect:
                         router.navigateTo(.protect(JWTUtilities.decode(jwt: globalModel.accessToken)["sub"] as? String ?? ""))
-                    case .wallet:
-                        router.navigateTo(.wallet)
                     case .sendLogs:
                         router.navigateTo(.sendLogs)
                     case .signOut:

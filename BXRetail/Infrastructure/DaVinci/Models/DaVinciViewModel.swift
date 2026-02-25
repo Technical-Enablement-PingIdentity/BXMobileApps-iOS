@@ -9,7 +9,7 @@ import Foundation
 import PingDavinci
 import PingOidc
 import PingOrchestrate
-import PingExternal_idp
+import PingExternalIdP
 
 /// A view model that manages the flow and state of the DaVinci orchestration process.
 /// - Responsible for:

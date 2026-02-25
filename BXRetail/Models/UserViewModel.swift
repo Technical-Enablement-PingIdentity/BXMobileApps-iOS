@@ -51,7 +51,7 @@ class UserViewModel: ObservableObject {
     }
     
     func fetchUserInfo() async {
-        let userInfoResponse = await loginFlowClient.user()?.userinfo(cache: false)
+        let userInfoResponse = await loginFlowClient.daVinciUser()?.userinfo(cache: false)
             
         switch userInfoResponse {
         case .success(let userInfoDictionary):
@@ -77,7 +77,7 @@ class UserViewModel: ObservableObject {
     }
 
     func logoutUser() async {
-        await loginFlowClient.user()?.logout()
+        await loginFlowClient.daVinciUser()?.logout()
         await resetModel()
     }
     

@@ -17,24 +17,6 @@
 		10109F562A5F05DB004A60E1 /* BXHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10109F552A5F05DB004A60E1 /* BXHealthApp.swift */; };
 		10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F592A5F05DD004A60E1 /* Assets.xcassets */; };
 		10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10109F5C2A5F05DD004A60E1 /* Preview Assets.xcassets */; };
-		10222EE02D357FB500295B35 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */; };
-		10222EE12D357FB500295B35 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EE22D357FB500295B35 /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */; };
-		10222EE32D357FB500295B35 /* CommunicationManager.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EE42D357FB500295B35 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */; };
-		10222EE52D357FB500295B35 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EE62D357FB500295B35 /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */; };
-		10222EE72D357FB500295B35 /* DIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EE82D357FB500295B35 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */; };
-		10222EE92D357FB500295B35 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EEA2D357FB500295B35 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */; };
-		10222EEB2D357FB500295B35 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EEC2D357FB500295B35 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */; };
-		10222EED2D357FB500295B35 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EEE2D357FB500295B35 /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */; };
-		10222EEF2D357FB500295B35 /* PingOneWallet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10222EF02D357FB500295B35 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */; };
-		10222EF12D357FB500295B35 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10222EFD2D35801000295B35 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EFA2D35801000295B35 /* WalletCoordinator.swift */; };
 		10222EFE2D35801000295B35 /* DefaultCredentialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EF72D35801000295B35 /* DefaultCredentialPicker.swift */; };
 		10222EFF2D35801000295B35 /* ApplicationUiCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EF52D35801000295B35 /* ApplicationUiCallbackHandler.swift */; };
@@ -59,18 +41,11 @@
 		1031476F2D5BDAD00049F8AD /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031476E2D5BDAC90049F8AD /* DashboardScreen.swift */; };
 		103147712D5BDC730049F8AD /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 103147702D5BDC730049F8AD /* AppAuth */; };
 		103147732D5BDC790049F8AD /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 103147722D5BDC790049F8AD /* PingOneSDK */; };
-		103147742D5BDCA70049F8AD /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; };
-		103147752D5BDCA70049F8AD /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		103147772D5BDCB50049F8AD /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; };
-		103147782D5BDCB50049F8AD /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		103147792D5BDCB50049F8AD /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; };
-		1031477A2D5BDCB50049F8AD /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		103501E22DD6323D005F2E74 /* UnauthenticatedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501E12DD6323D005F2E74 /* UnauthenticatedContentView.swift */; };
 		103501E42DD78E30005F2E74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 103501E32DD78E30005F2E74 /* GoogleService-Info.plist */; };
 		103501E52DD78ECD005F2E74 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */; };
 		103501E72DD798DF005F2E74 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501E62DD798DA005F2E74 /* AccountView.swift */; };
 		103501EB2DDB7970005F2E74 /* DaVinciViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501EA2DDB7960005F2E74 /* DaVinciViewModel.swift */; };
-		103501ED2DDB79CA005F2E74 /* PingExternal-idp in Frameworks */ = {isa = PBXBuildFile; productRef = 103501EC2DDB79CA005F2E74 /* PingExternal-idp */; };
 		103501EF2DDB7B1A005F2E74 /* DaVinciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501EE2DDB7B11005F2E74 /* DaVinciView.swift */; };
 		103501F12DDB7B49005F2E74 /* DaVinciConnectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501F02DDB7B38005F2E74 /* DaVinciConnectorView.swift */; };
 		103501F32DDB7B89005F2E74 /* DaVinciContinueNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103501F22DDB7B75005F2E74 /* DaVinciContinueNodeView.swift */; };
@@ -98,8 +73,6 @@
 		104DD86E2D78D0EC00C25A26 /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */; };
 		104DD8702D78D99F00C25A26 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 104DD86F2D78D99F00C25A26 /* FirebaseAnalytics */; };
 		104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */; };
-		104DD8752D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */; };
-		104DD8762D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */; };
 		105979682D078953009A7610 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 105979672D078953009A7610 /* SwiftyJSON */; };
 		1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 1059796E2D08ABD6009A7610 /* PingOneSignals */; };
 		105FAA242C9A261F006BE8BF /* PingOneSignals in Frameworks */ = {isa = PBXBuildFile; productRef = 105FAA232C9A261F006BE8BF /* PingOneSignals */; };
@@ -110,6 +83,7 @@
 		106EE2A22D5E60FF002E6BE5 /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF392D0CB41C00B89DF7 /* VerifyView.swift */; };
 		106EE2A42D5E6EDE002E6BE5 /* PairDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */; };
 		106EE2A52D5E6EDE002E6BE5 /* PairDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */; };
+		10719F4F2F197929008BF133 /* PingExternalIdP in Frameworks */ = {isa = PBXBuildFile; productRef = 10719F4E2F197929008BF133 /* PingExternalIdP */; };
 		1072D79A2E43F5860086C8BA /* MultiSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7992E43F57F0086C8BA /* MultiSelectView.swift */; };
 		1072D79F2E4A4A240086C8BA /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D79E2E4A4A1D0086C8BA /* CredentialDetailView.swift */; };
 		1072D7A22E4A4A480086C8BA /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7A12E4A4A430086C8BA /* CredentialListView.swift */; };
@@ -119,18 +93,106 @@
 		1072D7BD2E4A783E0086C8BA /* CredentialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7BC2E4A78360086C8BA /* CredentialCardView.swift */; };
 		1072D7BE2E4A7E3D0086C8BA /* VerifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF1B2D0CB41C00B89DF7 /* VerifyClient.swift */; };
 		1072D7BF2E4A7E4C0086C8BA /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF2D2D0CB41C00B89DF7 /* UIUtilities.swift */; };
-		1072D7C02E4A7E6F0086C8BA /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; };
-		1072D7C12E4A7E6F0086C8BA /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1072D7C32E4A7E970086C8BA /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; };
-		1072D7C42E4A7E970086C8BA /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1072D7C52E4A7EB80086C8BA /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; };
-		1072D7C62E4A7EB80086C8BA /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1072D7C82E4A7F780086C8BA /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7C72E4A7F770086C8BA /* K.swift */; };
 		1072D7C92E4A7F9F0086C8BA /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF372D0CB41C00B89DF7 /* ToastView.swift */; };
 		1072D7CB2E4A80610086C8BA /* HomeWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7CA2E4A805D0086C8BA /* HomeWalletView.swift */; };
 		1072D7D02E4B7C2D0086C8BA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1072D7CF2E4B7C2D0086C8BA /* Localizable.xcstrings */; };
 		1072D7D32E4B81640086C8BA /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7D22E4B81600086C8BA /* SideMenuView.swift */; };
 		1072D7D52E4B81CA0086C8BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072D7D42E4B81C60086C8BA /* SettingsView.swift */; };
+		107BBA1C2F4F5FB600FE5496 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; };
+		107BBA1D2F4F5FB600FE5496 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA1E2F4F5FB900FE5496 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; };
+		107BBA1F2F4F5FB900FE5496 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA202F4F5FBA00FE5496 /* GeoLocationProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; };
+		107BBA212F4F5FBA00FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA222F4F5FBC00FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; };
+		107BBA232F4F5FBC00FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA242F4F5FBD00FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; };
+		107BBA252F4F5FBD00FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA262F4F5FBE00FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; };
+		107BBA272F4F5FBE00FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA282F4F5FC200FE5496 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; };
+		107BBA292F4F5FC200FE5496 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA2A2F4F5FC300FE5496 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; };
+		107BBA2B2F4F5FC300FE5496 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA2C2F4F5FC400FE5496 /* LanguagePackProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; };
+		107BBA2D2F4F5FC400FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA2E2F4F5FC500FE5496 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; };
+		107BBA2F2F4F5FC500FE5496 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA302F4F5FC700FE5496 /* NeoInterfaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; };
+		107BBA312F4F5FC700FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA322F4F5FC900FE5496 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; };
+		107BBA332F4F5FC900FE5496 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA342F4F5FCA00FE5496 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; };
+		107BBA352F4F5FCA00FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA472F4F60FE00FE5496 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */; };
+		107BBA482F4F60FE00FE5496 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA492F4F60FF00FE5496 /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */; };
+		107BBA4A2F4F60FF00FE5496 /* CommunicationManager.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA4B2F4F610100FE5496 /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */; };
+		107BBA4C2F4F610100FE5496 /* DIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA4D2F4F610300FE5496 /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */; };
+		107BBA4E2F4F610300FE5496 /* PingOneWallet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA4F2F4F610900FE5496 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; };
+		107BBA502F4F610900FE5496 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA512F4F610A00FE5496 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; };
+		107BBA522F4F610A00FE5496 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA532F4F610B00FE5496 /* GeoLocationProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; };
+		107BBA542F4F610B00FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA552F4F610C00FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; };
+		107BBA562F4F610C00FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA572F4F610D00FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; };
+		107BBA582F4F610D00FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA592F4F610E00FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; };
+		107BBA5A2F4F610E00FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA5B2F4F610F00FE5496 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; };
+		107BBA5C2F4F610F00FE5496 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA5D2F4F611000FE5496 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; };
+		107BBA5E2F4F611000FE5496 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA5F2F4F611100FE5496 /* LanguagePackProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; };
+		107BBA602F4F611100FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA612F4F611200FE5496 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; };
+		107BBA622F4F611200FE5496 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA632F4F611300FE5496 /* NeoInterfaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; };
+		107BBA642F4F611300FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA652F4F611400FE5496 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; };
+		107BBA662F4F611400FE5496 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA672F4F611500FE5496 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; };
+		107BBA682F4F611500FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA692F4F612000FE5496 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */; };
+		107BBA6A2F4F612000FE5496 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA6B2F4F612100FE5496 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; };
+		107BBA6C2F4F612100FE5496 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA6D2F4F612200FE5496 /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */; };
+		107BBA6E2F4F612200FE5496 /* CommunicationManager.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA6F2F4F612300FE5496 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; };
+		107BBA702F4F612300FE5496 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA712F4F612400FE5496 /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */; };
+		107BBA722F4F612400FE5496 /* DIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA732F4F612600FE5496 /* GeoLocationProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; };
+		107BBA742F4F612600FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA752F4F612700FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; };
+		107BBA762F4F612700FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA772F4F612800FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; };
+		107BBA782F4F612800FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA792F4F612900FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; };
+		107BBA7A2F4F612900FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA7B2F4F612A00FE5496 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; };
+		107BBA7C2F4F612A00FE5496 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA7D2F4F612B00FE5496 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; };
+		107BBA7E2F4F612B00FE5496 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA7F2F4F612E00FE5496 /* LanguagePackProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; };
+		107BBA802F4F612E00FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA812F4F612F00FE5496 /* NeoInterfaces.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; };
+		107BBA822F4F612F00FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA832F4F613000FE5496 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; };
+		107BBA842F4F613000FE5496 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA852F4F613100FE5496 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; };
+		107BBA862F4F613100FE5496 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA872F4F613200FE5496 /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */; };
+		107BBA882F4F613200FE5496 /* PingOneWallet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		107BBA892F4F613300FE5496 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; };
+		107BBA8A2F4F613300FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		107D4DB82E6F3C7C00092F66 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD05DC2E4E2ABA00683E42 /* Color.swift */; };
 		108733C92CCC48A80071630C /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 108733C82CCC48A80071630C /* AppAuth */; };
 		108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 108733CA2CCC48B00071630C /* PingOneSDK */; };
@@ -142,29 +204,11 @@
 		109465B32E4BBA0A008B0151 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EFA2D35801000295B35 /* WalletCoordinator.swift */; };
 		109465B42E4BBA0F008B0151 /* EventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EF22D35801000295B35 /* EventObserver.swift */; };
 		109465B52E4BBA14008B0151 /* EventObserverUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222EF32D35801000295B35 /* EventObserverUtils.swift */; };
-		109465B62E4BBA4F008B0151 /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */; };
-		109465B72E4BBA4F008B0151 /* DIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465B82E4BBA56008B0151 /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */; };
-		109465B92E4BBA56008B0151 /* PingOneWallet.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		109465BE2E4BBBE0008B0151 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222F082D3580EC00295B35 /* WalletViewModel.swift */; };
 		109465BF2E4BBBE5008B0151 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A0402E2D5BC89500816220 /* ConfirmationViewModel.swift */; };
 		109465C02E4BBBF2008B0151 /* UIImage+FromSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222F0E2D35824900295B35 /* UIImage+FromSVG.swift */; };
 		109465C12E4BBBF6008B0151 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222F0C2D35819B00295B35 /* QRScanner.swift */; };
 		109465C22E4BBBFD008B0151 /* String+resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A64D442DD626A200F16D87 /* String+resource.swift */; };
-		109465C32E4BBD62008B0151 /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */; };
-		109465C42E4BBD62008B0151 /* JOSESwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465C52E4BBD66008B0151 /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */; };
-		109465C62E4BBD66008B0151 /* JoseTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465C72E4BBD6D008B0151 /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */; };
-		109465C82E4BBD6D008B0151 /* CommunicationManager.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465C92E4BBD8C008B0151 /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */; };
-		109465CA2E4BBD8C008B0151 /* libsecp256k1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465CB2E4BBDB1008B0151 /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */; };
-		109465CC2E4BBDB1008B0151 /* secp256k1Wrapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465CD2E4BBDBF008B0151 /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */; };
-		109465CE2E4BBDBF008B0151 /* CryptoTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		109465CF2E4BBDCD008B0151 /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */; };
-		109465D02E4BBDCD008B0151 /* AnyCoder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		109465D22E4BBDDD008B0151 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 109465D12E4BBDDD008B0151 /* SVGKit */; };
 		109465D32E4BBEC8008B0151 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10222F142D35879D00295B35 /* Connectivity.swift */; };
 		109465D52E4BBF10008B0151 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 109465D42E4BBF10008B0151 /* FirebaseAnalytics */; };
@@ -213,12 +257,6 @@
 		10CD05E42E4E66DE00683E42 /* WalletAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD05E32E4E66D300683E42 /* WalletAppViewModel.swift */; };
 		10D29E862DD511B900F1C4CA /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF322D0CB41C00B89DF7 /* LogoView.swift */; };
 		10EC3AC92DF096FD0012CD0E /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC3AC82DF096FA0012CD0E /* VersionView.swift */; };
-		10EEFF0C2D0CB3F600B89DF7 /* BlinkID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; };
-		10EEFF0D2D0CB3F600B89DF7 /* BlinkID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10EEFF0E2D0CB3F600B89DF7 /* VoiceSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; };
-		10EEFF0F2D0CB3F600B89DF7 /* VoiceSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10EEFF132D0CB41200B89DF7 /* PingOneVerify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; };
-		10EEFF142D0CB41200B89DF7 /* PingOneVerify.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10EEFF432D0CB41C00B89DF7 /* DevicePairingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF162D0CB41C00B89DF7 /* DevicePairingClient.swift */; };
 		10EEFF452D0CB41C00B89DF7 /* OpenBankingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF182D0CB41C00B89DF7 /* OpenBankingClient.swift */; };
 		10EEFF462D0CB41C00B89DF7 /* PingFedAuthnClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEFF192D0CB41C00B89DF7 /* PingFedAuthnClient.swift */; };
@@ -268,9 +306,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				103147752D5BDCA70049F8AD /* PingOneVerify.xcframework in Embed Frameworks */,
-				1031477A2D5BDCB50049F8AD /* VoiceSdk.xcframework in Embed Frameworks */,
-				103147782D5BDCB50049F8AD /* BlinkID.xcframework in Embed Frameworks */,
+				107BBA682F4F611500FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
+				107BBA5A2F4F610E00FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */,
+				107BBA562F4F610C00FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */,
+				107BBA622F4F611200FE5496 /* libsecp256k1.xcframework in Embed Frameworks */,
+				107BBA602F4F611100FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */,
+				107BBA542F4F610B00FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */,
+				107BBA522F4F610A00FE5496 /* CryptoTools.xcframework in Embed Frameworks */,
+				107BBA5C2F4F610F00FE5496 /* JOSESwift.xcframework in Embed Frameworks */,
+				107BBA502F4F610900FE5496 /* BlinkID.xcframework in Embed Frameworks */,
+				107BBA642F4F611300FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */,
+				107BBA662F4F611400FE5496 /* PingOneVerify.xcframework in Embed Frameworks */,
+				107BBA5E2F4F611000FE5496 /* JoseTools.xcframework in Embed Frameworks */,
+				107BBA582F4F610D00FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,18 +339,23 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				109465C82E4BBD6D008B0151 /* CommunicationManager.xcframework in Embed Frameworks */,
-				109465CA2E4BBD8C008B0151 /* libsecp256k1.xcframework in Embed Frameworks */,
-				109465B72E4BBA4F008B0151 /* DIDSDK.xcframework in Embed Frameworks */,
-				109465C62E4BBD66008B0151 /* JoseTools.xcframework in Embed Frameworks */,
-				109465B92E4BBA56008B0151 /* PingOneWallet.xcframework in Embed Frameworks */,
-				1072D7C12E4A7E6F0086C8BA /* PingOneVerify.xcframework in Embed Frameworks */,
-				109465CC2E4BBDB1008B0151 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
-				1072D7C62E4A7EB80086C8BA /* VoiceSdk.xcframework in Embed Frameworks */,
-				109465D02E4BBDCD008B0151 /* AnyCoder.xcframework in Embed Frameworks */,
-				109465C42E4BBD62008B0151 /* JOSESwift.xcframework in Embed Frameworks */,
-				109465CE2E4BBDBF008B0151 /* CryptoTools.xcframework in Embed Frameworks */,
-				1072D7C42E4A7E970086C8BA /* BlinkID.xcframework in Embed Frameworks */,
+				107BBA7A2F4F612900FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */,
+				107BBA7E2F4F612B00FE5496 /* JoseTools.xcframework in Embed Frameworks */,
+				107BBA802F4F612E00FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */,
+				107BBA762F4F612700FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */,
+				107BBA782F4F612800FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */,
+				107BBA702F4F612300FE5496 /* CryptoTools.xcframework in Embed Frameworks */,
+				107BBA8A2F4F613300FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
+				107BBA722F4F612400FE5496 /* DIDSDK.xcframework in Embed Frameworks */,
+				107BBA6A2F4F612000FE5496 /* AnyCoder.xcframework in Embed Frameworks */,
+				107BBA842F4F613000FE5496 /* libsecp256k1.xcframework in Embed Frameworks */,
+				107BBA882F4F613200FE5496 /* PingOneWallet.xcframework in Embed Frameworks */,
+				107BBA7C2F4F612A00FE5496 /* JOSESwift.xcframework in Embed Frameworks */,
+				107BBA742F4F612600FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */,
+				107BBA6E2F4F612200FE5496 /* CommunicationManager.xcframework in Embed Frameworks */,
+				107BBA862F4F613100FE5496 /* PingOneVerify.xcframework in Embed Frameworks */,
+				107BBA6C2F4F612100FE5496 /* BlinkID.xcframework in Embed Frameworks */,
+				107BBA822F4F612F00FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,18 +366,23 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				10222EE12D357FB500295B35 /* AnyCoder.xcframework in Embed Frameworks */,
-				10222EE32D357FB500295B35 /* CommunicationManager.xcframework in Embed Frameworks */,
-				10222EED2D357FB500295B35 /* libsecp256k1.xcframework in Embed Frameworks */,
-				10222EE92D357FB500295B35 /* JOSESwift.xcframework in Embed Frameworks */,
-				10EEFF142D0CB41200B89DF7 /* PingOneVerify.xcframework in Embed Frameworks */,
-				10222EEF2D357FB500295B35 /* PingOneWallet.xcframework in Embed Frameworks */,
-				10222EE72D357FB500295B35 /* DIDSDK.xcframework in Embed Frameworks */,
-				10222EEB2D357FB500295B35 /* JoseTools.xcframework in Embed Frameworks */,
-				10222EF12D357FB500295B35 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
-				10EEFF0D2D0CB3F600B89DF7 /* BlinkID.xcframework in Embed Frameworks */,
-				10222EE52D357FB500295B35 /* CryptoTools.xcframework in Embed Frameworks */,
-				10EEFF0F2D0CB3F600B89DF7 /* VoiceSdk.xcframework in Embed Frameworks */,
+				107BBA292F4F5FC200FE5496 /* JOSESwift.xcframework in Embed Frameworks */,
+				107BBA4A2F4F60FF00FE5496 /* CommunicationManager.xcframework in Embed Frameworks */,
+				107BBA232F4F5FBC00FE5496 /* IDLiveFaceCamera.xcframework in Embed Frameworks */,
+				107BBA2B2F4F5FC300FE5496 /* JoseTools.xcframework in Embed Frameworks */,
+				107BBA1D2F4F5FB600FE5496 /* BlinkID.xcframework in Embed Frameworks */,
+				107BBA212F4F5FBA00FE5496 /* GeoLocationProvider.xcframework in Embed Frameworks */,
+				107BBA332F4F5FC900FE5496 /* PingOneVerify.xcframework in Embed Frameworks */,
+				107BBA4E2F4F610300FE5496 /* PingOneWallet.xcframework in Embed Frameworks */,
+				107BBA352F4F5FCA00FE5496 /* secp256k1Wrapper.xcframework in Embed Frameworks */,
+				107BBA312F4F5FC700FE5496 /* NeoInterfaces.xcframework in Embed Frameworks */,
+				107BBA252F4F5FBD00FE5496 /* IDLiveFaceDetection.xcframework in Embed Frameworks */,
+				107BBA272F4F5FBE00FE5496 /* IDLiveFaceIAD.xcframework in Embed Frameworks */,
+				107BBA482F4F60FE00FE5496 /* AnyCoder.xcframework in Embed Frameworks */,
+				107BBA4C2F4F610100FE5496 /* DIDSDK.xcframework in Embed Frameworks */,
+				107BBA2D2F4F5FC400FE5496 /* LanguagePackProvider.xcframework in Embed Frameworks */,
+				107BBA2F2F4F5FC500FE5496 /* libsecp256k1.xcframework in Embed Frameworks */,
+				107BBA1F2F4F5FB900FE5496 /* CryptoTools.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +447,6 @@
 		104DD8672D78C6EF00C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		104DD86C2D78D0E600C25A26 /* GoogleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
 		104DD8712D78DA1800C25A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		104DD8742D7903BA00C25A26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PingOneVerifyLocalizable.strings; sourceTree = "<group>"; };
 		105FAA352C9B1C08006BE8BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		106EE2A32D5E6EDE002E6BE5 /* PairDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDeviceView.swift; sourceTree = "<group>"; };
 		1072D7992E43F57F0086C8BA /* MultiSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectView.swift; sourceTree = "<group>"; };
@@ -408,6 +465,23 @@
 		1072D7D42E4B81C60086C8BA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1076D2432A5F52EB0073ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1076D2472A5F548E0073ADD2 /* BXHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXHealth.entitlements; sourceTree = "<group>"; };
+		107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
+		107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GeoLocationProvider.xcframework; sourceTree = "<group>"; };
+		107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:CQQF4ZK23A:ID R&D Inc."; lastKnownFileType = wrapper.xcframework; path = IDLiveFaceCamera.xcframework; sourceTree = "<group>"; };
+		107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:CQQF4ZK23A:ID R&D Inc."; lastKnownFileType = wrapper.xcframework; path = IDLiveFaceDetection.xcframework; sourceTree = "<group>"; };
+		107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:CQQF4ZK23A:ID R&D Inc."; lastKnownFileType = wrapper.xcframework; path = IDLiveFaceIAD.xcframework; sourceTree = "<group>"; };
+		107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LanguagePackProvider.xcframework; sourceTree = "<group>"; };
+		107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = NeoInterfaces.xcframework; sourceTree = "<group>"; };
+		107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneVerify.xcframework; sourceTree = "<group>"; };
+		107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CryptoTools.xcframework; sourceTree = "<group>"; };
+		107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JOSESwift.xcframework; sourceTree = "<group>"; };
+		107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JoseTools.xcframework; sourceTree = "<group>"; };
+		107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libsecp256k1.xcframework; sourceTree = "<group>"; };
+		107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = secp256k1Wrapper.xcframework; sourceTree = "<group>"; };
+		107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
+		107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CommunicationManager.xcframework; sourceTree = "<group>"; };
+		107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DIDSDK.xcframework; sourceTree = "<group>"; };
+		107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneWallet.xcframework; sourceTree = "<group>"; };
 		108733A02CCC2F730071630C /* BXFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109465D92E4BC0E6008B0151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		109465DB2E4BC356008B0151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -439,18 +513,6 @@
 		10CD05DF2E4E54B300683E42 /* BXWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXWallet.entitlements; sourceTree = "<group>"; };
 		10CD05E32E4E66D300683E42 /* WalletAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAppViewModel.swift; sourceTree = "<group>"; };
 		10EC3AC82DF096FA0012CD0E /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
-		10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
-		10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlinkID.xcframework; sourceTree = "<group>"; };
-		10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CommunicationManager.xcframework; sourceTree = "<group>"; };
-		10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CryptoTools.xcframework; sourceTree = "<group>"; };
-		10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DIDSDK.xcframework; sourceTree = "<group>"; };
-		10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JOSESwift.xcframework; sourceTree = "<group>"; };
-		10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JoseTools.xcframework; sourceTree = "<group>"; };
-		10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libsecp256k1.xcframework; sourceTree = "<group>"; };
-		10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneWallet.xcframework; sourceTree = "<group>"; };
-		10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = secp256k1Wrapper.xcframework; sourceTree = "<group>"; };
-		10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:CQQF4ZK23A:ID R&D Inc."; lastKnownFileType = wrapper.xcframework; path = VoiceSdk.xcframework; sourceTree = "<group>"; };
-		10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneVerify.xcframework; sourceTree = "<group>"; };
 		10EEFF162D0CB41C00B89DF7 /* DevicePairingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePairingClient.swift; sourceTree = "<group>"; };
 		10EEFF182D0CB41C00B89DF7 /* OpenBankingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBankingClient.swift; sourceTree = "<group>"; };
 		10EEFF192D0CB41C00B89DF7 /* PingFedAuthnClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingFedAuthnClient.swift; sourceTree = "<group>"; };
@@ -499,12 +561,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103147742D5BDCA70049F8AD /* PingOneVerify.xcframework in Frameworks */,
+				107BBA512F4F610A00FE5496 /* CryptoTools.xcframework in Frameworks */,
+				107BBA572F4F610D00FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */,
+				107BBA532F4F610B00FE5496 /* GeoLocationProvider.xcframework in Frameworks */,
+				107BBA4F2F4F610900FE5496 /* BlinkID.xcframework in Frameworks */,
+				107BBA652F4F611400FE5496 /* PingOneVerify.xcframework in Frameworks */,
+				107BBA632F4F611300FE5496 /* NeoInterfaces.xcframework in Frameworks */,
+				107BBA552F4F610C00FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */,
+				107BBA592F4F610E00FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */,
+				107BBA672F4F611500FE5496 /* secp256k1Wrapper.xcframework in Frameworks */,
+				107BBA5B2F4F610F00FE5496 /* JOSESwift.xcframework in Frameworks */,
+				107BBA5F2F4F611100FE5496 /* LanguagePackProvider.xcframework in Frameworks */,
+				107BBA612F4F611200FE5496 /* libsecp256k1.xcframework in Frameworks */,
 				103147732D5BDC790049F8AD /* PingOneSDK in Frameworks */,
 				104DD86B2D78C76800C25A26 /* FirebaseAnalytics in Frameworks */,
+				107BBA5D2F4F611000FE5496 /* JoseTools.xcframework in Frameworks */,
 				103147712D5BDC730049F8AD /* AppAuth in Frameworks */,
-				103147792D5BDCB50049F8AD /* VoiceSdk.xcframework in Frameworks */,
-				103147772D5BDCB50049F8AD /* BlinkID.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,20 +584,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107BBA7D2F4F612B00FE5496 /* JoseTools.xcframework in Frameworks */,
+				107BBA832F4F613000FE5496 /* libsecp256k1.xcframework in Frameworks */,
+				107BBA792F4F612900FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */,
+				107BBA852F4F613100FE5496 /* PingOneVerify.xcframework in Frameworks */,
+				107BBA6B2F4F612100FE5496 /* BlinkID.xcframework in Frameworks */,
+				107BBA772F4F612800FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */,
+				107BBA6D2F4F612200FE5496 /* CommunicationManager.xcframework in Frameworks */,
+				107BBA892F4F613300FE5496 /* secp256k1Wrapper.xcframework in Frameworks */,
+				107BBA812F4F612F00FE5496 /* NeoInterfaces.xcframework in Frameworks */,
+				107BBA6F2F4F612300FE5496 /* CryptoTools.xcframework in Frameworks */,
+				107BBA752F4F612700FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */,
 				109465D52E4BBF10008B0151 /* FirebaseAnalytics in Frameworks */,
 				109465D22E4BBDDD008B0151 /* SVGKit in Frameworks */,
-				109465C72E4BBD6D008B0151 /* CommunicationManager.xcframework in Frameworks */,
-				109465C92E4BBD8C008B0151 /* libsecp256k1.xcframework in Frameworks */,
-				109465B62E4BBA4F008B0151 /* DIDSDK.xcframework in Frameworks */,
-				109465C52E4BBD66008B0151 /* JoseTools.xcframework in Frameworks */,
-				109465B82E4BBA56008B0151 /* PingOneWallet.xcframework in Frameworks */,
-				1072D7C02E4A7E6F0086C8BA /* PingOneVerify.xcframework in Frameworks */,
-				109465CB2E4BBDB1008B0151 /* secp256k1Wrapper.xcframework in Frameworks */,
-				1072D7C52E4A7EB80086C8BA /* VoiceSdk.xcframework in Frameworks */,
-				109465CF2E4BBDCD008B0151 /* AnyCoder.xcframework in Frameworks */,
-				109465C32E4BBD62008B0151 /* JOSESwift.xcframework in Frameworks */,
-				109465CD2E4BBDBF008B0151 /* CryptoTools.xcframework in Frameworks */,
-				1072D7C32E4A7E970086C8BA /* BlinkID.xcframework in Frameworks */,
+				107BBA692F4F612000FE5496 /* AnyCoder.xcframework in Frameworks */,
+				107BBA7B2F4F612A00FE5496 /* JOSESwift.xcframework in Frameworks */,
+				107BBA872F4F613200FE5496 /* PingOneWallet.xcframework in Frameworks */,
+				107BBA7F2F4F612E00FE5496 /* LanguagePackProvider.xcframework in Frameworks */,
+				107BBA712F4F612400FE5496 /* DIDSDK.xcframework in Frameworks */,
+				107BBA732F4F612600FE5496 /* GeoLocationProvider.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,24 +610,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10222EE62D357FB500295B35 /* DIDSDK.xcframework in Frameworks */,
-				10222EE02D357FB500295B35 /* AnyCoder.xcframework in Frameworks */,
-				10EEFF0C2D0CB3F600B89DF7 /* BlinkID.xcframework in Frameworks */,
-				10EEFF0E2D0CB3F600B89DF7 /* VoiceSdk.xcframework in Frameworks */,
+				107BBA2C2F4F5FC400FE5496 /* LanguagePackProvider.xcframework in Frameworks */,
+				107BBA1C2F4F5FB600FE5496 /* BlinkID.xcframework in Frameworks */,
+				107BBA322F4F5FC900FE5496 /* PingOneVerify.xcframework in Frameworks */,
+				107BBA492F4F60FF00FE5496 /* CommunicationManager.xcframework in Frameworks */,
+				107BBA262F4F5FBE00FE5496 /* IDLiveFaceIAD.xcframework in Frameworks */,
+				107BBA302F4F5FC700FE5496 /* NeoInterfaces.xcframework in Frameworks */,
+				107BBA1E2F4F5FB900FE5496 /* CryptoTools.xcframework in Frameworks */,
+				107BBA4B2F4F610100FE5496 /* DIDSDK.xcframework in Frameworks */,
+				107BBA2E2F4F5FC500FE5496 /* libsecp256k1.xcframework in Frameworks */,
 				10222F132D35876300295B35 /* SVGKit in Frameworks */,
+				107BBA2A2F4F5FC300FE5496 /* JoseTools.xcframework in Frameworks */,
 				105979682D078953009A7610 /* SwiftyJSON in Frameworks */,
-				10222EE42D357FB500295B35 /* CryptoTools.xcframework in Frameworks */,
-				10222EEE2D357FB500295B35 /* PingOneWallet.xcframework in Frameworks */,
+				107BBA282F4F5FC200FE5496 /* JOSESwift.xcframework in Frameworks */,
+				107BBA222F4F5FBC00FE5496 /* IDLiveFaceCamera.xcframework in Frameworks */,
+				107BBA472F4F60FE00FE5496 /* AnyCoder.xcframework in Frameworks */,
+				107BBA202F4F5FBA00FE5496 /* GeoLocationProvider.xcframework in Frameworks */,
 				104DD8702D78D99F00C25A26 /* FirebaseAnalytics in Frameworks */,
 				108733CB2CCC48B00071630C /* PingOneSDK in Frameworks */,
-				10222EF02D357FB500295B35 /* secp256k1Wrapper.xcframework in Frameworks */,
-				10EEFF132D0CB41200B89DF7 /* PingOneVerify.xcframework in Frameworks */,
-				10222EEC2D357FB500295B35 /* libsecp256k1.xcframework in Frameworks */,
-				10222EEA2D357FB500295B35 /* JoseTools.xcframework in Frameworks */,
 				108733C92CCC48A80071630C /* AppAuth in Frameworks */,
-				10222EE22D357FB500295B35 /* CommunicationManager.xcframework in Frameworks */,
-				10222EE82D357FB500295B35 /* JOSESwift.xcframework in Frameworks */,
+				107BBA342F4F5FCA00FE5496 /* secp256k1Wrapper.xcframework in Frameworks */,
 				1059796F2D08ABD6009A7610 /* PingOneSignals in Frameworks */,
+				107BBA4D2F4F610300FE5496 /* PingOneWallet.xcframework in Frameworks */,
+				107BBA242F4F5FBD00FE5496 /* IDLiveFaceDetection.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +641,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				109EBFAB2DD2406E00D59128 /* FirebaseAnalytics in Frameworks */,
+				10719F4F2F197929008BF133 /* PingExternalIdP in Frameworks */,
 				103501F52DDB7BEB005F2E74 /* PingOrchestrate in Frameworks */,
-				103501ED2DDB79CA005F2E74 /* PingExternal-idp in Frameworks */,
 				10C6AC872DD4FB0C0041BB5D /* PingDavinci in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,7 +672,6 @@
 		10109F352A5F0541004A60E1 = {
 			isa = PBXGroup;
 			children = (
-				104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */,
 				10EEFEF12D0CB3CE00B89DF7 /* Frameworks */,
 				10EEFF412D0CB41C00B89DF7 /* BXFinance */,
 				10109F542A5F05DB004A60E1 /* BXHealth */,
@@ -780,6 +861,44 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		107BB9AD2F4F593500FE5496 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				107BBA082F4F5F7C00FE5496 /* CryptoTools.xcframework */,
+				107BBA092F4F5F7C00FE5496 /* JOSESwift.xcframework */,
+				107BBA0A2F4F5F7C00FE5496 /* JoseTools.xcframework */,
+				107BBA0B2F4F5F7C00FE5496 /* libsecp256k1.xcframework */,
+				107BBA0C2F4F5F7C00FE5496 /* secp256k1Wrapper.xcframework */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		107BB9AE2F4F593B00FE5496 /* Verify */ = {
+			isa = PBXGroup;
+			children = (
+				107BB9E82F4F5F6800FE5496 /* BlinkID.xcframework */,
+				107BB9E92F4F5F6800FE5496 /* GeoLocationProvider.xcframework */,
+				107BB9EA2F4F5F6800FE5496 /* IDLiveFaceCamera.xcframework */,
+				107BB9EB2F4F5F6800FE5496 /* IDLiveFaceDetection.xcframework */,
+				107BB9EC2F4F5F6800FE5496 /* IDLiveFaceIAD.xcframework */,
+				107BB9ED2F4F5F6800FE5496 /* LanguagePackProvider.xcframework */,
+				107BB9EE2F4F5F6800FE5496 /* NeoInterfaces.xcframework */,
+				107BB9EF2F4F5F6800FE5496 /* PingOneVerify.xcframework */,
+			);
+			path = Verify;
+			sourceTree = "<group>";
+		};
+		107BBA362F4F60CB00FE5496 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				107BBA372F4F60EC00FE5496 /* AnyCoder.xcframework */,
+				107BBA382F4F60EC00FE5496 /* CommunicationManager.xcframework */,
+				107BBA392F4F60EC00FE5496 /* DIDSDK.xcframework */,
+				107BBA3A2F4F60EC00FE5496 /* PingOneWallet.xcframework */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
 		109465AC2E4BB86D008B0151 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,18 +1038,9 @@
 		10EEFEF12D0CB3CE00B89DF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10EEFEE62D0CB3CE00B89DF7 /* AnyCoder.xcframework */,
-				10EEFEE72D0CB3CE00B89DF7 /* BlinkID.xcframework */,
-				10EEFEE82D0CB3CE00B89DF7 /* CommunicationManager.xcframework */,
-				10EEFEE92D0CB3CE00B89DF7 /* CryptoTools.xcframework */,
-				10EEFEEA2D0CB3CE00B89DF7 /* DIDSDK.xcframework */,
-				10EEFEEB2D0CB3CE00B89DF7 /* JOSESwift.xcframework */,
-				10EEFEEC2D0CB3CE00B89DF7 /* JoseTools.xcframework */,
-				10EEFEED2D0CB3CE00B89DF7 /* libsecp256k1.xcframework */,
-				10EEFEEE2D0CB3CE00B89DF7 /* PingOneWallet.xcframework */,
-				10EEFEEF2D0CB3CE00B89DF7 /* secp256k1Wrapper.xcframework */,
-				10EEFEF02D0CB3CE00B89DF7 /* VoiceSdk.xcframework */,
-				10EEFF102D0CB40900B89DF7 /* PingOneVerify.xcframework */,
+				107BB9AD2F4F593500FE5496 /* Common */,
+				107BB9AE2F4F593B00FE5496 /* Verify */,
+				107BBA362F4F60CB00FE5496 /* Wallet */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1154,8 +1264,8 @@
 			packageProductDependencies = (
 				109EBFAA2DD2406E00D59128 /* FirebaseAnalytics */,
 				10C6AC862DD4FB0C0041BB5D /* PingDavinci */,
-				103501EC2DDB79CA005F2E74 /* PingExternal-idp */,
 				103501F42DDB7BEB005F2E74 /* PingOrchestrate */,
+				10719F4E2F197929008BF133 /* PingExternalIdP */,
 			);
 			productName = BXRetail;
 			productReference = 109EBF762DD2400900D59128 /* BXRetail.app */;
@@ -1247,7 +1357,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104DD8762D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */,
 				10109F5D2A5F05DD004A60E1 /* Preview Assets.xcassets in Resources */,
 				104DD8682D78C6EF00C25A26 /* GoogleService-Info.plist in Resources */,
 				10109F5A2A5F05DD004A60E1 /* Assets.xcassets in Resources */,
@@ -1269,7 +1378,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104DD8752D7903BA00C25A26 /* PingOneVerifyLocalizable.strings in Resources */,
 				10EEFF632D0CB41C00B89DF7 /* Preview Assets.xcassets in Resources */,
 				104DD8722D78DA1800C25A26 /* GoogleService-Info.plist in Resources */,
 				1036486A2D5A51BB00418CD4 /* Localizable.xcstrings in Resources */,
@@ -1498,17 +1606,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		104DD8732D7903BA00C25A26 /* PingOneVerifyLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				104DD8742D7903BA00C25A26 /* en */,
-			);
-			name = PingOneVerifyLocalizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		10109F4A2A5F0543004A60E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1572,6 +1669,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1630,6 +1728,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1784,7 +1883,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1805,7 +1904,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.5;
+				MARKETING_VERSION = 4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1826,7 +1925,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BXFinance/BXFinance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "BXFinance/Preview\\ Content/MockData.swift BXFinance/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1847,7 +1946,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 4.5;
+				MARKETING_VERSION = 4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingIdentity.p14c.bxfinance.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2069,7 +2168,7 @@
 			repositoryURL = "https://github.com/openid/AppAuth-iOS.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 		104DD8692D78C76800C25A26 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -2108,8 +2207,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ForgeRock/ping-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				kind = exactVersion;
+				version = "2.0.0-alpha";
 			};
 		};
 		10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */ = {
@@ -2148,11 +2247,6 @@
 			package = 1076D2402A5F52D80073ADD2 /* XCRemoteSwiftPackageReference "pingone-mobile-sdk-ios" */;
 			productName = PingOneSDK;
 		};
-		103501EC2DDB79CA005F2E74 /* PingExternal-idp */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 10C6AC852DD4FB0C0041BB5D /* XCRemoteSwiftPackageReference "ping-ios-sdk" */;
-			productName = "PingExternal-idp";
-		};
 		103501F42DDB7BEB005F2E74 /* PingOrchestrate */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10C6AC852DD4FB0C0041BB5D /* XCRemoteSwiftPackageReference "ping-ios-sdk" */;
@@ -2182,6 +2276,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10D4133B2A65EC7E00BC8DC4 /* XCRemoteSwiftPackageReference "pingone-signals-sdk-ios" */;
 			productName = PingOneSignals;
+		};
+		10719F4E2F197929008BF133 /* PingExternalIdP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10C6AC852DD4FB0C0041BB5D /* XCRemoteSwiftPackageReference "ping-ios-sdk" */;
+			productName = PingExternalIdP;
 		};
 		108733C82CCC48A80071630C /* AppAuth */ = {
 			isa = XCSwiftPackageProductDependency;

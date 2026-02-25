@@ -8,7 +8,7 @@
 import SwiftUI
 import PingOrchestrate
 import PingDavinci
-import PingExternal_idp
+import PingDavinciPlugin
 
 /// A view for displaying and handling user interaction with a continue node in the authentication flow.
 /// - This view renders different collectors based on their type and handles user input and validation.

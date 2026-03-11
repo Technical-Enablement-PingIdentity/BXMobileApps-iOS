@@ -21,8 +21,8 @@ struct HomeWalletView: View {
                 CredentialListView(credentials: walletModel.credentials, credentialDescriptionAttribute: walletAppModel.credentialDescriptionKey, credentialIssuedAttribute: walletAppModel.credentialIssueDateKey)
                     .toolbar {
                         ToolbarItem(placement: .principal) {
-                            if walletAppModel.appLogoUrl.isEmpty {
-                                Image("AppLogo")
+                            if walletAppModel.appLogoUrl.isEmpty && walletAppModel.selectedTheme != .Custom {
+                                Image("\(walletAppModel.selectedTheme.rawValue)Logo")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 200)
@@ -30,7 +30,7 @@ struct HomeWalletView: View {
                                 AsyncImage(url: URL(string: walletAppModel.appLogoUrl)) { image in
                                     image.resizable()
                                 } placeholder: {
-                                    Image("AppLogo")
+                                    Image("BXWalletLogo")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 200)

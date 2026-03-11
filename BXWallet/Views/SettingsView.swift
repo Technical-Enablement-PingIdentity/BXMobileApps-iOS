@@ -45,61 +45,79 @@ struct SettingsView: View {
                     .padding(.top, 70)
                     .padding(.bottom)
                     
-                    Text("settings.logo_url")
-                        .bold()
-                        .padding(.top)
-                    TextField("settings.placeholder_url", text: $walletAppModel.appLogoUrl)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .onChange(of: walletAppModel.appLogoUrl) { _, newValue in
-                            walletAppModel.updateAppLogoUrl(url: newValue)
+                    List {
+                        Picker(selection: $walletAppModel.selectedTheme) {
+                            ForEach(Theme.allCases) { theme in
+                                Text(theme.rawValue)
+                            }
+                        } label: {
+                            Text("Select Theme")
                         }
-                        .padding(8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 7)
-                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
-                        )
-                    Text("settings.logo_url.note")
-                        .font(.system(size: 10))
-                        .padding(.bottom)
-                    
-                    
-                    ColorPicker(selection: $walletAppModel.primaryColor, supportsOpacity: false) {
-                        Text("settings.primary_color")
-                            .bold()
+                        .onChange(of: walletAppModel.selectedTheme) { oldValue, newValue in
+                            if newValue != oldValue {
+                                walletAppModel.updateTheme(theme: newValue)
+                            }
+                        }
+                        
+                        if walletAppModel.selectedTheme == .Custom {
+                            VStack(alignment: .leading) {
+                                Text("settings.logo_url")
+                                TextField("settings.placeholder_url", text: $walletAppModel.appLogoUrl)
+                                    .autocorrectionDisabled()
+                                    .autocapitalization(.none)
+                                    .onChange(of: walletAppModel.appLogoUrl) { _, newValue in
+                                        walletAppModel.updateAppLogoUrl(url: newValue)
+                                    }
+                                    .padding(8)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 7)
+                                            .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                                    )
+                                Text("settings.logo_url.note")
+                                    .font(.system(size: 10))
+                            }
+                            
+                            
+                            ColorPicker(selection: $walletAppModel.primaryColor, supportsOpacity: false) {
+                                Text("settings.primary_color")
+                            }
+                            .onChange(of: walletAppModel.primaryColor) { _, newValue in
+                                walletAppModel.updatePrimaryColor(color: newValue)
+                            }
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("settings.description_key")
+                                
+                            TextField("settings.placeholder_key", text: $walletAppModel.credentialDescriptionKey)
+                                .autocorrectionDisabled()
+                                .autocapitalization(.none)
+                                .onChange(of: walletAppModel.credentialDescriptionKey) { _, newValue in
+                                    walletAppModel.updateCredentialDescriptionKey(key: newValue)
+                                }
+                                .padding(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                                )
+                        }
+                        VStack (alignment: .leading){
+                            Text("settings.issue_date_key")
+                                
+                            TextField("settings.placeholder_key", text: $walletAppModel.credentialIssueDateKey)
+                                .autocorrectionDisabled()
+                                .autocapitalization(.none)
+                                .onChange(of: walletAppModel.credentialIssueDateKey) { _, newValue in
+                                    walletAppModel.updateCredentialIssueDateKey(key: newValue)
+                                }
+                                .padding(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .stroke(.secondary.opacity(0.5), lineWidth: 1)
+                                )
+                        }
                     }
-                    .onChange(of: walletAppModel.primaryColor) { _, newValue in
-                        walletAppModel.updatePrimaryColor(color: newValue)
-                    }
                     
-                    Text("settings.description_key")
-                        .bold()
-                        .padding(.top)
-                    TextField("settings.placeholder_key", text: $walletAppModel.credentialDescriptionKey)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .onChange(of: walletAppModel.credentialDescriptionKey) { _, newValue in
-                            walletAppModel.updateCredentialDescriptionKey(key: newValue)
-                        }
-                        .padding(8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 7)
-                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
-                        )
-                    Text("settings.issue_date_key")
-                        .bold()
-                        .padding(.top)
-                    TextField("settings.placeholder_key", text: $walletAppModel.credentialIssueDateKey)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .onChange(of: walletAppModel.credentialIssueDateKey) { _, newValue in
-                            walletAppModel.updateCredentialIssueDateKey(key: newValue)
-                        }
-                        .padding(8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 7)
-                                .stroke(.secondary.opacity(0.5), lineWidth: 1)
-                        )
                     Spacer()
                     VStack {
                         HStack {
@@ -108,7 +126,8 @@ struct SettingsView: View {
                                 .font(.system(size: 12))
                                 .padding(.bottom, 2)
                             Spacer()
-                        }.padding(.bottom)
+                        }
+                        .padding(.bottom, 8)
                     }
                     HStack {
                         Spacer()
@@ -136,4 +155,5 @@ struct SettingsView: View {
     SettingsView {
         print("tapped")
     }
+    .environmentObject(WalletAppViewModel())
 }

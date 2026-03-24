@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SideMenuView: View {
     @Binding var isShowing: Bool
+    @Binding var updateView: Bool
+    
     var content: AnyView
     var edgeTransition: AnyTransition = .move(edge: .leading)
     
@@ -20,6 +22,7 @@ struct SideMenuView: View {
                     .ignoresSafeArea()
                     .onTapGesture {
                         isShowing.toggle()
+                        updateView.toggle()
                     }
                 content
                     .transition(edgeTransition)

@@ -29,7 +29,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             HomeWalletView(presentSideMenu: $presentSideMenu)
-            SideMenuView(isShowing: $presentSideMenu, content: AnyView(SettingsView(closeTapped: hideSideMenu)))
+            SideMenuView(isShowing: $presentSideMenu, updateView: $updateView, content: AnyView(SettingsView(closeTapped: hideSideMenu)))
         }
         .task {
             await checkCameraAccess()
